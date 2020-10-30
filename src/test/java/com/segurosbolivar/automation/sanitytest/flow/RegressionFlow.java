@@ -6,6 +6,8 @@ import com.segurosbolivar.automation.utils.PropertyManager;
 
 public class RegressionFlow extends RegressionUi {
 
+    //prueba
+
     public String loginUsername(){
         Login.click();
 

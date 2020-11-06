@@ -20,6 +20,9 @@ public class RegressionUi extends BaseTest {
     public static  WebElement buttonLogin;
     @FindBy(id = "navbarDropdown")
     public static  WebElement labelUsername;
+    @FindBy(id = "facebookbtn")
+    public static WebElement LoginFacebook;
+    
 
     public static  By outlookNotSignedButton = By.id("trackLogIn");
 

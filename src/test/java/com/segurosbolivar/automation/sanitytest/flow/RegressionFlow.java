@@ -6,7 +6,7 @@ import com.segurosbolivar.automation.utils.PropertyManager;
 
 public class RegressionFlow extends RegressionUi {
 
-    public String loginUsername(){
+    public String loginUsername() {
         Login.click();
         Login.sendKeys();
         LoginPass.click();
@@ -18,7 +18,13 @@ public class RegressionFlow extends RegressionUi {
         return labelUsername.getText();
     }
 
-    public String loginFacebook(){
-
+    public String loginFacebook() {
+        LoginFacebook.click();
+        emailFacebook.click();
+        emailFacebook.sendKeys();
+        passwordFacebook.click();
+        passwordFacebook.sendKeys();
+        buttonFacebook.click();
     }
+
 }

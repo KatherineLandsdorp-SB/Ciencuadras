@@ -25,9 +25,7 @@
     <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/flow/RegressionFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/flow/RegressionFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/test/LoginStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/test/LoginStepDef.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/ui/RegressionUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/ui/RegressionUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

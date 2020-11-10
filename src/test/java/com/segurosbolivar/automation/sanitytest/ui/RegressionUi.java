@@ -21,13 +21,21 @@ public class RegressionUi extends BaseTest {
     @FindBy(id = "navbarDropdown")
     public static  WebElement labelUsername;
     @FindBy(id = "facebookbtn")
-    public static WebElement LoginFacebook;
+    public static WebElement buttonLoginFacebook;
     @FindBy(id = "email")
     public static WebElement emailFacebook;
     @FindBy(id = "pass")
     public static WebElement passwordFacebook;
     @FindBy(id = "u_0_0")
     public static WebElement buttonFacebook;
+    @FindBy(id = "googlebtn")
+    public static WebElement buttonLoginGoogle;
+    @FindBy(class = "lCoei YZVTmd SmR8")
+    public static WebElement seleccionarOtraCuenta;
+    @FindBy(id = "identifierId")
+    public static WebElement emailGoogle;
+    
+
 
     public static  By outlookNotSignedButton = By.id("trackLogIn");
 

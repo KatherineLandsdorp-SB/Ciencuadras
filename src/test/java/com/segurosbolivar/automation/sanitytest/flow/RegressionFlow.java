@@ -19,12 +19,11 @@ public class RegressionFlow extends RegressionUi {
     }
 
     public String loginFacebook() {
-        LoginFacebook.click();
+        buttonLoginFacebook.click();
         emailFacebook.click();
         emailFacebook.sendKeys();
         passwordFacebook.click();
         passwordFacebook.sendKeys();
         buttonFacebook.click();
     }
-
 }

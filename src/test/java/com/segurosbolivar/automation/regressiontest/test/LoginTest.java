@@ -12,8 +12,6 @@ public class LoginTest extends Hooks {
         steps.get().clickLogin().fillAll().checkLogin("Zeroe Zeroe");
     }
 
-
-
     @Test
     public void successfulLogin2(){
         steps.get().clickLogin().fillAll().checkLogin("Holman");

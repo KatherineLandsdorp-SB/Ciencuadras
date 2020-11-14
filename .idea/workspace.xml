@@ -23,9 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok">
+      <change afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/flow/RegressionFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/flow/RegressionFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/ui/RegressionUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/ui/RegressionUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +54,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -118,6 +124,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="ok" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="458" y="93" key="#Project_Structure" timestamp="1605317338067">
+      <screen x="0" y="23" width="1920" height="993" />
+    </state>
+    <state x="458" y="93" key="#Project_Structure/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605317338067" />
     <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603909600460">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
@@ -158,9 +168,10 @@
     <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604703354650" />
-    <state x="221" y="66" key="SettingsEditor" timestamp="1604071801970">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state x="295" y="75" key="SettingsEditor" timestamp="1605317473588">
+      <screen x="0" y="23" width="1920" height="993" />
     </state>
+    <state x="295" y="75" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605317473588" />
     <state x="221" y="66" key="SettingsEditor/0.23.1440.814@0.23.1440.814" timestamp="1604071801970" />
     <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1604071623713">
       <screen x="0" y="23" width="1440" height="814" />

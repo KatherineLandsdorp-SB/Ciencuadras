@@ -30,11 +30,11 @@ public class RegressionUi extends BaseTest {
     public static WebElement buttonFacebook;
     @FindBy(id = "googlebtn")
     public static WebElement buttonLoginGoogle;
-    @FindBy(class = "lCoei YZVTmd SmR8")
-    public static WebElement seleccionarOtraCuenta;
+    //@FindBy(class = "lCoei YZVTmd SmR8")
+    //public static WebElement seleccionarOtraCuenta;
     @FindBy(id = "identifierId")
     public static WebElement emailGoogle;
-    
+
 
 
     public static  By outlookNotSignedButton = By.id("trackLogIn");

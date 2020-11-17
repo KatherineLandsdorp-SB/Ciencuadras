@@ -8,7 +8,7 @@ public class RegressionFlow extends RegressionUi {
 
     public String loginUsername() {
         Login.click();
-        Login.sendKeys();
+        Login.sendKeys(PropertyManager.getConfigValueByKey("username"));
         LoginPass.click();
         LoginPass.sendKeys();
         webDriverFacade.waitForVisibilityOfElement(buttonLogin);
@@ -18,12 +18,19 @@ public class RegressionFlow extends RegressionUi {
         return labelUsername.getText();
     }
 
-    public String loginFacebook() {
+    public void loginFacebook() {
         buttonLoginFacebook.click();
         emailFacebook.click();
         emailFacebook.sendKeys();
         passwordFacebook.click();
         passwordFacebook.sendKeys();
         buttonFacebook.click();
+    }
+
+    public void loginGoogle(){
+        buttonLoginGoogle.click();
+        emailGoogle.click();
+        emailGoogle.sendKeys();
+
     }
 }

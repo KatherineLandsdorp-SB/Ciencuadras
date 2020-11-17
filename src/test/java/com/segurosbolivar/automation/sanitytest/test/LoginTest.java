@@ -8,6 +8,11 @@ public class LoginTest extends Hooks {
     ThreadLocal<LoginStepDef> steps= ThreadLocal.withInitial(LoginStepDef::new);
 
     @Test
+    public void Login(){
+        steps.get().checkLogin("Natalia Pineda Tarazona");
+    }
+
+    @Test
     public void successfulLogin(){
         steps.get().checkLogin("Natalia Pineda Tarazona");
     }

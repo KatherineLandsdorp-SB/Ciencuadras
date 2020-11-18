@@ -22,55 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/test/steps/LoginStepDef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/regression.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/sanity.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/smoke.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/RecicleableMethodsCiencuadras.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/dev/flow/RegressionFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/dev/test/LoginStepDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/dev/test/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/dev/ui/RegressionUi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/flow/RegressionFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/flow/RegressionFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/test/LoginStepDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/regressiontest/test/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/flow/RegressionFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/test/LoginStepDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/test/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/sanitytest/ui/RegressionUi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/smoketest/flow/RegressionFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/smoketest/test/LoginStepDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/smoketest/test/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/smoketest/ui/RegressionUi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/suite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/suite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/RecicleableMethodsCiencuadras.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/dev/flow/RegressionFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/dev/test/LoginStepDef.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/dev/test/LoginTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/dev/ui/RegressionUi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/flow/RegressionFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/flow/RegressionFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/test/LoginStepDef.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/test/LoginTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/test/LoginTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/sanitytest/flow/RegressionFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/sanitytest/test/LoginStepDef.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/sanitytest/test/LoginTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/sanitytest/ui/RegressionUi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/smoketest/flow/RegressionFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/smoketest/test/LoginStepDef.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/smoketest/test/LoginTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/smoketest/ui/RegressionUi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/utils/PropertyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/utils/PropertyManager.class" afterDir="false" />
-    </list>
+    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -245,34 +197,34 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="100" y="123" width="1240" height="611" key="DiffContextDialog/0.23.1440.812@0.23.1440.812" timestamp="1603914598209" />
-    <state width="1756" height="273" key="GridCell.Tab.0.bottom" timestamp="1605669585085">
+    <state width="1756" height="150" key="GridCell.Tab.0.bottom" timestamp="1605669717366">
       <screen x="0" y="23" width="1920" height="993" />
     </state>
-    <state width="1756" height="273" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669585085" />
+    <state width="1756" height="150" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717366" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1603981847142" />
     <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1603925176482" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1604674378998" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1605622839560" />
-    <state width="1756" height="273" key="GridCell.Tab.0.center" timestamp="1605669585083">
+    <state width="1756" height="150" key="GridCell.Tab.0.center" timestamp="1605669717365">
       <screen x="0" y="23" width="1920" height="993" />
     </state>
-    <state width="1756" height="273" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669585083" />
+    <state width="1756" height="150" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717365" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1603981847141" />
     <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1605622839559" />
-    <state width="1756" height="273" key="GridCell.Tab.0.left" timestamp="1605669585082">
+    <state width="1756" height="150" key="GridCell.Tab.0.left" timestamp="1605669717364">
       <screen x="0" y="23" width="1920" height="993" />
     </state>
-    <state width="1756" height="273" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669585082" />
+    <state width="1756" height="150" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717364" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1603981847141" />
     <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1603925176480" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1604674378996" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1605622839559" />
-    <state width="1756" height="273" key="GridCell.Tab.0.right" timestamp="1605669585084">
+    <state width="1756" height="150" key="GridCell.Tab.0.right" timestamp="1605669717365">
       <screen x="0" y="23" width="1920" height="993" />
     </state>
-    <state width="1756" height="273" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669585084" />
+    <state width="1756" height="150" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717365" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1603981847142" />
     <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />

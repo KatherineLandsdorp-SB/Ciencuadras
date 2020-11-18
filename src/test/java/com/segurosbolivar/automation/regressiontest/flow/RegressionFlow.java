@@ -6,10 +6,6 @@ import com.segurosbolivar.automation.utils.PropertyManager;
 
 public class RegressionFlow extends RegressionUi {
 
-
-
-
-
     public String loginUsername(){
         webDriverFacade.waitForVisibilityOfElement(buttonProfile);
         webDriverFacade.awaitToFindElement(outlookNotSignedButton);
@@ -30,7 +26,4 @@ public class RegressionFlow extends RegressionUi {
         webDriverFacade.waitForVisibilityOfElement(linkLogin);
         linkLogin.click();
     }
-
-
-
 }

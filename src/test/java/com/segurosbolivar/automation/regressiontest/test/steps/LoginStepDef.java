@@ -9,12 +9,12 @@ public class LoginStepDef{
 
     private RegressionFlow RegressionFlow;
 
-    @Step("The user clicks on the login Link in the Header")
-    public LoginStepDef clickLogin(){
-        RegressionFlow = new RegressionFlow();
-        RegressionFlow.clickOnLogin();
-        return this;
-    }
+//    @Step("The user clicks on the login Link in the Header")
+//    public LoginStepDef clickLogin(){
+//        RegressionFlow = new RegressionFlow();
+//        RegressionFlow.clickOnLogin();
+//        return this;
+//    }
 
 //    @Step("The user fill all the required fields")
 //    public LoginStepDef fillAll(){

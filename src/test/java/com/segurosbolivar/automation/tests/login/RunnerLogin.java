@@ -1,20 +1,21 @@
-package com.segurosbolivar.automation.tests.register;
+package com.segurosbolivar.automation.tests.login;
 
 import com.segurosbolivar.automation.commons.Hooks;
-import com.segurosbolivar.automation.regressiontest.test.steps.LoginStepDef;
+import com.segurosbolivar.automation.tests.login.StepsLogin;
+
 import org.testng.annotations.Test;
 
 public class RunnerLogin extends Hooks {
 
-    ThreadLocal<LoginStepDef> steps= ThreadLocal.withInitial(LoginStepDef::new);
+    ThreadLocal<StepsLogin> steps= ThreadLocal.withInitial(StepsLogin::new);
 
     @Test
     public void successfulLogin(){
-        steps.get().clickLogin();
+        steps.get().clickEntry().fillAll("AUTOMATION PRUEBAS AUTOMATION PRUEBAS");
     }
 
 //    @Test
-//    public void successfulLogin2(){
-//        steps.get().clickLogin().fillAll().checkLogin("Holman");
+//    public void successfulLoginSucess(){
+//        steps.get().clickEntry();
 //    }
 }

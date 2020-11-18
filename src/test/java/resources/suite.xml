@@ -5,7 +5,7 @@
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
-            <class name="com.segurosbolivar.automation.regressiontest.test.LoginTest"/>
+            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
         </classes>
     </test>
 </suite>

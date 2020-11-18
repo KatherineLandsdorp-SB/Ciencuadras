@@ -1,10 +1,10 @@
 package com.segurosbolivar.automation.regressiontest.flow;
 
 
-import com.segurosbolivar.automation.regressiontest.ui.RegressionUi;
+import com.segurosbolivar.automation.elements.Elements;
 import com.segurosbolivar.automation.utils.PropertyManager;
 
-public class RegressionFlow extends RegressionUi {
+public class RegressionFlow extends Elements {
 
     public String loginUsername(){
         webDriverFacade.waitForVisibilityOfElement(buttonProfile);

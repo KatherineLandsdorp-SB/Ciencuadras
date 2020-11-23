@@ -23,7 +23,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("THIS TEST FAILED!");
+        System.out.println("TEST SUCCESSFUL!");
         //add log
         takeScreenshot();
     }

@@ -22,7 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok" />
+    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/GeneralSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromedriver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/TestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/TestListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/TestListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/flow/RegressionFlow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/test/LoginTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/test/steps/LoginStepDef.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/regressiontest/ui/RegressionUi.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +56,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -53,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -70,7 +85,17 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RunnerLogin">
+  <component name="RunManager" selected="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml">
+    <configuration name="C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SegurosBolivar_UI_Automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/resources/suite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="bol-automation-ciencuadras-test-main" />
       <extension name="coverage">
@@ -134,9 +159,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml" />
         <item itemvalue="TestNG.RunnerLogin" />
         <item itemvalue="TestNG./Users/holmansneyder/Documents/nivelics/automation/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml" />
-        <item itemvalue="TestNG.LoginTest (1)" />
         <item itemvalue="TestNG.LoginTest" />
       </list>
     </recent_temporary>
@@ -197,43 +222,71 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="100" y="123" width="1240" height="611" key="DiffContextDialog/0.23.1440.812@0.23.1440.812" timestamp="1603914598209" />
-    <state width="1756" height="150" key="GridCell.Tab.0.bottom" timestamp="1605669717366">
-      <screen x="0" y="23" width="1920" height="993" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1605793042100">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605793042100" />
+    <state width="1323" height="78" key="GridCell.Tab.0.bottom" timestamp="1606169609546">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1756" height="150" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717366" />
+    <state width="1323" height="78" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606169609546" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1603981847142" />
     <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1603925176482" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1604674378998" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1605622839560" />
-    <state width="1756" height="150" key="GridCell.Tab.0.center" timestamp="1605669717365">
-      <screen x="0" y="23" width="1920" height="993" />
+    <state width="1323" height="78" key="GridCell.Tab.0.center" timestamp="1606169609545">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1756" height="150" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717365" />
+    <state width="1323" height="78" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606169609545" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1603981847141" />
     <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1605622839559" />
-    <state width="1756" height="150" key="GridCell.Tab.0.left" timestamp="1605669717364">
-      <screen x="0" y="23" width="1920" height="993" />
+    <state width="1323" height="78" key="GridCell.Tab.0.left" timestamp="1606169609545">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1756" height="150" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717364" />
+    <state width="1323" height="78" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606169609545" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1603981847141" />
     <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1603925176480" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1604674378996" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1605622839559" />
-    <state width="1756" height="150" key="GridCell.Tab.0.right" timestamp="1605669717365">
-      <screen x="0" y="23" width="1920" height="993" />
+    <state width="1323" height="78" key="GridCell.Tab.0.right" timestamp="1606169609546">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1756" height="150" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717365" />
+    <state width="1323" height="78" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606169609546" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1603981847142" />
     <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604703354650" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1606146475985">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606146475985" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1606146475985">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606146475985" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1606146475985">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606146475985" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1606146475985">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606146475985" />
     <state x="295" y="75" key="SettingsEditor" timestamp="1605659060806">
       <screen x="0" y="23" width="1920" height="993" />
     </state>
     <state x="295" y="75" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605659060806" />
     <state x="221" y="66" key="SettingsEditor/0.23.1440.814@0.23.1440.814" timestamp="1604071801970" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606152598655">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1606152598655" />
     <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1604071623713">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
@@ -242,6 +295,10 @@
       <screen x="0" y="23" width="1920" height="993" />
     </state>
     <state x="567" y="255" width="907" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605624388029" />
+    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1606161704562">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606161704562" />
     <state x="513" y="232" key="run.anything.popup" timestamp="1605626371445">
       <screen x="0" y="23" width="1920" height="993" />
     </state>

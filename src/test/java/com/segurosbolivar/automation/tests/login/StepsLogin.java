@@ -21,4 +21,5 @@ public class StepsLogin extends Elements {
         assertEquals(MethodsLogin.fillAllTheRequiredFields(), username);
         return this;
     }
+
 }

@@ -6,15 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SegurosBolivar_UI_Automation" />
         <module name="bol-automation-ciencuadras-test-main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bol-automation-ciencuadras-test-main" target="1.8" />
+      <module name="SegurosBolivar_UI_Automation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SegurosBolivar_UI_Automation" options="-Werror" />
       <module name="bol-automation-ciencuadras-test-main" options="-Werror" />
     </option>
   </component>

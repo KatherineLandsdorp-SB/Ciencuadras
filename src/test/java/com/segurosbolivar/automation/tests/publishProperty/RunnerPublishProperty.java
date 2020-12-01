@@ -9,11 +9,13 @@ public class RunnerPublishProperty extends Hooks {
 
     @Test
     public void registerUserEnd() {
-        steps.get().clickPublish();
+        //steps.get().clickPublish();
         steps.get().clickPublishYourself();
         steps.get().clickOnBasicPlan();
         steps.get().clickOnAddToCar();
         steps.get().fillAllFieldPublication();
 
+
     }
+
 }

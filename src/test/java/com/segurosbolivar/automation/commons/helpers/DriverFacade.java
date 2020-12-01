@@ -57,6 +57,7 @@ public class DriverFacade {
         }
         else{
             driver = new ChromeDriver();
+            driver.manage().window().maximize();
 
         }
         wait = new WebDriverWait(driver, timeoutInSeconds);

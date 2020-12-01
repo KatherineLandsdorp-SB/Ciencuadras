@@ -57,14 +57,14 @@ public class Elements extends BaseTest {
 
 
     //Home
-    @FindBy(xpath = "(//a[@type='button' and //a[text()='Conoce cómo publicar']])[1]")
+    @FindBy(xpath = "(//div/a[@href='/publicar'])[1]")
     public static WebElement buttonHowToPublish;
 
     //Home accompaniment
     @FindBy(xpath = "//button[text()='PUBLICA TÚ MISMO']")
     public static WebElement buttonPublishYourself;
-    @FindBy(xpath = "//button[text()='CON INMOBILIARIA']")
-    public  static WebElement buttonRealState;
+    @FindBy(xpath = "//div/button[text()='CON INMOBILIARIA']")
+    public static WebElement buttonRealState;
 
 
     //Home Select plan
@@ -74,23 +74,30 @@ public class Elements extends BaseTest {
     public static WebElement buttonAddToCar;
 
     //Form RealState
-    @FindBy (id = "name")
-    public static WebElement buttonNameRegister;
-    @FindBy(id = "email")
-    public  static WebElement inputMail;
-    @FindBy(id = "cellphone")
+    @FindBy(xpath = "//div/input[@id='name' and @name='nameRegister']")
+    public static WebElement inputNameRegister;
+    @FindBy(xpath = "//div/input[@id='email' and @name='mailRegister']")
+    public static WebElement inputMail;
+    @FindBy(xpath = "//div/input[@id='cellphone' and @name='cellphone']")
     public static WebElement inputPhone;
-    @FindBy(xpath = "//span[@class='mat-option-text']")
-    public static  WebElement selectCity;
+    @FindBy (xpath = "(//div/input[@id='ciudad' and @name='ciudad'])[2]")
+    public static  WebElement inputCityReallSate;
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[1]")
+    public static WebElement selectCity;
     @FindBy(xpath = "(//div[@class='mat-radio-label-content'])[1]")
-    public static  WebElement radioButtonRent;
-    @FindBy(xpath ="(//div[@class='mat-radio-label-content'])[2]" )
-    public  static  WebElement radioButtonSale;
+    public static WebElement radioButtonRent;
+    @FindBy(xpath = "(//div[@class='mat-radio-label-content'])[2]")
+    public static WebElement radioButtonSale;
     @FindBy(xpath = "(//div[@class='mat-radio-label-content'])[3]")
-    public  static  WebElement radioButtonRentSale;
+    public static WebElement radioButtonRentSale;
+    @FindBy(xpath = "//span[contains (text(), 'CONFIRMAR')]")
+    public static WebElement buttonConfirm;
+    @FindBy(xpath = "//div/h5[text()='¡Nos encanta ayudarte!']")
+    public static WebElement textConfirmation;
+
     //Form publish
     @FindBy(xpath = "//*[@id=\"cdk-step-label-0-2\"]/div[2]/div/span")
-    public static  WebElement buttonTracking3;
+    public static WebElement buttonTracking3;
     @FindBy(xpath = "//*[@id=\"propertyTypeId\"]/div/div[1]/span/span")
     public static WebElement selectStudioApartment;
     @FindBy(xpath = "//*[@id=\"propertyTypeId\"]/div/div[1]/span/span")
@@ -107,12 +114,12 @@ public class Elements extends BaseTest {
     public static WebElement inputAdministrationValue;
     @FindBy(id = "antiquity")
     public static WebElement inputAntiquity;
-    @FindBy (id = "form_elem")
+    @FindBy(id = "form_elem")
     public static WebElement inputDescription;
     @FindBy(xpath = "//button[@class='mat-button-toggle-button' and @id='mat-button-toggle-4-button']")
     public static WebElement buttonStratum;
     @FindBy(id = "builtArea")
-    public static  WebElement inputArea;
+    public static WebElement inputArea;
     @FindBy(id = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[11]/div/div/div/div/div/div/button[2]")
     public static WebElement buttonAddRoom;
     @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[10]/div/div[1]/div/div/div/div/button[2]")
@@ -127,14 +134,14 @@ public class Elements extends BaseTest {
     public static WebElement buttonAddBalcony;
     @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[13]/div/div/div/div/div/div/button[1]/span/span")
     public static WebElement buttonRemoveBalcony;
-    @FindBy (xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
+    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
     public static WebElement buttonAddAscensor;
     @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
     public static WebElement buttonAddTerrace;
     @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
     public static WebElement buttonRemoveTerrce;
     @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[17]/div/div/div/div/div/div/button[2]")
-    public static  WebElement buttonAddDeposits;
+    public static WebElement buttonAddDeposits;
     @FindBy(id = "ciudad")
     public static WebElement inputCity;
     @FindBy(id = "localidadComuna")

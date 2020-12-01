@@ -2,45 +2,18 @@ package com.segurosbolivar.automation.tests.publishProperty;
 
 import com.segurosbolivar.automation.elements.Elements;
 import com.segurosbolivar.automation.utils.PropertyManager;
-import org.openqa.selenium.By;
+
 
 public class MethodsPublishProperty extends Elements {
 
-    public void clickOnPublish() {
-        webDriverFacade.waitForVisibilityOfElement(buttonHowToPublish);
-        buttonHowToPublish.click();
-    }
-
-    //metdodo candidato a ser generico
-    public void scrollToElement() {
-
-
-    }
-
-    public void clickOnPublishYourself() {
-        webDriverFacade.waitForVisibilityOfElement(buttonPublishYourself);
-        buttonPublishYourself.click();
-    }
-
-    public void clickOnBasicPlan() {
-        webDriverFacade.waitForVisibilityOfElement(buttonBasicPlan);
-        buttonBasicPlan.click();
-    }
-
-    public void clickOnAddToCar() {
-        webDriverFacade.waitForVisibilityOfElement(buttonAddToCar);
-        buttonAddToCar.click();
-    }
 
     //Formulario publish yourselff
     public void fillAllFieldPublication() {
         //buttonTracking3.isDisplayed();
-        //selectAparment.click();
-        // webDriverFacade.waitForVisibilityOfElement(selectSale);
-        //   selectSale.click();
-
-        // webDriverFacade.waitForVisibilityOfElement(inputSalePrice);
-
+        // selectAparment.click();
+       // webDriverFacade.waitForVisibilityOfElement(selectSale);
+       // selectSale.click();
+        webDriverFacade.waitForVisibilityOfElement(inputSalePrice);
         inputSalePrice.sendKeys(PropertyManager.getConfigValueByKey("salePrice"));
         webDriverFacade.waitForVisibilityOfElement(inputAntiquity);
         inputAntiquity.sendKeys(PropertyManager.getConfigValueByKey("antiquity"));
@@ -70,14 +43,6 @@ public class MethodsPublishProperty extends Elements {
         inputPassword.sendKeys(PropertyManager.getConfigValueByKey("passwordUser"));
         inputPasswordConfirm.sendKeys(PropertyManager.getConfigValueByKey("confirmpassword"));
         //buttonContinue.click();
-
 */
-
-
     }
-    //formulario publicar con inmobiliaria
-
-
-
-
 }

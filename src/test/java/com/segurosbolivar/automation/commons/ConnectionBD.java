@@ -1,6 +1,15 @@
 package com.segurosbolivar.automation.commons;
 
 import java.sql.*;
+import com.segurosbolivar.automation.elements.Elements;
+import com.segurosbolivar.automation.utils.PropertyManager;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.research.ws.wadl.Response;
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONObject;
+
 
 public class ConnectionBD {
     public static Connection myConnection;
@@ -11,6 +20,36 @@ public class ConnectionBD {
         myConnection.close();
         System.out.println("********Base De Datos Desconecda***********");
     }
+
+    public String getDataService(String portal,String campo){
+        String dataCampo ="";
+        Response respuesta=new Response();
+        try {
+            System.out.println("Hello World!");
+            Client client = Client.create();
+            WebResource webResource = client.resource("https://us-central1-ucroniadata.cloudfunctions.net/app/portal/" + portal);
+            ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
+            if (response.getStatus() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+            }
+            String output = response.getEntity(String.class);
+            System.out.println("Output from Server .... \n");
+            System.out.println(output);
+            JSONObject jsonObj = new JSONObject(output);
+            JSONArray jsonArray = jsonObj.getJSONArray("result");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject explrObject = jsonArray.getJSONObject(i);
+                dataCampo = explrObject.getString(campo);
+                return dataCampo;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dataCampo;
+    }
+
+
+
 
     public void Konnection() {
 

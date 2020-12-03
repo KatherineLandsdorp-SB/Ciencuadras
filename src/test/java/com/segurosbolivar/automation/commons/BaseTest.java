@@ -2,10 +2,12 @@ package com.segurosbolivar.automation.commons;
 
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BaseTest {
     protected DriverFacade driverFacade;
+    protected WebDriver driverW;
 
 
     public BaseTest() {

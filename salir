@@ -1,0 +1,60 @@
+[33mcommit 1053e9078b14aace2c3d070d976146e8b93bbf04[m[33m ([m[1;36mHEAD -> [m[1;32mcandidate-v0.0.1[m[33m, [m[1;31morigin/candidate-v0.0.1[m[33m)[m
+Author: Sandy Gonzalez <sandy.gonzalez@dreamcodesoft.com>
+Date:   Thu Nov 26 12:36:52 2020 -0500
+
+    se agregan clases del flujo publicar inmueble
+
+[33mcommit b13da9a6096138fcbee150294ac28daca05e7cb5[m
+Author: Sandy Gonzalez <sandy.gonzalez@dreamcodesoft.com>
+Date:   Thu Nov 26 12:23:21 2020 -0500
+
+    Se agregan clases flujo publicar inmueble
+
+[33mcommit 1078fe7a383baae2ead005cd50e8192896e63d10[m
+Author: Sandy Gonzalez <sandy.gonzalez@dreamcodesoft.com>
+Date:   Mon Nov 23 17:42:06 2020 -0500
+
+    elements
+
+[33mcommit 30c7a85ec92a3016494112def12eef0c581e67e0[m[33m ([m[1;31morigin/candidate-v0.0.0[m[33m, [m[1;32mcandidate-v0.0.0[m[33m, [m[1;32mDev[m[33m)[m
+Author: Holman Sneyder Cabezas Mondragon <holman.cabezas@nivelics.co>
+Date:   Wed Nov 18 10:56:34 2020 -0500
+
+    worspace
+
+[33mcommit 05a3090c568f3f585ec9b9f3b7bdb279d6f3cb99[m
+Author: Holman Sneyder Cabezas Mondragon <holman.cabezas@nivelics.co>
+Date:   Tue Nov 17 22:37:34 2020 -0500
+
+    add sturecure suite
+
+[33mcommit ce0f75e797518cae970a4cf14b35f6b90d4936b3[m
+Author: Holman Sneyder Cabezas Mondragon <holman.cabezas@nivelics.co>
+Date:   Tue Nov 17 22:37:18 2020 -0500
+
+    change structure
+
+[33mcommit 285b46a4912201b94be17f837b5f9a4cfc629e17[m
+Author: Holman Sneyder Cabezas Mondragon <holman.cabezas@nivelics.co>
+Date:   Tue Nov 17 09:37:06 2020 -0500
+
+    jenkinsfile
+
+[33mcommit e6ed0726c9249df379cd58a58e8857131e54a3f3[m
+Merge: d126aea f9d92d9
+Author: NataliaPineda <72627200+NataliaPineda@users.noreply.github.com>
+Date:   Tue Nov 17 09:31:58 2020 -0500
+
+    Merge branch 'candidate-v0.0.0' of https://github.com/segurosbolivar/bol-automation-ciencuadras-test into candidate-v0.0.0
+
+[33mcommit d126aea647188afeb0daa50cbfd1a4cbd6d31f1d[m
+Author: NataliaPineda <72627200+NataliaPineda@users.noreply.github.com>
+Date:   Tue Nov 17 09:27:10 2020 -0500
+
+    ok
+
+[33mcommit f9d92d9f13cb38ac5258b082fdfde742fa8f8e31[m
+Author: Holman Sneyder Cabezas Mondragon <holman.cabezas@nivelics.co>
+Date:   Fri Nov 13 20:41:10 2020 -0500
+
+    POM

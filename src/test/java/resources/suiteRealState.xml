@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite name="Test Suite" parallel="methods" thread-count="2">
+    <test name="Seguros Bolivar Test">
+        <listeners>
+            <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
+        </listeners>
+        <classes>
+            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+        </classes>
+    </test>
+</suite>

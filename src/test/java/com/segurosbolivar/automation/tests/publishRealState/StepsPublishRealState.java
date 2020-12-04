@@ -5,6 +5,7 @@ import com.segurosbolivar.automation.elements.Elements;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class StepsPublishRealState extends Elements {
     private MethodsPublishRealState MethodsPublishRealState;
@@ -93,5 +94,24 @@ public class StepsPublishRealState extends Elements {
         assertEquals(MethodsPublishRealState.validationDataMandatory(), button);
         return this;
     }
+    @Step()
+    public StepsPublishRealState validationRadioButtonSale() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        assertTrue(MethodsPublishRealState.validatorRadioButtonSale());
+        return this;
+    }
+    @Step()
+    public StepsPublishRealState validationRadioButtonRent() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        assertTrue(MethodsPublishRealState.validatorRadioButtonRent());
+        return this;
+    }
+    @Step()
+    public StepsPublishRealState validationRadioButtonRentSale() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        assertTrue(MethodsPublishRealState.validatorRadioButtonRentSale());
+        return this;
+    }
+
 
 }

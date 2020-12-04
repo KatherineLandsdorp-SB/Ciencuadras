@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 
 public class MethodsPublishRealState extends Elements {
-    RecicleableMethodsCiencuadras methodsRecicleable= new RecicleableMethodsCiencuadras();
+    RecicleableMethodsCiencuadras methodsRecicleable = new RecicleableMethodsCiencuadras();
 
     public void registerName(String name) {
         driverFacade.waitForVisibilityOfElement(inputNameRegister);
@@ -34,16 +34,17 @@ public class MethodsPublishRealState extends Elements {
 
     public void selectCity() {
         driverFacade.waitForVisibilityOfElement(selectCity);
-        if (selectCity.isEnabled()){
+        if (selectCity.isEnabled()) {
             System.out.println("Esta disponible");
             driverFacade.waitForVisibilityOfElement(selectCity);
             selectCity.click();
-        }else {
+        } else {
             driverFacade.waitForVisibilityOfElement(selectCity);
             selectCity.click();
             System.out.println("Encontrado en el intento 2");
 
-        }           }
+        }
+    }
 
     public void clickButtonSale() {
         driverFacade.waitForVisibilityOfElement(radioButtonSale);
@@ -78,6 +79,26 @@ public class MethodsPublishRealState extends Elements {
         String btn = buttonConfirm.getText();
         System.out.println("texto encontrado" + btn);
         return buttonConfirm.getText();
+    }
+
+
+    public boolean validatorRadioButtonSale() {
+        boolean present;
+        present = methodsRecicleable.validationElementEnable(radioButtonSale);
+        return present;
+
+    }
+
+    public boolean validatorRadioButtonRent() {
+        boolean present;
+        present = methodsRecicleable.validationElementEnable(radioButtonRent);
+        return present;
+    }
+
+    public boolean validatorRadioButtonRentSale() {
+        boolean present;
+        present = methodsRecicleable.validationElementEnable(radioButtonRentSale);
+        return present;
     }
 
 }

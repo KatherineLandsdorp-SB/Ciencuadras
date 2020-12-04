@@ -4,11 +4,13 @@ import com.segurosbolivar.automation.commons.Hooks;
 import com.segurosbolivar.automation.utils.PropertyManager;
 import org.testng.annotations.Test;
 
+import java.util.PriorityQueue;
+
 public class RunnerPublishRealState extends Hooks {
     ThreadLocal<StepsPublishRealState> steps = ThreadLocal.withInitial(StepsPublishRealState::new);
 
 
-    @Test(priority = 1)
+   /* @Test(priority = 1)
     public void publihsRealStateexitosoSuccssful() {
         steps.get().clickPublish();
         steps.get().clickRealState();
@@ -32,5 +34,13 @@ public class RunnerPublishRealState extends Hooks {
         steps.get().validationDataMandatory(PropertyManager.getConfigValueByKey("messajeMandatoey"));
 
 
+    }*/
+    @Test(priority = 3)
+    public  void validationButtonTransaction(){
+        steps.get().clickPublish();
+        steps.get().clickRealState();
+        steps.get().validationRadioButtonSale();
+        steps.get().validationRadioButtonRent();
+       steps.get().validationRadioButtonRentSale();
     }
 }

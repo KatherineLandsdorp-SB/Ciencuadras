@@ -22,19 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.class" afterDir="false" />
-    </list>
+    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="SLGM: Se agregan metodos de validacion elementos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +39,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="SandyLuz &lt;sandy.gonzalez@dreamcodesoft.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -189,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607088779697</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SLGM: Se agregan metodos de validacion elementos">
+      <created>1607101314844</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607101314844</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +207,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok" />
     <MESSAGE value="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite" />
-    <option name="LAST_COMMIT_MESSAGE" value="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite" />
+    <MESSAGE value="SLGM: Se agregan metodos de validacion elementos" />
+    <option name="LAST_COMMIT_MESSAGE" value="SLGM: Se agregan metodos de validacion elementos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

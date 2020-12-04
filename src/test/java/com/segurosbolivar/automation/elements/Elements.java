@@ -80,8 +80,8 @@ public class Elements extends BaseTest {
     public static WebElement inputMail;
     @FindBy(xpath = "//div/input[@id='cellphone' and @name='cellphone']")
     public static WebElement inputPhone;
-    @FindBy (xpath = "(//div/input[@id='ciudad' and @name='ciudad'])[2]")
-    public static  WebElement inputCityReallSate;
+    @FindBy(xpath = "(//div/input[@id='ciudad' and @name='ciudad'])[2]")
+    public static WebElement inputCityReallSate;
     @FindBy(xpath = "(//span[@class='mat-option-text'])[1]")
     public static WebElement selectCity;
     @FindBy(xpath = "(//div[@class='mat-radio-label-content'])[1]")
@@ -92,8 +92,17 @@ public class Elements extends BaseTest {
     public static WebElement radioButtonRentSale;
     @FindBy(xpath = "//span[contains (text(), 'CONFIRMAR')]")
     public static WebElement buttonConfirm;
+    //public static By textConfirmation = By.xpath("//div/h5[text()='¡Nos encanta ayudarte!']");
     @FindBy(xpath = "//div/h5[text()='¡Nos encanta ayudarte!']")
     public static WebElement textConfirmation;
+    @FindBy(xpath = "//div/a[@class='btn btn-default']")
+    public static WebElement buttonUnderstood;
+    @FindBy(xpath = "//span[contains(text(),'Ingresa un número de celular')]")
+    public static WebElement texMissingPhone;
+    @FindBy(xpath = "//span[contains(text(),'Ingresa un correo electrónico')]")
+    public static WebElement texMissingMail;
+    @FindBy(xpath = "//span[contains(text(),'Ingresa tu nombre')]")
+    public static WebElement textMissingName;
 
     //Form publish
     @FindBy(xpath = "//*[@id=\"cdk-step-label-0-2\"]/div[2]/div/span")

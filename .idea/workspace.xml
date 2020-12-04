@@ -22,32 +22,39 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="ok">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/suiteRealState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SegurosBolivar_UI_Automation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SegurosBolivar_UI_Automation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/Hooks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/regression.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/sanity.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/smoke.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/BaseTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/RunnerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/RunnerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,12 +66,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1jW3rOBpQfjmN9LEurx2H4C4qud" />
   <component name="ProjectViewState">
@@ -74,21 +77,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/DreamCode/bol-automation-ciencuadras-test/estructura-vieja" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/java/resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.segurosbolivar.automation.common.ui" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/resources" />
     </key>
   </component>
   <component name="RunManager" selected="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suiteRealState.xml">
@@ -169,8 +172,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suiteRealState.xml" />
-        <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suitepublish.xml" />
         <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml" />
+        <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suitepublish.xml" />
         <item itemvalue="TestNG.RunnerLogin" />
         <item itemvalue="TestNG./Users/holmansneyder/Documents/nivelics/automation/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml" />
       </list>
@@ -209,122 +212,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="458" y="93" key="#Project_Structure" timestamp="1605632240125">
-      <screen x="0" y="23" width="1920" height="993" />
-    </state>
-    <state x="458" y="93" key="#Project_Structure/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605632240125" />
-    <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603909600460">
-      <screen x="0" y="23" width="1440" height="814" />
-    </state>
-    <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.814@0.23.1440.814" timestamp="1603909600460" />
-    <state x="92" y="92" width="1182" height="544" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1606774719996">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="92" y="92" width="1182" height="544" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1366.728@0.0.1366.728" timestamp="1606774719996" />
-    <state x="426" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603922343605">
-      <screen x="0" y="23" width="1440" height="811" />
-    </state>
-    <state x="426" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.811@0.23.1440.811" timestamp="1603922343605" />
-    <state x="751" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605626403460">
-      <screen x="0" y="23" width="1920" height="993" />
-    </state>
-    <state x="751" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605626403460" />
-    <state x="100" y="123" width="1240" height="611" key="DiffContextDialog" timestamp="1603914598209">
-      <screen x="0" y="23" width="1440" height="812" />
-    </state>
-    <state x="100" y="123" width="1240" height="611" key="DiffContextDialog/0.23.1440.812@0.23.1440.812" timestamp="1603914598209" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1606426642065">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606426642065" />
-    <state width="1323" height="494" key="GridCell.Tab.0.bottom" timestamp="1606833301628">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1756" height="150" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717366" />
-    <state width="1323" height="494" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606833301628" />
-    <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1603981847142" />
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1603925176482" />
-    <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1604674378998" />
-    <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1605622839560" />
-    <state width="1323" height="494" key="GridCell.Tab.0.center" timestamp="1606833301628">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1756" height="150" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717365" />
-    <state width="1323" height="494" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606833301628" />
-    <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1603981847141" />
-    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
-    <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />
-    <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1605622839559" />
-    <state width="1323" height="494" key="GridCell.Tab.0.left" timestamp="1606833301628">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1756" height="150" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717364" />
-    <state width="1323" height="494" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606833301628" />
-    <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1603981847141" />
-    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1603925176480" />
-    <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1604674378996" />
-    <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1605622839559" />
-    <state width="1323" height="494" key="GridCell.Tab.0.right" timestamp="1606833301628">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1756" height="150" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605669717365" />
-    <state width="1323" height="494" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606833301628" />
-    <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1603981847142" />
-    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1603925176481" />
-    <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1604674378997" />
-    <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604703354650" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1606753939198">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606753939198" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1606753939198">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606753939198" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1606753939198">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606753939198" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1606753939198">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606753939198" />
-    <state x="295" y="75" key="SettingsEditor" timestamp="1605659060806">
-      <screen x="0" y="23" width="1920" height="993" />
-    </state>
-    <state x="295" y="75" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605659060806" />
-    <state x="221" y="66" key="SettingsEditor/0.23.1440.814@0.23.1440.814" timestamp="1604071801970" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606152598655">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1606152598655" />
-    <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1604071623713">
-      <screen x="0" y="23" width="1440" height="814" />
-    </state>
-    <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.23.1440.814@0.23.1440.814" timestamp="1604071623713" />
-    <state x="403" y="98" width="646" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606769243262">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="567" y="255" width="907" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605624388029" />
-    <state x="403" y="98" width="646" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1606769243262" />
-    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1606161704562">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606161704562" />
-    <state x="365" y="153" key="run.anything.popup" timestamp="1606335297711">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="513" y="232" key="run.anything.popup/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605626371445" />
-    <state x="365" y="153" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606335297711" />
-    <state x="385" y="194" key="run.anything.popup/0.23.1440.814@0.23.1440.814" timestamp="1603908060139" />
-    <state x="513" y="189" width="894" height="827" key="search.everywhere.popup" timestamp="1605626383177">
-      <screen x="0" y="23" width="1920" height="993" />
-    </state>
-    <state x="513" y="189" width="894" height="827" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1920.993@0.23.1920.993" timestamp="1605626383177" />
-    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1603906741183" />
+    <MESSAGE value="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite" />
+    <option name="LAST_COMMIT_MESSAGE" value="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

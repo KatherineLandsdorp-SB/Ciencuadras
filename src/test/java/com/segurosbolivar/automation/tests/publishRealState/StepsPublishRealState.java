@@ -11,7 +11,7 @@ public class StepsPublishRealState extends Elements {
     private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
 
     @Step()
-    public StepsPublishRealState clickPublish() throws InterruptedException{
+    public StepsPublishRealState clickPublish() {
         RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
         RecicleableMethodsCiencuadras.clickOnPublish();
         return this;
@@ -25,10 +25,73 @@ public class StepsPublishRealState extends Elements {
     }
 
     @Step()
-    public StepsPublishRealState fillFieldFormRealState(String textConfirmation) {
+    public StepsPublishRealState fillInName(String name) {
         MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.fillFieldsFormRealState();
-        assertEquals(MethodsPublishRealState.fillFieldsFormRealState(), textConfirmation);
+        MethodsPublishRealState.registerName(name);
         return this;
     }
+
+    @Step()
+    public StepsPublishRealState fillInMail(String mail) {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.registerMail(mail);
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState fillInPhones(String phone) {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.registerPhone(phone);
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState fillInCitu(String city) {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.registerCity(city);
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState selectCity(){
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.selectCity();
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState selectSale() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.clickButtonSale();
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState clickConfirmation() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.clickButtonConfirm();
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState validationButton(String button) {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        assertEquals(MethodsPublishRealState.validationElement(), button);
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState clickButtonUnderstood() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.clickButtonUnderstood();
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState validationDataMandatory(String button) {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        assertEquals(MethodsPublishRealState.validationDataMandatory(), button);
+        return this;
+    }
+
 }

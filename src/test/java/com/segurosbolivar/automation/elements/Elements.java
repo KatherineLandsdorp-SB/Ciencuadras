@@ -58,13 +58,24 @@ public class Elements extends BaseTest {
 
     //Home
     @FindBy(xpath = "(//div/a[@href='/publicar'])[1]")
-    public static WebElement buttonHowToPublish;
+    public static WebElement buttonPublishProperty;
+    @FindBy(xpath = "(//div/a[@href='/publicar'])[2]")
+    public  static  WebElement buttonKnowPublish;
 
-    //Home accompaniment
+    //Home tracking
     @FindBy(xpath = "//button[text()='PUBLICA TÚ MISMO']")
     public static WebElement buttonPublishYourself;
     @FindBy(xpath = "//div/button[text()='CON INMOBILIARIA']")
     public static WebElement buttonRealState;
+    @FindBy(xpath = "(//div/span[@class='label-desktop ng-star-inserted'])[1]")
+    public static  WebElement labelAccompaiment;
+    @FindBy(xpath = "(//span[@class='label-desktop ng-star-inserted'])[2]")
+    public static WebElement labelSelectPlan;
+    @FindBy(xpath = "(//span[@class='label-desktop ng-star-inserted'])[3]")
+    public static  WebElement labelPublish;
+    @FindBy(xpath = "(//span[@class='label-desktop ng-star-inserted'])[4]")
+    public static  WebElement labelPay;
+
 
 
     //Home Select plan

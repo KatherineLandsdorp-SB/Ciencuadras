@@ -63,7 +63,7 @@ public class MethodsPublishRealState extends Elements {
         buttonConfirm.click();
     }
 
-    public String validationElement() {
+    public String validateElement() {
         driverFacade.waitForVisibilityOfElement(buttonUnderstood);
         String btn = buttonUnderstood.getText();
         System.out.println("texto encontrado" + btn);
@@ -71,10 +71,11 @@ public class MethodsPublishRealState extends Elements {
     }
 
     public void clickButtonUnderstood() {
+
         buttonUnderstood.click();
     }
 
-    public String validationDataMandatory() {
+    public String validateDataMandatory() {
         driverFacade.waitForVisibilityOfElement(buttonConfirm);
         String btn = buttonConfirm.getText();
         System.out.println("texto encontrado" + btn);
@@ -82,20 +83,20 @@ public class MethodsPublishRealState extends Elements {
     }
 
 
-    public boolean validatorRadioButtonSale() {
+    public boolean validateRadioButtonSale() {
         boolean present;
         present = methodsRecicleable.validationElementEnable(radioButtonSale);
         return present;
 
     }
 
-    public boolean validatorRadioButtonRent() {
+    public boolean validateRadioButtonRent() {
         boolean present;
         present = methodsRecicleable.validationElementEnable(radioButtonRent);
         return present;
     }
 
-    public boolean validatorRadioButtonRentSale() {
+    public boolean validateRadioButtonRentSale() {
         boolean present;
         present = methodsRecicleable.validationElementEnable(radioButtonRentSale);
         return present;

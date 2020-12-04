@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class StepsPublishRealState extends Elements {
+public class StepsPublishRealState {
     private MethodsPublishRealState MethodsPublishRealState;
     private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
 
@@ -77,7 +77,7 @@ public class StepsPublishRealState extends Elements {
     @Step()
     public StepsPublishRealState validationButton(String button) {
         MethodsPublishRealState = new MethodsPublishRealState();
-        assertEquals(MethodsPublishRealState.validationElement(), button);
+        assertEquals(MethodsPublishRealState.validateElement(), button);
         return this;
     }
 
@@ -91,25 +91,25 @@ public class StepsPublishRealState extends Elements {
     @Step()
     public StepsPublishRealState validationDataMandatory(String button) {
         MethodsPublishRealState = new MethodsPublishRealState();
-        assertEquals(MethodsPublishRealState.validationDataMandatory(), button);
+        assertEquals(MethodsPublishRealState.validateDataMandatory(), button);
         return this;
     }
     @Step()
     public StepsPublishRealState validationRadioButtonSale() {
         MethodsPublishRealState = new MethodsPublishRealState();
-        assertTrue(MethodsPublishRealState.validatorRadioButtonSale());
+        assertTrue(MethodsPublishRealState.validateRadioButtonSale());
         return this;
     }
     @Step()
     public StepsPublishRealState validationRadioButtonRent() {
         MethodsPublishRealState = new MethodsPublishRealState();
-        assertTrue(MethodsPublishRealState.validatorRadioButtonRent());
+        assertTrue(MethodsPublishRealState.validateRadioButtonRent());
         return this;
     }
     @Step()
     public StepsPublishRealState validationRadioButtonRentSale() {
         MethodsPublishRealState = new MethodsPublishRealState();
-        assertTrue(MethodsPublishRealState.validatorRadioButtonRentSale());
+        assertTrue(MethodsPublishRealState.validateRadioButtonRentSale());
         return this;
     }
 

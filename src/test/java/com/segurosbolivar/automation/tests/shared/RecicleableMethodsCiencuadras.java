@@ -14,15 +14,17 @@ public class RecicleableMethodsCiencuadras extends Elements {
     //protected DriverFacade webDriverFacade;
 
     public void clickOnPublish() {
-        //webDriverFacade.waitForVisibilityOfElement(buttonHowToPublish);
-
-        buttonHowToPublish.click();
+        buttonPublishProperty.click();
+    }
+    public void clickOnKnowHowPublish(){
+        buttonKnowPublish.click();
     }
 
     public void clickOnPublishYourself() {
         webDriverFacade.waitForVisibilityOfElement(buttonPublishYourself);
         buttonPublishYourself.click();
     }
+
 
     public void clickOnBasicPlan() {
         webDriverFacade.waitForVisibilityOfElement(buttonBasicPlan);
@@ -40,6 +42,8 @@ public class RecicleableMethodsCiencuadras extends Elements {
             buttonRealState.click();
         }
     }
+
+
 
 
     public boolean WaitingForElement(By ByElemto, int intentos) throws InterruptedException {

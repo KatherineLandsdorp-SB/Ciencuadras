@@ -22,7 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="SLGM: Se agregan metodos de validacion elementos" />
+=======
+    <list default="true" id="345c3fc6-d47c-4c4f-bfb4-99de838704d9" name="Default Changelist" comment="SLGM: Se realiza depuracion del proyecto, se agregan metodos y clases nuevas para test realSuite" />
+>>>>>>> 7ac87c8a92122c2bb2c8a00a7cee2b29482df0a5
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,6 +186,7 @@
       <option name="project" value="LOCAL" />
       <updated>1607088779697</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00003" summary="SLGM: Se agregan metodos de validacion elementos">
       <created>1607101314844</created>
       <option name="number" value="00003" />
@@ -190,6 +195,9 @@
       <updated>1607101314844</updated>
     </task>
     <option name="localTasksCounter" value="4" />
+=======
+    <option name="localTasksCounter" value="3" />
+>>>>>>> 7ac87c8a92122c2bb2c8a00a7cee2b29482df0a5
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

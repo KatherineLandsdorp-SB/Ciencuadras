@@ -63,7 +63,7 @@ public class Elements extends BaseTest {
     public  static  WebElement buttonKnowPublish;
 
     //Home tracking
-    @FindBy(xpath = "//button[text()='PUBLICA TÚ MISMO']")
+    @FindBy(xpath = "//div//button[text()='PUBLICA TÚ MISMO']")
     public static WebElement buttonPublishYourself;
     @FindBy(xpath = "//div/button[text()='CON INMOBILIARIA']")
     public static WebElement buttonRealState;
@@ -78,11 +78,26 @@ public class Elements extends BaseTest {
 
 
 
-    //Home Select plan
+    //Home Select plan basic
     @FindBy(id = "sale-button")
     public static WebElement buttonBasicPlan;
+
     @FindBy(xpath = "//button[@class='btn select-btn basico' and //button[contains(text(),'AÑADIR AL CARRITO')]]")
-    public static WebElement buttonAddToCar;
+    public static WebElement buttonBasicAddToCar;
+
+    //Home select plan destacadp
+    @FindBy(id = "rent-button")
+    public static  WebElement buttonFeaturedPlan;
+    @FindBy(id = "ciudad")
+    public static  WebElement inputCityCoverage;
+    @FindBy(xpath = "(//button[@class='btn btn-default'])[8]")
+    public static  WebElement buttonContinueCoverage;
+    @FindBy(xpath = "//div/p[@class='confirmed-coverage__text']")
+    public static  WebElement texConfirmedCity;
+    @FindBy(xpath = "//div//h3[@class='out-of-coverage__title']")
+    public static WebElement textOutCoverage;
+    @FindBy(xpath = "//button[@class='btn destacado' and //button[contains(text(),'AÑADIR AL CARRITO')]]")
+    public  static  WebElement buttonAddToCar;
 
     //Form RealState
     @FindBy(xpath = "//div/input[@id='name' and @name='nameRegister']")

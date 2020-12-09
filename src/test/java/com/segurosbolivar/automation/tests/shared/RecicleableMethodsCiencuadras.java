@@ -11,18 +11,29 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class RecicleableMethodsCiencuadras extends Elements {
-    //protected DriverFacade webDriverFacade;
+
 
     public void clickOnPublish() {
         buttonPublishProperty.click();
     }
-    public void clickOnKnowHowPublish(){
+
+    public void clickOnKnowHowPublish() {
         buttonKnowPublish.click();
     }
 
     public void clickOnPublishYourself() {
         webDriverFacade.waitForVisibilityOfElement(buttonPublishYourself);
-        buttonPublishYourself.click();
+
+        if (buttonPublishYourself.isEnabled()) {
+            System.out.println("Esta disponible");
+            driverFacade.waitForVisibilityOfElement(buttonPublishYourself);
+            buttonPublishYourself.click();
+        } else {
+            driverFacade.waitForVisibilityOfElement(buttonPublishYourself);
+            buttonPublishYourself.click();
+            System.out.println("Encontrado en el intento 2");
+
+        }
     }
 
 
@@ -32,8 +43,20 @@ public class RecicleableMethodsCiencuadras extends Elements {
     }
 
     public void clickOnAddToCar() {
+
         webDriverFacade.waitForVisibilityOfElement(buttonAddToCar);
-        buttonAddToCar.click();
+        if (buttonAddToCar.isEnabled()) {
+            System.out.println("Esta disponible");
+            driverFacade.waitForVisibilityOfElement(buttonAddToCar);
+            buttonAddToCar.click();
+        } else {
+            driverFacade.waitForVisibilityOfElement(buttonAddToCar);
+            buttonAddToCar.click();
+            System.out.println("Encontrado en el intento 2");
+
+        }
+
+
     }
 
     public void publishRealState() {
@@ -42,8 +65,6 @@ public class RecicleableMethodsCiencuadras extends Elements {
             buttonRealState.click();
         }
     }
-
-
 
 
     public boolean WaitingForElement(By ByElemto, int intentos) throws InterruptedException {

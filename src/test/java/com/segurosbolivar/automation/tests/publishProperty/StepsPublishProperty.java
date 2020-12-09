@@ -12,7 +12,7 @@ public class StepsPublishProperty extends Elements {
     private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
 
     @Step("The user clicks on the publish button in the home")
-    public StepsPublishProperty clickPublish() throws InterruptedException{
+    public StepsPublishProperty clickPublish() {
         RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
         RecicleableMethodsCiencuadras.clickOnPublish();
         return this;
@@ -21,7 +21,6 @@ public class StepsPublishProperty extends Elements {
 
     @Step("")
     public StepsPublishProperty clickPublishYourself() {
-        MethodsPublishProperty = new MethodsPublishProperty();
         RecicleableMethodsCiencuadras.clickOnPublishYourself();
         return this;
     }
@@ -44,6 +43,30 @@ public class StepsPublishProperty extends Elements {
     public StepsPublishProperty fillAllFieldPublication() {
         MethodsPublishProperty = new MethodsPublishProperty();
         MethodsPublishProperty.fillAllFieldPublication();
+        return this;
+    }
+    @Step()
+    public  StepsPublishProperty registerCityCoverage(String city){
+        MethodsPublishProperty= new MethodsPublishProperty();
+        MethodsPublishProperty.registerCityCoverage(city);
+        return this;
+    }
+    @Step()
+    public  StepsPublishProperty validateCityCoverage(String text){
+        MethodsPublishProperty= new MethodsPublishProperty();
+        assertEquals(MethodsPublishProperty.validateTextConfirmCoverage(),text);
+        return this;
+    }
+    @Step()
+    public StepsPublishProperty validateCityOutCoverage(String text){
+        MethodsPublishProperty = new MethodsPublishProperty();
+        assertEquals(MethodsPublishProperty.validateTextOutCoverage(),text);
+        return this;
+    }
+    @Step()
+    public StepsPublishProperty clickButtonContinueCityCoverage(){
+        MethodsPublishProperty= new MethodsPublishProperty();
+        MethodsPublishProperty.clickButtonContinueCoverageCity();
         return this;
     }
 

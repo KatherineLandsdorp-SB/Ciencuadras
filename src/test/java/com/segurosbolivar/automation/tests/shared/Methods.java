@@ -11,11 +11,12 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class RecicleableMethodsCiencuadras extends Elements {
-    //protected DriverFacade webDriverFacade;
+    protected DriverFacade webDriverFacade;
 
     public void clickOnPublish() {
         buttonPublishProperty.click();
     }
+
     public void clickOnKnowHowPublish(){
         buttonKnowPublish.click();
     }
@@ -24,7 +25,6 @@ public class RecicleableMethodsCiencuadras extends Elements {
         webDriverFacade.waitForVisibilityOfElement(buttonPublishYourself);
         buttonPublishYourself.click();
     }
-
 
     public void clickOnBasicPlan() {
         webDriverFacade.waitForVisibilityOfElement(buttonBasicPlan);
@@ -37,7 +37,7 @@ public class RecicleableMethodsCiencuadras extends Elements {
     }
 
     public void publishRealState() {
-        driverFacade.waitForVisibilityOfElement(buttonRealState);
+        webDriverFacade.waitForVisibilityOfElement(buttonRealState);
         if (buttonRealState.isEnabled()) {
             buttonRealState.click();
         }
@@ -86,7 +86,6 @@ public class RecicleableMethodsCiencuadras extends Elements {
             System.out.println("Is disponible");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-
         }
         if (element) {
             System.out.println("Is disponible 2");

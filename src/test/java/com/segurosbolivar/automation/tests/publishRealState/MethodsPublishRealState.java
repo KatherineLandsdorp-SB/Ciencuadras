@@ -1,16 +1,11 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
-import com.segurosbolivar.automation.elements.Elements;
-import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
-import com.segurosbolivar.automation.utils.PropertyManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.tests.shared.Methods;
 
-import java.util.Set;
-import java.util.regex.Matcher;
-
-public class MethodsPublishRealState extends Elements {
-    RecicleableMethodsCiencuadras methodsRecicleable = new RecicleableMethodsCiencuadras();
+public class MethodsPublishRealState extends BaseTest {
+    Services services = new Services();
 
     public void registerName(String name) {
         driverFacade.waitForVisibilityOfElement(inputNameRegister);
@@ -85,20 +80,20 @@ public class MethodsPublishRealState extends Elements {
 
     public boolean validateRadioButtonSale() {
         boolean present;
-        present = methodsRecicleable.validationElementEnable(radioButtonSale);
+        present = services.validationElementEnable(radioButtonSale);
         return present;
 
     }
 
     public boolean validateRadioButtonRent() {
         boolean present;
-        present = methodsRecicleable.validationElementEnable(radioButtonRent);
+        present = services.validationElementEnable(radioButtonRent);
         return present;
     }
 
     public boolean validateRadioButtonRentSale() {
         boolean present;
-        present = methodsRecicleable.validationElementEnable(radioButtonRentSale);
+        present = services.validationElementEnable(radioButtonRentSale);
         return present;
     }
 

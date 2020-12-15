@@ -1,6 +1,5 @@
 package com.segurosbolivar.automation.elements;
 
-import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
 import org.openqa.selenium.By;
@@ -8,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Elements extends BaseTest {
+public class Elements {
     protected DriverFacade webDriverFacade;
 
     /* ========== LoginTest ========= */
@@ -34,6 +33,77 @@ public class Elements extends BaseTest {
 
     /* ========== LoginTest ========= */
 
+    /* ========== RegisterTest ========= */
+
+    @FindBy(xpath = "//span[contains(text(),'Aliados')]")
+    public static WebElement allied;
+
+    @FindBy(xpath = "//a[contains(text(),'Regístrate')]")
+    public static WebElement alliedRegistry;
+
+    @FindBy(xpath = "//span[contains(text(),'Regístrate')]")
+    public static WebElement registerUser;
+
+    @FindBy(id = "nameRegister")
+    public static WebElement nameRegister;
+
+    @FindBy(id = "secondNameRegister")
+    public static WebElement secondNameRegister;
+
+    @FindBy(id = "lastNameRegister")
+    public static WebElement lastNameRegister;
+
+    @FindBy(id = "secondLastnameRegister")
+    public static WebElement secondLastnameRegister;
+
+    @FindBy(id = "mailRegister")
+    public static WebElement mailRegister;
+
+    @FindBy(id = "passRegister")
+    public static WebElement passRegister;
+
+    @FindBy(id = "confirmPassRegister")
+    public static WebElement confirmPassRegister;
+
+    @FindBy(id = "terms")
+    public static WebElement terms;
+
+    @FindBy(id = "register")
+    public static WebElement register;
+
+    /* ========== RegisterTest ========= */
+
+    /* ========== AlliedRegisternTest ========= */
+
+    @FindBy(id = "username")
+    public static WebElement usernameAllied;
+
+    @FindBy(id = "correo")
+    public static WebElement mailAllied;
+
+    @FindBy(id = "verify_email")
+    public static WebElement verifyEmailAllied;
+
+    @FindBy(id = "password")
+    public static WebElement passwordAllied;
+
+    @FindBy(id = "city")
+    public static WebElement cityAllied;
+
+    @FindBy(xpath = "//body/div[4]/div[2]/div[1]/mat-dialog-container[1]/app-register[1]/div[1]/div[2]/form[1]/div[9]/button[1]")
+    public static WebElement buttonRegisterAllied;
+    /* ========== AlliedRegisterTest ========= */
+
+
+    /* ========== AlliedLoginTest ========= */
+
+    @FindBy(id = "loginform-email")
+    public static WebElement loginformEmail;
+
+    @FindBy(id = "loginform-password")
+    public static WebElement loginFormPassword;
+
+    /* ========== AlliedLoginTest ========= */
 
     @FindBy(id = "trackLogIn")
     public static WebElement linkLogin;
@@ -43,7 +113,6 @@ public class Elements extends BaseTest {
     public static WebElement labelUsername;
 
     public static By outlookNotSignedButton = By.id("trackLogIn");
-
 
     //     loginPopUpContainer //
     @FindBy(id = "login")

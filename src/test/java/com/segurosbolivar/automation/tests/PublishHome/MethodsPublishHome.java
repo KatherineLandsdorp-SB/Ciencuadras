@@ -1,20 +1,20 @@
 package com.segurosbolivar.automation.tests.PublishHome;
 
-import com.segurosbolivar.automation.elements.Elements;
-import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Services;
 
-public class MethodsPublishHome extends Elements {
-    RecicleableMethodsCiencuadras methodsRecyclable = new RecicleableMethodsCiencuadras();
+public class MethodsPublishHome extends BaseTest {
+    Services services = new Services();
 
     public boolean validateButtonKnowHowPublish() {
         boolean present;
-        present = methodsRecyclable.validationElementEnable(buttonKnowPublish);
+        present = services.validationElementEnable(buttonKnowPublish);
         return present;
     }
 
     public boolean validateButtonPublishProperty() {
         boolean present;
-        present = methodsRecyclable.validationElementEnable(buttonPublishProperty);
+        present = services.validationElementEnable(buttonPublishProperty);
         return present;
     }
 
@@ -24,6 +24,4 @@ public class MethodsPublishHome extends Elements {
         present=labelAccompaiment.isDisplayed();
         return present;
     }
-
-
 }

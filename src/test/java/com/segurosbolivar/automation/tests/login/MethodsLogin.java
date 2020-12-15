@@ -1,9 +1,11 @@
 package com.segurosbolivar.automation.tests.login;
 
-import com.segurosbolivar.automation.elements.Elements;
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Services;
 import com.segurosbolivar.automation.utils.PropertyManager;
 
-public class MethodsLogin extends Elements {
+public class MethodsLogin extends BaseTest {
+
 
     public void clickOnEntry(){
         webDriverFacade.waitForVisibilityOfElement(entryUser);

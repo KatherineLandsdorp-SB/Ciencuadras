@@ -1,7 +1,6 @@
 package com.segurosbolivar.automation.tests.PublishHome;
 
-import com.fasterxml.jackson.databind.jsontype.impl.AsExistingPropertyTypeSerializer;
-import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
+import com.segurosbolivar.automation.tests.shared.Methods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertTrue;
@@ -9,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class StepsMethodsPublishHome {
     private MethodsPublishHome MethodsPublishHome;
-    private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
+    private Methods RecicleableMethodsCiencuadras;
 
 
     @Step()
@@ -24,7 +23,7 @@ public class StepsMethodsPublishHome {
     }
     @Step()
     public void clickButtonKnowPublish(){
-        RecicleableMethodsCiencuadras=new RecicleableMethodsCiencuadras();
+        RecicleableMethodsCiencuadras=new Methods();
         RecicleableMethodsCiencuadras.clickOnKnowHowPublish();;
     }
     @Step()

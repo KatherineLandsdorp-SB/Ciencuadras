@@ -1,7 +1,6 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
-import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
-import com.segurosbolivar.automation.elements.Elements;
+import com.segurosbolivar.automation.tests.shared.Methods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
@@ -9,19 +8,17 @@ import static org.testng.Assert.assertTrue;
 
 public class StepsPublishRealState {
     private MethodsPublishRealState MethodsPublishRealState;
-    private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
+    private Methods methods = new Methods();
 
     @Step()
     public StepsPublishRealState clickPublish() {
-        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
-        RecicleableMethodsCiencuadras.clickOnPublish();
+        methods.clickOnPublish();
         return this;
     }
 
     @Step()
     public StepsPublishRealState clickRealState() {
-        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
-        RecicleableMethodsCiencuadras.publishRealState();
+        methods.publishRealState();
         return this;
     }
 

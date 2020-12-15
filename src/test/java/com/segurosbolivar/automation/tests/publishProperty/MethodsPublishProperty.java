@@ -1,10 +1,11 @@
 package com.segurosbolivar.automation.tests.publishProperty;
 
+import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.elements.Elements;
 import com.segurosbolivar.automation.utils.PropertyManager;
 
 
-public class MethodsPublishProperty extends Elements {
+public class MethodsPublishProperty extends BaseTest {
 
 
     //Formulario publish yourselff

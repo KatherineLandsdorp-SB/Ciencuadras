@@ -58,7 +58,6 @@ public class DriverFacade {
         else{
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-
         }
         wait = new WebDriverWait(driver, timeoutInSeconds);
     }
@@ -72,17 +71,5 @@ public class DriverFacade {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public void awaitToFindElement(By webElement) {
-        await().atMost(1, TimeUnit.MINUTES)
-                .pollInterval(Duration.ONE_SECOND)
-                .until(() -> {
-                    try {
-                        driver.findElement(webElement);
-                        return true;
-                    } catch (NoSuchElementException e) {
-                        return false;
-                    }
 
-                });
-    }
 }

@@ -70,7 +70,6 @@ public class ConnectionBD {
     public String InputDataExtraction (String table,String suite,String casex,String campo) {
         String val = null;
         try {
-
             String readRecordSQL = "select * from "+table+" where id_suite="+suite+" and id_case= "+casex+"";
             myResultSet = sqlStatement.executeQuery(readRecordSQL);
 //            System.out.println(myResultSet);
@@ -88,10 +87,10 @@ public class ConnectionBD {
         return val;
       
     }
+
     public String MaxIdintfac(String sateliteMax) {
         String val = null;
         try {
-
             String readRecordSQL = "select  max(idintfac) as idintfac from aut_data_service_post_fe where SATELITE= '"+sateliteMax+"'" ;
             System.out.println("eL QUERY DEL MAXIMO ID_FACTURA:  " + readRecordSQL);
             ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
@@ -108,7 +107,6 @@ public class ConnectionBD {
             System.out.println(e);
         }
         return val;
-
     }
 
     public String MaxIdExecutionServiceFE() {
@@ -130,8 +128,8 @@ public class ConnectionBD {
             System.out.println(e);
         }
         return val;
-
     }
+
     public String MaxIdExecutionGlobal() {
         String val = null;
         try {
@@ -146,12 +144,10 @@ public class ConnectionBD {
             }
             myResultSet.close();
 //            myConnection.close();
-
         } catch (Exception e) {
             System.out.println(e);
         }
         return val;
-
     }
 
 
@@ -175,21 +171,16 @@ public class ConnectionBD {
             System.out.println("Error de insercion sobre la tabla: aut_execution " );
         }
         return intMaxIdExecutionGlobalPlus;
-
     }
 
     public void UpdateAutExecutionFinal (int idAutExecution,String outcome) {
         String val = null;
-
-
         try {
-
             String readRecordSQL = "update aut_execution set status='3', outcome="+outcome+", end_date= CURRENT_TIMESTAMP where id_aut_execution = "+idAutExecution+"";
             ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
             System.out.println(myResultSet);
             System.out.println("Update  final Correcta sobre la tabla : aut_execution " );
             myResultSet.close();
-
         } catch (Exception e) {
             System.out.println("Error de Update final sobre la tabla: aut_execution " );
         }
@@ -204,73 +195,51 @@ public class ConnectionBD {
         System.out.println("EL maximo de los id_FE: " + intMaxIdExecutionServiceFEPlus );
 
         try {
-
             String readRecordSQL = "Insert INTO aut_execution_service_fe (ID_AUT_EXECUTION_SERVICE_FE,ID_SUITE,ID_CASE,ID_AUT_AUTOMATION,STATUSCODE,ID_AUT_EXECUTION,RESPONSE,SUITE_NAME,CASE_NAME)\n" +
                     "values ("+intMaxIdExecutionServiceFEPlus+","+suite+","+casex+","+ID_AUT_AUTOMATION+",'0',"+ID_AUT_EXECUTION+",'rESPONSE nULL iNICIAL',"+SUIITE_NAME+","+CASE_NAME+")";
             System.out.println("EL Insert del query inicial FE: " + readRecordSQL );
-
             ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
             System.out.println(myResultSet);
             System.out.println("insercion Correcta sobre la tabla: aut_execution_service_fe Ok"  );
             myResultSet.close();
-
         } catch (Exception e) {
             System.out.println("Error de insercion sobre la tabla: aut_execution_service_fe " );
         }
         return intMaxIdExecutionServiceFEPlus;
-
     }
 
     public void UpdateAutExecutionServiceFEFinal (int idAutExecutionServiceFE,int statusCode,String response ){
         String val = null;
-
-
         try {
-
             String readRecordSQL = " update aut_execution_service_fe set STATUSCODE ='"+statusCode+"',RESPONSE='"+response+"'WHERE ID_AUT_EXECUTION_SERVICE_FE = "+idAutExecutionServiceFE+"";
             System.out.println("El Update: " + readRecordSQL);
             ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
             System.out.println("El Update: " + readRecordSQL);
             System.out.println(myResultSet);
-
             System.out.println("Update final Correcto sobre la tabla : aut_execution_service_fe " );
             myResultSet.close();
-
         } catch (Exception e) {
             System.out.println("Error de Actualizacion final sobre la tabla: aut_execution_service_fe " );
         }
-
     }
 
-    public void UpdateIdFactDataInsumo (String table,String suite,String casex,String idFact) {
+    public void UpdateIdFactDataInsumo(String table,String suite,String casex,String idFact) {
         String val = null;
-
-
         try {
-
             String readRecordSQL = "update "+table+" set idintfac= '"+idFact+"' where id_suite= '"+suite+"'  and id_case= '"+casex+"' ";
             System.out.println("?????????????????????????????????????? EL query de idefac insumo : " + readRecordSQL);
             ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
             System.out.println(myResultSet);
             System.out.println("Update  final Correcta sobre IDINTFAC DE LA tabla : "+table+" " );
             myResultSet.close();
-
         } catch (Exception e) {
             System.out.println("Update  final FALLO sobre IDINTFAC DE LA tabla: "+table+" " );
         }
-
     }
 
     public void idIntFacPlus (String idIntFacPlus) {
-
         int entero = Integer.parseInt(idIntFacPlus);
         String idIntFacPlusx = String.valueOf(entero + 1);
         UpdateIdFactDataInsumo("aut_data_service_post_fe", "1", "1", idIntFacPlusx);
-
     }
-
-
-
-
-
 }

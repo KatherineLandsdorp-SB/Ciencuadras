@@ -1,19 +1,18 @@
 package com.segurosbolivar.automation.tests.publishProperty;
 
-import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
-import com.segurosbolivar.automation.elements.Elements;
+import com.segurosbolivar.automation.tests.shared.Methods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
 
-public class StepsPublishProperty extends Elements {
+public class StepsPublishProperty {
 
     private MethodsPublishProperty MethodsPublishProperty;
-    private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
+    private Methods RecicleableMethodsCiencuadras;
 
     @Step("The user clicks on the publish button in the home")
     public StepsPublishProperty clickPublish() throws InterruptedException{
-        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
+        RecicleableMethodsCiencuadras = new Methods();
         RecicleableMethodsCiencuadras.clickOnPublish();
         return this;
 
@@ -28,14 +27,14 @@ public class StepsPublishProperty extends Elements {
 
     @Step("")
     public StepsPublishProperty clickOnBasicPlan() {
-        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
+        RecicleableMethodsCiencuadras = new Methods();
         RecicleableMethodsCiencuadras.clickOnBasicPlan();
         return this;
     }
 
     @Step("")
     public StepsPublishProperty clickOnAddToCar() {
-        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
+        RecicleableMethodsCiencuadras = new Methods();
         RecicleableMethodsCiencuadras.clickOnAddToCar();
         return this;
     }

@@ -10,6 +10,11 @@ public class RunnerLogin extends Hooks {
 
     ThreadLocal<StepsLogin> steps= ThreadLocal.withInitial(StepsLogin::new);
 
+    @Test
+    public void successfullLogin(){
+        steps.get().clickEntry().fillAll("AUTOMATION PRUEBAS AUTOMATION PRUEBAS");
+    }
+
     // se agrega inmplementaciòn trayendo datos desde servicio de firebase
    /* ConnectionBD objBd = new ConnectionBD();
     @Test
@@ -18,10 +23,7 @@ public class RunnerLogin extends Hooks {
         steps.get().clickEntry().fillAll("AUTOMATION PRUEBAS AUTOMATION PRUEBAS");
     }
 */
-    @Test
-    public void successfulLogin(){
-        steps.get().clickEntry().fillAll("AUTOMATION PRUEBAS AUTOMATION PRUEBAS");
-    }
+
 
 //    @Test
 //    public void successfulLoginSucess(){

@@ -81,16 +81,17 @@ public class Elements extends BaseTest {
     //Home Select plan basic
     @FindBy(id = "sale-button")
     public static WebElement buttonBasicPlan;
-
     @FindBy(xpath = "//button[@class='btn select-btn basico' and //button[contains(text(),'AÑADIR AL CARRITO')]]")
     public static WebElement buttonBasicAddToCar;
 
     //Home select plan destacadp
     @FindBy(id = "rent-button")
     public static  WebElement buttonFeaturedPlan;
-    @FindBy(id = "ciudad")
+    @FindBy(xpath= "(//*[@id=\"ciudad\"])[2]")
     public static  WebElement inputCityCoverage;
-    @FindBy(xpath = "(//button[@class='btn btn-default'])[8]")
+    @FindBy(xpath = "(//div/button[contains (text(), 'CONFIRMAR')])")
+    public static  WebElement buttonCnfirmCoverage;
+    @FindBy(xpath = "(//div/button[contains (text(), 'CONTINUAR')])[6]")
     public static  WebElement buttonContinueCoverage;
     @FindBy(xpath = "//div/p[@class='confirmed-coverage__text']")
     public static  WebElement texConfirmedCity;
@@ -142,41 +143,23 @@ public class Elements extends BaseTest {
     @FindBy(xpath = "//*[@id=\"mat-button-toggle-73-button\"]/div/span")
     public static WebElement selectRent;
     @FindBy(xpath = "//div/span[text()='Venta']")
-    public static WebElement selectSale;
+    public static WebElement buttonPublishSale;
     @FindBy(xpath = "//input[@id=\"sellingPrice\"]")
     public static WebElement inputSalePrice;
+    @FindBy(id = "leasingFee")
+    public static  WebElement inputValueRent;
     @FindBy(id = "administrationValue")
     public static WebElement inputAdministrationValue;
     @FindBy(id = "antiquity")
     public static WebElement inputAntiquity;
     @FindBy(id = "form_elem")
+    public static  WebElement sliderAdministration;
+    @FindBy(xpath = "//div/textarea")
     public static WebElement inputDescription;
-    @FindBy(xpath = "//button[@class='mat-button-toggle-button' and @id='mat-button-toggle-4-button']")
+    @FindBy(xpath = "//button/div[contains(text(), '3')]")
     public static WebElement buttonStratum;
     @FindBy(id = "builtArea")
     public static WebElement inputArea;
-    @FindBy(id = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[11]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonAddRoom;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[10]/div/div[1]/div/div/div/div/button[2]")
-    public static WebElement buttonAddBathroom;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[11]/div/div/div/div/div/div/button[1]")
-    public static WebElement buttonRemoveBathroom;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[12]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonAddParking;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[12]/div/div/div/div/div/div/button[1]")
-    public static WebElement buttonremoveParking;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[13]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonAddBalcony;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[13]/div/div/div/div/div/div/button[1]/span/span")
-    public static WebElement buttonRemoveBalcony;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonAddAscensor;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonAddTerrace;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[14]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonRemoveTerrce;
-    @FindBy(xpath = "//*[@id=\"publicationInfoForm\"]/div[1]/div/fieldset/div[17]/div/div/div/div/div/div/button[2]")
-    public static WebElement buttonAddDeposits;
     @FindBy(id = "ciudad")
     public static WebElement inputCity;
     @FindBy(id = "localidadComuna")
@@ -185,12 +168,14 @@ public class Elements extends BaseTest {
     public static WebElement inputDistric;
     @FindBy(id = "address")
     public static WebElement inputAdress;
-    @FindBy(id = "dirCheckAddress-input")
+    @FindBy(xpath = "//span[contains(text(),'Confirmar ubicación del inmueble.')]")
     public static WebElement checkAdress;
     @FindBy(id = "email")
     public static WebElement inputEmail;
-    @FindBy(id = "mat-option-3")
-    public static WebElement selectCC;
+    @FindBy(id = "documentType")
+    public static WebElement listTypeDocument;
+    @FindBy(xpath = "(//span[contains(text(),'Cédula de ciudadanía')])[2]")
+    public static WebElement listCedula;
     @FindBy(id = "identification")
     public static WebElement inputIdentification;
     @FindBy(id = "name")
@@ -209,6 +194,8 @@ public class Elements extends BaseTest {
     public static WebElement buttonAddPhoto;
     @FindBy(xpath = "(//h3[contains(text(),'Resumen de tu compra')])[2]")
     public static WebElement headerSummary;
+    @FindBy (xpath = "//p[contains (text(),'Disculpa no hemos podido ubicar tu inmueble, por favor revisa tu direccion')]")
+    public static  WebElement texNav;
 
 
     public Elements() {

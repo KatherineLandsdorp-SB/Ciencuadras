@@ -1,6 +1,5 @@
-package com.segurosbolivar.automation.tests.PublishHome;
+package com.segurosbolivar.automation.tests.publishHome;
 
-import com.fasterxml.jackson.databind.jsontype.impl.AsExistingPropertyTypeSerializer;
 import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
 import io.qameta.allure.Step;
 

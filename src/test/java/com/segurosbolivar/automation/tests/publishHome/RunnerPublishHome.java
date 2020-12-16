@@ -1,4 +1,4 @@
-package com.segurosbolivar.automation.tests.PublishHome;
+package com.segurosbolivar.automation.tests.publishHome;
 
 import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.annotations.Test;

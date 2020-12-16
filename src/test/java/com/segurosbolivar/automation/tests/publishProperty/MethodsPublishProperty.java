@@ -3,72 +3,203 @@ package com.segurosbolivar.automation.tests.publishProperty;
 import com.segurosbolivar.automation.elements.Elements;
 import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
 import com.segurosbolivar.automation.utils.PropertyManager;
-import org.openqa.selenium.interactions.Actions;
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 
 public class MethodsPublishProperty extends Elements {
-    //Actions actions = new Actions(driverW);
-    RecicleableMethodsCiencuadras methodsRecicleables= new RecicleableMethodsCiencuadras();
 
+    RecicleableMethodsCiencuadras methodsRecicleables = new RecicleableMethodsCiencuadras();
 
-    //Formulario publish yourselff
-    public void fillAllFieldPublication() {
-        //buttonTracking3.isDisplayed();
-        // selectAparment.click();
-       // webDriverFacade.waitForVisibilityOfElement(selectSale);
-       // selectSale.click();
+    public void clickButtonSale() {
+        driverFacade.waitForVisibilityOfElement(buttonPublishSale);
+        buttonPublishSale.click();
+    }
+
+    public void registerRentValue(String value) {
+        inputValueRent.sendKeys(value);
+
+    }
+
+    public void registerSalePrice(String value) {
         webDriverFacade.waitForVisibilityOfElement(inputSalePrice);
-        inputSalePrice.sendKeys(PropertyManager.getConfigValueByKey("salePrice"));
+        inputSalePrice.sendKeys(value);
+    }
+
+    public void clickSliderAdministrationValue() {
+        sliderAdministration.click();
+    }
+
+    public void registerValueAdministration(String value) {
+        List<WebElement> dynamicElement = driverFacade.getWebDriver().findElements(By.id("administrationValue"));
+        if(dynamicElement.size() != 0){
+            System.out.println("Existe elemento");
+            inputAdministrationValue.sendKeys(value);
+        }else{//0, elemento no esta presente.
+            System.out.println("Elemento no existe");
+        }
+    }
+
+
+    public void validateNoEnableIValueAdministracion(String value) {
+        if (inputAdministrationValue.isEnabled()) {
+            inputAdministrationValue.sendKeys(value);
+        } else {
+            sliderAdministration.isSelected();
+            System.out.println("El campos no esta disponible");
+        }
+
+    }
+
+    public void registerAntiquityProperty(String value) {
         webDriverFacade.waitForVisibilityOfElement(inputAntiquity);
-        inputAntiquity.sendKeys(PropertyManager.getConfigValueByKey("antiquity"));
-        inputDescription.sendKeys(PropertyManager.getConfigValueByKey("description"));
+        inputAntiquity.sendKeys(value);
+
+    }
+
+    public void registeArea(String area) {
+        inputArea.sendKeys(area);
+    }
+
+    public void registerDescriptionProperty(String value) {
+        inputDescription.sendKeys(value);
+
+    }
+
+    public void registerStratum() {
         buttonStratum.click();
-/*
-        inputArea.sendKeys(PropertyManager.getConfigValueByKey("area"));
-        buttonAddBathroom.click();
-        buttonAddRoom.click();
-        buttonAddBathroom.click();
-        buttonAddParking.click();
-        buttonAddBalcony.click();
-        buttonAddAscensor.click();
-        buttonAddTerrace.click();
-        buttonAddDeposits.click();
-        inputCity.sendKeys(PropertyManager.getConfigValueByKey("city"));
-        inputLocation.sendKeys((PropertyManager.getConfigValueByKey("location")));
-        inputDistric.sendKeys(PropertyManager.getConfigValueByKey("distric"));
-        inputAdress.sendKeys(PropertyManager.getConfigValueByKey("adress"));
+
+    }
+
+    public void registerCityProperty(String city) throws InterruptedException {
+        inputCity.sendKeys(city);
+        driverFacade.waitForVisibilityOfElement(selectCity);
+        if (selectCity.isEnabled()) {
+            driverFacade.waitForVisibilityOfElement(selectCity);
+            selectCity.click();
+        } else {
+            driverFacade.waitForVisibilityOfElement(selectCity);
+            selectCity.click();
+
+        }
+    }
+
+
+    public void registerLocationProperty(String value) throws InterruptedException {
+        inputLocation.sendKeys(value);
+        Thread.sleep(3000);
+        inputLocation.sendKeys(Keys.ARROW_DOWN);
+        inputLocation.sendKeys(Keys.ENTER);
+    }
+
+    public void registerDistric(String value) throws InterruptedException {
+        inputDistric.sendKeys(value);
+        Thread.sleep(4000);
+        inputDistric.sendKeys(Keys.ARROW_DOWN);
+        inputDistric.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
+
+    }
+
+    public void registerAdress(String value) {
+        inputAdress.click();
+        inputAdress.sendKeys(value);
+    }
+
+    public void confirmAdress() throws InterruptedException {
         checkAdress.click();
-        inputEmail.sendKeys(PropertyManager.getConfigValueByKey("email"));
-        selectCC.click();
-        inputIdentification.sendKeys(PropertyManager.getConfigValueByKey("identification"));
-        inputName.sendKeys(PropertyManager.getConfigValueByKey("name"));
-        inputLastName.sendKeys(PropertyManager.getConfigValueByKey("lastname"));
-        inputCellPhone.sendKeys(PropertyManager.getConfigValueByKey("cellphone"));
-        inputPassword.sendKeys(PropertyManager.getConfigValueByKey("passwordUser"));
-        inputPasswordConfirm.sendKeys(PropertyManager.getConfigValueByKey("confirmpassword"));
-        //buttonContinue.click();
-*/
-    }
-    public void registerCityCoverage(String city){
-        inputCityCoverage.sendKeys(city);
-      //  actions.moveByOffset(0,-4).click();
+        Thread.sleep(2000);
 
     }
-    public void clickButtonContinueCoverageCity(){
-        buttonContinueCoverage.click();
 
+    public void registerEmailNewUser(String email) throws InterruptedException {
+        inputEmail.sendKeys(email);
+        Thread.sleep(8000);
     }
-    public String validateTextConfirmCoverage(){
+
+    public void registerTypeDocument() {
+        listTypeDocument.click();
+        listTypeDocument.sendKeys(Keys.ENTER);
+        // listCedula.click();
+    }
+
+    public void registerIdentificacionNewUser(String value) {
+        inputIdentification.sendKeys(value);
+    }
+
+    public void registerNameNewUser(String name) {
+        inputName.sendKeys(name);
+    }
+
+    public void registerLastNameNewUser(String lastname) {
+        inputLastName.sendKeys(lastname);
+    }
+
+    public void registerCellPhoneNewUser(String phone) {
+        inputCellPhone.sendKeys(phone);
+    }
+
+    public void registerPasswordNewUser(String value) {
+        inputPassword.sendKeys(value);
+    }
+
+    public void registerConfirmPassword(String value) {
+        inputPasswordConfirm.sendKeys(value);
+    }
+
+    public void clickOnButtonContinue() {
+        buttonContinue.click();
+    }
+
+    public String validateTexFormWithoutCity() {
+        driverFacade.waitForVisibilityOfElement(texNav);
         String present;
-        methodsRecicleables.validationElementEnable(texConfirmedCity);
-        present=texConfirmedCity.getText();
-        return  present;
-
-    }
-    public String validateTextOutCoverage(){
-        String present;
-        methodsRecicleables.validationElementEnable(textOutCoverage);
-        present=textOutCoverage.getText();
+        present = texNav.getText();
         return present;
     }
+
+
+    public void registerCityCoverage(String city) throws InterruptedException {
+        driverFacade.waitForVisibilityOfElement(inputCityCoverage);
+        inputCityCoverage.sendKeys(city);
+        Thread.sleep(3000);
+        inputCityCoverage.sendKeys(Keys.ARROW_DOWN);
+        inputCityCoverage.sendKeys(Keys.ENTER);
+
+    }
+    public void clickButtonConfirmCoverageCity(){
+        buttonCnfirmCoverage.click();
+    }
+
+    public void clickButtonContinueCoverage() {
+        //driverFacade.awaitToFindElement(By.xpath("(//div/button[contains (text(), 'CONTINUAR')])[6]"));
+        driverFacade.waitForVisibilityOfElement(buttonContinueCoverage);
+        buttonContinueCoverage.click();
+
+
+    }
+
+    public String validateTextConfirmCoverage() {
+        String present;
+        driverFacade.waitForVisibilityOfElement(texConfirmedCity);
+        methodsRecicleables.validationElementEnable(texConfirmedCity);
+        present = texConfirmedCity.getText();
+        String result = present.replaceAll("[-¡+.^:,]", "");
+        return result;
+
+    }
+
+    public String validateTextOutCoverage() {
+        driverFacade.waitForVisibilityOfElement(textOutCoverage);
+        String present;
+        // methodsRecicleables.validationElementEnable(textOutCoverage);
+        present = textOutCoverage.getText();
+        return present;
+    }
+
 }

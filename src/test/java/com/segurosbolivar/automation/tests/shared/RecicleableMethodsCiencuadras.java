@@ -1,14 +1,15 @@
 package com.segurosbolivar.automation.tests.shared;
 
+
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import com.segurosbolivar.automation.elements.Elements;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-
-import java.io.IOException;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.List;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 public class RecicleableMethodsCiencuadras extends Elements {
 
@@ -42,20 +43,23 @@ public class RecicleableMethodsCiencuadras extends Elements {
         buttonBasicPlan.click();
     }
 
-    public void clickOnAddToCar() {
+    public void clickOnAddToCarOutstanding() {
 
         webDriverFacade.waitForVisibilityOfElement(buttonAddToCar);
         if (buttonAddToCar.isEnabled()) {
-            System.out.println("Esta disponible");
             driverFacade.waitForVisibilityOfElement(buttonAddToCar);
             buttonAddToCar.click();
+
         } else {
             driverFacade.waitForVisibilityOfElement(buttonAddToCar);
             buttonAddToCar.click();
-            System.out.println("Encontrado en el intento 2");
-
         }
 
+
+    }
+
+    public void clickOnAddToCarBasicPlan() {
+        buttonBasicAddToCar.click();
 
     }
 
@@ -116,6 +120,23 @@ public class RecicleableMethodsCiencuadras extends Elements {
         }
         return element;
 
+    }
+
+    public void validarexistenciaElemento() {
+        List<WebElement> dynamicElement = driverFacade.getWebDriver().findElements(By.xpath(""));
+
+        if (dynamicElement.size() != 0) {
+            System.out.println("Existe elemento");
+        } else {//0, elemento no esta presente.
+            System.out.println("Elemento no existe");
+        }
+    }
+
+    public void keyDown(WebElement elemt) throws InterruptedException{
+        Thread.sleep(3000);
+        elemt.sendKeys(Keys.ARROW_DOWN);
+        elemt.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
     }
 
 

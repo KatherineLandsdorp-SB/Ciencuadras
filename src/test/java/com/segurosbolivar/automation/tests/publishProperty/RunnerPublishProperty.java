@@ -12,7 +12,7 @@ public class RunnerPublishProperty extends Hooks {
     ThreadLocal<StepsLogin> step = ThreadLocal.withInitial(StepsLogin::new);
 
 
-      @Test(priority=1)
+      /*@Test(priority=1)
         public void publishPropertyRegisterUserEnd() throws InterruptedException{
             steps.get().clickPublish();
             steps.get().clickPublishYourself();
@@ -38,7 +38,6 @@ public class RunnerPublishProperty extends Hooks {
             steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUser"));
             steps.get().registerConfirmPasswordUser(PropertyManager.getConfigValueByKey(("passwordUser")));
             //steps.get().clickOnButtonContinue();
-
 
         }
 
@@ -155,9 +154,6 @@ public class RunnerPublishProperty extends Hooks {
             steps.get().registerCityAdress(PropertyManager.getConfigValueByKey("wrongAdress"));
             steps.get().confirmAdress();
             steps.get().validateFormWithoutCity(PropertyManager.getConfigValueByKey("textEmptyCity"));
-
-
-
         }
 
         @Test (priority=7)
@@ -207,8 +203,9 @@ public class RunnerPublishProperty extends Hooks {
             steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
             steps.get().clickOnButtonContinue();
         }
+
    @Test (priority=9)
-    public void publishPropertyForRentWithoutValueAdministration() throws InterruptedException{
+    public void publishForRenOustandingPlantHiddenValueAdministration() throws InterruptedException{
         steps.get().clickPublish();
         steps.get().clickPublishYourself();
         steps.get().clickOnAddToCarOutstanding();
@@ -218,8 +215,33 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().registerValueRent(PropertyManager.getConfigValueByKey("price"));
         steps.get().clickAdministrationValue();
         steps.get().registerValueAdministration(PropertyManager.getConfigValueByKey("price"));
+    }*/
+
+    @Test(priority = 10)
+    public void publishForRenBasicPlantWithoutValueAdministration() throws InterruptedException{
+        steps.get().clickPublish();
+        steps.get().clickPublishYourself();
+        steps.get().clickOnBasicPlan();
+        steps.get().clickOnAddToCar();
+        steps.get().registerValueRent(PropertyManager.getConfigValueByKey("price"));
+        //steps.get().registerValueAdministration(PropertyManager.getConfigValueByKey("price"));
+        steps.get().registerAntiquityProperty(PropertyManager.getConfigValueByKey("antiquity"));
+        steps.get().registerDescription(PropertyManager.getConfigValueByKey("description"));
+        steps.get().registerStratumProperty();
+        steps.get().registerArea(PropertyManager.getConfigValueByKey("area"));
+        steps.get().registerCityProperty(PropertyManager.getConfigValueByKey("city"));
+        steps.get().registerLocationProperty(PropertyManager.getConfigValueByKey("location"));
+        steps.get().registerPropertyDistric(PropertyManager.getConfigValueByKey("distric"));
+        steps.get().registerCityAdress(PropertyManager.getConfigValueByKey("adress"));
+        steps.get().confirmAdress();
+        steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
+        steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
+        steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
+        steps.get().clickOnButtonContinue();
+        steps.get().validateMandatoryFieldValueAdministration(PropertyManager.getConfigValueByKey("alertValueAdministration"));
+
     }
-    @Test (priority=10)
+  /*  @Test (priority=12)
     public void validateCityWithCoverage() throws InterruptedException{
         steps.get().clickPublish();
         steps.get().clickPublishYourself();
@@ -229,7 +251,7 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().validateCityCoverage(PropertyManager.getConfigValueByKey("textCoverageCity"));
         steps.get().clickButtonContinueCityCoverage();
     }
-    @Test(priority = 11)
+    @Test(priority = 13)
     public  void  validationCityOutCoverage() throws  InterruptedException{
         steps.get().clickPublish();
         steps.get().clickPublishYourself();
@@ -239,7 +261,22 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().validateCityOutCoverage(PropertyManager.getConfigValueByKey("textOutCoverageCity"));
 
     }
+    @Test(priority = 14)
+    public  void  validationViewStepTracking() throws  InterruptedException{
 
+
+    }
+    @Test(priority = 15)
+    public  void  validationCheckSteps() throws  InterruptedException{
+
+
+    }
+    @Test(priority = 16)
+    public  void  validationBackCheckSteps() throws  InterruptedException{
+
+
+    }
+*/
 
 
 }

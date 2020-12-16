@@ -150,6 +150,8 @@ public class Elements extends BaseTest {
     public static  WebElement inputValueRent;
     @FindBy(id = "administrationValue")
     public static WebElement inputAdministrationValue;
+    @FindBy(xpath = "//div[contains(text(),' El campo Valor de la administración Es Obligatorio')]")
+    public static WebElement alertValueAdministration;
     @FindBy(id = "antiquity")
     public static WebElement inputAntiquity;
     @FindBy(id = "form_elem")

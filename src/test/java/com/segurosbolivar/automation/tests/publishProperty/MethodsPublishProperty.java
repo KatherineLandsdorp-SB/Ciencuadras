@@ -44,6 +44,12 @@ public class MethodsPublishProperty extends Elements {
             System.out.println("Elemento no existe");
         }
     }
+    public String validateMandatoryValueAdministration(){
+        driverFacade.waitForVisibilityOfElement(alertValueAdministration);
+        String present = alertValueAdministration.getText().replaceAll("[ó]", "o");
+        return present;
+
+    }
 
 
     public void validateNoEnableIValueAdministracion(String value) {

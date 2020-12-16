@@ -80,6 +80,12 @@ public class StepsPublishProperty extends Elements {
         MethodsPublishProperty.registerValueAdministration(value);
         return this;
     }
+    @Step()
+    public StepsPublishProperty validateMandatoryFieldValueAdministration(String value) {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        assertEquals(MethodsPublishProperty.validateMandatoryValueAdministration(),value);
+        return this;
+    }
 
     @Step()
     public StepsPublishProperty registerAntiquityProperty(String value) {

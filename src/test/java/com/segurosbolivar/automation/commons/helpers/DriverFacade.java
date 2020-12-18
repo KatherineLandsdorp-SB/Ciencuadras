@@ -72,6 +72,7 @@ public class DriverFacade {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
+
     public void awaitToFindElement(By webElement) {
         await().atMost(1, TimeUnit.MINUTES)
                 .pollInterval(Duration.ONE_SECOND)

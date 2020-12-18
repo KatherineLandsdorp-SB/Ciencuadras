@@ -20,7 +20,7 @@ public class RunnerLogin extends Hooks {
 */
     @Test
     public void successfulLogin(){
-        steps.get().clickEntry().fillAll("PRUEBA AUTOMATION");
+        steps.get().clickEntry().fillAll("YAZMIN ANACONA");
     }
 
 //    @Test

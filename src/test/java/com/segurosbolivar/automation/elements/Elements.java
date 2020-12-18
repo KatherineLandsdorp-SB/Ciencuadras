@@ -8,10 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Elements extends BaseTest {
+public class Elements  {
     protected DriverFacade webDriverFacade;
 
     /* ========== LoginTest ========= */
+    @FindBy(id = "city")
+    public static WebElement cityAllied;
 
     @FindBy(xpath = "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]")
     public static WebElement entryUser;
@@ -60,7 +62,7 @@ public class Elements extends BaseTest {
     @FindBy(xpath = "(//div/a[@href='/publicar'])[1]")
     public static WebElement buttonPublishProperty;
     @FindBy(xpath = "(//div/a[@href='/publicar'])[2]")
-    public  static  WebElement buttonKnowPublish;
+    public static WebElement buttonKnowPublish;
 
     //Home tracking
     @FindBy(xpath = "//div//button[text()='PUBLICA TÚ MISMO']")
@@ -68,14 +70,31 @@ public class Elements extends BaseTest {
     @FindBy(xpath = "//div/button[text()='CON INMOBILIARIA']")
     public static WebElement buttonRealState;
     @FindBy(xpath = "(//div/span[@class='label-desktop ng-star-inserted'])[1]")
-    public static  WebElement labelAccompaiment;
+    public static WebElement labelAccompaniment;
+    @FindBy(xpath = "(//div/span[contains(text(),'1')])[1]")
+    public static WebElement imgStepAccompaniment;
+    @FindBy(xpath = "(//mat-icon[contains(text(),'done')])[1]")
+    public static  WebElement checkDoneStepOne;
     @FindBy(xpath = "(//span[@class='label-desktop ng-star-inserted'])[2]")
-    public static WebElement labelSelectPlan;
+    public static WebElement labelChoosePlan;
+    @FindBy(xpath = "(//div/span[contains(text(),'2')])[1]")
+    public static WebElement imgStepChoosePlan;
+    @FindBy(xpath = "(//mat-icon[contains(text(),'done')])[2]")
+    public static  WebElement checkDoneStepTwo;
     @FindBy(xpath = "(//span[@class='label-desktop ng-star-inserted'])[3]")
-    public static  WebElement labelPublish;
+    public static WebElement labelPublish;
+    @FindBy(xpath = "(//div/span[contains(text(),'3')])[1]")
+    public static WebElement imgStepPublish;
+    @FindBy(xpath = "(//mat-icon[contains(text(),'done')])[3]")
+    public static  WebElement checkDoneThree;
     @FindBy(xpath = "(//span[@class='label-desktop ng-star-inserted'])[4]")
-    public static  WebElement labelPay;
-
+    public static WebElement labelPay;
+    @FindBy(xpath = "(//div/span[contains(text(),'4')])[1]")
+    public static  WebElement imgStepPay;
+    @FindBy(xpath = "(//mat-icon[contains(text(),'done')])[4]")
+    public static  WebElement checkDoneStepFour;
+    @FindBy(xpath = "(//button[text()='ATRÁS'])[1]")
+    public static  WebElement buttonBackTracking;
 
 
     //Home Select plan basic
@@ -86,19 +105,19 @@ public class Elements extends BaseTest {
 
     //Home select plan destacadp
     @FindBy(id = "rent-button")
-    public static  WebElement buttonFeaturedPlan;
-    @FindBy(xpath= "(//*[@id=\"ciudad\"])[2]")
-    public static  WebElement inputCityCoverage;
+    public static WebElement buttonFeaturedPlan;
+    @FindBy(xpath = "(//*[@id=\"ciudad\"])[2]")
+    public static WebElement inputCityCoverage;
     @FindBy(xpath = "(//div/button[contains (text(), 'CONFIRMAR')])")
-    public static  WebElement buttonCnfirmCoverage;
+    public static WebElement buttonCnfirmCoverage;
     @FindBy(xpath = "(//div/button[contains (text(), 'CONTINUAR')])[6]")
-    public static  WebElement buttonContinueCoverage;
+    public static WebElement buttonContinueCoverage;
     @FindBy(xpath = "//div/p[@class='confirmed-coverage__text']")
-    public static  WebElement texConfirmedCity;
+    public static WebElement texConfirmedCity;
     @FindBy(xpath = "//div//h3[@class='out-of-coverage__title']")
     public static WebElement textOutCoverage;
     @FindBy(xpath = "//button[@class='btn destacado' and //button[contains(text(),'AÑADIR AL CARRITO')]]")
-    public  static  WebElement buttonAddToCar;
+    public static WebElement buttonAddToCar;
 
     //Form RealState
     @FindBy(xpath = "//div/input[@id='name' and @name='nameRegister']")
@@ -130,6 +149,8 @@ public class Elements extends BaseTest {
     public static WebElement texMissingMail;
     @FindBy(xpath = "//span[contains(text(),'Ingresa tu nombre')]")
     public static WebElement textMissingName;
+    @FindBy(id = "recaptcha-anchor-label")
+    public static  WebElement captchaRealState;
 
     //Form publish
     @FindBy(xpath = "//*[@id=\"cdk-step-label-0-2\"]/div[2]/div/span")
@@ -147,7 +168,7 @@ public class Elements extends BaseTest {
     @FindBy(xpath = "//input[@id=\"sellingPrice\"]")
     public static WebElement inputSalePrice;
     @FindBy(id = "leasingFee")
-    public static  WebElement inputValueRent;
+    public static WebElement inputValueRent;
     @FindBy(id = "administrationValue")
     public static WebElement inputAdministrationValue;
     @FindBy(xpath = "//div[contains(text(),' El campo Valor de la administración Es Obligatorio')]")
@@ -155,7 +176,7 @@ public class Elements extends BaseTest {
     @FindBy(id = "antiquity")
     public static WebElement inputAntiquity;
     @FindBy(id = "form_elem")
-    public static  WebElement sliderAdministration;
+    public static WebElement sliderAdministration;
     @FindBy(xpath = "//div/textarea")
     public static WebElement inputDescription;
     @FindBy(xpath = "//button/div[contains(text(), '3')]")
@@ -196,8 +217,8 @@ public class Elements extends BaseTest {
     public static WebElement buttonAddPhoto;
     @FindBy(xpath = "(//h3[contains(text(),'Resumen de tu compra')])[2]")
     public static WebElement headerSummary;
-    @FindBy (xpath = "//p[contains (text(),'Disculpa no hemos podido ubicar tu inmueble, por favor revisa tu direccion')]")
-    public static  WebElement texNav;
+    @FindBy(xpath = "//p[contains (text(),'Disculpa no hemos podido ubicar tu inmueble, por favor revisa tu direccion')]")
+    public static WebElement texNav;
 
 
     public Elements() {

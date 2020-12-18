@@ -12,25 +12,21 @@ public class StepsMethodsPublishHome {
 
 
     @Step()
-    public void validateButtonPublishProperty(){
-        MethodsPublishHome= new MethodsPublishHome();
-        assertTrue( MethodsPublishHome.validateButtonPublishProperty());
-    }
-    @Step()
-    public void validateButtonKnowPublish(){
-        MethodsPublishHome= new MethodsPublishHome();
-        assertTrue( MethodsPublishHome.validateButtonKnowHowPublish());
-    }
-    @Step()
-    public void clickButtonKnowPublish(){
-        RecicleableMethodsCiencuadras=new RecicleableMethodsCiencuadras();
-        RecicleableMethodsCiencuadras.clickOnKnowHowPublish();;
-    }
-    @Step()
-    public void validateLabelAccompaiment(){
-        MethodsPublishHome=new MethodsPublishHome();
-        assertTrue(MethodsPublishHome.validateLabelAccompainment());
+    public void validateButtonPublishProperty() {
+        MethodsPublishHome = new MethodsPublishHome();
+        assertTrue(MethodsPublishHome.validateButtonPublishProperty());
     }
 
+    @Step()
+    public void validateButtonKnowPublish() {
+        MethodsPublishHome = new MethodsPublishHome();
+        assertTrue(MethodsPublishHome.validateButtonKnowHowPublish());
+    }
 
+    @Step()
+    public void clickButtonKnowPublish() {
+        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
+        RecicleableMethodsCiencuadras.clickOnKnowHowPublish();
+        ;
+    }
 }

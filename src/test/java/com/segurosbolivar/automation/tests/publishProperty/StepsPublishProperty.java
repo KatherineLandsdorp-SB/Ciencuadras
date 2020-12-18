@@ -21,9 +21,74 @@ public class StepsPublishProperty extends Elements {
 
     @Step("")
     public StepsPublishProperty clickPublishYourself() {
+        MethodsPublishProperty = new MethodsPublishProperty();
         RecicleableMethodsCiencuadras.clickOnPublishYourself();
         return this;
     }
+
+    @Step("")
+    public StepsPublishProperty validateStepAccompaniment() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateLabelAccompaniment();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateStepChoosePlan() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateLabelChoosePlan();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateStepPublish() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateLabelPublish();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateStepPay() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateLabelPay();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateCheckDoneStepOneTracking() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateCheckStepOneTracking();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateCheckDoneStepTwoTracking() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateCheckStepTwoTracking();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateCheckDoneStepThreeTracking() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateCheckStepThreeTracking();
+        return this;
+    }
+
+    @Step("")
+    public StepsPublishProperty validateCheckDoneStepFourTracking() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.validateCheckStepFourTracking();
+        return this;
+    }
+    @Step("")
+    public StepsPublishProperty clickOnButtonBackStepTracking() {
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.clickOnButtonBackTracking();
+        return this;
+    }
+
+
 
     @Step("")
     public StepsPublishProperty clickOnBasicPlan() {
@@ -67,6 +132,7 @@ public class StepsPublishProperty extends Elements {
         MethodsPublishProperty.registerSalePrice(value);
         return this;
     }
+
     @Step()
     public StepsPublishProperty clickAdministrationValue() {
         MethodsPublishProperty = new MethodsPublishProperty();
@@ -80,10 +146,11 @@ public class StepsPublishProperty extends Elements {
         MethodsPublishProperty.registerValueAdministration(value);
         return this;
     }
+
     @Step()
     public StepsPublishProperty validateMandatoryFieldValueAdministration(String value) {
         MethodsPublishProperty = new MethodsPublishProperty();
-        assertEquals(MethodsPublishProperty.validateMandatoryValueAdministration(),value);
+        assertEquals(MethodsPublishProperty.validateMandatoryValueAdministration(), value);
         return this;
     }
 
@@ -167,7 +234,7 @@ public class StepsPublishProperty extends Elements {
     @Step()
     public StepsPublishProperty registerIdentificationUser(String value) {
         MethodsPublishProperty = new MethodsPublishProperty();
-        MethodsPublishProperty.registerIdentificacionNewUser(value);
+        MethodsPublishProperty.registerIdentificationNewUser(value);
         return this;
     }
 
@@ -235,13 +302,14 @@ public class StepsPublishProperty extends Elements {
     }
 
     @Step()
-    public StepsPublishProperty clickButtonContinueCityCoverage()throws InterruptedException {
+    public StepsPublishProperty clickButtonContinueCityCoverage() throws InterruptedException {
         MethodsPublishProperty = new MethodsPublishProperty();
         MethodsPublishProperty.clickButtonContinueCoverage();
         return this;
     }
+
     @Step()
-    public StepsPublishProperty clickButtonConfirmCityCoverage() throws InterruptedException  {
+    public StepsPublishProperty clickButtonConfirmCityCoverage() throws InterruptedException {
         MethodsPublishProperty = new MethodsPublishProperty();
         MethodsPublishProperty.clickButtonConfirmCoverageCity();
         return this;

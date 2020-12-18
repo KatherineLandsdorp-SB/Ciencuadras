@@ -6,9 +6,7 @@
         </listeners>
         <classes>
             <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
-            <class name="com.segurosbolivar.automation.tests.publishProperty.RunnerPublishProperty"/>
-            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-            <class name="com.segurosbolivar.automation.tests.publishHome.RunnerPublishHome"/>
         </classes>
     </test>
+
 </suite>

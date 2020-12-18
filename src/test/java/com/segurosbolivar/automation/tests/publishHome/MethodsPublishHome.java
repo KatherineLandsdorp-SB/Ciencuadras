@@ -17,13 +17,4 @@ public class MethodsPublishHome extends Elements {
         present = methodsRecyclable.validationElementEnable(buttonPublishProperty);
         return present;
     }
-
-    public boolean validateLabelAccompainment(){
-        driverFacade.waitForVisibilityOfElement(labelAccompaiment);
-        boolean present;
-        present=labelAccompaiment.isDisplayed();
-        return present;
-    }
-
-
 }

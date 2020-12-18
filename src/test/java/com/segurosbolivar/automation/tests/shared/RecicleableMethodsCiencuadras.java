@@ -1,6 +1,7 @@
 package com.segurosbolivar.automation.tests.shared;
 
 
+import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import com.segurosbolivar.automation.elements.Elements;
 import org.openqa.selenium.By;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import static org.junit.Assert.assertFalse;
 
-public class RecicleableMethodsCiencuadras extends Elements {
+public class RecicleableMethodsCiencuadras extends BaseTest {
 
 
     public void clickOnPublish() {
@@ -78,7 +79,7 @@ public class RecicleableMethodsCiencuadras extends Elements {
 
         while (Intentos < (intentos * 2) && !ElementPresent) {
             try {
-                ElementPresent = driverW.findElement(ByElemto).isEnabled();
+                ElementPresent = webDriver.findElement(ByElemto).isEnabled();
             } catch (Exception e) {
                 System.out.println(ElementPresent + "  Not Present ");
                 Intentos++;

@@ -77,6 +77,9 @@ public class MethodsPublishProperty extends BaseTest {
         buttonBackTracking.click();
         System.out.println("entro aqui" + buttonBackTracking);
     }
+    public void clickButtonBack(){
+        buttonBack.click();
+    }
 
     public void clickButtonSale() {
         driverFacade.waitForVisibilityOfElement(buttonPublishSale);

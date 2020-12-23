@@ -95,6 +95,10 @@ public class Elements  {
     public static  WebElement checkDoneStepFour;
     @FindBy(xpath = "(//button[text()='ATRÁS'])[1]")
     public static  WebElement buttonBackTracking;
+    @FindBy(xpath = "(//button[text()='ATRÁS'])[2]")
+    public static  WebElement buttonBack;
+
+
 
 
     //Home Select plan basic
@@ -149,7 +153,7 @@ public class Elements  {
     public static WebElement texMissingMail;
     @FindBy(xpath = "//span[contains(text(),'Ingresa tu nombre')]")
     public static WebElement textMissingName;
-    @FindBy(id = "recaptcha-anchor-label")
+    @FindBy(xpath = "/html/body/div[2]/div[3]/div[1]/div/div/span")
     public static  WebElement captchaRealState;
 
     //Form publish
@@ -213,12 +217,15 @@ public class Elements  {
     public static WebElement inputPasswordConfirm;
     @FindBy(xpath = "//button[contains(text(), 'CONTINUAR')]")
     public static WebElement buttonContinue;
-    @FindBy(xpath = "//*[@id=\"mediaInfo\"]/fieldset/div[2]/div[1]/div/div/input-file/div/div/div/button/span/mat-icon")
+    @FindBy(xpath = "//*[@id=\"mediaInfo\"]/fieldset/div[2]/div[1]/div/div/input-file/div/div/div/button")
     public static WebElement buttonAddPhoto;
     @FindBy(xpath = "(//h3[contains(text(),'Resumen de tu compra')])[2]")
     public static WebElement headerSummary;
     @FindBy(xpath = "//p[contains (text(),'Disculpa no hemos podido ubicar tu inmueble, por favor revisa tu direccion')]")
     public static WebElement texNav;
+    @FindBy(xpath = "//*[@id=\"ngx-input-file-0\"]")
+    public static WebElement inputImage;
+
 
 
     public Elements() {

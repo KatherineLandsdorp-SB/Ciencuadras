@@ -11,7 +11,7 @@ public class RunnerPublishProperty extends Hooks {
     ThreadLocal<StepsLogin> step = ThreadLocal.withInitial(StepsLogin::new);
 
 
-    @Test(priority = 1)
+   /* @Test(priority = 1)
     public void publishPropertyRegisterUserEnd() throws InterruptedException {
         steps.get().clickPublish();
         steps.get().clickPublishYourself();
@@ -39,11 +39,13 @@ public class RunnerPublishProperty extends Hooks {
         //steps.get().clickOnButtonContinue();
 
     }
-    /*
+
+
+
 
     @Test(priority = 2)
     public void publishPropertyUserLoggegInWithIdentification() throws InterruptedException {
-        step.get().clickEntry().fillAll("YAZMIN ANACONA");
+        step.get().clickEntry().fillAll("PRUEBA AUTOMATION");
         steps.get().clickPublish();
         steps.get().clickPublishYourself();
         steps.get().clickOnBasicPlan();
@@ -61,8 +63,10 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().confirmAdress();
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         //steps.get().clickOnButtonContinue();
+            }
 
-    }
+
+
 
     @Test(priority = 3)
     public void publishPropertyUserNotLoggedIn() throws InterruptedException {
@@ -253,7 +257,7 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().validateCityCoverage(PropertyManager.getConfigValueByKey("textCoverageCity"));
         steps.get().clickButtonContinueCityCoverage();
     }
-*/
+
     @Test(priority = 13)
     public void validateCityOutCoverage() throws InterruptedException {
         steps.get().clickPublish();
@@ -264,7 +268,7 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().validateCityOutCoverage(PropertyManager.getConfigValueByKey("textOutCoverageCity"));
 
     }
-/*
+
     @Test(priority = 14)
     public void validateViewAndCheckStepTracking() throws InterruptedException {
         steps.get().clickPublish();
@@ -294,9 +298,13 @@ public class RunnerPublishProperty extends Hooks {
 
     }
 
+    */
+
     @Test(priority = 16)
     public void validateBackCheckSteps() throws InterruptedException {
-        steps.get().clickPublish();
+
+
+       steps.get().clickPublish();
         steps.get().clickPublishYourself();
         steps.get().clickOnBasicPlan();
         steps.get().clickOnAddToCar();
@@ -317,10 +325,13 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
-        //steps.get().clickOnButtonContinue();
-        // steps.get().clickOnButtonBackStepTracking();
-        // steps.get().clickOnButtonBackStepTracking();
+        steps.get().clickOnButtonContinue();
+        Thread.sleep(8000);
+        //steps.get().clickOnButtonBack();
+       // steps.get().clickbuttonAddPhoto();
+        //steps.get().clickOnButtonBackStepTracking();
+        steps.get().uploapFile();
     }
-*/
+
 
 }

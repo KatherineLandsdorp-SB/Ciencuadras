@@ -1,8 +1,12 @@
 package com.segurosbolivar.automation.tests.publishProperty;
 
+import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.tests.shared.Methods;
 import com.segurosbolivar.automation.tests.shared.RecicleableMethodsCiencuadras;
 import com.segurosbolivar.automation.elements.Elements;
 import io.qameta.allure.Step;
+
+import javax.xml.ws.Service;
 
 import static org.testng.Assert.assertEquals;
 
@@ -10,11 +14,14 @@ public class StepsPublishProperty extends Elements {
 
     private MethodsPublishProperty MethodsPublishProperty;
     private RecicleableMethodsCiencuadras RecicleableMethodsCiencuadras;
+    private Services Services;
+    private Methods Methods;
 
     @Step("The user clicks on the publish button in the home")
     public StepsPublishProperty clickPublish() {
         RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
         RecicleableMethodsCiencuadras.clickOnPublish();
+
         return this;
 
     }
@@ -85,6 +92,12 @@ public class StepsPublishProperty extends Elements {
     public StepsPublishProperty clickOnButtonBackStepTracking() {
         MethodsPublishProperty = new MethodsPublishProperty();
         MethodsPublishProperty.clickOnButtonBackTracking();
+        return this;
+    }
+    @Step("")
+    public StepsPublishProperty clickOnButtonBack(){
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.clickButtonBack();
         return this;
     }
 
@@ -322,6 +335,19 @@ public class StepsPublishProperty extends Elements {
         assertEquals(MethodsPublishProperty.validateTexFormWithoutCity(), texto);
         return this;
     }
+    @Step()
+    public StepsPublishProperty uploapFile() throws  InterruptedException {
+        Services = new Services();
+        Services.uploadFile();
+        return this;
+    }
+    @Step()
+    public StepsPublishProperty clickbuttonAddPhoto(){
+        Methods = new Methods();
+        Methods.clickOnButtonAddPhoto();
+        return this;
+    }
+
 
 
 }

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class RunnerPublishRealState extends Hooks {
     ThreadLocal<StepsPublishRealState> steps = ThreadLocal.withInitial(StepsPublishRealState::new);
 
-
+/*
     @Test(priority = 1)
     public void publihsRealStateexitosoSuccssful() throws InterruptedException {
         steps.get().clickPublish();
@@ -31,7 +31,7 @@ public class RunnerPublishRealState extends Hooks {
        /* steps.get().clickCaptcha();
         steps.get().clickConfirmation();
         steps.get().validationDataMandatory(PropertyManager.getConfigValueByKey("messajeMandatoey"));
-        */
+
 
     }
 
@@ -46,7 +46,7 @@ public class RunnerPublishRealState extends Hooks {
         /*steps.get().clickCaptcha();
         steps.get().clickConfirmation();
         steps.get().validationDataMandatory(PropertyManager.getConfigValueByKey("messajeMandatoey"));
-        */
+
     }
 
     @Test(priority = 4)
@@ -57,10 +57,10 @@ public class RunnerPublishRealState extends Hooks {
         steps.get().fillInPhones(PropertyManager.getConfigValueByKey("phoneRealState"));
         steps.get().fillInCitu(PropertyManager.getConfigValueByKey("cityRealState"));
         steps.get().selectSale();
-       /* steps.get().clickCaptcha();
+       steps.get().clickCaptcha();
         steps.get().clickConfirmation();
         steps.get().validationDataMandatory(PropertyManager.getConfigValueByKey("messajeMandatoey"));
-        */
+
     }
 
     @Test(priority = 5)
@@ -76,7 +76,7 @@ public class RunnerPublishRealState extends Hooks {
         // steps.get().validationDataMandatory(PropertyManager.getConfigValueByKey("messajeMandatoey"));
 
     }
-
+*/
     @Test(priority = 6)
     public void publihsRealStateNoMandatoryCityData() throws InterruptedException {
         steps.get().clickPublish();
@@ -85,12 +85,13 @@ public class RunnerPublishRealState extends Hooks {
         steps.get().fillInMail(PropertyManager.getConfigValueByKey("emailRealState"));
         steps.get().fillInPhones(PropertyManager.getConfigValueByKey("phoneRealState"));
         steps.get().selectSale();
-        //steps.get().clickCaptcha();
+        Thread.sleep(3000);
+        steps.get().clickCaptcha();
         //steps.get().clickConfirmation();
         //  steps.get().validationDataMandatory(PropertyManager.getConfigValueByKey("messajeMandatoey"));
 
     }
-
+/*
     @Test(priority = 7)
     public void validationButtonTransaction() throws InterruptedException {
         steps.get().clickPublish();
@@ -99,6 +100,6 @@ public class RunnerPublishRealState extends Hooks {
         steps.get().validationRadioButtonRent();
         steps.get().validationRadioButtonRentSale();
     }
-
+*/
 
 }

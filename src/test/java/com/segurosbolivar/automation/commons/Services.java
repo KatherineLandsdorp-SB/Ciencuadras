@@ -1,20 +1,28 @@
 package com.segurosbolivar.automation.commons;
 
+import com.segurosbolivar.automation.commons.helpers.DriverFactory;
+import com.segurosbolivar.automation.utils.PropertyManager;
 import org.awaitility.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
 
-public class Services extends BaseTest{
+public class Services extends BaseTest {
     WebDriverWait wait;
 
     /* ============================================================= */
@@ -122,7 +130,7 @@ public class Services extends BaseTest{
         //WebElement element = webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]"));
         //driverFacade.waitForVisibilityOfElement(element);
 
-        Select dropdown = new Select(webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]")));
+        Select dropdown = new Select(webDriver.findElement(By.xpath("//span[contains(text(),'" + search + "')]")));
         dropdown.selectByVisibleText(search);
     }
 
@@ -132,7 +140,7 @@ public class Services extends BaseTest{
         driverFacade.waitForVisibilityOfElement(webElement);
         cityAllied.click();
         cityAllied.sendKeys(search);
-        Select dropdown = new Select(webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]")));
+        Select dropdown = new Select(webDriver.findElement(By.xpath("//span[contains(text(),'" + search + "')]")));
         dropdown.selectByVisibleText(search);
     }
 
@@ -149,25 +157,57 @@ public class Services extends BaseTest{
         Thread.sleep(4000);
         webElement.sendKeys(Keys.ARROW_DOWN);
         webElement.sendKeys(Keys.ENTER);
-        }
-// revisar
-        public void awaitToFindElement(WebElement webElement, int SECONDS) {
-            By ByElement = toByVal(webElement);
-            await().atMost(SECONDS, TimeUnit.SECONDS)
-                    .pollInterval(Duration.ONE_SECOND)
-                    .until(() -> {
-                        try {
-                            webDriver.findElements(ByElement);
-                            System.out.println("ENTRO"+ByElement);
-                            return true;
-                        } catch (NoSuchElementException e) {
-                            return false;
-                        }
-                    });
-        }
+    }
+
+    // revisar
+    public void awaitToFindElement(WebElement webElement, int SECONDS) {
+        By ByElement = toByVal(webElement);
+        await().atMost(SECONDS, TimeUnit.SECONDS)
+                .pollInterval(Duration.ONE_SECOND)
+                .until(() -> {
+                    try {
+                        webDriver.findElements(ByElement);
+                        System.out.println("ENTRO" + ByElement);
+                        return true;
+                    } catch (NoSuchElementException e) {
+                        return false;
+                    }
+                });
+    }
+
+
+    public void uploadFile() throws InterruptedException{
+        Thread.sleep(4000);
+
+      // System.out.println("entro a la imagen");
+       String path=System.getProperty("user.dir");
+       System.getProperty("user.dir");
+       System.out.println(path);
+       inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+        inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+        inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+        //inputImage.sendKeys("/Users/dreamcode/Documents/WS/bol-automation-ciencuadras-test/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
 
 
 
+       /* try {
+            System.out.println("Drag and Drom started :");
+            Thread.sleep(12000);
+            Actions actions = new Actions(webDriver);
+            WebElement srcElement = webDriver.findElement(By.xpath("src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png\""));
+            WebElement targetElement = webDriver.findElement(By.xpath("//*[@id=\"mediaInfo\"]/fieldset/div[2]/div[1]/div/div/input-file/div/div/div/button"));
+            actions.dragAndDrop(srcElement, targetElement);
+            actions.build().perform();
+            System.out.println("Drag and Drom complated :");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+           // resultDetails.setFlag(true);
+        }*/
+
+
+
+
+    }
 
 
 }

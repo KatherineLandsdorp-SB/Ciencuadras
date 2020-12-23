@@ -46,6 +46,9 @@ public class Methods extends BaseTest {
             buttonRealState.click();
         }
     }
+    public void clickOnButtonAddPhoto(){
+        buttonAddPhoto.click();
+    }
 
 
 

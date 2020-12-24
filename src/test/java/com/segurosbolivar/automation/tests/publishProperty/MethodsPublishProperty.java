@@ -73,7 +73,8 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void clickOnButtonBackTracking() {
-        driverFacade.waitForVisibilityOfElement(buttonBackTracking);
+       // driverFacade.waitForVisibilityOfElement(buttonBackTracking);
+        driverFacade.awaitToFindElement(By.xpath("(//button[text()='ATRÁS'])[1]"));
         buttonBackTracking.click();
         System.out.println("entro aqui" + buttonBackTracking);
     }
@@ -215,6 +216,7 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void clickOnButtonContinue() {
+        driverFacade.waitForVisibilityOfElement(buttonContinue);
         buttonContinue.click();
     }
 
@@ -251,6 +253,9 @@ public class MethodsPublishProperty extends BaseTest {
         String present;
         present = textOutCoverage.getText();
         return present;
+    }
+    public void clickOnButtonContinuePhoto(){
+        buttonContinuePhoto.click();
     }
 
 }

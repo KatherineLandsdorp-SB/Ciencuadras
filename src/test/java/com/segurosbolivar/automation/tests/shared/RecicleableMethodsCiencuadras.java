@@ -60,6 +60,7 @@ public class RecicleableMethodsCiencuadras extends BaseTest {
     }
 
     public void clickOnAddToCarBasicPlan() {
+        driverFacade.waitForVisibilityOfElement(buttonBasicAddToCar);
         buttonBasicAddToCar.click();
 
     }

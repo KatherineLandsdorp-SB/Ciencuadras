@@ -177,35 +177,14 @@ public class Services extends BaseTest {
 
 
     public void uploadFile() throws InterruptedException{
-        Thread.sleep(4000);
-
-      // System.out.println("entro a la imagen");
        String path=System.getProperty("user.dir");
        System.getProperty("user.dir");
        System.out.println(path);
        inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+        Thread.sleep(10000);
         inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+        Thread.sleep(10000);
         inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
-        //inputImage.sendKeys("/Users/dreamcode/Documents/WS/bol-automation-ciencuadras-test/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
-
-
-
-       /* try {
-            System.out.println("Drag and Drom started :");
-            Thread.sleep(12000);
-            Actions actions = new Actions(webDriver);
-            WebElement srcElement = webDriver.findElement(By.xpath("src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png\""));
-            WebElement targetElement = webDriver.findElement(By.xpath("//*[@id=\"mediaInfo\"]/fieldset/div[2]/div[1]/div/div/input-file/div/div/div/button"));
-            actions.dragAndDrop(srcElement, targetElement);
-            actions.build().perform();
-            System.out.println("Drag and Drom complated :");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-           // resultDetails.setFlag(true);
-        }*/
-
-
-
 
     }
 

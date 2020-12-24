@@ -302,8 +302,6 @@ public class RunnerPublishProperty extends Hooks {
 
     @Test(priority = 16)
     public void validateBackCheckSteps() throws InterruptedException {
-
-
        steps.get().clickPublish();
         steps.get().clickPublishYourself();
         steps.get().clickOnBasicPlan();
@@ -328,9 +326,9 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().clickOnButtonContinue();
         Thread.sleep(8000);
         //steps.get().clickOnButtonBack();
-       // steps.get().clickbuttonAddPhoto();
         //steps.get().clickOnButtonBackStepTracking();
         steps.get().uploapFile();
+        steps.get().clickButtonContinuePhoto();
     }
 
 

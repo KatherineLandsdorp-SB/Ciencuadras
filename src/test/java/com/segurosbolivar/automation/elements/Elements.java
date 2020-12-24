@@ -225,6 +225,8 @@ public class Elements  {
     public static WebElement texNav;
     @FindBy(xpath = "//*[@id=\"ngx-input-file-0\"]")
     public static WebElement inputImage;
+    @FindBy(xpath = "(//button[contains(text(), 'CONTINUAR')])[2]")
+    public static WebElement buttonContinuePhoto;
 
 
 

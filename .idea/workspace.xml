@@ -23,23 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784489bf-04c0-4cd3-a453-f6bcafd93866" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/Methods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/Services.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/RunnerPublishProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/shared/Methods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/shared/Methods.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

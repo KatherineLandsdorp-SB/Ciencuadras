@@ -342,9 +342,9 @@ public class StepsPublishProperty extends Elements {
         return this;
     }
     @Step()
-    public StepsPublishProperty clickbuttonAddPhoto(){
-        Methods = new Methods();
-        Methods.clickOnButtonAddPhoto();
+    public StepsPublishProperty clickButtonContinuePhoto(){
+        MethodsPublishProperty = new MethodsPublishProperty();
+        MethodsPublishProperty.clickOnButtonContinuePhoto();
         return this;
     }
 

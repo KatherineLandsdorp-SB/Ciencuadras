@@ -23,42 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784489bf-04c0-4cd3-a453-f6bcafd93866" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/RunnerRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/MethodsRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/RunnerRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/StepsRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SegurosBolivar_UI_Automation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SegurosBolivar_UI_Automation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/ConnectionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/ConnectionBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/StepsMethodsPublishHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/StepsMethodsPublishHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/RecicleableMethodsCiencuadras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/suite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/suite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/BaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/ConnectionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/ConnectionBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/commons/Services.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/elements/Elements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/PublishHome/StepsMethodsPublishHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/PublishHome/StepsMethodsPublishHome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/MethodsLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/MethodsLogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/RunnerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/RunnerLogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/StepsLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/login/StepsLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishProperty/StepsPublishProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/segurosbolivar/automation/tests/publishRealState/StepsPublishRealState.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,20 +89,20 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.segurosbolivar.automation.common.ui" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister" />
       <recent name="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register" />
       <recent name="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests" />
       <recent name="$PROJECT_DIR$/src/test/java/resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.segurosbolivar.automation.common.ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.RunnerRegister (1)">
+  <component name="RunManager" selected="TestNG.RunnerLogin (1)">
     <configuration name="C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suiteRealState.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SegurosBolivar_UI_Automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/resources/suiteRealState.xml" />
@@ -195,9 +176,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RunnerLogin (1)" />
         <item itemvalue="TestNG.RunnerRegister (1)" />
         <item itemvalue="TestNG.RunnerRegister" />
-        <item itemvalue="TestNG.RunnerLogin (1)" />
         <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suite.xml" />
         <item itemvalue="TestNG.C:/WS/bol-automation-ciencuadras-test/src/test/java/resources/suiteRealState.xml" />
       </list>
@@ -255,58 +236,68 @@
     <option name="LAST_COMMIT_MESSAGE" value="SLGM: Se agregan metodos de validacion elementos" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="722" y="423" width="492" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1608577498419">
+      <screen x="0" y="23" width="1920" height="999" />
+    </state>
+    <state x="722" y="423" width="492" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608577498419" />
     <state x="614" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607641482214">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
     <state x="614" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1607641482214" />
-    <state width="1801" height="140" key="GridCell.Tab.0.bottom" timestamp="1608055153360">
+    <state width="1801" height="198" key="GridCell.Tab.0.bottom" timestamp="1608661950494">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="140" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608055153360" />
-    <state width="1801" height="140" key="GridCell.Tab.0.center" timestamp="1608055153359">
+    <state width="1801" height="198" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608661950494" />
+    <state width="1801" height="198" key="GridCell.Tab.0.center" timestamp="1608661950492">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="140" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608055153359" />
-    <state width="1801" height="140" key="GridCell.Tab.0.left" timestamp="1608055153359">
+    <state width="1801" height="198" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608661950492" />
+    <state width="1801" height="198" key="GridCell.Tab.0.left" timestamp="1608661950482">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="140" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608055153359" />
-    <state width="1801" height="140" key="GridCell.Tab.0.right" timestamp="1608055153360">
+    <state width="1801" height="198" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608661950482" />
+    <state width="1801" height="198" key="GridCell.Tab.0.right" timestamp="1608661950492">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="140" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608055153360" />
-    <state width="1801" height="334" key="GridCell.Tab.1.bottom" timestamp="1608054063573">
+    <state width="1801" height="198" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608661950492" />
+    <state width="1801" height="335" key="GridCell.Tab.1.bottom" timestamp="1608310768317">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="334" key="GridCell.Tab.1.bottom/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608054063573" />
-    <state width="1801" height="334" key="GridCell.Tab.1.center" timestamp="1608054063572">
+    <state width="1801" height="335" key="GridCell.Tab.1.bottom/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608310768317" />
+    <state width="1801" height="335" key="GridCell.Tab.1.center" timestamp="1608310768317">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="334" key="GridCell.Tab.1.center/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608054063572" />
-    <state width="1801" height="334" key="GridCell.Tab.1.left" timestamp="1608054063571">
+    <state width="1801" height="335" key="GridCell.Tab.1.center/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608310768317" />
+    <state width="1801" height="335" key="GridCell.Tab.1.left" timestamp="1608310768316">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="334" key="GridCell.Tab.1.left/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608054063571" />
-    <state width="1801" height="334" key="GridCell.Tab.1.right" timestamp="1608054063573">
+    <state width="1801" height="335" key="GridCell.Tab.1.left/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608310768316" />
+    <state width="1801" height="335" key="GridCell.Tab.1.right" timestamp="1608310768317">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state width="1801" height="334" key="GridCell.Tab.1.right/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608054063573" />
+    <state width="1801" height="335" key="GridCell.Tab.1.right/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608310768317" />
     <state x="782" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608056797803">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
     <state x="782" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608056797803" />
-    <state x="-1549" y="23" width="1469" height="944" key="dock-window-1" timestamp="1608038193639">
-      <screen x="-1920" y="23" width="1920" height="1057" />
+    <state x="516" y="265" width="907" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608253451935">
+      <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state x="-1549" y="23" width="1469" height="944" key="dock-window-1/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608038193639" />
+    <state x="516" y="265" width="907" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608253451935" />
+    <state x="451" y="77" width="1469" height="932" key="dock-window-1" timestamp="1609172454331">
+      <screen x="0" y="23" width="1920" height="986" />
+    </state>
+    <state x="451" y="77" width="1469" height="932" key="dock-window-1/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609172454331" />
+    <state x="-1549" y="23" width="1469" height="944" key="dock-window-1/-1920.23.1920.1057/0.23.1920.999@-1920.23.1920.1057" timestamp="1608733763037" />
+    <state x="579" y="139" width="1469" height="944" key="dock-window-1/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608767970439" />
     <state x="684" y="238" width="586" height="548" key="find.popup" timestamp="1607484447881">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
     <state x="684" y="238" width="586" height="548" key="find.popup/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1607484447881" />
-    <state x="400" y="134" key="new project wizard" timestamp="1607485786966">
+    <state x="376" y="130" key="new project wizard" timestamp="1608734233220">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
-    <state x="400" y="134" key="new project wizard/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1607485786966" />
+    <state x="376" y="130" key="new project wizard/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608734233220" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

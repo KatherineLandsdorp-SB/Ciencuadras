@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
+    testImplementation 'org.testng:testng:6.14.3'
+    testImplementation 'io.qameta.allure:allure-testng:2.10.0'
+    testImplementation 'org.awaitility:awaitility:3.0.0'
+    testImplementation 'com.sun.jersey:jersey-bundle:1.19.4'
+    testImplementation 'org.codehaus.jettison:jettison:1.1'
+}
+
+group = 'com.segurosbolivar.automation.ui'
+version = '1.0-SNAPSHOT'
+description = 'SegurosBolivar_UI_Automation'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('test') {
+    useTestNG()
+}
+

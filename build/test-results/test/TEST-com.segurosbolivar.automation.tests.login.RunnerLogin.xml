@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.segurosbolivar.automation.tests.login.RunnerLogin" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-12-28T19:14:57" hostname="iMac-de-holman.local" time="15.17">
+  <properties/>
+  <testcase name="successfullLogin" classname="com.segurosbolivar.automation.tests.login.RunnerLogin" time="15.17">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[THIS TEST FAILED!
+THIS TEST FAILED!
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 4509
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 28, 2020 2:14:53 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

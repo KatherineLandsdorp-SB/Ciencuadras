@@ -15,6 +15,14 @@ public class RunnerLogin extends Hooks {
         steps.get().clickEntry().fillAll("AUTOMATION PRUEBAS AUTOMATION PRUEBAS");
     }
 
+    @Test
+    public void successfullLoginFacebook(){
+        steps.get()
+                .clickEntry()
+                .clickLoginPerson()
+                .fillAllFacebook();
+    }
+
     // se agrega inmplementaciòn trayendo datos desde servicio de firebase
    /* ConnectionBD objBd = new ConnectionBD();
     @Test

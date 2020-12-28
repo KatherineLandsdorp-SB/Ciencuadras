@@ -1,14 +1,16 @@
 package com.segurosbolivar.automation.commons;
 
 import org.awaitility.Duration;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
@@ -19,39 +21,47 @@ public class Services extends BaseTest{
     /* ============================================================= */
     /* ====================== COMMONS ANGULAR ====================== */
     /* ============================================================= */
-
-    public boolean WaitingForElement(WebElement webElement, int intentos) throws InterruptedException {
-
-        By ByElement = toByVal(webElement);
-        boolean ElementPresent = false;
-        int Intentos = 0;
-
-        while (Intentos < (intentos * 2) && !ElementPresent) {
-            try {
-                ElementPresent = webDriver.findElement(ByElement).isEnabled();
-            } catch (Exception e) {
-                System.out.println(ElementPresent + "  Not Present ");
-                Intentos++;
-                System.out.print("#Tried: " + Intentos);
-                System.out.println(ElementPresent + " Not Present  ");
-            }
-        }
-
-        if (ElementPresent) {
-            Thread.sleep(1000);
-            System.out.print("Successful Enable: ** :) **  ");
-            //assertEquals(true, ElementPresent);
-        } else {
-            System.out.print("Enable Failed: ** :( **  ");
-            System.out.print("No Se encontro el Elemento: ** :( ** : " + ByElement);
-            System.out.print("Nooooo Se encontro el Elemento: ** :) **  ");
-            assertFalse(ElementPresent);
-        }
-        System.out.println(" ");
-        return ElementPresent;
+    public WebElement elementText(String text){
+        return xpathElement("//span[text()='"+text+"']");
     }
 
-    //***************end.. method waiting Element ***************//
+    public WebElement xpathElement(String xpath){
+        return webDriver.findElement(By.xpath(xpath));
+    }
+
+    //waitingElement
+    public  void waitingForElement(WebElement webElement, int intentos)  {
+        try {
+            By ByElement = toByVal(webElement);
+            boolean ElementPresent = false;
+            int Intentos = 0;
+
+            while (Intentos < (intentos * 2) && !ElementPresent) {
+                try {
+                    ElementPresent = driverFacade.getWebDriver().findElement(ByElement).isEnabled();
+                } catch (Exception e) {
+                    System.out.println(ElementPresent + "  Not Present ");
+                    Intentos++;
+                    System.out.print("#Tried: " + Intentos);
+                    System.out.println(ElementPresent + " Not Present  ");
+                }
+            }
+
+            if (ElementPresent) {
+                Thread.sleep(1000);
+                System.out.print("Successful Enable: ** :) **  ");
+                //assertEquals(true, ElementPresent);
+            } else {
+                System.out.print("Enable Failed: ** :( **  ");
+                System.out.print("No Se encontro el Elemento: ** :( ** : " + ByElement);
+                System.out.print("Nooooo Se encontro el Elemento: ** :) **  ");
+                assertFalse(ElementPresent);
+            }
+            System.out.println(" ");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     //Metod validation web element enable
     public boolean validationElementEnable(WebElement webElement) {
@@ -70,6 +80,7 @@ public class Services extends BaseTest{
         return element;
     }
 
+    //WebElementToBy
     public By toByVal(WebElement we) {
         // By format = "[foundFrom] -> locator: term"
         // see RemoteWebElement toString() implementation
@@ -79,7 +90,9 @@ public class Services extends BaseTest{
 
         switch (locator) {
             case "xpath":
-                return By.xpath(term);
+                String[] dataXpath = we.toString().split(" -> ")[1].replace("]]", "]").split(": ");
+                String termXpath = dataXpath[1];
+                return By.xpath(termXpath);
             case "css selector":
                 return By.cssSelector(term);
             case "id":
@@ -96,17 +109,20 @@ public class Services extends BaseTest{
         return (By) we;
     }
 
-
+    //waitForVisibilityOfElement
     public void waitForVisibilityOfElement(WebElement webElement) {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public void awaitToFindElement(By webElement, int SECONDS) {
+    //awaitToFindElement
+    public void awaitToFindElement(WebElement webElement, int SECONDS) {
+        By ByElement = toByVal(webElement);
+
         await().atMost(SECONDS, TimeUnit.SECONDS)
                 .pollInterval(Duration.ONE_SECOND)
                 .until(() -> {
                     try {
-                        webDriver.findElement(webElement);
+                        driverFacade.getWebDriver().findElement(ByElement);
                         return true;
                     } catch (NoSuchElementException e) {
                         return false;
@@ -115,9 +131,44 @@ public class Services extends BaseTest{
     }
 
 
+    public void waitForPageLoad() {
+        Wait<WebDriver> wait = new WebDriverWait(driverFacade.getWebDriver(), 30);
+        wait.until(new Function<WebDriver, Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                System.out.println("Current Window State       : "
+                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
+                return String
+                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
+                        .equals("complete");
+            }
+        });
+        pause(6);
+    }
+
+    //changeWindow
+    public void changeWindow(){
+        String originalWindow = driverFacade.getWebDriver().getWindowHandle();
+        for (String windowHandle : driverFacade.getWebDriver().getWindowHandles()) {
+            if(!originalWindow.contentEquals(windowHandle)) {
+                driverFacade.getWebDriver().switchTo().window(windowHandle);
+                break;
+            }
+        }
+    }
+
+    //waitTime
+    public void pause(Integer seconds){
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     /* ============================================================= */
     /* =================== FIN COMMONS ANGULAR ===================== */
     /* ============================================================= */
+
+
 
 
     /* ============================================================= */
@@ -127,23 +178,21 @@ public class Services extends BaseTest{
     // Select material angular
     public void AngularMaterialSelect(WebElement webElement, String search) {
         driverFacade.waitForVisibilityOfElement(webElement);
-        cityAllied.click();
-        cityAllied.sendKeys(search);
+        webElement.click();
+        webElement.sendKeys(search);
+        Select dropdown = new Select(driverFacade.getWebDriver().findElement(By.xpath("//span[contains(text(),'"+search+"')]")));
+        dropdown.selectByVisibleText(search);
         //WebElement element = webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]"));
         //driverFacade.waitForVisibilityOfElement(element);
-
-        Select dropdown = new Select(webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]")));
-        dropdown.selectByVisibleText(search);
     }
-
 
     // Autocomplete material angular
     public void AngularMaterialAutocomplete(WebElement webElement, String search) {
-        driverFacade.waitForVisibilityOfElement(webElement);
-        cityAllied.click();
-        cityAllied.sendKeys(search);
-        Select dropdown = new Select(webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]")));
-        dropdown.selectByVisibleText(search);
+        waitingForElement(webElement, 5);
+        webElement.click();
+        webElement.sendKeys(search);
+        webElement.sendKeys(Keys.ARROW_DOWN);
+        webElement.sendKeys(Keys.ENTER);
     }
 
     /* ============================================================= */

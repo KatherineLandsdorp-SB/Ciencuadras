@@ -10,10 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 public class Elements {
     protected DriverFacade webDriverFacade;
 
-    /* ========== LoginTest ========= */
+    /* ========== Login ========= */
 
     @FindBy(xpath = "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]")
     public static WebElement entryUser;
+
+    public static By entryUserBy = By.xpath("//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]");
 
 
     @FindBy(xpath = "//span[contains(text(),'Personas')]")
@@ -31,7 +33,24 @@ public class Elements {
     @FindBy(id = "navbarDropdown")
     public static WebElement navbarDropdown;
 
-    /* ========== LoginTest ========= */
+    /* ========== Login ========= */
+
+    /* ========== LoginFacebook ========= */
+
+    @FindBy(id = "facebookbtn")
+    public static WebElement facebookbtn;
+
+    @FindBy(id = "email")
+    public static WebElement facebookEmail;
+
+    @FindBy(id = "pass")
+    public static WebElement facebookPass;
+
+    @FindBy(id = "u_0_0")
+    public static WebElement buttonLoginFacebook;
+
+    /* ========== LoginFacebook ========= */
+
 
     /* ========== RegisterTest ========= */
 

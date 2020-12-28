@@ -4,6 +4,7 @@ import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
 import com.segurosbolivar.automation.elements.Elements;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BaseTest extends Elements {

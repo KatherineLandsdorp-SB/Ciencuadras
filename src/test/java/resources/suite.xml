@@ -5,6 +5,7 @@
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
+            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
             <class name="com.segurosbolivar.automation.tests.PublishHome.RunnerPublishHome"/>
         </classes>
     </test>

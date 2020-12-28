@@ -8,44 +8,38 @@ public class MethodsRegister extends BaseTest {
 
 
     public void clickOnEntry(){
-        webDriverFacade.waitForVisibilityOfElement(entryUser);
+        methods.awaitToFindElement(entryUser, 5);
         entryUser.click();
     }
 
     public void registerAllied(){
-        webDriverFacade.waitForVisibilityOfElement(allied);
-        allied.click();
-        webDriverFacade.waitForVisibilityOfElement(alliedRegistry);
-        alliedRegistry.click();
+//        methods.awaitToFindElement(allied , 5);
+//        allied.click();
+//        webDriverFacade.waitForVisibilityOfElement(alliedRegistry);
+//        alliedRegistry.click();
     }
 
     public String fillAllTheRequiredFields(){
-
-        methods.AngularMaterialSelect(usernameAllied, "bogota");
 //
-//        driverFacade.waitForVisibilityOfElement(usernameAllied);
+//
+//        methods.awaitToFindElement(usernameAllied, 1);
 //        usernameAllied.click();
 //        usernameAllied.sendKeys("prueba110");
 //
-//        driverFacade.waitForVisibilityOfElement(mailAllied);
+//        methods.awaitToFindElement(mailAllied,5);
 //        mailAllied.click();
-//        mailAllied.sendKeys("prueba110@yopmail.com");
+//        mailAllied.sendKeys("prueba1130@yopmail.com");
 //
-//        driverFacade.waitForVisibilityOfElement(verifyEmailAllied);
+//        methods.awaitToFindElement(verifyEmailAllied, 5);
 //        verifyEmailAllied.click();
 //        verifyEmailAllied.sendKeys("prueba110@yopmail.com");
 //
-//        driverFacade.waitForVisibilityOfElement(passwordAllied);
+//        methods.awaitToFindElement(passwordAllied, 5);
 //        passwordAllied.click();
 //        passwordAllied.sendKeys("prueba110");
 //
-//
-//        driverFacade.waitForVisibilityOfElement(cityAllied);
-//        cityAllied.click();
-//        cityAllied.sendKeys("bogota");
-//
-//        driverFacade.waitForVisibilityOfElement(buttonRegisterAllied);
-//        buttonRegisterAllied.click();
+//        methods.AngularMaterialAutocomplete(cityAllied, "bogota");
+//        methods.elementText("registrate").click();
 
         driverFacade.waitForVisibilityOfElement(navbarDropdown);
         return navbarDropdown.getText();

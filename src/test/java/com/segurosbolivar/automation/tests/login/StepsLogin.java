@@ -15,11 +15,22 @@ public class StepsLogin {
         return this;
     }
 
+    @Step("The user clicks on the login Link in the Header")
+    public StepsLogin clickLoginPerson(){
+        methodsLogin.loginPerson();
+        return this;
+    }
+
+
     @Step("The user fill all the required fields")
     public StepsLogin fillAll(String username){
-        methodsLogin.loginPerson();
         assertEquals(methodsLogin.fillAllTheRequiredFields(), username);
         return this;
     }
 
+    @Step("The user fill all the required fields facebook")
+    public StepsLogin fillAllFacebook(){
+        methodsLogin.fillAllTheRequiredFacebook();
+        return this;
+    }
 }

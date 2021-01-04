@@ -1,5 +1,7 @@
 package com.segurosbolivar.automation;
 
+import com.segurosbolivar.automation.commons.Methods;
+import com.segurosbolivar.automation.commons.Services;
 import org.testng.TestNG;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
@@ -7,6 +9,7 @@ import org.testng.collections.Lists;
 import java.util.List;
 
 public class TestClass {
+//    private static Services methods = new Services();
 
     public static void main(String[] args) {
         TestNG testng = new TestNG();

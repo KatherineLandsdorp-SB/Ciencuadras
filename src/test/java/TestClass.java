@@ -1,5 +1,3 @@
-package com.segurosbolivar.automation;
-
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.Services;
 import org.testng.TestNG;

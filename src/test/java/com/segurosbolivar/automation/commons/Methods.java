@@ -14,7 +14,7 @@ import java.util.function.Function;
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
 
-public class Services extends BaseTest{
+public class Methods extends BaseTest{
     WebDriverWait wait;
 
     /* ============================================================= */

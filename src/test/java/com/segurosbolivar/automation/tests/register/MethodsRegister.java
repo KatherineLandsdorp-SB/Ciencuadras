@@ -1,5 +1,4 @@
 package com.segurosbolivar.automation.tests.register;
-
 import com.segurosbolivar.automation.commons.BaseTest;
 
 public class MethodsRegister extends BaseTest {
@@ -17,27 +16,25 @@ public class MethodsRegister extends BaseTest {
     public String fillAllTheRequiredFields(){
         driverFacade.waitForVisibilityOfElement(nameRegister);
         nameRegister.click();
-        nameRegister.sendKeys("name");
+        nameRegister.sendKeys(services.getField("firstName"));
 
-        driverFacade.waitForVisibilityOfElement(secondNameRegister);
         secondNameRegister.click();
-        secondNameRegister.sendKeys("name");
+        secondNameRegister.sendKeys(services.getField("secondName"));
 
-        driverFacade.waitForVisibilityOfElement(lastNameRegister);
         lastNameRegister.click();
-        lastNameRegister.sendKeys("name");
+        lastNameRegister.sendKeys(services.getField("lastName"));
 
-        driverFacade.waitForVisibilityOfElement(secondLastnameRegister);
         secondLastnameRegister.click();
-        secondLastnameRegister.sendKeys("name");
+        secondLastnameRegister.sendKeys(services.getField("secondLastName"));
 
-        driverFacade.waitForVisibilityOfElement(mailRegister);
         mailRegister.click();
-        mailRegister.sendKeys("name");
+        mailRegister.sendKeys(services.getField("mail"));
 
-        driverFacade.waitForVisibilityOfElement(passRegister);
         passRegister.click();
-        passRegister.sendKeys("name");
+        passRegister.sendKeys(services.getField("passRegister"));
+
+        confirmPassRegister.click();
+        confirmPassRegister.sendKeys(services.getField("passRegister"));
 
 
         driverFacade.waitForVisibilityOfElement(terms);

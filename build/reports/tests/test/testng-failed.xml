@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="2" verbose="0" name="Seguros Bolivar Test(failed)" parallel="methods">
     <classes>
-      <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
+      <class name="com.segurosbolivar.automation.tests.register.RunnerRegister">
         <methods>
-          <include name="successfullLogin"/>
           <include name="before"/>
           <include name="after"/>
+          <include name="successfullRegister"/>
         </methods>
-      </class> <!-- com.segurosbolivar.automation.tests.login.RunnerLogin -->
+      </class> <!-- com.segurosbolivar.automation.tests.register.RunnerRegister -->
     </classes>
   </test> <!-- Seguros Bolivar Test(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

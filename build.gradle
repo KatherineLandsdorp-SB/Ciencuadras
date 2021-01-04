@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id "application"
 }
 
 group 'org.example'
@@ -11,6 +12,14 @@ repositories {
     maven {
         url = uri('https://repo.maven.apache.org/maven2/')
     }
+}
+
+ext {
+    javaMainClass = "TestClass"
+}
+
+application {
+    mainClassName = javaMainClass
 }
 
 dependencies {
@@ -50,17 +59,26 @@ tasks.named('test') {
     }
 }
 
-test { //this is the gradle task to be executed
-    useTestNG() { //Tells Gradle to use TestNG
-        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
-        suites 'src/test/java/resources/suite.xml'
-    }
-}
-
-
 jar {
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     manifest {
-        attributes 'Main-Class': 'src/test/java/com/segurosbolivar/automation/MainClass'
+        attributes(
+                "Main-Class": javaMainClass
+        )
     }
 }
+
+//
+//test { //this is the gradle task to be executed
+//    useTestNG() { //Tells Gradle to use TestNG
+//        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+//        suites 'src/test/java/resources/suite.xml'
+//    }
+//}
+//
+//
+//jar {
+//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+//    manifest {
+//        attributes 'Main-Class': 'src/test/java/com/segurosbolivar/automation/MainClass'
+//    }
+//}

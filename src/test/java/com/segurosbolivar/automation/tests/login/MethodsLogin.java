@@ -1,11 +1,11 @@
 package com.segurosbolivar.automation.tests.login;
 
-import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.utils.PropertyManager;
 
 public class MethodsLogin extends BaseTest {
-    private Services methods = new Services();
+    private Methods methods = new Methods();
 
 
     public void clickOnEntry(){

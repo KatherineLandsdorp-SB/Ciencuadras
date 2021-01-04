@@ -24,9 +24,8 @@ public class StepsRegister extends BaseTest {
     }
 
     @Step("The user fill all the required fields")
-    public StepsRegister fillAll(String username){
-        MethodsRegister.registerPerson();
-        assertEquals(MethodsRegister.fillAllTheRequiredFields(), username);
+    public StepsRegister fillAll(){
+        MethodsRegister.fillAllTheRequiredFields();
         return this;
     }
 

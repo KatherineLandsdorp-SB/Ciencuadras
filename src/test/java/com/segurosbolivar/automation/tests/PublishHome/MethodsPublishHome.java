@@ -1,10 +1,10 @@
 package com.segurosbolivar.automation.tests.PublishHome;
 
-import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
 
 public class MethodsPublishHome extends BaseTest {
-    Services services = new Services();
+    Methods services = new Methods();
 
     public boolean validateButtonKnowHowPublish() {
         boolean present;

@@ -1,10 +1,10 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
-import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
 
 public class MethodsPublishRealState extends BaseTest {
-    Services services = new Services();
+    Methods services = new Methods();
 
     public void registerName(String name) {
         driverFacade.waitForVisibilityOfElement(inputNameRegister);

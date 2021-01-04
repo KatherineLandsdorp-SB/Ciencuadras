@@ -23,8 +23,8 @@ public class StepsLogin {
 
 
     @Step("The user fill all the required fields")
-    public StepsLogin fillAll(String username){
-        assertEquals(methodsLogin.fillAllTheRequiredFields(), username);
+    public StepsLogin fillAll(){
+        methodsLogin.fillAllTheRequiredFields();
         return this;
     }
 

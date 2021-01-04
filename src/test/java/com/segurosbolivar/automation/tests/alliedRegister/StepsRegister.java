@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class StepsRegister extends BaseTest {
 
-    private com.segurosbolivar.automation.tests.alliedRegister.MethodsRegister MethodsRegister = new MethodsRegister();
+    private MethodsRegister MethodsRegister = new MethodsRegister();
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister clickEntry(){
@@ -15,15 +15,15 @@ public class StepsRegister extends BaseTest {
         return this;
     }
 
-    @Step("The user clicks on the register Link in the Popup")
-    public StepsRegister clickAllied(){
-        MethodsRegister.registerAllied();
-        return this;
-    }
+//    @Step("The user clicks on the register Link in the Popup")
+//    public StepsRegister clickAllied(){
+//        MethodsRegister.registerAllied();
+//        return this;
+//    }
 
     @Step("The user fill all the required fields")
     public StepsRegister fillAll(String username){
-        assertEquals(MethodsRegister.fillAllTheRequiredFields(), username);
+        MethodsRegister.fillAllTheRequiredFields();
         return this;
     }
 

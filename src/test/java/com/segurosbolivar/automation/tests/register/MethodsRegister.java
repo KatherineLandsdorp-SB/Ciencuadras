@@ -1,8 +1,6 @@
 package com.segurosbolivar.automation.tests.register;
 
 import com.segurosbolivar.automation.commons.BaseTest;
-import com.segurosbolivar.automation.elements.Elements;
-import com.segurosbolivar.automation.utils.PropertyManager;
 
 public class MethodsRegister extends BaseTest {
 

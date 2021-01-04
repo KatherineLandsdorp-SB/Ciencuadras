@@ -1,8 +1,6 @@
 package com.segurosbolivar.automation.commons.helpers;
 
 import com.segurosbolivar.automation.utils.PropertyManager;
-import org.awaitility.Duration;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,8 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 import static org.awaitility.Awaitility.await;
 

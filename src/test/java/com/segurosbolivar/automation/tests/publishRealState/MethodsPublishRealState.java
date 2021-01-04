@@ -1,8 +1,7 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
-import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Services;
-import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.commons.BaseTest;
 
 public class MethodsPublishRealState extends BaseTest {
     Services services = new Services();

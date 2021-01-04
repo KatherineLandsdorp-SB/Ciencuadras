@@ -44,6 +44,23 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.named('test') {
-    useTestNG()
+    useTestNG(){
+        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+        suites 'src/test/java/resources/suite.xml'
+    }
 }
 
+test { //this is the gradle task to be executed
+    useTestNG() { //Tells Gradle to use TestNG
+        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+        suites 'src/test/java/resources/suite.xml'
+    }
+}
+
+
+jar {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes 'Main-Class': 'src/test/java/com/segurosbolivar/automation/MainClass'
+    }
+}

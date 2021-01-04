@@ -1,7 +1,7 @@
 package com.segurosbolivar.automation.tests.PublishHome;
 
-import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.commons.BaseTest;
 
 public class MethodsPublishHome extends BaseTest {
     Services services = new Services();

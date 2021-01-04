@@ -1,6 +1,5 @@
 package com.segurosbolivar.automation.tests.login;
 
-import com.segurosbolivar.automation.commons.ConnectionBD;
 import com.segurosbolivar.automation.commons.Hooks;
 
 

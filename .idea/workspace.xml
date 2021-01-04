@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="smoke:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d1f639a-7112-4518-9659-cb26f7304f3d" name="Default Changelist" comment="" />
+    <list default="true" id="7d1f639a-7112-4518-9659-cb26f7304f3d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/ConnectionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/ConnectionBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/login/RunnerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/login/RunnerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/register/MethodsRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/register/MethodsRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/shared/Methods.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/tests/shared/Methods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/Gradle#20Test#20Executor#203.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.segurosbolivar.automation.tests.login.RunnerLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.segurosbolivar.automation.tests.login.RunnerLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.segurosbolivar.automation.tests.login.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.segurosbolivar.automation.tests.login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-Gradle#20Test#20Executor#203.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.segurosbolivar.automation.tests.login.RunnerLogin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.segurosbolivar.automation.tests.login.RunnerLogin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/ConnectionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/ConnectionBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishProperty/MethodsPublishProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/RunnerPublishRealState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/MethodsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/MethodsRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/StepsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/StepsRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/shared/Methods.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +106,29 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="untitled" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -39,11 +144,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="TestNG./Users/holmansneyder/Documents/nivelics/automation/untitled/src/test/java/resources/suite.xml">
+  <component name="RunManager" selected="Application.TestClass">
+    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.segurosbolivar.automation.TestClass" />
+      <module name="untitled.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.segurosbolivar.automation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RunnerLogin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -69,6 +190,25 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.segurosbolivar.automation.tests.alliedRegister.RunnerRegister&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNGMainClass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.segurosbolivar.automation.TestNGMainClass&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -113,6 +253,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestNGMainClass" />
         <item itemvalue="TestNG./Users/holmansneyder/Documents/nivelics/automation/untitled/src/test/java/resources/suite.xml" />
         <item itemvalue="Gradle.RunnerLogin" />
         <item itemvalue="Gradle.RunnerRegister" />
@@ -130,34 +271,60 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="469" y="97" key="#Project_Structure" timestamp="1609653010266">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state x="469" y="97" key="#Project_Structure/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609653010265" />
     <state x="463" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608734279212">
       <screen x="0" y="23" width="1920" height="999" />
     </state>
     <state x="463" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608734279212" />
-    <state width="1801" height="285" key="GridCell.Tab.0.bottom" timestamp="1609182798200">
-      <screen x="0" y="23" width="1920" height="986" />
+    <state x="736" y="318" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1609722278944">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state x="736" y="318" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609722278944" />
+    <state width="1839" height="190" key="GridCell.Tab.0.bottom" timestamp="1609721741711">
+      <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798200" />
-    <state width="1801" height="285" key="GridCell.Tab.0.center" timestamp="1609182798199">
-      <screen x="0" y="23" width="1920" height="986" />
+    <state width="1839" height="190" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609721741711" />
+    <state width="1839" height="190" key="GridCell.Tab.0.center" timestamp="1609721741710">
+      <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798199" />
-    <state width="1801" height="285" key="GridCell.Tab.0.left" timestamp="1609182798198">
-      <screen x="0" y="23" width="1920" height="986" />
+    <state width="1839" height="190" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609721741710" />
+    <state width="1839" height="190" key="GridCell.Tab.0.left" timestamp="1609721741710">
+      <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798198" />
-    <state width="1801" height="285" key="GridCell.Tab.0.right" timestamp="1609182798199">
-      <screen x="0" y="23" width="1920" height="986" />
+    <state width="1839" height="190" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609721741710" />
+    <state width="1839" height="190" key="GridCell.Tab.0.right" timestamp="1609721741711">
+      <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798199" />
-    <state x="486" y="103" key="SettingsEditor" timestamp="1608734259589">
-      <screen x="0" y="23" width="1920" height="999" />
+    <state width="1839" height="190" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609721741711" />
+    <state x="486" y="102" key="SettingsEditor" timestamp="1609722308862">
+      <screen x="0" y="23" width="1920" height="990" />
     </state>
+    <state x="486" y="102" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609273312284" />
+    <state x="486" y="102" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609722308862" />
     <state x="486" y="103" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608734259589" />
-    <state x="577" y="128" key="new project wizard" timestamp="1609171026000">
+    <state x="577" y="128" key="new project wizard" timestamp="1609335759240">
       <screen x="0" y="23" width="1920" height="986" />
     </state>
-    <state x="577" y="128" key="new project wizard/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609171026000" />
+    <state x="577" y="128" key="new project wizard/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609335759240" />
   </component>
 </project>

@@ -2,7 +2,6 @@ package com.segurosbolivar.automation.commons;
 
 import org.awaitility.Duration;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;

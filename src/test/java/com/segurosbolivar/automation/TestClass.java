@@ -6,7 +6,7 @@ import org.testng.collections.Lists;
 
 import java.util.List;
 
-public class MainClass {
+public class TestClass {
 
     public static void main(String[] args) {
         TestNG testng = new TestNG();

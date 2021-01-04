@@ -1,7 +1,7 @@
 package com.segurosbolivar.automation.tests.alliedRegister;
 
-import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Services;
+import com.segurosbolivar.automation.commons.BaseTest;
 
 public class MethodsRegister extends BaseTest {
     private Services methods = new Services();

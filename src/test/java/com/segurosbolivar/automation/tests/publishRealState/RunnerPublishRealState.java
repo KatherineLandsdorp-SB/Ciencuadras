@@ -4,8 +4,6 @@ import com.segurosbolivar.automation.commons.Hooks;
 import com.segurosbolivar.automation.utils.PropertyManager;
 import org.testng.annotations.Test;
 
-import java.util.PriorityQueue;
-
 public class RunnerPublishRealState extends Hooks {
     ThreadLocal<StepsPublishRealState> steps = ThreadLocal.withInitial(StepsPublishRealState::new);
 

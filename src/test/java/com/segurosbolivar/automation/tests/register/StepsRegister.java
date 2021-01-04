@@ -1,7 +1,7 @@
 package com.segurosbolivar.automation.tests.register;
 
-import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;

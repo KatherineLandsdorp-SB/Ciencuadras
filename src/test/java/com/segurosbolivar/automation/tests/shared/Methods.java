@@ -2,11 +2,6 @@ package com.segurosbolivar.automation.tests.shared;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
-import com.segurosbolivar.automation.elements.Elements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.io.IOException;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

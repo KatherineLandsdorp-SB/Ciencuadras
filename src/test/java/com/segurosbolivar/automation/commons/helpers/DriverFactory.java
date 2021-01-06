@@ -11,5 +11,4 @@ public class DriverFactory {
     public static DriverFacade getDriverFacade() {
         return webDriverMap.get();
     }
-
 }

@@ -1,4 +1,4 @@
-package com.segurosbolivar.automation.tests.alliedRegister;
+package com.segurosbolivar.automation.tests.registerAllied;
 
 import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.annotations.Test;

@@ -1,13 +1,11 @@
-package com.segurosbolivar.automation.tests.login;
+package com.segurosbolivar.automation.tests.editProfile;
 
 import com.segurosbolivar.automation.commons.Hooks;
-
-
 import org.testng.annotations.Test;
 
-public class RunnerLogin extends Hooks {
+public class RunnerEditProfile extends Hooks {
 
-    ThreadLocal<StepsLogin> steps= ThreadLocal.withInitial(StepsLogin::new);
+    ThreadLocal<StepsEditProfile> steps= ThreadLocal.withInitial(StepsEditProfile::new);
 
     @Test(priority=2, groups = { "smoke" })
     public void successfullLogin(){

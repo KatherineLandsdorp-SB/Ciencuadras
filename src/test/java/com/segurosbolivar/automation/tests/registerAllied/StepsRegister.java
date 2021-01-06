@@ -1,4 +1,4 @@
-package com.segurosbolivar.automation.tests.alliedRegister;
+package com.segurosbolivar.automation.tests.registerAllied;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;

@@ -1,12 +1,19 @@
 package com.segurosbolivar.automation.commons;
 
 import org.awaitility.Duration;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -16,53 +23,150 @@ import static org.junit.Assert.assertFalse;
 
 public class Methods extends BaseTest{
     WebDriverWait wait;
+    private JSONObject field;
+    private int iteration;
 
     /* ============================================================= */
-    /* ====================== COMMONS ANGULAR ====================== */
+    /* ====================== JSON     HANDLE ====================== */
     /* ============================================================= */
-    public WebElement elementText(String text){
-        return xpathElement("//span[text()='"+text+"']");
-    }
 
-    public WebElement xpathElement(String xpath){
-        return webDriver.findElement(By.xpath(xpath));
-    }
-
-    //waitingElement
-    public  void waitingForElement(WebElement webElement, int intentos)  {
+    //Buscar un elemento dada la entidad
+    public WebElement getEntity(String entity){
+        WebElement element = null;
+        field = (JSONObject) driverFacade.JsonFile().get(entity);
         try {
-            By ByElement = toByVal(webElement);
-            boolean ElementPresent = false;
-            int Intentos = 0;
-
-            while (Intentos < (intentos * 2) && !ElementPresent) {
-                try {
-                    ElementPresent = driverFacade.getWebDriver().findElement(ByElement).isEnabled();
-                } catch (Exception e) {
-                    System.out.println(ElementPresent + "  Not Present ");
-                    Intentos++;
-                    System.out.print("#Tried: " + Intentos);
-                    System.out.println(ElementPresent + " Not Present  ");
+            if(field != null){
+                String typeObject = (String) field.get("GetFieldBy");
+                switch (typeObject){
+                    case "Xpath":
+                        element = driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind")));
+                        break;
+                    case "Id":
+                        element = driverFacade.getWebDriver().findElement(By.id((String) field.get("ValueToFind")));
+                        break;
+                    default:
+                        element = null;
                 }
-            }
+                return element;
 
-            if (ElementPresent) {
-                Thread.sleep(1000);
-                System.out.print("Successful Enable: ** :) **  ");
-                //assertEquals(true, ElementPresent);
-            } else {
-                System.out.print("Enable Failed: ** :( **  ");
-                System.out.print("No Se encontro el Elemento: ** :( ** : " + ByElement);
-                System.out.print("Nooooo Se encontro el Elemento: ** :) **  ");
-                assertFalse(ElementPresent);
+            }else{
+                System.out.println("Item not found");
             }
-            System.out.println(" ");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return element;
+    }
+
+    /* ============================================================= */
+    /* ====================== JSON     HANDLE ====================== */
+    /* ============================================================= */
+
+
+    /* ============================================================= */
+    /* ====================== COMMONS GLOBALES ====================== */
+    /* ============================================================= */
+
+    //Esperar un elemento con carga explicita
+    public WebElement waitElementExplicitTime(String entity){
+        WebElement element = null;
+        WebDriverWait wait = new WebDriverWait(driverFacade.getWebDriver(), 10);
+        field = (JSONObject) driverFacade.JsonFile().get(entity);
+        try {
+            if(field != null){
+                String typeObject = (String) field.get("GetFieldBy");
+                System.out.println("elemento" + field.get("ValueToFind"));
+                switch (typeObject){
+                    case "Xpath":
+                        element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath((String) field.get("ValueToFind"))));
+                        break;
+                    default:
+                        element = null;
+                }
+                return element;
+
+            }else{
+                System.out.println("Item not found");
+            }
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return element;
+    }
+
+
+    //Esperar elemento por iteraciones
+    public  void waitingForElement(String entity, int iterations)  {
+
+        WebElement element = null;
+        field = (JSONObject) driverFacade.JsonFile().get(entity);
+        if(field != null) {
+            String typeObject = (String) field.get("GetFieldBy");
+
+            try {
+                boolean ElementPresent = false;
+                iteration = 0;
+
+                while (iteration < (iterations * 2) && !ElementPresent) {
+                    try {
+
+                        switch (typeObject){
+                            case "Xpath":
+                                ElementPresent = driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind"))).isEnabled();
+                                break;
+                            case "Id":
+                                ElementPresent = driverFacade.getWebDriver().findElement(By.id((String) field.get("ValueToFind"))).isEnabled();
+                                break;
+                            default:
+                                ElementPresent = false;
+                        }
+
+                    } catch (Exception e) {
+                        iteration++;
+                        System.out.print("#Tried: " + iteration);
+                        System.out.println(ElementPresent + " Not Present  " + entity);
+                    }
+                }
+
+                if (ElementPresent) {
+                    Thread.sleep(1000);
+                    System.out.print("Successful Enable: ** :) **  ");
+                    //assertEquals(true, ElementPresent);
+                } else {
+                    System.out.print("Enable Failed: ** :( **  ");
+                    System.out.print("No Se encontro el Elemento: ** :( ** : " + entity);
+                    System.out.print("Nooooo Se encontro el Elemento: ** :) **  ");
+                    assertFalse(ElementPresent);
+                }
+                System.out.println(" ");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }else{
+            System.out.println("Item not found");
         }
     }
 
-    //Metod validation web element enable
+
+    //Esperar un elemento esperando n segundos
+    public void awaitToFindElement(String entity, int seconds) {
+        WebElement element = null;
+        field = (JSONObject) driverFacade.JsonFile().get(entity);
+
+        await().atMost(seconds, TimeUnit.SECONDS)
+                .pollInterval(Duration.ONE_SECOND)
+                .until(() -> {
+                    try {
+                        driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind")));
+                        return true;
+                    } catch (NoSuchElementException e) {
+                        return false;
+                    }
+                });
+    }
+
+
+    //Validar si un elemento esta disponible
     public boolean validationElementEnable(WebElement webElement) {
         boolean element = false;
         try {
@@ -77,56 +181,6 @@ public class Methods extends BaseTest{
             System.out.println(element + "  Not Present ");
         }
         return element;
-    }
-
-    //WebElementToBy
-    public By toByVal(WebElement we) {
-        // By format = "[foundFrom] -> locator: term"
-        // see RemoteWebElement toString() implementation
-        String[] data = we.toString().split(" -> ")[1].replace("]", "").split(": ");
-        String locator = data[0];
-        String term = data[1];
-
-        switch (locator) {
-            case "xpath":
-                String[] dataXpath = we.toString().split(" -> ")[1].replace("]]", "]").split(": ");
-                String termXpath = dataXpath[1];
-                return By.xpath(termXpath);
-            case "css selector":
-                return By.cssSelector(term);
-            case "id":
-                return By.id(term);
-            case "tag name":
-                return By.tagName(term);
-            case "name":
-                return By.name(term);
-            case "link text":
-                return By.linkText(term);
-            case "class name":
-                return By.className(term);
-        }
-        return (By) we;
-    }
-
-    //waitForVisibilityOfElement
-    public void waitForVisibilityOfElement(WebElement webElement) {
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
-
-    //awaitToFindElement
-    public void awaitToFindElement(WebElement webElement, int SECONDS) {
-        By ByElement = toByVal(webElement);
-
-        await().atMost(SECONDS, TimeUnit.SECONDS)
-                .pollInterval(Duration.ONE_SECOND)
-                .until(() -> {
-                    try {
-                        driverFacade.getWebDriver().findElement(ByElement);
-                        return true;
-                    } catch (NoSuchElementException e) {
-                        return false;
-                    }
-                });
     }
 
 
@@ -144,6 +198,17 @@ public class Methods extends BaseTest{
         pause(6);
     }
 
+    public String elementText(String text, String type){
+        return "//"+type+"[text()='"+text+"']";
+    }
+
+    public WebElement xpathElement(String xpath){
+        return driverFacade.getWebDriver().findElement(By.xpath(xpath));
+    }
+
+    public void clickElement(String entity){
+        getEntity(entity).click();
+    }
     //changeWindow
     public void changeWindow(){
         String originalWindow = driverFacade.getWebDriver().getWindowHandle();
@@ -163,10 +228,16 @@ public class Methods extends BaseTest{
             e.printStackTrace();
         }
     }
-    /* ============================================================= */
-    /* =================== FIN COMMONS ANGULAR ===================== */
-    /* ============================================================= */
 
+    //Enviar texto
+    public void sendKeysText(String entity, String text){
+        getEntity(entity).click();
+        getEntity(entity).clear();
+        getEntity(entity).sendKeys(text);
+    }
+    /* ============================================================= */
+    /* =================== FIN COMMONS GLOBALES ==================== */
+    /* ============================================================= */
 
 
 
@@ -186,12 +257,12 @@ public class Methods extends BaseTest{
     }
 
     // Autocomplete material angular
-    public void AngularMaterialAutocomplete(WebElement webElement, String search) {
-        waitingForElement(webElement, 5);
-        webElement.click();
-        webElement.sendKeys(search);
-        webElement.sendKeys(Keys.ARROW_DOWN);
-        webElement.sendKeys(Keys.ENTER);
+    public void AngularMaterialAutocomplete(String entity, String search) {
+        waitingForElement(entity, 5);
+        getEntity(entity).click();
+        getEntity(entity).sendKeys(search);
+        getEntity(entity).sendKeys(Keys.ARROW_DOWN);
+        getEntity(entity).sendKeys(Keys.ENTER);
     }
 
     /* ============================================================= */

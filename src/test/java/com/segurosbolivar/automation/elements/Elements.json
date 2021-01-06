@@ -1,0 +1,58 @@
+{
+  "entryUser": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]"
+  },
+  "allied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Aliados')]"
+  },
+  "alliedRegistry": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//a[contains(text(),'Regístrate')]"
+  },
+  "loginPerson": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Personas')]"
+  },
+  "facebookbtn": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "facebookbtn"
+  },
+  "loginInMail": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginInMail"
+  },
+  "usernameAllied": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "username"
+  },
+  "mailAllied": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "correo"
+  },
+  "verifyEmailAllied": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "verify_email"
+  },
+  "passwordAllied": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "password"
+  },
+  "cityAllied": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "city"
+  },
+  "registryAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[@type='submit' and contains(., 'Regístrate')]"
+  },
+  "navbarDropdown": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "navbarDropdown"
+  },
+  "confirmationMessage": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[contains(text(), 'Te hemos')]"
+  }
+}

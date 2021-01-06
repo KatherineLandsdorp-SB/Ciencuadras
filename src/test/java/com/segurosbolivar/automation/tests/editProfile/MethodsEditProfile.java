@@ -1,10 +1,10 @@
-package com.segurosbolivar.automation.tests.login;
+package com.segurosbolivar.automation.tests.editProfile;
 
-import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.utils.PropertyManager;
 
-public class MethodsLogin extends BaseTest {
+public class MethodsEditProfile extends BaseTest {
     private Methods methods = new Methods();
 
 

@@ -1,6 +1,9 @@
 package com.segurosbolivar.automation.commons.helpers;
 
 import com.segurosbolivar.automation.utils.PropertyManager;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +12,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -18,6 +24,7 @@ public class DriverFacade {
 
     RemoteWebDriver driver;
     WebDriverWait wait;
+    JSONObject jsonObject;
     int timeoutInSeconds = 60;
 
 
@@ -39,6 +46,7 @@ public class DriverFacade {
     }
 
     public DriverFacade() {
+        JsonFile();
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
             try {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")
@@ -49,7 +57,6 @@ public class DriverFacade {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-
         }
         else{
             driver = new ChromeDriver();
@@ -61,11 +68,29 @@ public class DriverFacade {
         return driver;
     }
 
+    public JSONObject getJsonObject(){
+        return jsonObject;
+    }
 
 
     public void waitForVisibilityOfElement(WebElement webElement) {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
+    public JSONObject JsonFile(){
+        JSONParser parser = new JSONParser();
+        try {
+            Object obj = parser.parse(new FileReader(PropertyManager.getConfigValueByKey("elements")));
+            jsonObject = (JSONObject) obj;
+            return jsonObject;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
 
 }

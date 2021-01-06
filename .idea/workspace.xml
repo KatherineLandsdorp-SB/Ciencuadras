@@ -28,7 +28,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d1f639a-7112-4518-9659-cb26f7304f3d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Methods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/TestClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/elements/Elements.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/editProfile/MethodsEditProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/editProfile/RunnerEditProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/editProfile/StepsEditProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/registerAllied/MethodsRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
@@ -41,11 +47,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/TestClass.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/BaseTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/ConnectionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/ConnectionBD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Hooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/Services.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/TestListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/TestListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/segurosbolivar/automation/commons/helpers/DriverFacade.class" afterDir="false" />
@@ -75,41 +79,32 @@
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/Test Suite/Seguros Bolivar Test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/Test Suite/Seguros Bolivar Test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/Test Suite/Seguros Bolivar Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/Test Suite/Seguros Bolivar Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/Test Suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/Test Suite/testng-failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.segurosbolivar.automation.tests.PublishHome.RunnerPublishHome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.segurosbolivar.automation.tests.login.RunnerLogin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.segurosbolivar.automation.tests.register.RunnerRegister.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/emailable-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/junitreports/TEST-com.segurosbolivar.automation.tests.login.RunnerLogin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/junitreports/TEST-com.segurosbolivar.automation.tests.login.RunnerLogin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/groups.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/groups.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/methods-alphabetical.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/methods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/testng.xml.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/Test Suite/toc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/old/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.segurosbolivar.automation.tests.PublishHome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.segurosbolivar.automation.tests.login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.segurosbolivar.automation.tests.register.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/testng-results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.segurosbolivar.automation.tests.PublishHome.RunnerPublishHome.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.segurosbolivar.automation.tests.login.RunnerLogin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.segurosbolivar.automation.tests.register.RunnerRegister.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestClass.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/PublishHome/MethodsPublishHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/RunnerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/RunnerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/commons/helpers/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/MethodsRegister.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/RunnerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/registerAllied/RunnerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/alliedRegister/StepsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/registerAllied/StepsRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/MethodsLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/RunnerLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/login/StepsLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/publishRealState/MethodsPublishRealState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/MethodsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/MethodsRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/RunnerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/RunnerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/StepsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/register/StepsRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/resources/suite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/suite.xml" afterDir="false" />
     </list>
@@ -184,15 +179,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/editProfile" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager" selected="Gradle.bol-automation-ciencuadras-test [jar]">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.segurosbolivar.automation.tests.editProfile" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/com/segurosbolivar/automation/tests/editProfile" />
+      <recent name="$PROJECT_DIR$/src/test/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.RunnerRegister">
     <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
+      <option name="MAIN_CLASS_NAME" value="com.segurosbolivar.automation.TestClass" />
       <module name="untitled.test" />
       <extension name="coverage">
         <pattern>
@@ -209,7 +213,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.segurosbolivar.automation.tests.register.RunnerRegister&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.segurosbolivar.automation.tests.alliedRegister.RunnerRegister&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -292,11 +296,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RunnerRegister" />
         <item itemvalue="Application.TestClass" />
         <item itemvalue="Gradle.bol-automation-ciencuadras-test [jar]" />
         <item itemvalue="Gradle.bol-automation-ciencuadras-test [build]" />
         <item itemvalue="TestNG./Users/holmansneyder/Documents/nivelics/automation/untitled/src/test/java/resources/suite.xml" />
-        <item itemvalue="Gradle.RunnerRegister" />
       </list>
     </recent_temporary>
   </component>
@@ -336,43 +340,67 @@
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state x="736" y="318" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609776518301" />
-    <state x="638" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609729286186">
+    <state x="638" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609903408822">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
-    <state x="638" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609729286186" />
-    <state width="1839" height="158" key="GridCell.Tab.0.bottom" timestamp="1609776473860">
+    <state x="638" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609903408822" />
+    <state width="1839" height="166" key="GridCell.Tab.0.bottom" timestamp="1609952195545">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798200" />
-    <state width="1839" height="158" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609776473860" />
-    <state width="1839" height="158" key="GridCell.Tab.0.center" timestamp="1609776473859">
+    <state width="1839" height="166" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609952195545" />
+    <state width="1839" height="166" key="GridCell.Tab.0.center" timestamp="1609952195542">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798199" />
-    <state width="1839" height="158" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609776473859" />
-    <state width="1839" height="158" key="GridCell.Tab.0.left" timestamp="1609776473858">
+    <state width="1839" height="166" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609952195542" />
+    <state width="1839" height="166" key="GridCell.Tab.0.left" timestamp="1609952195541">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798198" />
-    <state width="1839" height="158" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609776473858" />
-    <state width="1839" height="158" key="GridCell.Tab.0.right" timestamp="1609776473859">
+    <state width="1839" height="166" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609952195541" />
+    <state width="1839" height="166" key="GridCell.Tab.0.right" timestamp="1609952195544">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state width="1801" height="285" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609182798199" />
-    <state width="1839" height="158" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609776473859" />
+    <state width="1839" height="166" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609952195544" />
+    <state width="1839" height="176" key="GridCell.Tab.1.bottom" timestamp="1609814362945">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state width="1839" height="176" key="GridCell.Tab.1.bottom/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609814362945" />
+    <state width="1839" height="176" key="GridCell.Tab.1.center" timestamp="1609814362944">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state width="1839" height="176" key="GridCell.Tab.1.center/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609814362944" />
+    <state width="1839" height="176" key="GridCell.Tab.1.left" timestamp="1609814362944">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state width="1839" height="176" key="GridCell.Tab.1.left/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609814362944" />
+    <state width="1839" height="176" key="GridCell.Tab.1.right" timestamp="1609814362945">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state width="1839" height="176" key="GridCell.Tab.1.right/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609814362945" />
     <state x="688" y="347" key="RollbackChangesDialog" timestamp="1609731234156">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state x="688" y="347" key="RollbackChangesDialog/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609731234156" />
-    <state x="486" y="102" key="SettingsEditor" timestamp="1609776522040">
+    <state x="486" y="102" key="SettingsEditor" timestamp="1609780972626">
       <screen x="0" y="23" width="1920" height="990" />
     </state>
     <state x="486" y="102" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609273312284" />
-    <state x="486" y="102" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609776522040" />
+    <state x="486" y="102" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609780972626" />
     <state x="486" y="103" key="SettingsEditor/-1920.23.1920.1057/0.23.1920.999@0.23.1920.999" timestamp="1608734259589" />
+    <state x="664" y="271" width="586" height="490" key="find.popup" timestamp="1609854967381">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state x="664" y="271" width="586" height="490" key="find.popup/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609854967381" />
     <state x="577" y="128" key="new project wizard" timestamp="1609335759240">
       <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="577" y="128" key="new project wizard/-1920.23.1920.1057/0.23.1920.986@0.23.1920.986" timestamp="1609335759240" />
+    <state x="622" y="240" width="670" height="676" key="search.everywhere.popup" timestamp="1609810255155">
+      <screen x="0" y="23" width="1920" height="990" />
+    </state>
+    <state x="622" y="240" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1920.990@0.23.1920.990" timestamp="1609810255155" />
   </component>
 </project>

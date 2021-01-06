@@ -1,35 +1,34 @@
-package com.segurosbolivar.automation.tests.login;
+package com.segurosbolivar.automation.tests.editProfile;
 
 import com.segurosbolivar.automation.tests.shared.Methods;
 import io.qameta.allure.Step;
-import static org.testng.Assert.assertEquals;
 
-public class StepsLogin {
+public class StepsEditProfile {
 
-    private MethodsLogin methodsLogin = new MethodsLogin();
+    private MethodsEditProfile methodsLogin = new MethodsEditProfile();
     private Methods methods = new Methods();
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsLogin clickEntry(){
+    public StepsEditProfile clickEntry(){
         methodsLogin.clickOnEntry();
         return this;
     }
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsLogin clickLoginPerson(){
+    public StepsEditProfile clickLoginPerson(){
         methodsLogin.loginPerson();
         return this;
     }
 
 
     @Step("The user fill all the required fields")
-    public StepsLogin fillAll(){
+    public StepsEditProfile fillAll(){
         methodsLogin.fillAllTheRequiredFields();
         return this;
     }
 
     @Step("The user fill all the required fields facebook")
-    public StepsLogin fillAllFacebook(){
+    public StepsEditProfile fillAllFacebook(){
         methodsLogin.fillAllTheRequiredFacebook();
         return this;
     }

@@ -73,12 +73,13 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void clickOnButtonBackTracking() {
-       // driverFacade.waitForVisibilityOfElement(buttonBackTracking);
+        // driverFacade.waitForVisibilityOfElement(buttonBackTracking);
         driverFacade.awaitToFindElement(By.xpath("(//button[text()='ATRÁS'])[1]"));
         buttonBackTracking.click();
         System.out.println("entro aqui" + buttonBackTracking);
     }
-    public void clickButtonBack(){
+
+    public void clickButtonBack() {
         buttonBack.click();
     }
 
@@ -88,6 +89,7 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerRentValue(String value) {
+        driverFacade.waitForVisibilityOfElement(inputValueRent);
         inputValueRent.sendKeys(value);
 
     }
@@ -115,9 +117,7 @@ public class MethodsPublishProperty extends BaseTest {
         driverFacade.waitForVisibilityOfElement(alertValueAdministration);
         String present = alertValueAdministration.getText().replaceAll("[ó]", "o");
         return present;
-
     }
-
 
     public void validateNoEnableIValueAdministration(String value) {
         if (inputAdministrationValue.isEnabled()) {
@@ -159,16 +159,12 @@ public class MethodsPublishProperty extends BaseTest {
             driverFacade.waitForVisibilityOfElement(selectCity);
             selectCity.click();
         }
-    }
-
-    public void registerLocationProperty(String value) throws InterruptedException {
-        services.DropdownCity(inputLocation,value);
 
     }
 
     public void registerDistric(String value) throws InterruptedException {
-        services.DropdownCity(inputDistric,value);
-        inputDistric.sendKeys(value);
+        services.DropdownCity(inputDistric, value);
+        //inputDistric.sendKeys(value);
     }
 
     public void registerAdress(String value) {
@@ -215,9 +211,10 @@ public class MethodsPublishProperty extends BaseTest {
         inputPasswordConfirm.sendKeys(value);
     }
 
-    public void clickOnButtonContinue() {
+    public void clickOnButtonContinue() throws InterruptedException {
         driverFacade.waitForVisibilityOfElement(buttonContinue);
         buttonContinue.click();
+        Thread.sleep(8000);
     }
 
     public String validateTexFormWithoutCity() {
@@ -228,7 +225,7 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerCityCoverage(String city) throws InterruptedException {
-        services.DropdownCity(inputCityCoverage,city);
+        services.DropdownCity(inputCityCoverage, city);
     }
 
     public void clickButtonConfirmCoverageCity() {
@@ -254,7 +251,8 @@ public class MethodsPublishProperty extends BaseTest {
         present = textOutCoverage.getText();
         return present;
     }
-    public void clickOnButtonContinuePhoto(){
+
+    public void clickOnButtonContinuePhoto() {
         buttonContinuePhoto.click();
     }
 

@@ -7,12 +7,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -176,17 +180,39 @@ public class Services extends BaseTest {
     }
 
 
-    public void uploadFile() throws InterruptedException{
-       String path=System.getProperty("user.dir");
-       System.getProperty("user.dir");
-       System.out.println(path);
-       inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+    public void uploadFile() throws InterruptedException {
+        String path = System.getProperty("user.dir");
+        System.getProperty("user.dir");
+        System.out.println(path + "esta ingresando a cargar la imagen");
+        inputImage.sendKeys(path + "/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
         Thread.sleep(10000);
-        inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
-        Thread.sleep(10000);
-        inputImage.sendKeys(path+"/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
-
     }
 
+    public void uploadFileImage(int Intentos, int Veces) throws InterruptedException {
+       // String path = System.getProperty("user.dir");
+        while (Intentos <= Veces) {
+            //System.out.println(path + "esta ingresando a cargar la imagen");
+           // inputImage.sendKeys(path + "/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+            inputImage.sendKeys(getFile());
+            Thread.sleep(10000);
+            System.out.println("Valor de Intentos : " + Intentos+ getFile());
+            Intentos++;
+        }
+    }
 
+    public void uploadRemoteImage()  throws InterruptedException{
+        LocalFileDetector detector = new LocalFileDetector();
+        ((RemoteWebDriver)inputImage).setFileDetector(detector);
+        inputImage.sendKeys(getFile());
+        Thread.sleep(10000);
+    }
+    String getFile() {
+        return new File("./src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png").getAbsolutePath();
+    }
 }
+
+
+
+
+
+

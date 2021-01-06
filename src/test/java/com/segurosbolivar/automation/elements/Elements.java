@@ -63,6 +63,8 @@ public class Elements  {
     public static WebElement buttonPublishProperty;
     @FindBy(xpath = "(//div/a[@href='/publicar'])[2]")
     public static WebElement buttonKnowPublish;
+    @FindBy(xpath = "//p[contains(text(),'VENDER')]")
+    public static  WebElement buttonSale;
 
     //Home tracking
     @FindBy(xpath = "//div//button[text()='PUBLICA TÚ MISMO']")
@@ -189,8 +191,6 @@ public class Elements  {
     public static WebElement inputArea;
     @FindBy(id = "ciudad")
     public static WebElement inputCity;
-    @FindBy(id = "localidadComuna")
-    public static WebElement inputLocation;
     @FindBy(id = "barrio")
     public static WebElement inputDistric;
     @FindBy(id = "address")

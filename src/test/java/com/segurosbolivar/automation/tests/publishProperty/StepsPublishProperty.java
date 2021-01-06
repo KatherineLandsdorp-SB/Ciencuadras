@@ -25,10 +25,18 @@ public class StepsPublishProperty extends Elements {
         return this;
 
     }
+    @Step("The user clicks on the publish button in the home")
+    public StepsPublishProperty clickButtonSaleHome() {
+        Methods = new Methods();
+        Methods.clickOnButtonSaleHome();
+
+        return this;
+
+    }
 
     @Step("")
     public StepsPublishProperty clickPublishYourself() {
-        MethodsPublishProperty = new MethodsPublishProperty();
+        RecicleableMethodsCiencuadras = new RecicleableMethodsCiencuadras();
         RecicleableMethodsCiencuadras.clickOnPublishYourself();
         return this;
     }
@@ -202,12 +210,6 @@ public class StepsPublishProperty extends Elements {
         return this;
     }
 
-    @Step()
-    public StepsPublishProperty registerLocationProperty(String value) throws InterruptedException {
-        MethodsPublishProperty = new MethodsPublishProperty();
-        MethodsPublishProperty.registerLocationProperty(value);
-        return this;
-    }
 
     @Step()
     public StepsPublishProperty registerPropertyDistric(String value) throws InterruptedException {
@@ -287,7 +289,7 @@ public class StepsPublishProperty extends Elements {
     }
 
     @Step()
-    public StepsPublishProperty clickOnButtonContinue() {
+    public StepsPublishProperty clickOnButtonContinue () throws InterruptedException{
         MethodsPublishProperty = new MethodsPublishProperty();
         MethodsPublishProperty.clickOnButtonContinue();
         return this;
@@ -336,9 +338,10 @@ public class StepsPublishProperty extends Elements {
         return this;
     }
     @Step()
-    public StepsPublishProperty uploapFile() throws  InterruptedException {
+    public StepsPublishProperty uploapFile(int h,int s) throws InterruptedException  {
         Services = new Services();
-        Services.uploadFile();
+       Services.uploadFileImage(h,s);
+        //Services.uploadRemoteImage();
         return this;
     }
     @Step()

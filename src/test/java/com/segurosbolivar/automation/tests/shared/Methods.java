@@ -24,6 +24,9 @@ public class Methods extends BaseTest {
     public void clickOnKnowHowPublish(){
         buttonKnowPublish.click();
     }
+    public void clickOnButtonSaleHome(){
+        buttonSale.click();
+    }
 
     public void clickOnPublishYourself() {
         webDriverFacade.waitForVisibilityOfElement(buttonPublishYourself);

@@ -31,10 +31,10 @@ public class DriverFacade {
 //        capabilities.setCapability("browserName", "Safari");
 //        capabilities.setCapability("version","13.0");
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "70.0");
+        capabilities.setCapability("version", "85");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
         capabilities.setCapability("build", "Ui_Automation_CienCuadrasTEST");
-        capabilities.setCapability("name", "Ui_Automation_Seguros_Bolivar_Structure_1");
+        capabilities.setCapability("name", "Ui_Automation_CienCuadrasTEST");
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
         capabilities.setCapability("video", true); // To enable video recording

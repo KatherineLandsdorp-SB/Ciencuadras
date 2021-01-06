@@ -9,9 +9,10 @@ public class RunnerPublishProperty extends Hooks {
 
     ThreadLocal<StepsPublishProperty> steps = ThreadLocal.withInitial(StepsPublishProperty::new);
     ThreadLocal<StepsLogin> step = ThreadLocal.withInitial(StepsLogin::new);
+/*
 
-
-   /* @Test(priority = 1)
+    @Test(priority = 1)
+    //Sienpre cambiar correo para este test
     public void publishPropertyRegisterUserEnd() throws InterruptedException {
         steps.get().clickPublish();
         steps.get().clickPublishYourself();
@@ -36,11 +37,10 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUser"));
         steps.get().registerConfirmPasswordUser(PropertyManager.getConfigValueByKey(("passwordUser")));
-        //steps.get().clickOnButtonContinue();
+        steps.get().clickOnButtonContinue();
+        steps.get().uploapFile(0, 3);
 
     }
-
-
 
 
     @Test(priority = 2)
@@ -62,36 +62,38 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().registerCityAdress(PropertyManager.getConfigValueByKey("adress"));
         steps.get().confirmAdress();
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
-        //steps.get().clickOnButtonContinue();
-            }
-
-
-
-
-    @Test(priority = 3)
-    public void publishPropertyUserNotLoggedIn() throws InterruptedException {
-        steps.get().clickPublish();
-        steps.get().clickPublishYourself();
-        steps.get().clickOnBasicPlan();
-        steps.get().clickOnAddToCar();
-        steps.get().registerValueRent(PropertyManager.getConfigValueByKey("price"));
-        steps.get().registerValueAdministration(PropertyManager.getConfigValueByKey("price"));
-        steps.get().registerAntiquityProperty(PropertyManager.getConfigValueByKey("antiquity"));
-        steps.get().registerDescription(PropertyManager.getConfigValueByKey("description"));
-        steps.get().registerStratumProperty();
-        steps.get().registerArea(PropertyManager.getConfigValueByKey("area"));
-        steps.get().registerCityProperty(PropertyManager.getConfigValueByKey("city"));
-        steps.get().registerLocationProperty(PropertyManager.getConfigValueByKey("location"));
-        steps.get().registerPropertyDistric(PropertyManager.getConfigValueByKey("distric"));
-        steps.get().registerCityAdress(PropertyManager.getConfigValueByKey("adress"));
-        steps.get().confirmAdress();
-        steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
-        steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
-        steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
-        //steps.get().clickOnButtonContinue();
-
+        steps.get().clickOnButtonContinue();
+        steps.get().uploapFile(0, 3);
     }
+*/
 
+      @Test(priority = 3)
+      public void publishPropertyUserNotLoggedIn() throws InterruptedException {
+         // steps.get().clickPublish();
+          steps.get().clickButtonSaleHome();
+          steps.get().clickPublishYourself();
+          steps.get().clickOnBasicPlan();
+          steps.get().clickOnAddToCar();
+          steps.get().registerValueRent(PropertyManager.getConfigValueByKey("price"));
+          steps.get().registerValueAdministration(PropertyManager.getConfigValueByKey("price"));
+          steps.get().registerAntiquityProperty(PropertyManager.getConfigValueByKey("antiquity"));
+          steps.get().registerDescription(PropertyManager.getConfigValueByKey("description"));
+          steps.get().registerStratumProperty();
+          steps.get().registerArea(PropertyManager.getConfigValueByKey("area"));
+          steps.get().registerCityProperty(PropertyManager.getConfigValueByKey("city"));
+          steps.get().registerPropertyDistric(PropertyManager.getConfigValueByKey("distric"));
+          steps.get().registerCityAdress(PropertyManager.getConfigValueByKey("adress"));
+          steps.get().confirmAdress();
+          steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
+          steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
+          steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
+          steps.get().clickOnButtonContinue();
+          steps.get().uploapFile(0, 3);
+          //steps.get().uploapFile();
+          steps.get().clickButtonContinuePhoto();
+
+      }
+/*
     @Test(priority = 4)
     public void publishPropertyCityWithoutLocality() throws InterruptedException {
         steps.get().clickPublish();
@@ -110,7 +112,7 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
-        // steps.get().clickOnButtonContinue();
+        steps.get().clickOnButtonContinue();
 
     }
 
@@ -180,7 +182,8 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
-        // steps.get().clickOnButtonContinue();
+        steps.get().clickOnButtonContinue();
+        steps.get().uploapFile(0, 3);
     }
 
     @Test(priority = 8)
@@ -206,7 +209,8 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
-        //steps.get().clickOnButtonContinue();
+        steps.get().clickOnButtonContinue();
+        steps.get().uploapFile(0, 3);
     }
 
     @Test(priority = 9)
@@ -294,15 +298,14 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().regisStepsUserEmail(PropertyManager.getConfigValueByKey("emailUserRegister"));
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
-        //steps.get().clickOnButtonContinue();
+        steps.get().clickOnButtonContinue();
 
     }
 
-    */
 
     @Test(priority = 16)
     public void validateBackCheckSteps() throws InterruptedException {
-       steps.get().clickPublish();
+        steps.get().clickPublish();
         steps.get().clickPublishYourself();
         steps.get().clickOnBasicPlan();
         steps.get().clickOnAddToCar();
@@ -324,12 +327,13 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().registerCellPhoneUser(PropertyManager.getConfigValueByKey("cellphone"));
         steps.get().registerPasswordUser(PropertyManager.getConfigValueByKey("passwordUserRegister"));
         steps.get().clickOnButtonContinue();
-        Thread.sleep(8000);
-        //steps.get().clickOnButtonBack();
-        //steps.get().clickOnButtonBackStepTracking();
-        steps.get().uploapFile();
-        steps.get().clickButtonContinuePhoto();
+        Thread.sleep(10000);
+        steps.get().clickOnButtonBack();
+        steps.get().clickOnButtonBackStepTracking();
+       // steps.get().uploapFile(0, 3);
     }
+
+ */
 
 
 }

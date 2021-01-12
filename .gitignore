@@ -1,3 +1,4 @@
 /build
-/allure-ResultSet
+/allure-results
 /.gradle
+/.idea

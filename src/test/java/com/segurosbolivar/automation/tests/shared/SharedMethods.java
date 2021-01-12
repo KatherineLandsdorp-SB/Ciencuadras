@@ -2,6 +2,8 @@ package com.segurosbolivar.automation.tests.shared;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
+import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -9,6 +11,9 @@ import static org.junit.Assert.assertTrue;
 public class Methods extends BaseTest {
     protected DriverFacade webDriverFacade;
 
+    public void validateUsernameLoged(String entity){
+        driverFacade.getWebDriver().findElement(By.xpath("//*[contains(text(), "+entity+")]"))
+    }
 
     public void clickOnEntry(){
         webDriverFacade.waitForVisibilityOfElement(entryUser);

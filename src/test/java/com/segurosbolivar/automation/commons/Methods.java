@@ -223,6 +223,11 @@ public class Methods extends BaseTest{
         }
     }
 
+    public void scrollTo(String entity){
+        WebElement element = getEntity(entity);
+        ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     public String elementText(String text, String type){
         return "//"+type+"[text()='"+text+"']";
     }

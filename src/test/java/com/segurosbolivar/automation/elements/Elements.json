@@ -28,8 +28,8 @@
     "ValueToFind": "loginUser"
   },
   "defaultCheckIn": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "defaultCheckIn"
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id='defaultCheckIn']"
   },
   "registerUser": {
     "GetFieldBy": "Xpath",
@@ -90,6 +90,10 @@
   "terms": {
     "GetFieldBy": "Id",
     "ValueToFind": "terms"
+  },
+  "register": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "register"
   },
   "confirmationMessage": {
     "GetFieldBy": "xpath",

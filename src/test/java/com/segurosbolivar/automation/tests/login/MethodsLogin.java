@@ -17,19 +17,19 @@ public class MethodsLogin extends BaseTest {
     }
 
     public void clickOnRemember(){
-        methods.awaitToFindElement("defaultCheckIn", 5);
+        methods.waitForPageLoad();
+        methods.awaitToFindElement("defaultCheckIn", 120);
         methods.clickElement("defaultCheckIn");
     }
 
     public void loginPerson(){
-        System.out.println("entro salida");
         methods.awaitToFindElement("loginPerson", 5);
         methods.clickElement("loginPerson");
     }
 
     public String fillAllTheRequiredFacebook(){
         methods.waitForPageLoad();
-        methods.waitingForElement("facebookbtn", 15);
+        methods.waitingForElement("facebookbtn", 120);
         methods.clickElement("facebookbtn");
         methods.switchToAnotherWindow(2);
         methods.waitForPageLoad();
@@ -44,7 +44,7 @@ public class MethodsLogin extends BaseTest {
     }
 
     public String fillAllTheRequiredGmail(){
-        methods.waitingForElement("googlebtn", 15);
+        methods.waitingForElement("googlebtn", 120);
         methods.clickElement("googlebtn");
         methods.switchToAnotherWindow(2);
         methods.waitForPageLoad();
@@ -62,11 +62,13 @@ public class MethodsLogin extends BaseTest {
     }
 
     public String fillAllTheRequiredFields(){
-        methods.waitingForElement("loginInMail", 5);
+        methods.waitForPageLoad();
+        methods.waitingForElement("loginInMail", 60);
         methods.sendKeysText("loginInMail", services.getField("mail"));
         methods.sendKeysText("loginInPass", services.getField("passRegister"));
         methods.clickElement("loginUser");
         methods.waitForPageLoad();
-        return  shared.validateUsernameLoged();
+        methods.waitingForElement("navbarDropdown", 800);
+        return methods.getEntity("navbarDropdown").getText();
     }
 }

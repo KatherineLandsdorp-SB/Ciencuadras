@@ -18,7 +18,7 @@ public class MethodsRegister extends BaseTest {
     }
 
     public String fillAllTheRequiredFields(){
-        methods.waitingForElement("nameRegister", 3);
+        methods.waitingForElement("nameRegister", 15);
         methods.sendKeysText("nameRegister", services.getField("firstName"));
         methods.sendKeysText("secondNameRegister", services.getField("secondName"));
         methods.sendKeysText("lastNameRegister", services.getField("lastName"));
@@ -26,10 +26,12 @@ public class MethodsRegister extends BaseTest {
         methods.sendKeysText("mailRegister", services.getField("mail"));
         methods.sendKeysText("passRegister", services.getField("passRegister"));
         methods.sendKeysText("confirmPassRegister", services.getField("passRegister"));
+        methods.scrollTo("terms");
         methods.clickElement("terms");
         methods.clickElement("register");
         methods.waitForPageLoad();
-        return  shared.validateUsernameLoged();
+        methods.waitingForElement("navbarDropdown", 800);
+        return methods.getEntity("navbarDropdown").getText();
     }
 
 

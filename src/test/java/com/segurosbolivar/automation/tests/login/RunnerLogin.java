@@ -9,7 +9,7 @@ public class RunnerLogin extends Hooks {
 
     ThreadLocal<StepsLogin> steps = ThreadLocal.withInitial(StepsLogin::new);
 
-    @Test(priority=2, groups = { "smoke" })
+    @Test(priority=1, groups = { "smoke" })
     public void successfullLogin(){
         steps.get()
                 .clickEntry()
@@ -17,29 +17,13 @@ public class RunnerLogin extends Hooks {
                 .fillAll();
     }
 
-    @Test(priority=2, groups = { "smoke" })
+    @Test(priority=1, groups = { "smoke" })
     public void successfullLoginRemember(){
         steps.get()
                 .clickEntry()
                 .clickLoginPerson()
                 .clickRemember()
                 .fillAll();
-    }
-
-    @Test(priority=2, groups = { "smoke" })
-    public void successfullGmail(){
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillAllGmail();
-    }
-
-    @Test(priority=2, groups = { "smoke" })
-    public void successfullLoginFacebook(){
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillAllFacebook();
     }
 
     // se agrega inmplementaciòn trayendo datos desde servicio de firebase

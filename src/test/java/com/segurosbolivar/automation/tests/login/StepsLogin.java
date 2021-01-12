@@ -21,7 +21,7 @@ public class StepsLogin extends BaseTest {
 
     @Step("The user clicks in remember user")
     public StepsLogin clickRemember(){
-        methodsLogin.clickOnEntry();
+        methodsLogin.clickOnRemember();
         return this;
     }
 

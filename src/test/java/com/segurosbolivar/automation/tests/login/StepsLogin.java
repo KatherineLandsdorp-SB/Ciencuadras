@@ -1,16 +1,26 @@
 package com.segurosbolivar.automation.tests.login;
 
-import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
+import org.apache.commons.lang3.StringUtils;
+import org.testng.Assert;
+
 import static org.testng.Assert.assertEquals;
 
-public class StepsLogin {
+public class StepsLogin extends BaseTest {
 
     private MethodsLogin methodsLogin = new MethodsLogin();
-    private Methods methods = new Methods();
+    private SharedMethods methods = new SharedMethods();
 
     @Step("The user clicks on the login Link in the Header")
     public StepsLogin clickEntry(){
+        methodsLogin.clickOnEntry();
+        return this;
+    }
+
+    @Step("The user clicks in remember user")
+    public StepsLogin clickRemember(){
         methodsLogin.clickOnEntry();
         return this;
     }
@@ -24,13 +34,19 @@ public class StepsLogin {
 
     @Step("The user fill all the required fields")
     public StepsLogin fillAll(){
-        methodsLogin.fillAllTheRequiredFields();
+        assertEquals(methodsLogin.fillAllTheRequiredFields(), services.getField("nameUserNav"));
         return this;
     }
 
     @Step("The user fill all the required fields facebook")
     public StepsLogin fillAllFacebook(){
-        methodsLogin.fillAllTheRequiredFacebook();
+        assertEquals(methodsLogin.fillAllTheRequiredFacebook(), services.getField("navBarFacebook"));
+        return this;
+    }
+
+    @Step("The user fill all the required fields google")
+    public StepsLogin fillAllGmail(){
+        assertEquals(methodsLogin.fillAllTheRequiredGmail(), services.getField("navBarFacebook"));
         return this;
     }
 }

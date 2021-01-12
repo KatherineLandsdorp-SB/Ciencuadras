@@ -1,50 +1,35 @@
 package com.segurosbolivar.automation.tests.register;
 import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Methods;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
 public class MethodsRegister extends BaseTest {
+    private Methods methods = new Methods();
+    private SharedMethods shared = new SharedMethods();
 
     public void clickOnEntry(){
-        webDriverFacade.waitForVisibilityOfElement(entryUser);
-        entryUser.click();
+        methods.waitingForElement("entryUser", 3);
+        methods.clickElement("entryUser");
     }
 
     public void registerPerson(){
-        webDriverFacade.waitForVisibilityOfElement(registerUser);
-        registerUser.click();
+        methods.waitingForElement("registerUser", 3);
+        methods.clickElement("registerUser");
     }
 
     public String fillAllTheRequiredFields(){
-        driverFacade.waitForVisibilityOfElement(nameRegister);
-        nameRegister.click();
-        nameRegister.sendKeys(services.getField("firstName"));
-
-        secondNameRegister.click();
-        secondNameRegister.sendKeys(services.getField("secondName"));
-
-        lastNameRegister.click();
-        lastNameRegister.sendKeys(services.getField("lastName"));
-
-        secondLastnameRegister.click();
-        secondLastnameRegister.sendKeys(services.getField("secondLastName"));
-
-        mailRegister.click();
-        mailRegister.sendKeys(services.getField("mail"));
-
-        passRegister.click();
-        passRegister.sendKeys(services.getField("passRegister"));
-
-        confirmPassRegister.click();
-        confirmPassRegister.sendKeys(services.getField("passRegister"));
-
-
-        driverFacade.waitForVisibilityOfElement(terms);
-        terms.click();
-
-        driverFacade.waitForVisibilityOfElement(register);
-        register.click();
-
-        driverFacade.waitForVisibilityOfElement(navbarDropdown);
-        return navbarDropdown.getText();
+        methods.waitingForElement("nameRegister", 3);
+        methods.sendKeysText("nameRegister", services.getField("firstName"));
+        methods.sendKeysText("secondNameRegister", services.getField("secondName"));
+        methods.sendKeysText("lastNameRegister", services.getField("lastName"));
+        methods.sendKeysText("secondLastnameRegister", services.getField("secondLastName"));
+        methods.sendKeysText("mailRegister", services.getField("mail"));
+        methods.sendKeysText("passRegister", services.getField("passRegister"));
+        methods.sendKeysText("confirmPassRegister", services.getField("passRegister"));
+        methods.clickElement("terms");
+        methods.clickElement("register");
+        methods.waitForPageLoad();
+        return  shared.validateUsernameLoged();
     }
 
 

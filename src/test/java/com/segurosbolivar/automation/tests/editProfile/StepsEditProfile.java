@@ -1,12 +1,12 @@
 package com.segurosbolivar.automation.tests.editProfile;
 
-import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
 public class StepsEditProfile {
 
     private MethodsEditProfile methodsLogin = new MethodsEditProfile();
-    private Methods methods = new Methods();
+    private SharedMethods methods = new SharedMethods();
 
     @Step("The user clicks on the login Link in the Header")
     public StepsEditProfile clickEntry(){

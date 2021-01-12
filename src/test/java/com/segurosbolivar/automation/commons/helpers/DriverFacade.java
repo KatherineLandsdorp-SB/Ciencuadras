@@ -17,14 +17,27 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.awaitility.Awaitility.await;
+class Windows {
+    String type;
+    String parent;
+
+    public Windows(String paramType, String paramParent){
+        type = paramType;
+        parent = paramParent;
+    }
+}
 
 public class DriverFacade {
 
     RemoteWebDriver driver;
     WebDriverWait wait;
     JSONObject jsonObject;
+    List<Windows> windows = new ArrayList<Windows>();
+
     int timeoutInSeconds = 60;
 
 
@@ -64,8 +77,13 @@ public class DriverFacade {
         }
         wait = new WebDriverWait(driver, timeoutInSeconds);
     }
+
     public WebDriver getWebDriver(){
         return driver;
+    }
+
+    public void setWindow(String aDefault, String windowHandles){
+        windows.add(new Windows(aDefault, windowHandles));
     }
 
     public JSONObject getJsonObject(){

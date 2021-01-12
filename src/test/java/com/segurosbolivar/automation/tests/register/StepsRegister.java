@@ -1,6 +1,6 @@
 package com.segurosbolivar.automation.tests.register;
 
-import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 public class StepsRegister extends BaseTest {
 
     private MethodsRegister MethodsRegister = new MethodsRegister();
-    private Methods methods = new Methods();
+    private SharedMethods methods = new SharedMethods();
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister clickEntry(){

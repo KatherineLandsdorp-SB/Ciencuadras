@@ -14,7 +14,10 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -50,7 +53,7 @@ public class Methods extends BaseTest{
                 return element;
 
             }else{
-                System.out.println("Item not found");
+                System.out.println("Item not found "+ entity);
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());
@@ -148,7 +151,7 @@ public class Methods extends BaseTest{
     }
 
 
-    //Esperar un elemento esperando n segundos
+    //Esperar un elemento n segundos
     public void awaitToFindElement(String entity, int seconds) {
         WebElement element = null;
         field = (JSONObject) driverFacade.JsonFile().get(entity);
@@ -183,7 +186,7 @@ public class Methods extends BaseTest{
         return element;
     }
 
-
+    //Esperar que la pagina termine de cargar
     public void waitForPageLoad() {
         Wait<WebDriver> wait = new WebDriverWait(driverFacade.getWebDriver(), 30);
         wait.until(new Function<WebDriver, Boolean>() {
@@ -198,6 +201,28 @@ public class Methods extends BaseTest{
         pause(6);
     }
 
+    public void switchToAnotherWindow(int windowNumber){
+        List<String> windowlist = null;
+        Set<String> windows = driverFacade.getWebDriver().getWindowHandles();
+        windowlist = new ArrayList<String>(windows);
+        String currentWindow = driverFacade.getWebDriver().getWindowHandle();
+        if (!currentWindow.equalsIgnoreCase(windowlist.get(windowNumber - 1)))
+        {
+            driverFacade.getWebDriver().switchTo().window(windowlist.get(windowNumber - 1));
+        }
+    }
+
+    //changeWindow
+    public void changeWindow(){
+        String originalWindow = driverFacade.getWebDriver().getWindowHandle();
+        for (String windowHandle : driverFacade.getWebDriver().getWindowHandles()) {
+            if(!originalWindow.contentEquals(windowHandle)) {
+                driverFacade.getWebDriver().switchTo().window(windowHandle);
+                break;
+            }
+        }
+    }
+
     public String elementText(String text, String type){
         return "//"+type+"[text()='"+text+"']";
     }
@@ -209,15 +234,11 @@ public class Methods extends BaseTest{
     public void clickElement(String entity){
         getEntity(entity).click();
     }
-    //changeWindow
-    public void changeWindow(){
-        String originalWindow = driverFacade.getWebDriver().getWindowHandle();
-        for (String windowHandle : driverFacade.getWebDriver().getWindowHandles()) {
-            if(!originalWindow.contentEquals(windowHandle)) {
-                driverFacade.getWebDriver().switchTo().window(windowHandle);
-                break;
-            }
-        }
+
+    public void clickElementJs(String entity){
+        WebElement element = getEntity(entity);
+        JavascriptExecutor executor = (JavascriptExecutor) driverFacade.getWebDriver();
+        executor.executeScript("arguments[0].click();", element);
     }
 
     //waitTime
@@ -246,7 +267,7 @@ public class Methods extends BaseTest{
     /* ============================================================= */
 
     // Select material angular
-    public void AngularMaterialSelect(WebElement webElement, String search) {
+    public void angularMaterialSelect(WebElement webElement, String search) {
         driverFacade.waitForVisibilityOfElement(webElement);
         webElement.click();
         webElement.sendKeys(search);
@@ -257,7 +278,7 @@ public class Methods extends BaseTest{
     }
 
     // Autocomplete material angular
-    public void AngularMaterialAutocomplete(String entity, String search) {
+    public void angularMaterialAutocomplete(String entity, String search) {
         waitingForElement(entity, 5);
         getEntity(entity).click();
         getEntity(entity).sendKeys(search);

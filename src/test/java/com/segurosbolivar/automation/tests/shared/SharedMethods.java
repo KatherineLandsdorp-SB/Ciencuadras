@@ -4,15 +4,22 @@ import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class Methods extends BaseTest {
+public class SharedMethods extends BaseTest {
     protected DriverFacade webDriverFacade;
 
-    public void validateUsernameLoged(String entity){
-        driverFacade.getWebDriver().findElement(By.xpath("//*[contains(text(), "+entity+")]"))
+    public String validateUsernameLoged(){
+
+        String entity = StringUtils.capitalize(services.getField("firstName"))+" "
+                +StringUtils.capitalize(services.getField("secondName"))+" "
+                +StringUtils.capitalize(services.getField("lastName"))+" "
+                +StringUtils.capitalize(services.getField("secondLastName"));
+
+        return driverFacade.getWebDriver().findElement(By.xpath("//*[contains(text(), "+entity+")]")).getText();
     }
 
     public void clickOnEntry(){

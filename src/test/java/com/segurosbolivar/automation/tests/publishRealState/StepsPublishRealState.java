@@ -1,6 +1,6 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
-import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class StepsPublishRealState {
     private MethodsPublishRealState MethodsPublishRealState;
-    private Methods methods = new Methods();
+    private SharedMethods methods = new SharedMethods();
 
     @Step()
     public StepsPublishRealState clickPublish() {

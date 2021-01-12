@@ -24,7 +24,7 @@ public class MethodsRegister extends BaseTest {
         methods.sendKeysText("mailAllied", services.getField("mailAllied"));
         methods.sendKeysText("verifyEmailAllied",services.getField("mailAllied"));
         methods.sendKeysText("passwordAllied",services.getField("passwordAllied"));
-        methods.AngularMaterialAutocomplete("cityAllied", services.getField("cityAllied"));
+        methods.angularMaterialAutocomplete("cityAllied", services.getField("cityAllied"));
         methods.clickElement("registryAllied");
     }
 

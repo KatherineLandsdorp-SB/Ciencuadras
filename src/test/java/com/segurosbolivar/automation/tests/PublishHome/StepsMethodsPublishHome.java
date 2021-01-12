@@ -1,6 +1,6 @@
 package com.segurosbolivar.automation.tests.PublishHome;
 
-import com.segurosbolivar.automation.tests.shared.Methods;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertTrue;
@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class StepsMethodsPublishHome {
     private MethodsPublishHome MethodsPublishHome;
-    private Methods RecicleableMethodsCiencuadras;
+    private SharedMethods RecicleableMethodsCiencuadras;
 
 
     @Step()
@@ -23,7 +23,7 @@ public class StepsMethodsPublishHome {
     }
     @Step()
     public void clickButtonKnowPublish(){
-        RecicleableMethodsCiencuadras=new Methods();
+        RecicleableMethodsCiencuadras=new SharedMethods();
         RecicleableMethodsCiencuadras.clickOnKnowHowPublish();;
     }
     @Step()

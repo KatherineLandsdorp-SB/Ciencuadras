@@ -1,35 +1,32 @@
-package com.segurosbolivar.automation.tests.registerAllied;
+package com.segurosbolivar.automation.tests.search;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 
-public class MethodsRegister extends BaseTest {
+public class MethodsSearch extends BaseTest {
     protected Methods methods = new Methods();
 
-    public void clickOnEntry(){
+    public void clickSearchSelect(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("entryUser", 3);
-        methods.clickElement("entryUser");
+        methods.awaitToFindElement("searchSelect", 3);
+        methods.clickElement("searchSelect");
     }
 
-    public void registerAllied(){
-        methods.awaitToFindElement("allied", 3);
-        methods.clickElement("allied");
-        methods.awaitToFindElement("alliedRegistry", 5);
-        methods.clickElement("alliedRegistry");
+    public void clickSearchType(){
+        methods.waitForPageLoad();
+        methods.awaitToFindElement("searchType", 3);
+        methods.clickElement("searchType");
     }
 
-    public void fillAllTheRequiredFields(){
-        methods.waitingForElement("usernameAllied", 3);
-        methods.sendKeysText("usernameAllied", services.getField("nameAllied"));
-        methods.sendKeysText("mailAllied", services.getField("mailAllied"));
-        methods.sendKeysText("verifyEmailAllied",services.getField("mailAllied"));
-        methods.sendKeysText("passwordAllied",services.getField("passwordAllied"));
-        methods.angularMaterialAutocomplete("cityAllied", services.getField("cityAllied"));
-        methods.clickElement("registryAllied");
+    public void city(){
+        methods.waitForPageLoad();
+        methods.awaitToFindElement("city", 3);
+        methods.clickElement("city");
     }
 
-    public void validateRegistration(){
-        methods.waitingForElement("confirmationMessage", 2);
-        System.out.println("jejejeje" + methods.getEntity("confirmationMessage").getText());
+    public void search(){
+        methods.waitForPageLoad();
+        methods.awaitToFindElement("search", 3);
+        methods.clickElement("search");
     }
+
 }

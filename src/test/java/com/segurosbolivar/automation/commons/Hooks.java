@@ -13,7 +13,7 @@ public class Hooks {
     public void before() {
         DriverFactory.setWebDriver();
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
-//        bd inicio
+        //bd inicio
     }
 
 

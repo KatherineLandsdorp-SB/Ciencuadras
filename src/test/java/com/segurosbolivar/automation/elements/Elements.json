@@ -15,13 +15,25 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//span[contains(text(),'Personas')]"
   },
-  "facebookbtn": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "facebookbtn"
-  },
   "loginInMail": {
     "GetFieldBy": "Id",
     "ValueToFind": "loginInMail"
+  },
+  "loginInPass": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginInPass"
+  },
+  "loginUser": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginUser"
+  },
+  "defaultCheckIn": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "defaultCheckIn"
+  },
+  "registerUser": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Regístrate')]"
   },
   "usernameAllied": {
     "GetFieldBy": "Id",
@@ -47,12 +59,94 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button[@type='submit' and contains(., 'Regístrate')]"
   },
-  "navbarDropdown": {
+  "nameRegister": {
     "GetFieldBy": "Id",
-    "ValueToFind": "navbarDropdown"
+    "ValueToFind": "nameRegister"
+  },
+  "secondNameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "secondNameRegister"
+  },
+  "lastNameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "lastNameRegister"
+  },
+  "secondLastnameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "secondLastnameRegister"
+  },
+  "mailRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mailRegister"
+  },
+  "passRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "passRegister"
+  },
+  "confirmPassRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "confirmPassRegister"
+  },
+  "terms": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "terms"
   },
   "confirmationMessage": {
     "GetFieldBy": "xpath",
     "ValueToFind": "//*[contains(text(), 'Te hemos')]"
+  },
+  "emailFacebook": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id='email']"
+  },
+  "passFacebook": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id='pass']"
+  },
+  "facebookbtn": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "facebookbtn"
+  },
+  "facebookLogin": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginbutton"
+  },
+  "googlebtn": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "googlebtn"
+  },
+  "identifierIdGoogle": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "identifierId"
+  },
+  "nextGmail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//body/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]"
+  },
+  "passGmail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@type='password']"
+  },
+  "navbarDropdown": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//a[@id='navbarDropdown']"
+  },
+
+
+  "searchSelect": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[1]/select[1]"
+  },
+  "searchType": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[2]/button[1]"
+  },
+  "city": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id='ciudadUbicacion']"
+  },
+  "search": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[3]/button[2]"
   }
 }

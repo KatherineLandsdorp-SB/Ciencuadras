@@ -2,40 +2,71 @@ package com.segurosbolivar.automation.tests.login;
 
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import com.segurosbolivar.automation.utils.PropertyManager;
+import org.apache.commons.lang3.StringUtils;
 
 public class MethodsLogin extends BaseTest {
     private Methods methods = new Methods();
+    private SharedMethods shared = new SharedMethods();
 
 
     public void clickOnEntry(){
         methods.awaitToFindElement("entryUser", 5);
-        entryUser.click();
+        methods.clickElement("entryUser");
+    }
+
+    public void clickOnRemember(){
+        methods.awaitToFindElement("defaultCheckIn", 5);
+        methods.clickElement("defaultCheckIn");
     }
 
     public void loginPerson(){
+        System.out.println("entro salida");
         methods.awaitToFindElement("loginPerson", 5);
-        loginPerson.click();
+        methods.clickElement("loginPerson");
     }
 
-    public void fillAllTheRequiredFacebook(){
-        methods.awaitToFindElement("facebookbtn", 5);
-        methods.clickElement("facebookbtn");
-        methods.changeWindow();
+    public String fillAllTheRequiredFacebook(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("facebookEmail", 5);
-        facebookEmail.sendKeys(PropertyManager.getConfigValueByKey("username"));
-        facebookPass.sendKeys(PropertyManager.getConfigValueByKey("password"));
-        buttonLoginFacebook.click();
+        methods.waitingForElement("facebookbtn", 15);
+        methods.clickElement("facebookbtn");
+        methods.switchToAnotherWindow(2);
+        methods.waitForPageLoad();
+        methods.waitingForElement("emailFacebook", 120);
+        methods.sendKeysText("emailFacebook", services.getField("mailFacebook"));
+        methods.sendKeysText("passFacebook", services.getField("passFacebook"));
+        methods.clickElement("facebookLogin");
+        methods.switchToAnotherWindow(1);
+        methods.waitForPageLoad();
+        methods.waitingForElement("navbarDropdown", 120);
+        return methods.getEntity("navbarDropdown").getText();
+    }
+
+    public String fillAllTheRequiredGmail(){
+        methods.waitingForElement("googlebtn", 15);
+        methods.clickElement("googlebtn");
+        methods.switchToAnotherWindow(2);
+        methods.waitForPageLoad();
+        methods.waitingForElement("identifierIdGoogle", 120);
+        methods.sendKeysText("identifierIdGoogle", services.getField("mailGmail"));
+        methods.clickElement("nextGmail");
+        methods.waitForPageLoad();
+        methods.waitingForElement("passGmail", 120);
+        methods.sendKeysText("passGmail", services.getField("passGmail"));
+        methods.clickElementJs("nextGmail");
+        methods.switchToAnotherWindow(1);
+        methods.waitForPageLoad();
+        methods.waitingForElement("navbarDropdown", 800);
+        return methods.getEntity("navbarDropdown").getText();
     }
 
     public String fillAllTheRequiredFields(){
         methods.waitingForElement("loginInMail", 5);
-        loginInMail.click();
-        loginInMail.sendKeys(PropertyManager.getConfigValueByKey("username"));
-        loginInPass.sendKeys(PropertyManager.getConfigValueByKey("password"));
-        loginUser.click();
-        webDriverFacade.waitForVisibilityOfElement(navbarDropdown);
-        return navbarDropdown.getText();
+        methods.sendKeysText("loginInMail", services.getField("mail"));
+        methods.sendKeysText("loginInPass", services.getField("passRegister"));
+        methods.clickElement("loginUser");
+        methods.waitForPageLoad();
+        return  shared.validateUsernameLoged();
     }
 }

@@ -1,34 +1,32 @@
-package com.segurosbolivar.automation.tests.registerAllied;
+package com.segurosbolivar.automation.tests.search;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
-import static org.testng.Assert.assertEquals;
+public class StepsSearch extends BaseTest {
 
-public class StepsRegister extends BaseTest {
-
-    private MethodsRegister MethodsRegister = new MethodsRegister();
+    private MethodsSearch MethodsRegister = new MethodsSearch();
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsRegister clickEntry(){
+    public StepsSearch clickEntry(){
         MethodsRegister.clickOnEntry();
         return this;
     }
 
     @Step("The user clicks on the register Link in the Popup")
-    public StepsRegister clickAllied(){
+    public StepsSearch clickAllied(){
         MethodsRegister.registerAllied();
         return this;
     }
 
     @Step("The user fill all the required fields")
-    public StepsRegister fillAll(){
+    public StepsSearch fillAll(){
         MethodsRegister.fillAllTheRequiredFields();
         return this;
     }
 
     @Step("Valid send email")
-    public StepsRegister validateEmail(){
+    public StepsSearch validateEmail(){
         MethodsRegister.validateRegistration();
         return this;
     }

@@ -1,4 +1,4 @@
-package com.segurosbolivar.automation.tests.PublishHome;
+package com.segurosbolivar.automation.tests.publishHome;
 
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;

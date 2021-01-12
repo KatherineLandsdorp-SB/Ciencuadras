@@ -44,19 +44,11 @@ public class StepsPublishRealState {
     }
 
     @Step()
-    public StepsPublishRealState fillInCitu(String city) {
+    public StepsPublishRealState fillInCitu(String city) throws InterruptedException {
         MethodsPublishRealState = new MethodsPublishRealState();
         MethodsPublishRealState.registerCity(city);
         return this;
     }
-
-    @Step()
-    public StepsPublishRealState selectCity(){
-        MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.selectCity();
-        return this;
-    }
-
     @Step()
     public StepsPublishRealState selectSale() {
         MethodsPublishRealState = new MethodsPublishRealState();
@@ -91,22 +83,32 @@ public class StepsPublishRealState {
         assertEquals(MethodsPublishRealState.validateDataMandatory(), button);
         return this;
     }
+
     @Step()
     public StepsPublishRealState validationRadioButtonSale() {
         MethodsPublishRealState = new MethodsPublishRealState();
         assertTrue(MethodsPublishRealState.validateRadioButtonSale());
         return this;
     }
+
     @Step()
     public StepsPublishRealState validationRadioButtonRent() {
         MethodsPublishRealState = new MethodsPublishRealState();
         assertTrue(MethodsPublishRealState.validateRadioButtonRent());
         return this;
     }
+
     @Step()
     public StepsPublishRealState validationRadioButtonRentSale() {
         MethodsPublishRealState = new MethodsPublishRealState();
         assertTrue(MethodsPublishRealState.validateRadioButtonRentSale());
+        return this;
+    }
+
+    @Step()
+    public StepsPublishRealState clickCaptcha() {
+        MethodsPublishRealState = new MethodsPublishRealState();
+        MethodsPublishRealState.clickOnCaptha();
         return this;
     }
 

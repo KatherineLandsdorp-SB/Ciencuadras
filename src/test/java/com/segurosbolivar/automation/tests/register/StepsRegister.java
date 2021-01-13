@@ -4,7 +4,6 @@ import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
-import static org.testng.Assert.assertEquals;
 
 public class StepsRegister extends BaseTest {
 

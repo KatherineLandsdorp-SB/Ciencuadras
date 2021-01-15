@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<suite name="Test Suite" parallel="methods" thread-count="2">
+<suite name="Test Suite" parallel="methods" thread-count="8">
     <test name="Seguros Bolivar Test">
         <listeners>
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLoginFacebook"/>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLoginGmail"/>
-<!--            <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"/>-->
+            <!--       <class name="com.segurosbolivar.automation.tests.rent.RunnerRent"/> >>-->
+                <class name="com.segurosbolivar.automation.tests.rent.RunnerRent1"/>
+                <!--  <class name="com.segurosbolivar.automation.tests.login.RunnerLoginFacebook"/>>-->
+            <!--   <class name="com.segurosbolivar.automation.tests.login.RunnerLoginGmail"/>>-->
+   <!--            <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"/>-->
 <!--            <class name="com.segurosbolivar.automation.tests.registerAllied.RunnerRegister"/>-->
 <!--            <class name="com.segurosbolivar.automation.tests.registerAllied.RunnerRegister"/>-->
 

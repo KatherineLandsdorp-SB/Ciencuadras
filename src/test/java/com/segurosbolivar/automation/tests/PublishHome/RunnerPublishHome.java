@@ -4,6 +4,7 @@ import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.annotations.Test;
 
 public class RunnerPublishHome extends Hooks {
+
     ThreadLocal<StepsMethodsPublishHome> steps= ThreadLocal.withInitial(StepsMethodsPublishHome::new);
 
    @Test(priority = 1)

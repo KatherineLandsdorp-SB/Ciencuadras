@@ -152,5 +152,101 @@
   "search": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[3]/button[2]"
+  },
+  "rent": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//a[contains(text(),'Arriendo')]"
+  },
+  "inputSeach": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "search"
+  },
+  "textSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"target\"]/app-search/div/h1"
+  },
+  "scroll": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "all-content"
+  },
+  "buttonDeal": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),' Tipo de negocio')]"
+  },
+  "dropDownDeal": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "bnt-filter-1"
+  },
+  "iconClose": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"instructionsSearchForm\"]/div/button[2]"
+  },
+  "buttonTypeProperty": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),' Tipo de inmueble')]"
+  },
+  "checkApartment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[contains(text(),'Apartamento')])[1]"
+  },
+  "checkStudioApartment": {
+  "GetFieldBy": "Xpath",
+  "ValueToFind": "//span[contains(text(),'Apartaestudio')] "
+},
+  "checkHome": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Casa')]"
+  },
+  "checkLocal": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind":"(//span[contains(text(),'Local')])[1]"
+  },
+  "checkOffice": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind":"//*[@id=\"mat-checkbox-51\"]/label/span"
+  },
+  "checkFarm": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-52\"]/label/span"
+  },
+  "checkConsultoring": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-53\"]/label/span"
+  },
+  "checkLot": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-54\"]/label/span"
+  },
+  "checkCellar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-55\"]/label/span"
+  },
+  "checkBuilding": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-55\"]/label/span"
+  },
+  "": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
   }
 }

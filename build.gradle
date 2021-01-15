@@ -15,7 +15,7 @@ repositories {
 }
 
 ext {
-    javaMainClass = "TestClass"
+    javaMainClass = "com.segurosbolivar.automation"
 }
 
 application {

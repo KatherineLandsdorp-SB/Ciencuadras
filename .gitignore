@@ -2,3 +2,8 @@
 /allure-results
 /.gradle
 /.idea
+/test-output/Test Suite/
+/test-output/junitreports/
+/test-output/old/Test Suite/
+/test-output/testng-failed.xml
+SegurosBolivar_UI_Automation.iml

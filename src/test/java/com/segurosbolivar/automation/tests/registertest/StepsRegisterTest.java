@@ -5,7 +5,6 @@ import com.segurosbolivar.automation.tests.register.StepsRegister;
 import io.qameta.allure.Step;
 
 public class StepsRegisterTest extends BaseTest {
-
     MethodsRegisterTest methodsRegisterTest = new MethodsRegisterTest();
 
     @Step("The user clicks on the login Link in the Header")
@@ -25,4 +24,5 @@ public class StepsRegisterTest extends BaseTest {
         methodsRegisterTest.fillAllTheRequiredFields();
         return this;
     }
+
 }

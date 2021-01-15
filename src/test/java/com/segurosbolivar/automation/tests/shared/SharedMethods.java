@@ -2,7 +2,8 @@ package com.segurosbolivar.automation.tests.shared;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
-import com.sun.xml.internal.ws.util.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 
 public class SharedMethods extends BaseTest {

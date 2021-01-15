@@ -135,8 +135,6 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//a[@id='navbarDropdown']"
   },
-
-
   "searchSelect": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[1]/select[1]"
@@ -152,5 +150,17 @@
   "search": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[3]/button[2]"
+  },
+  "searchButtonByCode": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[4]/button[1]"
+  },
+  "searchButtonIcon": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='tabCodigo']/div[1]/button[1]"
+  },
+  "errorMessageContainer": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='toast-container']/div[1]/div[1]"
   }
 }

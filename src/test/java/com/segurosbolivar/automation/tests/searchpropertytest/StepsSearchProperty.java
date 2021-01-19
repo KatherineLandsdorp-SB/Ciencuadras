@@ -22,6 +22,12 @@ public class StepsSearchProperty {
         return this;
     }
 
+    @Step("Fill search textbox whit valid property code")
+    public StepsSearchProperty fillTextBoxSearchByValidCode() {
+        this.methodsSearchProperty.fillTextBoxSearchByValidCode();
+        return this;
+    }
+
     @Step("Click  Search Button")
     public StepsSearchProperty clickSearchButton() {
         this.methodsSearchProperty.clickSearchButton();

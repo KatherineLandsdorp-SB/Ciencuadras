@@ -12,12 +12,18 @@ public class MethodsSearchProperty extends BaseTest {
     private Methods methods = new Methods();
 
     public void clickLinkSearchByCode() {
+        methods.waitForPageLoad();
         methods.clickElement("searchButtonByCode");
     }
 
     public void fillTextBoxSearchByInvalidCode() {
         methods.awaitToFindElement("city", 10);
         methods.sendKeysText("city", "test-code-23456");
+    }
+
+    public void fillTextBoxSearchByValidCode() {
+        methods.awaitToFindElement("city", 10);
+        methods.sendKeysText("city", "151119-921485");
     }
 
     public void clickSearchButton() {

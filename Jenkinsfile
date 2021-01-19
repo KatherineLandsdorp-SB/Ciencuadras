@@ -1,6 +1,9 @@
 pipeline
         {
             agent any // run the pipeline on any available node
+            tools {
+                jdk 'jdk8' 
+            }
              stages
             {
                 stage('SCM: code update')
@@ -14,17 +17,18 @@ pipeline
                             credentialsId: 'holmansnc',
                             url: 'https://github.com/segurosbolivar/bol-automation-ciencuadras-test.git'
                         }
-                        
                     }
                 }
-                stage('Docker build')
+                stage('gradle')
                 {
                     steps
                     {
                         script
                         {
-                            // copying and building gradle
-                            docker.build("bolivar/gradle")
+                            //copying and building gradle
+                            	steps {
+                                    sh './gradlew build'
+                                }
                         }
                     }
                 }

@@ -2,7 +2,6 @@ package com.segurosbolivar.automation.tests.publishProperty;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
-import com.segurosbolivar.automation.commons.Services;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import com.segurosbolivar.automation.utils.PropertyManager;
 import net.bytebuddy.asm.Advice;
@@ -18,7 +17,6 @@ public class MethodsPublishProperty extends BaseTest {
     private SharedMethods shared = new SharedMethods();
 
     //RecicleableMethodsCiencuadras methodsRecicleables = new RecicleableMethodsCiencuadras();
-    Services services = new Services();
 
     public boolean validateLabelAccompaniment() {
         methods.waitingForElement("labelAccompaniment", 10);

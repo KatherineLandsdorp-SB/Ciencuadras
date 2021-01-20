@@ -17,27 +17,6 @@ public class SharedMethods extends BaseTest {
     protected DriverFacade webDriverFacade;
     private Methods methods = new Methods();
 
-    public String validateUsernameLoged() {
-
-        String entity = StringUtils.capitalize(services.getField("firstName")) + " "
-                + StringUtils.capitalize(services.getField("secondName")) + " "
-                + StringUtils.capitalize(services.getField("lastName")) + " "
-                + StringUtils.capitalize(services.getField("secondLastName"));
-
-        return driverFacade.getWebDriver().findElement(By.xpath("//*[contains(text(), " + entity + ")]")).getText();
-    }
-
-
-    public void clickOnEntry() {
-        methods.waitingForElement("entryUser", 10);
-        methods.clickElement("entryUser");
-    }
-
-    public void loginPerson() {
-        methods.waitingForElement("loginPerson", 10);
-        methods.clickElement("loginPerson");
-    }
-
     public void clickOnPublish() {
         methods.clickElement("buttonPublishProperty");
     }

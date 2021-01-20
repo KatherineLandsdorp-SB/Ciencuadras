@@ -17,8 +17,16 @@ public class MethodsRegister extends BaseTest {
         methods.clickElement("registerUser");
     }
 
+    public void registerAllied(){
+        methods.waitingForElement("allied", 3);
+        methods.clickElement("allied");
+        methods.waitingForElement("alliedRegistry", 5);
+        methods.clickElement("alliedRegistry");
+    }
+
     public String fillAllTheRequiredFields(){
-        methods.waitingForElement("nameRegister", 15);
+        methods.waitForPageLoad();
+        methods.waitingForElement("nameRegister", 60);
         methods.sendKeysText("nameRegister", services.getField("firstName"));
         methods.sendKeysText("secondNameRegister", services.getField("secondName"));
         methods.sendKeysText("lastNameRegister", services.getField("lastName"));
@@ -34,6 +42,15 @@ public class MethodsRegister extends BaseTest {
         return methods.getEntity("navbarDropdown").getText();
     }
 
+    public void fillAllTheRequiredFieldsAllied(){
+        methods.waitingForElement("usernameAllied", 3);
+        methods.sendKeysText("usernameAllied", services.getField("nameAllied"));
+        methods.sendKeysText("mailAllied", services.getField("mailAllied"));
+        methods.sendKeysText("verifyEmailAllied",services.getField("mailAllied"));
+        methods.sendKeysText("passwordAllied",services.getField("passwordAllied"));
+        methods.angularMaterialAutocomplete("cityAllied", services.getField("cityAllied"));
+        methods.clickElement("registryAllied");
+    }
 
 
 

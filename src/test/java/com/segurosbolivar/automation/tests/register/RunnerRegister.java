@@ -14,4 +14,13 @@ public class RunnerRegister extends Hooks {
                 .clickRegister()
                 .fillAll();
     }
+
+    @Test(priority=1, groups = { "smoke" })
+    public void successfullRegisterAllied(){
+        steps.get()
+                .clickEntry()
+                .clickAllied()
+                .fillAllAllied();
+        //.validateEmail()
+    }
 }

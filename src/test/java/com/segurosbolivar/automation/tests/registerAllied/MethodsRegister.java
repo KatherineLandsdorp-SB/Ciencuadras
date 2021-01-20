@@ -7,14 +7,14 @@ public class MethodsRegister extends BaseTest {
 
     public void clickOnEntry(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("entryUser", 3);
+        methods.waitingForElement("entryUser", 3);
         methods.clickElement("entryUser");
     }
 
     public void registerAllied(){
-        methods.awaitToFindElement("allied", 3);
+        methods.waitingForElement("allied", 3);
         methods.clickElement("allied");
-        methods.awaitToFindElement("alliedRegistry", 5);
+        methods.waitingForElement("alliedRegistry", 5);
         methods.clickElement("alliedRegistry");
     }
 

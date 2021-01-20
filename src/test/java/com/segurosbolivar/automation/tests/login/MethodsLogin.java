@@ -12,18 +12,20 @@ public class MethodsLogin extends BaseTest {
 
 
     public void clickOnEntry(){
-        methods.awaitToFindElement("entryUser", 5);
+        System.out.println("entro");
+        methods.waitForPageLoad();
+        methods.waitingForElement("entryUser", 60);
         methods.clickElement("entryUser");
     }
 
     public void clickOnRemember(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("defaultCheckIn", 120);
+        methods.waitingForElement("defaultCheckIn", 120);
         methods.clickElement("defaultCheckIn");
     }
 
     public void loginPerson(){
-        methods.awaitToFindElement("loginPerson", 5);
+        methods.waitingForElement("loginPerson", 5);
         methods.clickElement("loginPerson");
     }
 

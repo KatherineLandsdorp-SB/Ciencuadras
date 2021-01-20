@@ -154,7 +154,6 @@ public class Methods extends BaseTest {
 
     //Esperar un elemento n segundos
     public void awaitToFindElement(String entity, int seconds) {
-        WebElement element = null;
         field = (JSONObject) driverFacade.JsonFile().get(entity);
 
         await().atMost(seconds, TimeUnit.SECONDS)

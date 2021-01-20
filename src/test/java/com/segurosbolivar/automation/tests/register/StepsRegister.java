@@ -23,6 +23,18 @@ public class StepsRegister extends BaseTest {
         return this;
     }
 
+    @Step("The user clicks on the register Link in the Popup")
+    public StepsRegister clickAllied(){
+        MethodsRegister.registerAllied();
+        return this;
+    }
+
+    @Step("The user fill all the required fields allied")
+    public StepsRegister fillAllAllied(){
+        MethodsRegister.fillAllTheRequiredFieldsAllied();
+        return this;
+    }
+
     @Step("The user fill all the required fields")
     public StepsRegister fillAll(){
         MethodsRegister.fillAllTheRequiredFields();

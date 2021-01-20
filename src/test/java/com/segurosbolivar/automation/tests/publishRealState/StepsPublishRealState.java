@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class StepsPublishRealState {
-    private MethodsPublishRealState MethodsPublishRealState;
+ /*   private MethodsPublishRealState MethodsPublishRealState;
     private SharedMethods methods = new SharedMethods();
 
     @Step()
@@ -109,6 +109,6 @@ public class StepsPublishRealState {
         assertTrue(MethodsPublishRealState.validateRadioButtonRentSale());
         return this;
     }
-
+*/
 
 }

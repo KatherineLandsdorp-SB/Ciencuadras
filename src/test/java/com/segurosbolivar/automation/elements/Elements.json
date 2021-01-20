@@ -225,28 +225,492 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-checkbox-55\"]/label/span"
   },
-  "": {
+
+  "buttonPublishProperty": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/a[@href='/publicar'])[1]"
+  },
+  "buttonKnowPublish": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/a[@href='/publicar'])[2]"
+  },
+  "buttonSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p[contains(text(),'VENDER')]"
+  },
+  "buttonPublishYourself": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div//button[text()='PUBLICA TÚ MISMO']"
+  },
+  "buttonRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/button[text()='CON INMOBILIARIA']"
+  },
+  "labelAccompaniment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/span[@class='label-desktop ng-star-inserted'])[1]"
+  },
+  "checkDoneStepOne": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[1]"
+  },
+  "labelChoosePlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='label-desktop ng-star-inserted'])[2]"
+  },
+  "checkDoneStepTwo": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[2]"
+  },
+  "labelPublish": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='label-desktop ng-star-inserted'])[3]"
+  },
+  "checkDoneThree": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[3]"
+  },
+  "labelPay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='label-desktop ng-star-inserted'])[4]"
+  },
+  "checkDoneStepFour": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[4]"
+  },
+  "buttonBackTracking": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[text()='ATRÁS'])[1]"
+  },
+  "buttonBack": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[text()='ATRÁS'])[2]"
+  },
+  "buttonBasicPlan": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "sale-button"
+  },
+  "buttonBasicAddToCar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[@class='btn select-btn basico' and //button[contains(text(),'AÑADIR AL CARRITO')]]"
+  },
+  "buttonFeaturedPlan": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "rent-button"
+  },
+  "inputCityCoverage": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//*[@id=\"ciudad\"])[2]"
+  },
+  "buttonCnfirmCoverage": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/button[contains (text(), 'CONFIRMAR')])"
+  },
+  "buttonContinueCoverage": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/button[contains (text(), 'CONTINUAR')])[6]"
+  },
+  "texConfirmedCity": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/p[@class='confirmed-coverage__text'"
+  },
+  "textOutCoverage": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div//h3[@class='out-of-coverage__title']"
+  },
+  "buttonAddToCar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[@class='btn destacado' and //button[contains(text(),'AÑADIR AL CARRITO')]]"
+  },
+  "inputNameRegister": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/input[@id='name' and @name='nameRegister']"
+  },
+  "inputMail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/input[@id='email' and @name='mailRegister']"
+  },
+  "inputPhone": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/input[@id='cellphone' and @name='cellphone']"
+  },
+  "inputCityReallSate": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/input[@id='ciudad' and @name='ciudad'])[2]"
+  },
+  "selectCity": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='mat-option-text'])[1]"
+  },
+  "radioButtonRent": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div[@class='mat-radio-label-content'])[1]"
+  },
+  "radioButtonSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div[@class='mat-radio-label-content'])[2]"
+  },
+  "radioButtonRentSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div[@class='mat-radio-label-content'])[3]"
+  },
+  "buttonConfirm": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains (text(), 'CONFIRMAR')]"
+  },
+  "textConfirmation": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/h5[text()='¡Nos encanta ayudarte!']"
+  },
+  "buttonUnderstood": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/a[@class='btn btn-default']"
+  },
+  "texMissingPhone": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Ingresa un número de celular')]"
+  },
+  "texMissingMail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Ingresa un correo electrónico')]"
+  },
+  "textMissingName": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Ingresa tu nombre')]"
+  },
+  "captchaRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "/html/body/div[2]/div[3]/div[1]/div/div/span"
+  },
+  "buttonTracking3": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"cdk-step-label-0-2\"]/div[2]/div/span"
+  },
+  "selectStudioApartment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"propertyTypeId\"]/div/div[1]/span/span"
+  },
+  "selectHouse": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"propertyTypeId\"]/div/div[1]/span/span"
+  },
+  "selectRent": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-button-toggle-73-button\"]/div/span"
+  },
+  "buttonPublishSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/span[text()='Venta']"
+  },
+  "inputSalePrice": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id=\"sellingPrice\"]"
+  },
+  "inputValueRent": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "leasingFee"
+  },
+  "inputAdministrationValue": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "administrationValue"
+  },
+  "buttonPublishProperty": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/a[@href='/publicar'])[1]"
+  },
+  "buttonKnowPublish": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/a[@href='/publicar'])[2]"
+  },
+  "buttonSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p[contains(text(),'VENDER')]"
+  },
+  "buttonPublishYourself": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div//button[text()='PUBLICA TÚ MISMO']"
+  },
+  "buttonRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/button[text()='CON INMOBILIARIA']"
+  },
+  "labelAccompaniment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/span[@class='label-desktop ng-star-inserted'])[1]"
+  },
+  "checkDoneStepOne": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[1]"
+  },
+  "labelChoosePlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='label-desktop ng-star-inserted'])[2]"
+  },
+  "checkDoneStepTwo": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[2]"
+  },
+  "labelPublish": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='label-desktop ng-star-inserted'])[3]"
+  },
+  "checkDoneThree": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[3]"
+  },
+  "labelPay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='label-desktop ng-star-inserted'])[4]"
+  },
+  "checkDoneStepFour": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//mat-icon[contains(text(),'done')])[4]"
+  },
+  "buttonBackTracking": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[text()='ATRÁS'])[1]"
+  },
+  "buttonBack": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[text()='ATRÁS'])[2]"
+  },
+  "buttonBasicPlan": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "sale-button"
+  },
+  "buttonBasicAddToCar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[@class='btn select-btn basico' and //button[contains(text(),'AÑADIR AL CARRITO')]]"
+  },
+
+  "inputNameRegister": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/input[@id='name' and @name='nameRegister']"
+  },
+  "inputMail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/input[@id='email' and @name='mailRegister']"
+  },
+  "inputPhone": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/input[@id='cellphone' and @name='cellphone']"
+  },
+  "inputCityReallSate": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/input[@id='ciudad' and @name='ciudad'])[2]"
+  },
+  "selectCity": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='mat-option-text'])[1]"
+  },
+  "radioButtonRent": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div[@class='mat-radio-label-content'])[1]"
+  },
+  "radioButtonSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div[@class='mat-radio-label-content'])[2]"
+  },
+  "radioButtonRentSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div[@class='mat-radio-label-content'])[3]"
+  },
+  "buttonConfirm": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains (text(), 'CONFIRMAR')]"
+  },
+  "textConfirmation": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/h5[text()='¡Nos encanta ayudarte!']"
+  },
+  "buttonUnderstood": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/a[@class='btn btn-default']"
+  },
+  "texMissingPhone": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Ingresa un número de celular')]"
+  },
+  "texMissingMail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Ingresa un correo electrónico')]"
+  },
+  "textMissingName": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Ingresa tu nombre')]"
+  },
+  "captchaRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "/html/body/div[2]/div[3]/div[1]/div/div/span"
+  },
+  "buttonTracking3": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"cdk-step-label-0-2\"]/div[2]/div/span"
+  },
+  "selectStudioApartment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"propertyTypeId\"]/div/div[1]/span/span"
+  },
+  "selectHouse": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"propertyTypeId\"]/div/div[1]/span/span"
+  },
+  "selectRent": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-button-toggle-73-button\"]/div/span"
+  },
+  "buttonPublishSale": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/span[text()='Venta']"
+  },
+  "inputSalePrice": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id=\"sellingPrice\"]"
+  },
+  "inputValueRent": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "leasingFee"
+  },
+  "inputAdministrationValue": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "administrationValue"
+  },
+  "alertValueAdministration": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[contains(text(),' El campo Valor de la administración Es Obligatorio')]"
+  },
+  "inputAntiquity": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "antiquity"
+  },
+  "sliderAdministration": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "form_elem"
+  },
+  "inputDescription": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/textarea"
+  },
+  "buttonStratum": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button/div[contains(text(), '3')]"
+  },
+  "inputArea": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "builtArea"
+  },
+  "inputCity": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "ciudad"
+  },
+  "inputDistric": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "barrio"
+  },
+  "inputAdress": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "address"
+  },
+  "checkAdress": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Confirmar ubicación del inmueble.')]"
+  },
+  "inputEmail": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "email"
+  },
+  "listTypeDocument": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "documentType"
+  },
+  "listCedula": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[contains(text(),'Cédula de ciudadanía')])[2]"
+  },
+  "inputIdentification": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "identification"
+  },
+  "inputName": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "name"
+  },
+  "inputLastName": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "last-name"
+  },
+  "inputCellPhone": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "cellphone"
+  },
+  "password": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "inputPasswordEndRegister"
+  },
+  "password-confirm": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "inputPasswordConfirm"
+  },
+  "buttonContinue": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(), 'CONTINUAR')]"
+  },
+  "buttonAddPhoto": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mediaInfo\"]/fieldset/div[2]/div[1]/div/div/input-file/div/div/div/button"
+  },
+  "headerSummary": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//h3[contains(text(),'Resumen de tu compra')])[2]"
+  },
+  "texNav": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p[contains (text(),'Disculpa no hemos podido ubicar tu inmueble, por favor revisa tu direccion')]"
+  },
+  "inputImage": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"ngx-input-file-0\"]"
+  },
+  "buttonContinuePhoto": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[contains(text(), 'CONTINUAR')])[2]"
+  },
+  "Element": {
     "GetFieldBy": "Xpath",
     "ValueToFind": ""
   },
-  "": {
+  "Element": {
     "GetFieldBy": "Xpath",
     "ValueToFind": ""
   },
-  "": {
+  "Element": {
     "GetFieldBy": "Xpath",
     "ValueToFind": ""
   },
-  "": {
+  "Element": {
     "GetFieldBy": "Xpath",
     "ValueToFind": ""
   },
-  "": {
+  "Element": {
     "GetFieldBy": "Xpath",
     "ValueToFind": ""
   },
-  "": {
+  "Element": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "Element": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "Element": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": ""
+  },
+  "Element": {
     "GetFieldBy": "Xpath",
     "ValueToFind": ""
   }
+
+
 }

@@ -2,11 +2,15 @@ package com.segurosbolivar.automation.tests.publishRealState;
 
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
 public class MethodsPublishRealState extends BaseTest {
-    Methods services = new Methods();
+  /*  //Methods services = new Methods();
+    private Methods methods = new Methods();
+    private SharedMethods shared = new SharedMethods();
 
     public void registerName(String name) {
+        methods.
         driverFacade.waitForVisibilityOfElement(inputNameRegister);
         inputNameRegister.click();
         inputNameRegister.sendKeys(name);
@@ -95,5 +99,5 @@ public class MethodsPublishRealState extends BaseTest {
         present = services.validationElementEnable(radioButtonRentSale);
         return present;
     }
-
+*/
 }

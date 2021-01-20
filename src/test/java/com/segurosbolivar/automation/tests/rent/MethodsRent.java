@@ -3,11 +3,9 @@ package com.segurosbolivar.automation.tests.rent;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
+
 
 public class MethodsRent extends BaseTest {
-    //protected Methods methods = new Methods();
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 

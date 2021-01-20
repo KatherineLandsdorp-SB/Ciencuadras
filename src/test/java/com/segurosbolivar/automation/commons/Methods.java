@@ -11,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -160,7 +161,7 @@ public class Methods extends BaseTest {
                 .pollInterval(Duration.ONE_SECOND)
                 .until(() -> {
                     try {
-                        driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind")));
+                        driverFacade.getWebDriver().findElement(By.id((String) field.get("ValueToFind")));
                         return true;
                     } catch (NoSuchElementException e) {
                         return false;
@@ -170,10 +171,11 @@ public class Methods extends BaseTest {
 
 
     //Validar si un elemento esta disponible
-    public boolean validationElementEnable(WebElement webElement) {
+    public boolean validationElementEnable(String entity) {
+        WebElement elemen = getEntity(entity);
         boolean element = false;
         try {
-            element = webElement.isEnabled();
+            element = elemen.isEnabled();
             System.out.println("Is disponible");
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -193,10 +195,26 @@ public class Methods extends BaseTest {
         try {
             elemen = element.isSelected();
         } catch (Exception e) {
-            System.out.println("El elemento no se encuentra seleccionado"+e.getMessage());
+            System.out.println("El elemento no se encuentra seleccionado" + e.getMessage());
         }
         if (elemen) {
-            System.out.println("El elemento" +entity+ "seleccionado");
+            System.out.println("El elemento" + entity + "seleccionado");
+        } else {
+            System.out.println(element + "Validar el elemento, no se encontro");
+        }
+        return elemen;
+    }
+
+    public boolean validationElementDisplayed(String entity) {
+        WebElement element = getEntity(entity);
+        boolean elemen = false;
+        try {
+            elemen = element.isDisplayed();
+        } catch (Exception e) {
+            System.out.println("El elemento no se encuentra seleccionado" + e.getMessage());
+        }
+        if (elemen) {
+            System.out.println("El elemento" + entity + "seleccionado");
         } else {
             System.out.println(element + "Validar el elemento, no se encontro");
         }
@@ -261,9 +279,9 @@ public class Methods extends BaseTest {
 
 // fin metodos scroll
 
-    public void selectList(String entity, String text){
+    public void selectList(String entity, String text) {
         WebElement element = getEntity(entity);
-        Select selecList= new Select(element);
+        Select selecList = new Select(element);
         selecList.selectByVisibleText(services.getField(text));
 
     }
@@ -300,6 +318,11 @@ public class Methods extends BaseTest {
         getEntity(entity).click();
         getEntity(entity).clear();
         getEntity(entity).sendKeys(text);
+    }
+
+    //Enviar enter
+    public void sendKeysEnter(String entity) {
+        getEntity(entity).sendKeys(Keys.ENTER);
     }
     /* ============================================================= */
     /* =================== FIN COMMONS GLOBALES ==================== */
@@ -338,26 +361,59 @@ public class Methods extends BaseTest {
     //Metodo para completar formularios de busqueda
     public void keyDown(String entity) throws InterruptedException {
         waitingForElement(entity, 5);
-        // Thread.sleep(3000);
         getEntity(entity).sendKeys(Keys.ARROW_DOWN);
         getEntity(entity).sendKeys(Keys.ENTER);
         waitingForElement(entity, 5);
         Thread.sleep(3000);
 
     }
+
     // Metodo para seleccionar elemento a partir del xpath
     public void angularMaterialDrop(String entity, String search) {
         WebElement element = getEntity(entity);
         driverFacade.waitForVisibilityOfElement(element);
-        driverFacade.getWebDriver().findElement(By.xpath("//*[@id=\"bnt-filter-1\"]/a["+search+"]")).click();
-        System.out.println("se realiza xpath"+"//*[@id=\"bnt-filter-1\"]/a["+search+"]");
+        driverFacade.getWebDriver().findElement(By.xpath("//*[@id=\"bnt-filter-1\"]/a[" + search + "]")).click();
+        System.out.println("se realiza xpath" + "//*[@id=\"bnt-filter-1\"]/a[" + search + "]");
 
-}
-    public boolean elementListSelected( String value) {
-        Boolean checkSelenium = driverFacade.getWebDriver().findElement(By.xpath("//*[@id=\"bnt-filter-1\"]/a["+value+"]")).isSelected();
-        System.out.println("variable"+checkSelenium);
+    }
+
+    public boolean elementListSelected(String value) {
+        Boolean checkSelenium = driverFacade.getWebDriver().findElement(By.xpath("//*[@id=\"bnt-filter-1\"]/a[" + value + "]")).isSelected();
+        System.out.println("variable" + checkSelenium);
         return checkSelenium;
     }
+
+    // Mètodo para limpiar texto
+    public String clearText(String entity, String oldText, String newText) {
+        String replace = getEntity(entity).getText().replaceAll(oldText, newText);
+        return replace;
+    }
+
+    // Metodo para obtener texto de elemento web
+    public String getTextElement(String entity) {
+        WebElement element = getEntity(entity);
+        String text = getEntity(entity).getText();
+        return text;
+    }
+
+    //Metodo para realizar carga de imagen guardada en ruta del proyecto
+    public void uploadFileImage(int Intentos, int Veces, String entity) {
+        //String path = System.getProperty("user.dir");
+        while (Intentos <= Veces) {
+            //System.out.println(path + "esta ingresando a cargar la imagen");
+            // inputImage.sendKeys(path + "/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
+            getEntity(entity).sendKeys(getFile());
+            pause(10);
+            System.out.println("Valor de Intentos : " + Intentos + getFile());
+            Intentos++;
+        }
+    }
+
+    //Metodo para obtener ruta absoluta local
+    String getFile() {
+        return new File("./src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png").getAbsolutePath();
+    }
+
 
 }
 

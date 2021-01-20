@@ -2,26 +2,25 @@ package com.segurosbolivar.automation.tests.PublishHome;
 
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
 public class MethodsPublishHome extends BaseTest {
-    Methods services = new Methods();
+    private Methods methods = new Methods();
+    private SharedMethods shared = new SharedMethods();
 
     public boolean validateButtonKnowHowPublish() {
-        boolean present;
-        present = services.validationElementEnable(buttonKnowPublish);
+        boolean present=methods.validationElementEnable("buttonKnowPublish");
         return present;
     }
 
     public boolean validateButtonPublishProperty() {
-        boolean present;
-        present = services.validationElementEnable(buttonPublishProperty);
+        boolean present= methods.validationElementEnable("buttonPublishProperty");
         return present;
     }
 
     public boolean validateLabelAccompainment(){
-        driverFacade.waitForVisibilityOfElement(labelAccompaiment);
-        boolean present;
-        present=labelAccompaiment.isDisplayed();
+        methods.waitingForElement("labelAccompaiment",10);
+        boolean present= methods.validationElementDisplayed("labelAccompaiment");
         return present;
     }
 }

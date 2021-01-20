@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class RunnerPublishRealState extends Hooks {
     ThreadLocal<StepsPublishRealState> steps = ThreadLocal.withInitial(StepsPublishRealState::new);
 
-
+/*
    @Test(priority = 1)
     public void publihsRealStateexitosoSuccssful() {
         steps.get().clickPublish();
@@ -92,4 +92,6 @@ public class RunnerPublishRealState extends Hooks {
         steps.get().validationRadioButtonRent();
        steps.get().validationRadioButtonRentSale();
     }
+
+ */
 }

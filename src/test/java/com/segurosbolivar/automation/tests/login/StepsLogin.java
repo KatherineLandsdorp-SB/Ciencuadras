@@ -3,8 +3,7 @@ package com.segurosbolivar.automation.tests.login;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
-import org.apache.commons.lang3.StringUtils;
-import org.testng.Assert;
+;
 
 import static org.testng.Assert.assertEquals;
 

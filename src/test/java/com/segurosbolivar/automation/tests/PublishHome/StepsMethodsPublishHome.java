@@ -8,7 +8,8 @@ import static org.testng.Assert.assertTrue;
 
 public class StepsMethodsPublishHome {
     private MethodsPublishHome MethodsPublishHome;
-    private SharedMethods RecicleableMethodsCiencuadras;
+
+    private SharedMethods sharemethods = new SharedMethods();
 
 
     @Step()
@@ -23,8 +24,9 @@ public class StepsMethodsPublishHome {
     }
     @Step()
     public void clickButtonKnowPublish(){
-        RecicleableMethodsCiencuadras=new SharedMethods();
-        RecicleableMethodsCiencuadras.clickOnKnowHowPublish();;
+
+        sharemethods.clickOnKnowHowPublish();
+
     }
     @Step()
     public void validateLabelAccompaiment(){

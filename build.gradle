@@ -57,6 +57,12 @@ tasks.named('test') {
     }
 }
 
+/* Implementacion para generar jar
+*  donde se guarda:  /build/libs/
+*  construir jar : gradle assemble
+*  ejecutar jar: java -jar /build/libs/<nombre>.jar
+*
+*/
 mainClassName = "com.segurosbolivar.automation.TestClass"
 
 jar {

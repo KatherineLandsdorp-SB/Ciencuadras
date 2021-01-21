@@ -11,7 +11,6 @@ public class Elements {
     protected DriverFacade webDriverFacade;
 
     /* ========== Login ========= */
-
     @FindBy(xpath = "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]")
     public static WebElement entryUser;
 

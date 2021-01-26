@@ -12,7 +12,6 @@ public class MethodsLogin extends BaseTest {
 
 
     public void clickOnEntry(){
-        System.out.println("entro");
         methods.waitForPageLoad();
         methods.waitingForElement("entryUser", 60);
         methods.clickElement("entryUser");

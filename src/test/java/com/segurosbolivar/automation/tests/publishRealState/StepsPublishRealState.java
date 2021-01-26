@@ -1,114 +1,109 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.tests.publishProperty.StepsPublishProperty;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class StepsPublishRealState {
- /*   private MethodsPublishRealState MethodsPublishRealState;
-    private SharedMethods methods = new SharedMethods();
+public class StepsPublishRealState extends BaseTest {
+    private MethodsPublishRealState MethodsPublishRealState= new MethodsPublishRealState();
+    private SharedMethods sharemethods = new SharedMethods();
 
-    @Step()
-    public StepsPublishRealState clickPublish() {
-        methods.clickOnPublish();
+    @Step("The user clicks on the sale button in the home")
+    public StepsPublishRealState clickButtonSaleHome() {
+        sharemethods.clickOnButtonSaleHome();
+        return this;
+
+    }
+
+    @Step("The user clicks on the offer button in the home")
+    public StepsPublishRealState clickButtonOfferHome() {
+        sharemethods.clickOnButtonOfferHome();
         return this;
     }
 
-    @Step()
+    @Step("The user click on the button publih with Real State")
     public StepsPublishRealState clickRealState() {
-        methods.publishRealState();
+        sharemethods.publishRealState();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState fillInName(String name) {
-        MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.registerName(name);
+    @Step("Register name in form publish with real state")
+    public StepsPublishRealState fillInName() {
+        MethodsPublishRealState.registerName();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState fillInMail(String mail) {
-        MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.registerMail(mail);
+    @Step("Register email in form publish with real state")
+    public StepsPublishRealState fillInMail() {
+        MethodsPublishRealState.registerMail();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState fillInPhones(String phone) {
-        MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.registerPhone(phone);
+    @Step("Step(Register cellphone in form publish with real state)")
+    public StepsPublishRealState fillInPhones() {
+        MethodsPublishRealState.registerPhone();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState fillInCitu(String city) {
-        MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.registerCity(city);
+    @Step("Register city in form publish with real state)")
+    public StepsPublishRealState fillInCity() throws InterruptedException {
+        MethodsPublishRealState.registerCity();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState selectCity(){
-        MethodsPublishRealState = new MethodsPublishRealState();
-        MethodsPublishRealState.selectCity();
-        return this;
-    }
 
-    @Step()
+    @Step("select rent transaction form publish with real state")
     public StepsPublishRealState selectSale() {
-        MethodsPublishRealState = new MethodsPublishRealState();
         MethodsPublishRealState.clickButtonSale();
         return this;
     }
 
-    @Step()
+    @Step("click on button confirm in form publish with real state")
     public StepsPublishRealState clickConfirmation() {
-        MethodsPublishRealState = new MethodsPublishRealState();
         MethodsPublishRealState.clickButtonConfirm();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState validationButton(String button) {
-        MethodsPublishRealState = new MethodsPublishRealState();
-        assertEquals(MethodsPublishRealState.validateElement(), button);
+    @Step("Validate text button Understood to end the form publish with real state")
+    public StepsPublishRealState validationTextButtonUnderstand() {
+        assertEquals(MethodsPublishRealState.validateElement(), services.getField("sanityUnderstand"));
         return this;
     }
 
-    @Step()
+    @Step("click on button Understood")
     public StepsPublishRealState clickButtonUnderstood() {
-        MethodsPublishRealState = new MethodsPublishRealState();
         MethodsPublishRealState.clickButtonUnderstood();
         return this;
     }
 
-    @Step()
-    public StepsPublishRealState validationDataMandatory(String button) {
-        MethodsPublishRealState = new MethodsPublishRealState();
-        assertEquals(MethodsPublishRealState.validateDataMandatory(), button);
+    @Step("validate mandatory button confirm")
+    public StepsPublishRealState validationDataMandatory() {
+        assertEquals(MethodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
         return this;
     }
-    @Step()
+
+    @Step("validate existence radio button sale")
     public StepsPublishRealState validationRadioButtonSale() {
-        MethodsPublishRealState = new MethodsPublishRealState();
         assertTrue(MethodsPublishRealState.validateRadioButtonSale());
         return this;
     }
-    @Step()
+
+    @Step("validate existence radio button rent")
     public StepsPublishRealState validationRadioButtonRent() {
-        MethodsPublishRealState = new MethodsPublishRealState();
+
         assertTrue(MethodsPublishRealState.validateRadioButtonRent());
         return this;
     }
-    @Step()
+
+    @Step("validate existence radio button rent and sale")
     public StepsPublishRealState validationRadioButtonRentSale() {
-        MethodsPublishRealState = new MethodsPublishRealState();
         assertTrue(MethodsPublishRealState.validateRadioButtonRentSale());
         return this;
     }
-*/
+
 
 }

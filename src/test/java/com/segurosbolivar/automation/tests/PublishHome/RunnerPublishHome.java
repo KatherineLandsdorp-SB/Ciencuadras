@@ -17,9 +17,4 @@ public class RunnerPublishHome extends Hooks {
         steps.get().validateButtonKnowPublish();
     }
 
-    @Test(priority = 3)
-    public void validateStepOneTracking(){
-        steps.get().clickButtonKnowPublish();
-        steps.get().validateLabelAccompaiment();
-    }
 }

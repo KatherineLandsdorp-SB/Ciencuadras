@@ -18,9 +18,5 @@ public class MethodsPublishHome extends BaseTest {
         return present;
     }
 
-    public boolean validateLabelAccompainment(){
-        methods.waitingForElement("labelAccompaiment",10);
-        boolean present= methods.validationElementDisplayed("labelAccompaiment");
-        return present;
-    }
+
 }

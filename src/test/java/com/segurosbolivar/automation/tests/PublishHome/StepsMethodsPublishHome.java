@@ -1,18 +1,19 @@
 package com.segurosbolivar.automation.tests.PublishHome;
 
+import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertTrue;
 
 
-public class StepsMethodsPublishHome {
+public class StepsMethodsPublishHome extends BaseTest {
     private MethodsPublishHome MethodsPublishHome;
 
     private SharedMethods sharemethods = new SharedMethods();
 
 
-    @Step()
+    @Step("Validate existence button publish property")
     public void validateButtonPublishProperty(){
         MethodsPublishHome= new MethodsPublishHome();
         assertTrue( MethodsPublishHome.validateButtonPublishProperty());
@@ -24,15 +25,10 @@ public class StepsMethodsPublishHome {
     }
     @Step()
     public void clickButtonKnowPublish(){
-
         sharemethods.clickOnKnowHowPublish();
 
     }
-    @Step()
-    public void validateLabelAccompaiment(){
-        MethodsPublishHome=new MethodsPublishHome();
-        assertTrue(MethodsPublishHome.validateLabelAccompainment());
-    }
+
 
 
 }

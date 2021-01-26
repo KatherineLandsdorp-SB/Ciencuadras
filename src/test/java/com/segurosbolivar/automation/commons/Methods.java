@@ -269,6 +269,12 @@ public class Methods extends BaseTest {
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("window.scrollBy(0,500)", element);
 
     }
+    public void doScroll(int x, String entity){
+        for (int i=0; i <=x; i++){
+            pause(2);
+            scrollToPixel(entity);
+        }
+    }
 
     public void scrollToEndPage() {
 
@@ -397,10 +403,7 @@ public class Methods extends BaseTest {
 
     //Metodo para realizar carga de imagen guardada en ruta del proyecto
     public void uploadFileImage(int Intentos, int Veces, String entity) {
-        //String path = System.getProperty("user.dir");
         while (Intentos <= Veces) {
-            //System.out.println(path + "esta ingresando a cargar la imagen");
-            // inputImage.sendKeys(path + "/src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png");
             getEntity(entity).sendKeys(getFile());
             pause(10);
             System.out.println("Valor de Intentos : " + Intentos + getFile());

@@ -13,9 +13,15 @@ public class StepsPublishProperty extends BaseTest {
     private MethodsPublishProperty methodsPublishProperty = new MethodsPublishProperty();
     private SharedMethods sharemethods = new SharedMethods();
 
-    @Step("The user clicks on the publish button in the home")
+    @Step("The user clicks on the sale button in the home")
     public StepsPublishProperty clickButtonSaleHome() {
         sharemethods.clickOnButtonSaleHome();
+        return this;
+
+    }
+    @Step("The user clicks on the offer button in the home")
+    public StepsPublishProperty clickButtonOfferHome() {
+        sharemethods.clickOnButtonOfferHome();
         return this;
 
     }
@@ -104,6 +110,11 @@ public class StepsPublishProperty extends BaseTest {
         methodsPublishProperty.clickOnButtonBackTracking();
         return this;
     }
+    @Step("The user click on button back de tracking")
+    public StepsPublishProperty clickOnButtonBackFomr() {
+        methodsPublishProperty.clickBackForm();
+        return this;
+    }
 
     @Step("The user click on button back")
     public StepsPublishProperty clickOnButtonBack() {
@@ -190,6 +201,11 @@ public class StepsPublishProperty extends BaseTest {
         methodsPublishProperty.registerAdress();
         return this;
     }
+    @Step("The user registered the city adress")
+    public StepsPublishProperty registerWrongCityAdress() {
+        methodsPublishProperty.registerWrongAddress();
+        return this;
+    }
 
     @Step("The user confirm the city adress registered")
     public StepsPublishProperty confirmAdress() throws InterruptedException {
@@ -197,9 +213,14 @@ public class StepsPublishProperty extends BaseTest {
         return this;
     }
 
-    @Step("The user registered")
-    public StepsPublishProperty regisStepsUserEmail() throws InterruptedException {
+    @Step("The user registered your email")
+    public StepsPublishProperty regisStepsNewUserEmail() throws InterruptedException {
         methodsPublishProperty.registerEmailNewUser();
+        return this;
+    }
+    @Step("The user registered email registered")
+    public StepsPublishProperty regisStepsOldUserEmail() throws InterruptedException {
+        methodsPublishProperty.registerEmailOldUser();
         return this;
     }
 
@@ -244,6 +265,11 @@ public class StepsPublishProperty extends BaseTest {
         methodsPublishProperty.registerConfirmPassword();
         return this;
     }
+    @Step("The user confirmed the password")
+    public StepsPublishProperty registerPasswordOldUser() {
+        methodsPublishProperty.registerPasswordOldUser();
+        return this;
+    }
 
     @Step("The user click on button continue")
     public StepsPublishProperty clickOnButtonContinue() throws InterruptedException {
@@ -254,6 +280,11 @@ public class StepsPublishProperty extends BaseTest {
     @Step("The user regitstered city whit coverage")
     public StepsPublishProperty registerCityCoverage() throws InterruptedException {
         methodsPublishProperty.registerCityCoverage();
+        return this;
+    }
+    @Step("The user regitstered city whit coverage")
+    public StepsPublishProperty registerCityOutCoverage() throws InterruptedException {
+        methodsPublishProperty.registerCityOutCoverage();
         return this;
     }
 

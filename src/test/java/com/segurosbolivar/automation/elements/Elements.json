@@ -234,9 +234,13 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//div/a[@href='/publicar'])[2]"
   },
-  "buttonSale": {
+  "buttonSaleHome": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//p[contains(text(),'VENDER')]"
+  },
+  "buttonOfferHome": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p[contains(text(),'OFRECER')]"
   },
   "buttonPublishYourself": {
     "GetFieldBy": "Xpath",
@@ -312,11 +316,11 @@
   },
   "texConfirmedCity": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//div/p[@class='confirmed-coverage__text'"
+    "ValueToFind": "//p[contains(text(),'Hemos confirmado la cobertura en la ciudad seleccionada!')]"
   },
   "textOutCoverage": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//div//h3[@class='out-of-coverage__title']"
+    "ValueToFind": "//p[contains(text(),'Lo sentimos, aún no tenemos disponibilidad en la zona que seleccionaste.')]"
   },
   "buttonAddToCar": {
     "GetFieldBy": "Xpath",
@@ -485,11 +489,15 @@
   },
   "password": {
     "GetFieldBy": "Id",
-    "ValueToFind": "inputPasswordEndRegister"
+    "ValueToFind": "password"
   },
-  "password-confirm": {
+  "inputPasswordConfirm": {
     "GetFieldBy": "Id",
-    "ValueToFind": "inputPasswordConfirm"
+    "ValueToFind": "password-confirm"
+  },
+  "passwordOldUser": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "password"
   },
   "buttonContinue": {
     "GetFieldBy": "Xpath",
@@ -514,5 +522,13 @@
   "buttonContinuePhoto": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//button[contains(text(), 'CONTINUAR')])[2]"
+  },
+  "divFormPublication": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "formInfo"
+  },
+  "divPublish": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"cdk-step-content-0-0\"]/app-options-content/div/div/div"
   }
 }

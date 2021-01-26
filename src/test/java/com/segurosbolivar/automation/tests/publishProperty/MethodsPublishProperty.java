@@ -16,7 +16,6 @@ public class MethodsPublishProperty extends BaseTest {
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 
-    //RecicleableMethodsCiencuadras methodsRecicleables = new RecicleableMethodsCiencuadras();
 
     public boolean validateLabelAccompaniment() {
         methods.waitingForElement("labelAccompaniment", 10);
@@ -68,10 +67,11 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void clickOnButtonBackTracking() {
-        methods.pause(10);
-        methods.scrollToPixel("inputAntiquity");
+        methods.doScroll(7,"divFormPublication");
         methods.clickElement("buttonBackTracking");
-        System.out.println("entro aqui" + methods.getEntity("buttonBackTracking"));
+    }
+    public void clickBackForm() {
+        methods.clickElement("buttonBackTracking");
     }
 
     public void clickButtonBack() {
@@ -84,13 +84,14 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerRentValue() {
+        methods.waitingForElement("inputValueRent",60);
         methods.sendKeysText("inputValueRent", services.getField("sanityValueRent"));
-        //driverFacade.getWebDriver().findElement(By.id("leasingFee")).sendKeys("200");
+
 
     }
 
     public void registerSalePrice() {
-        methods.waitingForElement("inputSalePrice", 10);
+        methods.waitingForElement("inputSalePrice", 60);
         methods.sendKeysText("inputSalePrice", services.getField("sanityValueSale"));
 
     }
@@ -102,7 +103,7 @@ public class MethodsPublishProperty extends BaseTest {
 
     public String validateMandatoryValueAdministration() {
         methods.waitingForElement("alertValueAdministration", 10);
-        String text = methods.clearText("alertValueAdministration", "[ó]", "0");
+        String text = methods.clearText("alertValueAdministration", "[ó]", "o");
         return text;
     }
 
@@ -117,12 +118,12 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerAntiquityProperty() {
-        methods.waitingForElement("inputAntiquity", 10);
         methods.sendKeysText("inputAntiquity", services.getField("sanityAntiquity"));
     }
 
     public void registerArea() {
         methods.sendKeysText("inputArea", services.getField("sanityArea"));
+        methods.doScroll(1,"divFormPublication");
     }
 
     public void registerDescriptionProperty() {
@@ -135,16 +136,27 @@ public class MethodsPublishProperty extends BaseTest {
 
     public void registerCityProperty() throws InterruptedException {
         methods.sendKeysText("inputCity", services.getField("sanityCity"));
-        methods.waitingForElement("selectCity", 10);
-        methods.keyDown("selectCity");
+        methods.pause(2);
+        methods.keyDown("inputCity");
     }
 
     public void registerDistric() throws InterruptedException {
+        methods.clickElement("inputDistric");
+        methods.pause(3);
+        methods.sendKeysText("inputDistric", services.getField("sanityDistric"));
+        methods.waitingForElement("selectCity",120);
         methods.keyDown("inputDistric");
     }
 
     public void registerAdress() {
-        methods.sendKeysText("inputAdress", services.getField("sanityDistric"));
+        methods.clickElement("inputDistric");
+        methods.pause(4);
+        methods.sendKeysText("inputAdress", services.getField("sanityAdress"));
+    }
+    public void registerWrongAddress() {
+        methods.clickElement("inputDistric");
+        methods.pause(4);
+        methods.sendKeysText("inputAdress", services.getField("sanitywrongAddress"));
     }
 
     public void confirmAdress() throws InterruptedException {
@@ -160,6 +172,7 @@ public class MethodsPublishProperty extends BaseTest {
     public void registerEmailOldUser() throws InterruptedException {
         methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
         methods.pause(8);
+        methods.doScroll(2,"divFormPublication");
     }
 
     public void registerTypeDocument() {
@@ -185,11 +198,14 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerPasswordNewUser() {
-        methods.sendKeysText("inputPassword", services.getField("sanityPassword"));
+        methods.sendKeysText("password", services.getField("sanityPassword"));
     }
 
     public void registerConfirmPassword() {
         methods.sendKeysText("inputPasswordConfirm", services.getField("sanityPassword"));
+    }
+    public void registerPasswordOldUser() {
+        methods.sendKeysText("passwordOldUser", services.getField("sanityPassword"));
     }
 
     public void clickOnButtonContinue() throws InterruptedException {
@@ -205,26 +221,34 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerCityCoverage() throws InterruptedException {
-        methods.angularMaterialAutocomplete("inputCityCoverage", services.getField("sanityCityCoverage"));
+        methods.sendKeysText("inputCityCoverage", services.getField("sanityCityCoverage"));
+        methods.pause(2);
+        methods.keyDown("inputCityCoverage");
+    }
+    public void registerCityOutCoverage() throws InterruptedException {
+        methods.sendKeysText("inputCityCoverage", services.getField("sanityOutCoverage"));
+        methods.pause(2);
+        methods.keyDown("inputCityCoverage");
     }
 
     public void clickButtonConfirmCoverageCity() {
         methods.clickElement("buttonCnfirmCoverage");
+
     }
 
     public void clickButtonContinueCoverage() {
-        methods.waitingForElement("buttonContinueCoverage", 10);
+        methods.waitingForElement("buttonContinueCoverage", 120);
         methods.clickElement("buttonContinueCoverage");
     }
 
     public String validateTextConfirmCoverage() {
-        methods.waitingForElement("texConfirmedCity", 10);
+        methods.pause(2);
         String text = methods.clearText("texConfirmedCity", "[-¡+.^:,]", "");
         return text;
     }
 
     public String validateTextOutCoverage() {
-        methods.waitingForElement("textOutCoverage", 10);
+        methods.pause(2);
         String text = methods.getTextElement("textOutCoverage");
         return text;
     }

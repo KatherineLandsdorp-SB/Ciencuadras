@@ -26,8 +26,7 @@ public class SharedMethods extends BaseTest {
     }
 
     public void clickOnPublishYourself() {
-        //methods.waitingForElement("buttonPublishYourself", 10);
-        methods.pause(10);
+        methods.doScroll(2,"divPublish");
         methods.clickElement("buttonPublishYourself");
     }
 
@@ -60,7 +59,12 @@ public class SharedMethods extends BaseTest {
     }
 
     public void clickOnButtonSaleHome() {
-        methods.clickElement("buttonSale");
+        methods.waitForPageLoad();
+        methods.clickElement("buttonSaleHome");
+    }
+    public void clickOnButtonOfferHome() {
+        methods.waitForPageLoad();
+        methods.clickElement("buttonOfferHome");
     }
 
     public void clickOnButtonAddPhoto() {
@@ -73,9 +77,11 @@ public class SharedMethods extends BaseTest {
             System.out.println("Existe elemento");
             methods.sendKeysText("inputAdministrationValue", services.getField("sanityAdminValue"));
         } else {//0, elemento no esta presente.
-            System.out.println("Elemento no existe");
+            System.out.println("El campo valor arriendo esta deshabilitado");
         }
     }
+
+
 
 
 }

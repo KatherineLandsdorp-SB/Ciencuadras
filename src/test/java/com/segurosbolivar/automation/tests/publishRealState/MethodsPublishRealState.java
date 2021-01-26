@@ -5,17 +5,14 @@ import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
 public class MethodsPublishRealState extends BaseTest {
-  /*  //Methods services = new Methods();
-    private Methods methods = new Methods();
+   /* private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 
-    public void registerName(String name) {
-        methods.
-        driverFacade.waitForVisibilityOfElement(inputNameRegister);
-        inputNameRegister.click();
-        inputNameRegister.sendKeys(name);
+    public void registerName() {
+        methods.waitingForElement("inputNameRegister",110);
+        methods.clickElement("inputNameRegister");
+        methods.sendKeysText("inputNameRegister",services.getField("sanityNameRealState"));
     }
-
     public void registerMail(String mail) {
         driverFacade.waitForVisibilityOfElement(inputMail);
         inputMail.sendKeys(mail);

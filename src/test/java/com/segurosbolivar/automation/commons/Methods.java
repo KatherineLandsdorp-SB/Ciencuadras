@@ -24,7 +24,7 @@ import java.util.function.Function;
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
 
-public class Methods extends BaseTest{
+public class Methods extends BaseTest {
     WebDriverWait wait;
     private JSONObject field;
     private int iteration;
@@ -34,13 +34,13 @@ public class Methods extends BaseTest{
     /* ============================================================= */
 
     //Buscar un elemento dada la entidad
-    public WebElement getEntity(String entity){
+    public WebElement getEntity(String entity) {
         WebElement element = null;
         field = (JSONObject) driverFacade.JsonFile().get(entity);
         try {
-            if(field != null){
+            if (field != null) {
                 String typeObject = (String) field.get("GetFieldBy");
-                switch (typeObject){
+                switch (typeObject) {
                     case "Xpath":
                         element = driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind")));
                         break;
@@ -52,13 +52,41 @@ public class Methods extends BaseTest{
                 }
                 return element;
 
-            }else{
-                System.out.println("Item not found "+ entity);
+            } else {
+                System.out.println("Item not found " + entity);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return element;
+    }
+
+    public List<WebElement> getEntities(String entity) {
+        List<WebElement> elements = new ArrayList<>();
+
+        field = (JSONObject) driverFacade.JsonFile().get(entity);
+        try {
+            if (field != null) {
+                String typeObject = (String) field.get("GetFieldBy");
+                switch (typeObject) {
+                    case "Xpath":
+                        elements = (List<WebElement>) driverFacade.getWebDriver().findElements(By.xpath((String) field.get("ValueToFind")));
+                        break;
+                    case "Id":
+                        elements = (List<WebElement>) driverFacade.getWebDriver().findElements(By.id((String) field.get("ValueToFind")));
+                        break;
+                    default:
+                        throw new Exception("typeObject case: " + typeObject + "Not found");
+                }
+                return elements;
+
+            } else {
+                System.out.println("Item not found " + entity);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return elements;
     }
 
     /* ============================================================= */
@@ -71,15 +99,15 @@ public class Methods extends BaseTest{
     /* ============================================================= */
 
     //Esperar un elemento con carga explicita
-    public WebElement waitElementExplicitTime(String entity){
+    public WebElement waitElementExplicitTime(String entity) {
         WebElement element = null;
         WebDriverWait wait = new WebDriverWait(driverFacade.getWebDriver(), 10);
         field = (JSONObject) driverFacade.JsonFile().get(entity);
         try {
-            if(field != null){
+            if (field != null) {
                 String typeObject = (String) field.get("GetFieldBy");
                 System.out.println("elemento" + field.get("ValueToFind"));
-                switch (typeObject){
+                switch (typeObject) {
                     case "Xpath":
                         element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath((String) field.get("ValueToFind"))));
                         break;
@@ -88,10 +116,10 @@ public class Methods extends BaseTest{
                 }
                 return element;
 
-            }else{
+            } else {
                 System.out.println("Item not found");
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return element;
@@ -99,11 +127,11 @@ public class Methods extends BaseTest{
 
 
     //Esperar elemento por iteraciones
-    public  void waitingForElement(String entity, int iterations)  {
+    public void waitingForElement(String entity, int iterations) {
 
         WebElement element = null;
         field = (JSONObject) driverFacade.JsonFile().get(entity);
-        if(field != null) {
+        if (field != null) {
             String typeObject = (String) field.get("GetFieldBy");
 
             try {
@@ -113,7 +141,7 @@ public class Methods extends BaseTest{
                 while (iteration < (iterations * 2) && !ElementPresent) {
                     try {
 
-                        switch (typeObject){
+                        switch (typeObject) {
                             case "Xpath":
                                 ElementPresent = driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind"))).isEnabled();
                                 break;
@@ -145,7 +173,7 @@ public class Methods extends BaseTest{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }else{
+        } else {
             System.out.println("Item not found");
         }
     }
@@ -201,53 +229,52 @@ public class Methods extends BaseTest{
         pause(6);
     }
 
-    public void switchToAnotherWindow(int windowNumber){
+    public void switchToAnotherWindow(int windowNumber) {
         List<String> windowlist = null;
         Set<String> windows = driverFacade.getWebDriver().getWindowHandles();
         windowlist = new ArrayList<String>(windows);
         String currentWindow = driverFacade.getWebDriver().getWindowHandle();
-        if (!currentWindow.equalsIgnoreCase(windowlist.get(windowNumber - 1)))
-        {
+        if (!currentWindow.equalsIgnoreCase(windowlist.get(windowNumber - 1))) {
             driverFacade.getWebDriver().switchTo().window(windowlist.get(windowNumber - 1));
         }
     }
 
     //changeWindow
-    public void changeWindow(){
+    public void changeWindow() {
         String originalWindow = driverFacade.getWebDriver().getWindowHandle();
         for (String windowHandle : driverFacade.getWebDriver().getWindowHandles()) {
-            if(!originalWindow.contentEquals(windowHandle)) {
+            if (!originalWindow.contentEquals(windowHandle)) {
                 driverFacade.getWebDriver().switchTo().window(windowHandle);
                 break;
             }
         }
     }
 
-    public void scrollTo(String entity){
+    public void scrollTo(String entity) {
         WebElement element = getEntity(entity);
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    public String elementText(String text, String type){
-        return "//"+type+"[text()='"+text+"']";
+    public String elementText(String text, String type) {
+        return "//" + type + "[text()='" + text + "']";
     }
 
-    public WebElement xpathElement(String xpath){
+    public WebElement xpathElement(String xpath) {
         return driverFacade.getWebDriver().findElement(By.xpath(xpath));
     }
 
-    public void clickElement(String entity){
+    public void clickElement(String entity) {
         getEntity(entity).click();
     }
 
-    public void clickElementJs(String entity){
+    public void clickElementJs(String entity) {
         WebElement element = getEntity(entity);
         JavascriptExecutor executor = (JavascriptExecutor) driverFacade.getWebDriver();
         executor.executeScript("arguments[0].click();", element);
     }
 
     //waitTime
-    public void pause(Integer seconds){
+    public void pause(Integer seconds) {
         try {
             TimeUnit.SECONDS.sleep(seconds);
         } catch (InterruptedException e) {
@@ -256,7 +283,7 @@ public class Methods extends BaseTest{
     }
 
     //Enviar texto
-    public void sendKeysText(String entity, String text){
+    public void sendKeysText(String entity, String text) {
         getEntity(entity).click();
         getEntity(entity).clear();
         getEntity(entity).sendKeys(text);
@@ -276,7 +303,7 @@ public class Methods extends BaseTest{
         driverFacade.waitForVisibilityOfElement(webElement);
         webElement.click();
         webElement.sendKeys(search);
-        Select dropdown = new Select(driverFacade.getWebDriver().findElement(By.xpath("//span[contains(text(),'"+search+"')]")));
+        Select dropdown = new Select(driverFacade.getWebDriver().findElement(By.xpath("//span[contains(text(),'" + search + "')]")));
         dropdown.selectByVisibleText(search);
         //WebElement element = webDriver.findElement(By.xpath("//span[contains(text(),'"+search+"')]"));
         //driverFacade.waitForVisibilityOfElement(element);

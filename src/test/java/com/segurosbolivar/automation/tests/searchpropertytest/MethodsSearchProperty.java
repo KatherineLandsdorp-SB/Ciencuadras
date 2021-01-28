@@ -9,10 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MethodsSearchProperty extends BaseTest {
 
-    private Methods methods = new Methods();
+    private Methods methods;
+
+    public MethodsSearchProperty(Methods methods) {
+        this.methods = methods;
+    }
 
     public void clickLinkSearchByCode() {
         methods.waitForPageLoad();
+        
         methods.clickElement("searchButtonByCode");
     }
 

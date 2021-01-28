@@ -8,7 +8,6 @@ import org.testng.annotations.Listeners;
 
 @Listeners({TestListener.class})
 public class Hooks {
-
     @BeforeMethod
     public void before() {
         DriverFactory.setWebDriver();

@@ -1,13 +1,15 @@
 package com.segurosbolivar.automation.tests.searchpropertytest;
 
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Methods;
 import io.qameta.allure.Step;
 
-public class StepsSearchProperty {
+public class StepsSearchProperty extends BaseTest {
 
     private MethodsSearchProperty methodsSearchProperty;
 
     public StepsSearchProperty() {
-        this.methodsSearchProperty = new MethodsSearchProperty();
+        this.methodsSearchProperty = new MethodsSearchProperty(new Methods());
     }
 
     @Step("Click link search code")

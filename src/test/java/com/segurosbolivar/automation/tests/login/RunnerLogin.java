@@ -9,7 +9,7 @@ public class RunnerLogin extends Hooks {
 
     ThreadLocal<StepsLogin> steps = ThreadLocal.withInitial(StepsLogin::new);
 
-    @Test(priority=1, groups = { "smoke" })
+    @Test(priority=1, groups = { "smoke", "sanity", "regresion" })
     public void successfullLogin(){
         steps.get()
                 .clickEntry()

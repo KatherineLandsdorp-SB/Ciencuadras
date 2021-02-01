@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class RunnerRent extends Hooks {
     ThreadLocal<StepsRent> steps = ThreadLocal.withInitial(StepsRent::new);
 
-    @Test(priority = 1, groups = {"smoke"})
+    @Test(priority = 1, groups = {"sanity"})
     public void searchForCity() throws InterruptedException {
         steps.get()
                 .clickOnRent()

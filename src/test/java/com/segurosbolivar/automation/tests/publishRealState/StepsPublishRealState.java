@@ -67,6 +67,11 @@ public class StepsPublishRealState extends BaseTest {
         MethodsPublishRealState.clickButtonConfirm();
         return this;
     }
+    @Step("click on captcha in form publish with real state")
+    public StepsPublishRealState clickCaptcha() {
+        MethodsPublishRealState.clickOnCaptcha();
+        return this;
+    }
 
     @Step("Validate text button Understood to end the form publish with real state")
     public StepsPublishRealState validationTextButtonUnderstand() {

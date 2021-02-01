@@ -18,9 +18,9 @@ public class MethodsRent extends BaseTest {
         methods.keyDown("inputSeach");
         methods.waitingForElement("textSearch", 120);
         System.out.println("se muestra" + methods.getEntity("textSearch").getText());
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
 
@@ -28,8 +28,8 @@ public class MethodsRent extends BaseTest {
         methods.sendKeysText("inputSeach", services.getField("neighborhood"));
         methods.waitingForElement("textSearch", 120);
         methods.keyDown("inputSeach");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
 
@@ -37,7 +37,7 @@ public class MethodsRent extends BaseTest {
         methods.sendKeysText("inputSeach", services.getField("sector"));
         methods.waitingForElement("textSearch", 120);
         methods.keyDown("inputSeach");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
 
@@ -46,8 +46,8 @@ public class MethodsRent extends BaseTest {
         methods.angularMaterialDrop("dropDownDeal", services.getField("li_Rent"));
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
 
@@ -56,8 +56,8 @@ public class MethodsRent extends BaseTest {
         methods.angularMaterialDrop("dropDownDeal", services.getField("li_BuyNew"));
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
 
     }
@@ -67,8 +67,8 @@ public class MethodsRent extends BaseTest {
         methods.angularMaterialDrop("dropDownDeal", services.getField("li_BuyUsed"));
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
 
     }
@@ -77,8 +77,8 @@ public class MethodsRent extends BaseTest {
         methods.clickElement("checkApartment");
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
 
     }
@@ -87,8 +87,8 @@ public class MethodsRent extends BaseTest {
         methods.clickElement("checkStudioApartment");
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
     public String  filterPropertyTypeHome(){
@@ -96,8 +96,8 @@ public class MethodsRent extends BaseTest {
         methods.clickElement("checkHome");
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
     public String  filterPropertyTypeLocal(){
@@ -105,8 +105,8 @@ public class MethodsRent extends BaseTest {
         methods.clickElement("checkLocal");
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
     public String  filterPropertyTypeOffice(){
@@ -114,8 +114,8 @@ public class MethodsRent extends BaseTest {
         methods.clickElement("checkLocal");
         methods.pause(8);
         methods.clickElement("iconClose");
-        methods.scrollToPixel("scroll");
-        methods.scrollToPixel("scroll");
+        methods.scrollToPixelDown("scroll");
+        methods.scrollToPixelDown("scroll");
         return methods.getEntity("textSearch").getText();
     }
 

@@ -3,25 +3,19 @@ package com.segurosbolivar.automation.commons;
 import org.awaitility.Duration;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.*;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
-
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
 
@@ -29,6 +23,7 @@ public class Methods extends BaseTest {
     WebDriverWait wait;
     private JSONObject field;
     private int iteration;
+
 
     /* ============================================================= */
     /* ====================== JSON     HANDLE ====================== */
@@ -263,18 +258,30 @@ public class Methods extends BaseTest {
 
 
     }
+    public void doScrollDown(int x, String entity){
+        for (int i=0; i <=x; i++){
+            pause(2);
+            scrollToPixelDown(entity);
+        }
+    }
 
-    public void scrollToPixel(String entity) {
+    public void scrollToPixelDown(String entity) {
         WebElement element = getEntity(entity);
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("window.scrollBy(0,500)", element);
 
     }
-    public void doScroll(int x, String entity){
+    public void scrollToPixelUp(String entity) {
+        WebElement element = getEntity(entity);
+        ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("window.scrollBy(0,-500)", element);
+
+    }
+    public void doScrollUp(int x, String entity){
         for (int i=0; i <=x; i++){
             pause(2);
-            scrollToPixel(entity);
+            scrollToPixelUp(entity);
         }
     }
+
 
     public void scrollToEndPage() {
 
@@ -404,16 +411,25 @@ public class Methods extends BaseTest {
     //Metodo para realizar carga de imagen guardada en ruta del proyecto
     public void uploadFileImage(int Intentos, int Veces, String entity) {
         while (Intentos <= Veces) {
+           // getEntity(entity).sendKeys(getFile());
+           // getEntity(entity).sendKeys("https://www.frases333.com/wp-content/uploads/2018/06/jpg.jpg");
+            pause(10);
+           // System.out.println("Valor de Intentos : " + Intentos + getFile());
+            Intentos++;
+        }
+    }
+    public void uploadRemoteImage(int Intentos, int Veces, String entity)  throws InterruptedException{
+        while (Intentos <= Veces) {
             getEntity(entity).sendKeys(getFile());
             pause(10);
-            System.out.println("Valor de Intentos : " + Intentos + getFile());
             Intentos++;
         }
     }
 
     //Metodo para obtener ruta absoluta local
     String getFile() {
-        return new File("./src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png").getAbsolutePath();
+        return new File("src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png").getAbsolutePath();
+
     }
 
 

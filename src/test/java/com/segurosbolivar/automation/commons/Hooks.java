@@ -9,7 +9,7 @@ import org.testng.annotations.Listeners;
 @Listeners({TestListener.class})
 public class Hooks {
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void before() {
         DriverFactory.setWebDriver();
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
@@ -17,9 +17,8 @@ public class Hooks {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void after() {
-
         DriverFactory.getDriverFacade().getWebDriver().quit();
     }
 //    bd final

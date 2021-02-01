@@ -8,88 +8,93 @@ public class RunnerPublishRealState extends Hooks {
     ThreadLocal<StepsPublishRealState> steps = ThreadLocal.withInitial(StepsPublishRealState::new);
 
 
-    @Test(priority = 1)
-    public void publihsRealStateSuccssful() throws InterruptedException {
+    @Test(priority = 1, groups = { "sanity"})
+    public void publishRealStateSuccessful() throws InterruptedException {
         steps.get()
-                .clickButtonSaleHome()
+               // .clickButtonSaleHome()
                 .clickRealState()
                 .fillInName()
                 .fillInMail()
                 .fillInPhones()
                 .fillInCity()
                 .selectSale()
+                .clickCaptcha()
                 .clickConfirmation()
                 .validationTextButtonUnderstand()
                 .clickButtonUnderstood();
     }
 
-    @Test(priority = 2)
-    public void publihsRealStateNoMandatoryData() {
+    @Test(priority = 2, groups = { "sanity"})
+    public void publishRealStateNoMandatoryData() {
         steps.get()
-                .clickButtonSaleHome()
+                //.clickButtonSaleHome()
                 .clickRealState()
                 .clickConfirmation()
                 .validationDataMandatory();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = { "sanity"})
     public void publihsRealStateNoMandatoryNameData() throws InterruptedException {
         steps.get()
-                .clickButtonSaleHome()
+              //  .clickButtonSaleHome()
                 .clickRealState()
                 .fillInMail()
                 .fillInPhones()
                 .fillInCity()
                 .selectSale()
+                .clickCaptcha()
                 .clickConfirmation()
                 .validationDataMandatory();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, groups = { "sanity"})
     public void publihsRealStateNoMandatoryEmailData() throws InterruptedException {
         steps.get()
-                .clickButtonSaleHome()
+                //.clickButtonSaleHome()
                 .clickRealState()
                 .fillInName()
                 .fillInPhones()
                 .fillInCity()
                 .selectSale()
+                .clickCaptcha()
                 .clickConfirmation()
                 .validationDataMandatory();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, groups = { "sanity"})
     public void publihsRealStateNoMandatoryPhoneData() throws InterruptedException {
         steps.get()
-                .clickButtonSaleHome()
+               // .clickButtonSaleHome()
                 .clickRealState()
                 .fillInName()
                 .fillInMail()
                 .fillInCity()
                 .selectSale()
+                .clickCaptcha()
                 .clickConfirmation()
                 .validationDataMandatory();
 
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6, groups = { "sanity"})
     public void publihsRealStateNoMandatoryCityData() {
         steps.get()
-                .clickButtonSaleHome()
+               // .clickButtonSaleHome()
                 .clickRealState()
                 .fillInName()
                 .fillInMail()
                 .fillInPhones()
                 .selectSale()
+                .clickCaptcha()
                 .clickConfirmation()
                 .validationDataMandatory();
 
     }
 
-    @Test(priority = 7)
+    @Test(priority = 7, groups = { "sanity"})
     public void validationButtonTransaction() {
         steps.get()
-                .clickButtonSaleHome()
+                //.clickButtonSaleHome()
                 .clickRealState()
                 .validationRadioButtonSale()
                 .validationRadioButtonRent()

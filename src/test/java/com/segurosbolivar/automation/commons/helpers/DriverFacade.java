@@ -20,12 +20,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.remote.LocalFileDetector;
+
 import static org.awaitility.Awaitility.await;
+
 class Windows {
     String type;
     String parent;
 
-    public Windows(String paramType, String paramParent){
+    public Windows(String paramType, String paramParent) {
         type = paramType;
         parent = paramParent;
     }
@@ -43,9 +46,9 @@ public class DriverFacade {
 
     private DesiredCapabilities capabilitiesSetUp() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("platform", "MacOS Catalina");
-//        capabilities.setCapability("browserName", "Safari");
-//        capabilities.setCapability("version","13.0");
+        capabilities.setCapability("platform", "MacOS Catalina");
+        capabilities.setCapability("browserName", "Chrome");
+        capabilities.setCapability("version", "87.0");
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "70.0");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
@@ -65,28 +68,28 @@ public class DriverFacade {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
                         PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp());
+                driver.setFileDetector(new LocalFileDetector());
             } catch (MalformedURLException e) {
                 System.out.println("Invalid grid URL");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-        }
-        else{
+        } else {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
         }
         wait = new WebDriverWait(driver, timeoutInSeconds);
     }
 
-    public WebDriver getWebDriver(){
+    public WebDriver getWebDriver() {
         return driver;
     }
 
-    public void setWindow(String aDefault, String windowHandles){
+    public void setWindow(String aDefault, String windowHandles) {
         windows.add(new Windows(aDefault, windowHandles));
     }
 
-    public JSONObject getJsonObject(){
+    public JSONObject getJsonObject() {
         return jsonObject;
     }
 
@@ -95,7 +98,7 @@ public class DriverFacade {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public JSONObject JsonFile(){
+    public JSONObject JsonFile() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader(PropertyManager.getConfigValueByKey("elements")));

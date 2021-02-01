@@ -281,6 +281,8 @@ public class Elements {
     public static WebElement buttonAddPhoto;
     @FindBy(xpath = "(//h3[contains(text(),'Resumen de tu compra')])[2]")
     public static WebElement headerSummary;
+    @FindBy(xpath = "//*[@id=\"ngx-input-file-0\"]")
+    public static WebElement inputImage;
 
 
     public Elements() {

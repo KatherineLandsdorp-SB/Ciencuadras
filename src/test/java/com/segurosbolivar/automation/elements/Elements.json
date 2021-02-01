@@ -135,8 +135,6 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//a[@id='navbarDropdown']"
   },
-
-
   "searchSelect": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[1]/select[1]"
@@ -190,20 +188,20 @@
     "ValueToFind": "(//span[contains(text(),'Apartamento')])[1]"
   },
   "checkStudioApartment": {
-  "GetFieldBy": "Xpath",
-  "ValueToFind": "//span[contains(text(),'Apartaestudio')] "
-},
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Apartaestudio')] "
+  },
   "checkHome": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//span[contains(text(),'Casa')]"
   },
   "checkLocal": {
     "GetFieldBy": "Xpath",
-    "ValueToFind":"(//span[contains(text(),'Local')])[1]"
+    "ValueToFind": "(//span[contains(text(),'Local')])[1]"
   },
   "checkOffice": {
     "GetFieldBy": "Xpath",
-    "ValueToFind":"//*[@id=\"mat-checkbox-51\"]/label/span"
+    "ValueToFind": "//*[@id=\"mat-checkbox-51\"]/label/span"
   },
   "checkFarm": {
     "GetFieldBy": "Xpath",
@@ -225,7 +223,6 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-checkbox-55\"]/label/span"
   },
-
   "buttonPublishProperty": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//div/a[@href='/publicar'])[1]"
@@ -418,7 +415,6 @@
     "GetFieldBy": "Id",
     "ValueToFind": "administrationValue"
   },
-
   "alertValueAdministration": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//div[contains(text(),' El campo Valor de la administración Es Obligatorio')]"
@@ -530,5 +526,169 @@
   "divPublish": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"cdk-step-content-0-0\"]/app-options-content/div/div/div"
+  },
+  "recaptcha": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div/re-captcha/div/div/iframe"
+  },
+  "clientRealEstate": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"products-profile\"]/div/div[2]/div/button[1]"
+  },
+  "clientAgent": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"products-profile\"]/div/div[2]/div/button[2]"
+  },
+  "clientBuilder": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"products-profile\"]/div/div[2]/div/button[3]"
+  },
+  "clientPeople": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"products-profile\"]/div/div[2]/div/button[3]"
+  },
+  "makePlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'Quiero armarlo')]"
+  },
+  "seePlans": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[contains(text(),'ver planes')]"
+  },
+  "carBasePlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),'Añadir a carrito')]"
+  },
+  "btnRemoveTour": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[2]"
+  },
+  "btnAddTour": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[3]"
+  },
+  "btnRemovePhoto": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[4]"
+  },
+  "btnAddPhoto": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[5]"
+  },
+  "btnRemoveOutstanding": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[6]"
+  },
+  "btnAddOutstanding": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[7]"
+  },
+  "btnRemoveAscend": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[8]"
+  },
+  "btnAddAscend": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[9]"
+  },
+  "btRemovePriceLine": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[10]"
+  },
+  "btnAddPriceLine": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[@class='material-icons'])[11]"
+  },
+  "btnPlanPay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[contains(text(),'Pagar')])[1]"
+  },
+  "btnCarPay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[contains(text(),'Pagar')])[2]"
+  },
+  "btnSelectPlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[contains(text(),'Seleccionar')])[8]"
+  },
+  "newAccount": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[contains(text(),'Crear cuenta')]"
+  },
+  "nameFormProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-2"
+  },
+  "mailFormProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-3"
+  },
+  "NitFormProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-4"
+  },
+  "phoneFormProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-5]"
+  },
+  "cityFormProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-6"
+  },
+  "passwdFormProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-7"
+  },
+  "passwdConfirmProduct": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-8"
+  },
+  "checkTerms": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-2-input"
+  },
+  "checkAuthorize": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-3-input"
+  },
+  "nameCreditCard": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-5"
+  },
+  "mailCreditCard": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-6"
+  },
+  "nameCreditCard": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-7"
+  },
+  "monthCreditCard": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-8"
+  },
+  "yearCreditCard": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-9"
+  },
+  "cvvCreditCard": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-10"
+  },
+  "selectDues": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-select-3\"]"
+  },
+  "btnReturnCommerce": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),'Volver a comercio')]"
+  },
+  "paySuccessful": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//h2[contains(text(),'Pago exitoso')]"
+  },
+  "": {
+    "GetFieldBy": "Id",
+    "ValueToFind": ""
   }
 }

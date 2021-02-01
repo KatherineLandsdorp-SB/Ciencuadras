@@ -26,7 +26,7 @@ public class SharedMethods extends BaseTest {
     }
 
     public void clickOnPublishYourself() {
-        methods.doScroll(2,"divPublish");
+        methods.doScrollDown(2,"divPublish");
         methods.clickElement("buttonPublishYourself");
     }
 

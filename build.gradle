@@ -95,3 +95,10 @@ jar {
 //        attributes 'Main-Class': 'src/test/java/com/segurosbolivar/automation/MainClass'
 //    }
 //}
+
+test {
+    def groups = System.getProperty('groups', 'sanity')
+    useTestNG() {
+        includeGroups groups
+    }
+}

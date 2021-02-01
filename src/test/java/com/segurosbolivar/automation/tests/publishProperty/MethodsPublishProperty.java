@@ -67,7 +67,7 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void clickOnButtonBackTracking() {
-        methods.doScroll(7,"divFormPublication");
+        methods.doScrollDown(7,"divFormPublication");
         methods.clickElement("buttonBackTracking");
     }
     public void clickBackForm() {
@@ -123,7 +123,7 @@ public class MethodsPublishProperty extends BaseTest {
 
     public void registerArea() {
         methods.sendKeysText("inputArea", services.getField("sanityArea"));
-        methods.doScroll(1,"divFormPublication");
+        methods.doScrollDown(1,"divFormPublication");
     }
 
     public void registerDescriptionProperty() {
@@ -172,7 +172,7 @@ public class MethodsPublishProperty extends BaseTest {
     public void registerEmailOldUser() throws InterruptedException {
         methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
         methods.pause(8);
-        methods.doScroll(2,"divFormPublication");
+        methods.doScrollDown(2,"divFormPublication");
     }
 
     public void registerTypeDocument() {
@@ -257,8 +257,9 @@ public class MethodsPublishProperty extends BaseTest {
         methods.clickElement("buttonContinuePhoto");
     }
 
-    public void uploadImage() {
-        methods.uploadFileImage(0, 3, "inputImage");
+    public void uploadImage() throws InterruptedException{
+        methods.doScrollUp(2,"divFormPublication");
+        methods.uploadRemoteImage(0, 2, "inputImage");
 
     }
 

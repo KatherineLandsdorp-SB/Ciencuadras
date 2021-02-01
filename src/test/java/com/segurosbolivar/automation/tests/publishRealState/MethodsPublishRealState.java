@@ -82,4 +82,8 @@ public class MethodsPublishRealState extends BaseTest {
         return present;
     }
 
+    public void clickOnCaptcha() {
+        methods.clickElement("recaptcha");
+        methods.pause(5);
+    }
 }

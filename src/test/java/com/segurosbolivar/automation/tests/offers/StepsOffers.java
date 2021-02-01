@@ -37,7 +37,7 @@ public class StepsOffers {
     }
 
     @Step("When search not found. Get not found search message")
-    public String getMessageNotResultOffers(){
+    public String getMessageNotResultOffers() {
         return methodsOffers.getMessageNotResultOffers();
     }
 

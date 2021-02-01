@@ -3,7 +3,6 @@ package com.segurosbolivar.automation.tests.offers;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;

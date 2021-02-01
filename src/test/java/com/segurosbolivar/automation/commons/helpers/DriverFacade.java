@@ -24,31 +24,24 @@ import org.openqa.selenium.remote.LocalFileDetector;
 
 import static org.awaitility.Awaitility.await;
 
-class Windows {
-    String type;
-    String parent;
-
-    public Windows(String paramType, String paramParent) {
-        type = paramType;
-        parent = paramParent;
-    }
-}
 
 public class DriverFacade {
 
     RemoteWebDriver driver;
     WebDriverWait wait;
     JSONObject jsonObject;
-    List<Windows> windows = new ArrayList<Windows>();
-
     int timeoutInSeconds = 60;
 
 
     private DesiredCapabilities capabilitiesSetUp() {
+        String javaHome = System.getenv("JAVA_HOME");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platform", "MacOS Catalina");
-        capabilities.setCapability("browserName", "Chrome");
-        capabilities.setCapability("version", "87.0");
+
+//        capabilities.setCapability("platform", "MacOS Catalina");
+//        capabilities.setCapability("browserName", "Safari");
+//        capabilities.setCapability("version","13.0");
+
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "70.0");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
@@ -85,13 +78,12 @@ public class DriverFacade {
         return driver;
     }
 
-    public void setWindow(String aDefault, String windowHandles) {
-        windows.add(new Windows(aDefault, windowHandles));
-    }
+
 
     public JSONObject getJsonObject() {
         return jsonObject;
     }
+
 
 
     public void waitForVisibilityOfElement(WebElement webElement) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<suite name="Test Suite" parallel="methods" thread-count="12">
-    <test name="Seguros Bolivar Test">
+<suite name="Test Suite" parallel="classes" thread-count="5">
+    <test name="Seguros Bolivar Test"  parallel="methods" thread-count="5">
         <listeners>
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>

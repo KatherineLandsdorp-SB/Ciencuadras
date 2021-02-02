@@ -1,13 +1,15 @@
 package com.segurosbolivar.automation.tests.searchpropertytest;
 
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Methods;
 import io.qameta.allure.Step;
 
-public class StepsSearchProperty {
+public class StepsSearchProperty extends BaseTest {
 
     private MethodsSearchProperty methodsSearchProperty;
 
     public StepsSearchProperty() {
-        this.methodsSearchProperty = new MethodsSearchProperty();
+        this.methodsSearchProperty = new MethodsSearchProperty(new Methods());
     }
 
     @Step("Click link search code")
@@ -19,6 +21,12 @@ public class StepsSearchProperty {
     @Step("Fill search textbox whit invalid property code")
     public StepsSearchProperty fillTextBoxSearchByInvalidCode() {
         this.methodsSearchProperty.fillTextBoxSearchByInvalidCode();
+        return this;
+    }
+
+    @Step("Fill search textbox whit valid property code")
+    public StepsSearchProperty fillTextBoxSearchByValidCode() {
+        this.methodsSearchProperty.fillTextBoxSearchByValidCode();
         return this;
     }
 

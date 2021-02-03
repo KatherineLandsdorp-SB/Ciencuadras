@@ -37,7 +37,7 @@ public class DriverFacade {
         String browserName = System.getenv("BROWSER_NAME");
         String browserVersion = System.getenv("BROWSER_VERSION");
         String platformBrowser = System.getenv("BROWSER_PLATFORM");
-        
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         if(browserName != null){

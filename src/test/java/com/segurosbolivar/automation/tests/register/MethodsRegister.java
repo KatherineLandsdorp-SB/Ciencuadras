@@ -9,26 +9,26 @@ public class MethodsRegister extends BaseTest {
 
     public void clickOnEntry(){
         methods.waitForPageLoad();
-        methods.waitingForElement("entryUser", 320);
+        methods.waitingForElement("entryUser", 30);
         methods.clickElement("entryUser");
     }
 
     public void registerPerson(){
-        methods.waitingForElement("registerUser", 320);
+        methods.waitingForElement("registerUser", 30);
         methods.clickElement("registerUser");
     }
 
     public void registerAllied(){
         methods.waitForPageLoad();
-        methods.waitingForElement("allied", 320);
+        methods.waitingForElement("allied", 30);
         methods.clickElementJs("allied");
-        methods.waitingForElement("alliedRegistry", 320);
+        methods.waitingForElement("alliedRegistry", 30);
         methods.clickElementJs("alliedRegistry");
     }
 
     public String fillAllTheRequiredFields(){
         methods.waitForPageLoad();
-        methods.waitingForElement("nameRegister", 600);
+        methods.waitingForElement("nameRegister", 30);
         methods.sendKeysText("nameRegister", services.getField("firstName"));
         methods.sendKeysText("secondNameRegister", services.getField("secondName"));
         methods.sendKeysText("lastNameRegister", services.getField("lastName"));
@@ -40,12 +40,12 @@ public class MethodsRegister extends BaseTest {
         methods.clickElement("terms");
         methods.clickElement("register");
         methods.waitForPageLoad();
-        methods.waitingForElement("navbarDropdown", 320);
+        methods.waitingForElement("navbarDropdown", 30);
         return methods.getEntity("navbarDropdown").getText();
     }
 
     public void fillAllTheRequiredFieldsAllied(){
-        methods.waitingForElement("usernameAllied", 320);
+        methods.waitingForElement("usernameAllied", 30);
         methods.sendKeysText("usernameAllied", services.getField("nameAllied"));
         methods.sendKeysText("mailAllied", services.getField("mailAllied"));
         methods.sendKeysText("verifyEmailAllied",services.getField("mailAllied"));

@@ -5,15 +5,8 @@
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
-            <!-- <class name="com.segurosbolivar.automation.tests.rent.RunnerRent"/> -->
-            <!-- <class name="com.segurosbolivar.automation.tests.rent.RunnerRent1"/> -->
-            <class name="com.segurosbolivar.automation.tests.publishProperty.RunnerPublishProperty"/>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLoginFacebook"/>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLoginGmail"/>
             <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"/>
-            <class name="com.segurosbolivar.automation.tests.registerAllied.RunnerRegister"/>
-            <class name="com.segurosbolivar.automation.tests.registerAllied.RunnerRegister"/>
+            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
         </classes>
     </test>
 </suite>

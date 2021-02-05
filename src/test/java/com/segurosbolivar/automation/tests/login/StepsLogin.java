@@ -37,6 +37,12 @@ public class StepsLogin extends BaseTest {
         return this;
     }
 
+    @Step("The user fill all the required fields")
+    public StepsLogin fillFail(){
+        methodsLogin.FailedFields();
+        return this;
+    }
+
     @Step("The user fill all the required fields facebook")
     public StepsLogin fillAllFacebook(){
         assertEquals(methodsLogin.fillAllTheRequiredFacebook(), services.getField("navBarFacebook"));

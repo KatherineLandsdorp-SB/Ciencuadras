@@ -9,7 +9,6 @@ import static org.testng.Assert.assertEquals;
 public class StepsRegister extends BaseTest {
 
     private MethodsRegister MethodsRegister = new MethodsRegister();
-    private SharedMethods methods = new SharedMethods();
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister clickEntry(){

@@ -318,13 +318,13 @@ public class StepsPublishProperty extends BaseTest {
         return this;
     }
 
-    @Step()
+    @Step("upload images")
     public StepsPublishProperty uploapFile() throws InterruptedException {
         methodsPublishProperty.uploadImage();
         return this;
     }
 
-    @Step("user click on button continu windows add photo")
+    @Step("user click on button continue windows add photo")
     public StepsPublishProperty clickButtonContinuePhoto() {
         methodsPublishProperty.clickOnButtonContinuePhoto();
         return this;

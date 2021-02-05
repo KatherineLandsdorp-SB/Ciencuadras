@@ -9,13 +9,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.json.simple.JSONObject;
+
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.NoSuchElementException;
-import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
 
@@ -169,18 +170,13 @@ public class Methods extends BaseTest {
         WebElement elemen = getEntity(entity);
         boolean element = false;
         try {
-            element = elemen.isEnabled();
-            System.out.println("Is disponible");
+            if (element = elemen.isEnabled()) ;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        if (element) {
-            System.out.println("Is disponible 2");
-        } else {
-            System.out.println(element + "  Not Present ");
-        }
         return element;
     }
+
 
     // Validar si un elemento esta seleccionado
     public boolean validationElementSelected(String entity) {
@@ -258,8 +254,9 @@ public class Methods extends BaseTest {
 
 
     }
-    public void doScrollDown(int x, String entity){
-        for (int i=0; i <=x; i++){
+
+    public void doScrollDown(int x, String entity) {
+        for (int i = 0; i <= x; i++) {
             pause(2);
             scrollToPixelDown(entity);
         }
@@ -270,13 +267,15 @@ public class Methods extends BaseTest {
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("window.scrollBy(0,500)", element);
 
     }
+
     public void scrollToPixelUp(String entity) {
         WebElement element = getEntity(entity);
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("window.scrollBy(0,-500)", element);
 
     }
-    public void doScrollUp(int x, String entity){
-        for (int i=0; i <=x; i++){
+
+    public void doScrollUp(int x, String entity) {
+        for (int i = 0; i <= x; i++) {
             pause(2);
             scrollToPixelUp(entity);
         }
@@ -371,14 +370,16 @@ public class Methods extends BaseTest {
     /* ============================================================= */
 
     //Metodo para completar formularios de busqueda
-    public void keyDown(String entity) throws InterruptedException {
+    public void keyDown(String entity) {
         waitingForElement(entity, 5);
         getEntity(entity).sendKeys(Keys.ARROW_DOWN);
         getEntity(entity).sendKeys(Keys.ENTER);
         waitingForElement(entity, 5);
-        Thread.sleep(3000);
+        pause(3);
+
 
     }
+
 
     // Metodo para seleccionar elemento a partir del xpath
     public void angularMaterialDrop(String entity, String search) {
@@ -411,14 +412,15 @@ public class Methods extends BaseTest {
     //Metodo para realizar carga de imagen guardada en ruta del proyecto
     public void uploadFileImage(int Intentos, int Veces, String entity) {
         while (Intentos <= Veces) {
-           // getEntity(entity).sendKeys(getFile());
-           // getEntity(entity).sendKeys("https://www.frases333.com/wp-content/uploads/2018/06/jpg.jpg");
+            // getEntity(entity).sendKeys(getFile());
+            // getEntity(entity).sendKeys("https://www.frases333.com/wp-content/uploads/2018/06/jpg.jpg");
             pause(10);
-           // System.out.println("Valor de Intentos : " + Intentos + getFile());
+            // System.out.println("Valor de Intentos : " + Intentos + getFile());
             Intentos++;
         }
     }
-    public void uploadRemoteImage(int Intentos, int Veces, String entity)  throws InterruptedException{
+
+    public void uploadRemoteImage(int Intentos, int Veces, String entity) throws InterruptedException {
         while (Intentos <= Veces) {
             getEntity(entity).sendKeys(getFile());
             pause(10);
@@ -429,6 +431,36 @@ public class Methods extends BaseTest {
     //Metodo para obtener ruta absoluta local
     String getFile() {
         return new File("src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png").getAbsolutePath();
+
+    }
+
+    //Metodo para generar valores aleatorios
+    public String generatosDinamicValue() {
+        int longitud = 6;
+        String alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String text = "";
+        Random rnd = new Random();
+        while (text.length() < 4) {
+            for (int x = 0; x < longitud; x++) {
+                int indiceAleatorio = numeroAleatorioEnRango(0, alphabet.length() - 1);
+                char caracterAleatorio = alphabet.charAt(indiceAleatorio);
+                text += caracterAleatorio;
+            }
+            return text;
+
+        }
+        return text;
+
+    }
+
+    public static int numeroAleatorioEnRango(int minimo, int maximo) {
+        // nextInt regresa en rango pero con límite superior exclusivo, por eso sumamos 1
+        return ThreadLocalRandom.current().nextInt(minimo, maximo + 1);
+    }
+    public String dinamicDataTest(String value){
+        String data= services.getField(value);
+        String dinamic=generatosDinamicValue()+data;
+        return dinamic;
 
     }
 

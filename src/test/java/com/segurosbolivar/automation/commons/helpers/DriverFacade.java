@@ -35,8 +35,8 @@ public class DriverFacade {
 
     private DesiredCapabilities capabilitiesSetUp() {
         String javaHome = System.getenv("JAVA_HOME");
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
 
 //        capabilities.setCapability("platform", "MacOS Catalina");
 //        capabilities.setCapability("browserName", "Safari");

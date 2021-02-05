@@ -553,7 +553,7 @@
   },
   "seePlans": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//span[contains(text(),'ver planes')]"
+    "ValueToFind": "//a[@href='/productos/seleccion-ideal']"
   },
   "carBasePlan": {
     "GetFieldBy": "Xpath",
@@ -599,7 +599,7 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//span[@class='material-icons'])[11]"
   },
-  "btnPlanPay": {
+  "btnPayPlan": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//button[contains(text(),'Pagar')])[1]"
   },
@@ -609,7 +609,7 @@
   },
   "btnSelectPlan": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "(//button[contains(text(),'Seleccionar')])[8]"
+    "ValueToFind": "//*[@id=\"products-ideal\"]/div/div[2]/div/app-carousel-card/owl-carousel-o/div/div[1]/owl-stage/div/div/div[6]/div/div[2]/button"
   },
   "newAccount": {
     "GetFieldBy": "Xpath",
@@ -629,7 +629,7 @@
   },
   "phoneFormProduct": {
     "GetFieldBy": "Id",
-    "ValueToFind": "mat-input-5]"
+    "ValueToFind": "mat-input-5"
   },
   "cityFormProduct": {
     "GetFieldBy": "Id",
@@ -644,12 +644,33 @@
     "ValueToFind": "mat-input-8"
   },
   "checkTerms": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-checkbox-2-input"
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-2\"]/label/div"
   },
   "checkAuthorize": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-3\"]/label/div"
+  },
+  "divNewAccount": {
     "GetFieldBy": "Id",
-    "ValueToFind": "mat-checkbox-3-input"
+    "ValueToFind": "mat-dialog-1"
+  },
+  "ExistsUserProduct": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": " //span[contains(text(),'El usuario ya se encuentra registrado')]"
+  },
+  "entryCar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p[contains(text(),'Total a pagar:')]"
+  },
+
+  "buttonEntryPay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button/span[contains(text(),'Ingresar')]"
+  },
+  "creditCard": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-radio-2\"]/label"
   },
   "nameCreditCard": {
     "GetFieldBy": "Id",
@@ -659,7 +680,7 @@
     "GetFieldBy": "Id",
     "ValueToFind": "mat-input-6"
   },
-  "nameCreditCard": {
+  "numberCreditCard": {
     "GetFieldBy": "Id",
     "ValueToFind": "mat-input-7"
   },
@@ -687,8 +708,24 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//h2[contains(text(),'Pago exitoso')]"
   },
-  "": {
-    "GetFieldBy": "Id",
-    "ValueToFind": ""
+  "payFail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p/strong[contains(text(), 'FALLIDA')]"
+  },
+  "retryPayment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(), 'Reintentar el pago')]"
+  },
+  "payPending": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p/strong[contains(text(), 'PENDIENTE')]"
+  },
+  "transactionPending": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//h2[contains(text(),'Transacción pendiente por confirmar')]"
+  },
+  "divProduct": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"products-profile\"]/div"
   }
 }

@@ -5,6 +5,7 @@ import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -26,7 +27,7 @@ public class SharedMethods extends BaseTest {
     }
 
     public void clickOnPublishYourself() {
-        methods.doScrollDown(2,"divPublish");
+        methods.doScrollDown(2, "divPublish");
         methods.clickElement("buttonPublishYourself");
     }
 
@@ -62,6 +63,7 @@ public class SharedMethods extends BaseTest {
         methods.waitForPageLoad();
         methods.clickElement("buttonSaleHome");
     }
+
     public void clickOnButtonOfferHome() {
         methods.waitForPageLoad();
         methods.clickElement("buttonOfferHome");
@@ -81,7 +83,38 @@ public class SharedMethods extends BaseTest {
         }
     }
 
+    public void clickOnBtnPayPlan() {
+        methods.clickElement("btnPayPlan");
+    }
 
+    public void fillDataFormCar(String number) {
+        methods.clickElement("btnPayPlan");
+        methods.waitingForElement("creditCard",150);
+        methods.clickElement("creditCard");
+        methods.sendKeysText("nameCreditCard", services.getField("sanityNameUser"));
+        methods.sendKeysText("numberCreditCard", services.getField(number));
+        methods.sendKeysText("monthCreditCard", services.getField("sanityMonth"));
+        methods.sendKeysText("yearCreditCard", services.getField("sanityYear"));
+        methods.sendKeysText("cvvCreditCard", services.getField("sanityCvv"));
+        //incluir metodo de numero de cuotas
+        methods.keyDown("selectDues");
+        clickOnBtnPayPlan();
+    }
+
+    public String  paymentSuccess() {
+        fillDataFormCar(services.getField("sanityCardsuccess"));
+        return methods.getTextElement("paySuccessful");
+    }
+
+    public  String  paymentFail() {
+        fillDataFormCar(services.getField("sanityCardFail"));
+        return methods.getTextElement("payFail");
+    }
+
+    public String  paymentPending() {
+        fillDataFormCar(services.getField("sanityCardPending"));
+        return methods.getTextElement("payPending");
+    }
 
 
 }

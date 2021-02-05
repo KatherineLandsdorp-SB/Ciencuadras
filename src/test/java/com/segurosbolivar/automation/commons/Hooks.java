@@ -19,7 +19,7 @@ public class Hooks {
 
     @AfterMethod(alwaysRun = true)
     public void after() {
-        //DriverFactory.getDriverFacade().getWebDriver().quit();
+        DriverFactory.getDriverFacade().getWebDriver().quit();
     }
 //    bd final
 }

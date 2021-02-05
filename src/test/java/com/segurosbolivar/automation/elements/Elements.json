@@ -727,5 +727,41 @@
   "divProduct": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"products-profile\"]/div"
+  },
+  "": {
+    "GetFieldBy": "Id",
+    "ValueToFind": ""
+  },
+  "searchButtonByCode": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//mat-tab-body/div[1]/div[1]/div[4]/button[1]"
+  },
+  "searchButtonIcon": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='tabCodigo']/div[1]/button[1]"
+  },
+  "errorMessageContainer": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='toast-container']/div[1]/div[1]"
+  },
+  "entryOffersUser": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='nav-link offer-options']"
+  },
+  "searchOffersInput": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "search"
+  },
+  "searchOffersButton": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[@class='icon icon-search']"
+  },
+  "contentResultOffers": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='all-content']//div[@class='content-inmueble detalle-inmueble-resultados']"
+  },
+  "messageNotResultOffers": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='resultados']//div/h2"
   }
 }

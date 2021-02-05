@@ -34,17 +34,23 @@ public class DriverFacade {
 
 
     private DesiredCapabilities capabilitiesSetUp() {
+
         String javaHome = System.getenv("JAVA_HOME");
+        String browserName = System.getenv("BROWSER_NAME");
+        String browserVersion = System.getenv("BROWSER_VERSION");
+        String platformBrowser = System.getenv("BROWSER_PLATFORM");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-
-//        capabilities.setCapability("platform", "MacOS Catalina");
-//        capabilities.setCapability("browserName", "Safari");
-//        capabilities.setCapability("version","13.0");
-
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "70.0");
-        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
+        if(browserName != null){
+            capabilities.setCapability("browserName", browserName);
+            capabilities.setCapability("version", browserVersion);
+            capabilities.setCapability("platform", platformBrowser); // If this cap isn't specified, it will just get the any available one
+        }else{
+            capabilities.setCapability("browserName", PropertyManager.getConfigValueByKey("BROWSER_NAME"));
+            capabilities.setCapability("version",  PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
+            capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
+        }
         capabilities.setCapability("build", "Ui_Automation_CienCuadrasTEST");
         capabilities.setCapability("name", "Ui_Automation_Seguros_Bolivar_Structure_1");
         capabilities.setCapability("network", true); // To enable network logs

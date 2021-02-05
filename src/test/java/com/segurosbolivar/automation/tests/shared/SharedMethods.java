@@ -3,6 +3,7 @@ package com.segurosbolivar.automation.tests.shared;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.helpers.DriverFacade;
+
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

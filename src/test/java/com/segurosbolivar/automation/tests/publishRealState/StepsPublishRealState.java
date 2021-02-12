@@ -1,7 +1,6 @@
 package com.segurosbolivar.automation.tests.publishRealState;
 
 import com.segurosbolivar.automation.commons.BaseTest;
-import com.segurosbolivar.automation.tests.publishProperty.StepsPublishProperty;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 

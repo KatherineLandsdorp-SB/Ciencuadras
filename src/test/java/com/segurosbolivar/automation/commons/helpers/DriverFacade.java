@@ -4,11 +4,14 @@ import com.segurosbolivar.automation.utils.PropertyManager;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -51,8 +54,8 @@ public class DriverFacade {
             capabilities.setCapability("version",  PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
             capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
         }
-        capabilities.setCapability("build", "Ui_Automation_CienCuadrasTEST");
-        capabilities.setCapability("name", "Ui_Automation_Seguros_Bolivar_Structure_1");
+        capabilities.setCapability("build", "Ui_Automation_CienCuadras_Sonic");
+       capabilities.setCapability("name", "Productos_Al-Destajo");
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
         capabilities.setCapability("video", true); // To enable video recording
@@ -68,6 +71,7 @@ public class DriverFacade {
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
                         PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp());
                 driver.setFileDetector(new LocalFileDetector());
+                ((JavascriptExecutor) driver).executeScript("lambda-name=TestName");
             } catch (MalformedURLException e) {
                 System.out.println("Invalid grid URL");
             } catch (Exception e) {

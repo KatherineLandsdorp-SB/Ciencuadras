@@ -16,8 +16,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class SharedMethods extends BaseTest {
-    protected DriverFacade webDriverFacade;
+
     private Methods methods = new Methods();
+
 
     public void clickOnPublish() {
         methods.clickElement("buttonPublishProperty");
@@ -70,9 +71,7 @@ public class SharedMethods extends BaseTest {
         methods.clickElement("buttonOfferHome");
     }
 
-    public void clickOnButtonAddPhoto() {
-        buttonAddPhoto.click();
-    }
+
 
     public void registerValueAdministration() {
         List<WebElement> dynamicElement = driverFacade.getWebDriver().findElements(By.id("administrationValue"));
@@ -87,34 +86,81 @@ public class SharedMethods extends BaseTest {
     public void clickOnBtnPayPlan() {
         methods.clickElement("btnPayPlan");
     }
+    public void clickOnBtnCarPay() {
+        methods.waitingForElement("btnCarPay", 130);
+        methods.clickElement("btnCarPay");
+    }
 
     public void fillDataFormCar(String number) {
+
         methods.clickElement("btnPayPlan");
         methods.waitingForElement("creditCard",150);
         methods.clickElement("creditCard");
         methods.sendKeysText("nameCreditCard", services.getField("sanityNameUser"));
-        methods.sendKeysText("numberCreditCard", services.getField(number));
+        methods.sendKeysText("numberCreditCard", number);
         methods.sendKeysText("monthCreditCard", services.getField("sanityMonth"));
         methods.sendKeysText("yearCreditCard", services.getField("sanityYear"));
         methods.sendKeysText("cvvCreditCard", services.getField("sanityCvv"));
-        //incluir metodo de numero de cuotas
-        methods.keyDown("selectDues");
+        methods.angularMaterialAutocomplete("selectDues","divDues");
+        methods.doScrollDown(1,"sanityNameUser");
+        clickOnBtnCarPay();
+    }
+    public void fillDataFormCarProduct(String number) {
+
+        methods.clickElement("btnPayPlan");
+        methods.waitingForElement("creditCard",150);
+        methods.clickElement("creditCard");
+        methods.sendKeysText("nameCreditCard", services.getField("sanityNameUser"));
+        methods.sendKeysText("numberCreditCard", number);
+        methods.sendKeysText("monthCreditCard", services.getField("sanityMonth"));
+        methods.sendKeysText("yearCreditCard", services.getField("sanityYear"));
+        methods.sendKeysText("cvvCreditCard", services.getField("sanityCvv"));
+        methods.angularMaterialAutocomplete("selectDues","divDues");
+        methods.doScrollDown(1,"sanityNameUser");
         clickOnBtnPayPlan();
+    }
+
+    public String  paymentSuccessProduct() {
+        fillDataFormCarProduct(services.getField("sanityCardsuccess"));
+        methods.waitingForElement("transactionSuccess",500);
+        return methods.getTextElement("transactionSuccess");
     }
 
     public String  paymentSuccess() {
         fillDataFormCar(services.getField("sanityCardsuccess"));
-        return methods.getTextElement("paySuccessful");
+        methods.waitingForElement("transactionSuccess",500);
+        return methods.getTextElement("transactionSuccess");
     }
 
     public  String  paymentFail() {
         fillDataFormCar(services.getField("sanityCardFail"));
         return methods.getTextElement("payFail");
     }
+    public  String  paymentFaiProduct() {
+        fillDataFormCarProduct(services.getField("sanityCardFail"));
+        methods.waitingForElement("payFail",500);
+        return methods.getTextElement("payFail");
+
+    }
 
     public String  paymentPending() {
         fillDataFormCar(services.getField("sanityCardPending"));
         return methods.getTextElement("payPending");
+    }
+    public String  paymentPendingProduct() {
+        fillDataFormCarProduct(services.getField("sanityCardPending"));
+        methods.waitingForElement("payPending",500);
+        return methods.getTextElement("payPending");
+    }
+
+    public String retryPay(){
+        return methods.getTextElement("retryPayment");
+    }
+    public String  clickOnButtonRetryPay(){
+        methods.clickElement("retryPayment");
+        methods.waitingForElement("paymentMethod",500);
+        return methods.getTextElement("paymentMethod");
+
     }
 
 

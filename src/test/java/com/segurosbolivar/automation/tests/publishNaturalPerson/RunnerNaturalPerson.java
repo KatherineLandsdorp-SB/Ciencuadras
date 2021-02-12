@@ -1,15 +1,15 @@
-package com.segurosbolivar.automation.tests.publishProperty;
+package com.segurosbolivar.automation.tests.publishNaturalPerson;
 
 import com.segurosbolivar.automation.commons.Hooks;
 import com.segurosbolivar.automation.tests.login.StepsLogin;
 import org.testng.annotations.Test;
 
-public class RunnerPublishProperty extends Hooks {
+public class RunnerNaturalPerson extends Hooks {
 
-    ThreadLocal<StepsPublishProperty> steps = ThreadLocal.withInitial(StepsPublishProperty::new);
+    ThreadLocal<StepsNaturalPerson> steps = ThreadLocal.withInitial(StepsNaturalPerson::new);
     ThreadLocal<StepsLogin> step = ThreadLocal.withInitial(StepsLogin::new);
 
-    @Test(priority = 1, groups = { "sanity"})
+    @Test(priority = 1, groups = {"sanity"})
     //Sienpre cambiar correo para este test
     public void publishPropertyRegisterUserEnd() throws InterruptedException {
         steps.get().clickButtonOfferHome();
@@ -36,10 +36,11 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().registerConfirmPasswordUser();
         steps.get().clickOnButtonContinue();
         steps.get().uploapFile();
-    }
-  //revisar login
 
-    @Test(priority = 2, groups = { "sanity"})
+    }
+    //revisar login
+
+    @Test(priority = 2, groups = {"sanity"})
     public void publishPropertyUserLoggegInWithIdentification() throws InterruptedException {
         step.get().clickEntry().fillAll();
         steps.get().clickButtonOfferHome();
@@ -58,16 +59,16 @@ public class RunnerPublishProperty extends Hooks {
         steps.get().confirmAdress();
         steps.get().registerCellPhoneUser();
         steps.get().clickOnButtonContinue();
-        steps.get().uploapFile();
+        steps.get().uploapFile()
+                .clickButtonContinuePhoto();
     }
 
 
-    @Test(priority = 3, groups = { "sanity"})
+    @Test(priority = 3, groups = {"sanity"})
     public void publishPropertyUserNotLoggedIn() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .registerValueRent()
                 .registerValueAdministration()
@@ -83,17 +84,17 @@ public class RunnerPublishProperty extends Hooks {
                 .registerCellPhoneUser()
                 .registerPasswordOldUser()
                 .clickOnButtonContinue();
-                // steps.get().uploapFile();
-                //.clickButtonContinuePhoto();
+        // steps.get().uploapFile();
+        //.clickButtonContinuePhoto();
 
     }
 
-    @Test(priority = 4, groups = { "sanity"})
+    // revisar este caso porque la localidad no esta en este form
+    @Test(priority = 4, groups = {"sanity"})
     public void publishPropertyCityWithoutLocality() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .registerValueRent()
                 .registerValueAdministration()
@@ -111,12 +112,11 @@ public class RunnerPublishProperty extends Hooks {
 
     }
 
-    @Test(priority = 5, groups = { "sanity"})
+    @Test(priority = 5, groups = {"sanity"})
     public void publishPropertyFormWithoutAddress() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .registerValueRent()
                 .registerValueAdministration()
@@ -135,12 +135,11 @@ public class RunnerPublishProperty extends Hooks {
     }
 
     //Revisar una vez realicen ajuste de bug CCF-260
-    @Test(priority = 6, groups = { "sanity"})
+    @Test(priority = 6, groups = {"sanity"})
     public void publishPropertyFormWithWrongAddress() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .registerValueRent()
                 .registerValueAdministration()
@@ -155,12 +154,11 @@ public class RunnerPublishProperty extends Hooks {
                 .validateFormWithoutCity();
     }
 
-    @Test(priority = 7, groups = { "sanity"})
+    @Test(priority = 7, groups = {"sanity"})
     public void publishPropertyForSaleBasicPlan() throws InterruptedException {
         steps.get()
                 .clickButtonSaleHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .registerPriceSale()
                 .registerAntiquityProperty()
@@ -174,11 +172,11 @@ public class RunnerPublishProperty extends Hooks {
                 .regisStepsOldUserEmail()
                 .registerCellPhoneUser()
                 .registerPasswordOldUser()
-                .clickOnButtonContinue();
-        //.uploapFile();
+                .clickOnButtonContinue()
+                .uploapFile();
     }
 
-    @Test(priority = 8, groups = { "sanity"})
+    @Test(priority = 8, groups = {"sanity"})
     public void publishPropertyForSaleFeaturedPlan() throws InterruptedException {
         steps.get()
                 .clickButtonSaleHome()
@@ -187,8 +185,8 @@ public class RunnerPublishProperty extends Hooks {
                 .registerCityCoverage()
                 .clickButtonConfirmCityCoverage()
                 .clickButtonContinueCityCoverage()
-                .registerPriceSale();
-                /*.registerValueAdministration()
+                .registerPriceSale()
+                .registerValueAdministration()
                 .registerAntiquityProperty()
                 .registerDescription()
                 .registerStratumProperty()
@@ -201,10 +199,10 @@ public class RunnerPublishProperty extends Hooks {
                 .registerCellPhoneUser()
                 .registerPasswordOldUser()
                 .clickOnButtonContinue()
-                    .uploapFile();*/
+                .uploapFile();
     }
 
-    @Test(priority = 9, groups = { "sanity"})
+    @Test(priority = 9, groups = {"sanity"})
     public void publishForRenOustandingPlanHiddenValueAdministration() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
@@ -218,12 +216,11 @@ public class RunnerPublishProperty extends Hooks {
                 .registerValueAdministration();
     }
 
-    @Test(priority = 10, groups = { "sanity"})
+    @Test(priority = 10, groups = {"sanity"})
     public void publishForRenBasicPlantWithoutValueAdministration() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .registerValueRent()
                 .registerAntiquityProperty()
@@ -241,7 +238,7 @@ public class RunnerPublishProperty extends Hooks {
                 .validateMandatoryFieldValueAdministration();
     }
 
-    @Test(priority = 12, groups = { "sanity"})
+    @Test(priority = 12, groups = {"sanity"})
     public void validateCityWithCoverage() throws InterruptedException {
         steps.get()
                 .clickButtonOfferHome()
@@ -253,7 +250,7 @@ public class RunnerPublishProperty extends Hooks {
                 .clickButtonContinueCityCoverage();
     }
 
-    @Test(priority = 13, groups = { "sanity"})
+    @Test(priority = 13, groups = {"sanity"})
     public void validateCityOutCoverage() throws InterruptedException {
         steps.get()
                 .clickButtonSaleHome()
@@ -264,7 +261,7 @@ public class RunnerPublishProperty extends Hooks {
                 .validateCityOutCoverage();
     }
 
-    @Test(priority = 14, groups = { "sanity"})
+    @Test(priority = 14, groups = {"sanity"})
     public void validateViewAndCheckStepTracking() throws InterruptedException {
         steps.get()
                 .clickButtonSaleHome()
@@ -272,7 +269,6 @@ public class RunnerPublishProperty extends Hooks {
                 .clickPublishYourself()
                 .validateCheckDoneStepOneTracking()
                 .validateStepChoosePlan()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .validateCheckDoneStepTwoTracking()
                 .validateStepPublish()
@@ -288,7 +284,9 @@ public class RunnerPublishProperty extends Hooks {
                 .regisStepsOldUserEmail()
                 .registerCellPhoneUser()
                 .registerPasswordOldUser()
-                .clickOnButtonContinue();
+                .clickOnButtonContinue().uploapFile()
+                .clickButtonContinuePhoto()
+                .paymentSuccess();
     }
 
     @Test(priority = 11, groups = {"sanity"})
@@ -296,7 +294,6 @@ public class RunnerPublishProperty extends Hooks {
         steps.get()
                 .clickButtonOfferHome()
                 .clickPublishYourself()
-                .clickOnBasicPlan()
                 .clickOnAddToCar()
                 .clickOnButtonBackStepTracking()
                 .clickOnAddToCar()
@@ -313,12 +310,16 @@ public class RunnerPublishProperty extends Hooks {
                 .confirmAdress()
                 .regisStepsOldUserEmail()
                 .registerCellPhoneUser()
-                .registerPasswordOldUser();
-        //.clickOnButtonContinue();
-        // Thread.sleep(10000);
-        //steps.get().clickOnButtonBack()
-        // steps.get().clickOnButtonBackFomr();
-        // steps.get().uploapFile()*/
+                .registerPasswordOldUser()
+                .clickOnButtonContinue()
+                .clickOnButtonBack()
+                .clickOnButtonBackFomr()
+                .clickOnAddToCar()
+                .clickOnButtonContinue()
+                .uploapFile()
+                .clickButtonContinuePhoto()
+                .paymentSuccess()
+                .returnCommerce();
     }
 
 

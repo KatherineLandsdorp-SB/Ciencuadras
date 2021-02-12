@@ -293,7 +293,7 @@
   },
   "buttonBasicAddToCar": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//button[@class='btn select-btn basico' and //button[contains(text(),'AÑADIR AL CARRITO')]]"
+    "ValueToFind": "(//button[contains(text(),'AÑADIR AL CARRITO')])[2]"
   },
   "buttonFeaturedPlan": {
     "GetFieldBy": "Id",
@@ -321,7 +321,7 @@
   },
   "buttonAddToCar": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//button[@class='btn destacado' and //button[contains(text(),'AÑADIR AL CARRITO')]]"
+    "ValueToFind": "(//button[contains(text(),'AÑADIR AL CARRITO')])[1]"
   },
   "inputNameRegister": {
     "GetFieldBy": "Xpath",
@@ -531,6 +531,14 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//div/re-captcha/div/div/iframe"
   },
+  "linkProduct": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//span[@class='link']"
+  },
+  "textProduct": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p[contains(text(),'Conoce nuestros productos y todos sus beneficios.')]"
+  },
   "clientRealEstate": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"products-profile\"]/div/div[2]/div/button[1]"
@@ -549,11 +557,19 @@
   },
   "makePlan": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//span[contains(text(),'Quiero armarlo')]"
+    "ValueToFind": "//a[@href='/productos/arma-tu-plan']"
+  },
+  "windowMakePlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//h1[contains(text(),'Arma tu plan en 2 pasos')]"
   },
   "seePlans": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//a[@href='/productos/seleccion-ideal']"
+  },
+  "windowSeePlan": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//h1[contains(text(),'Escoge tu plan ideal')]"
   },
   "carBasePlan": {
     "GetFieldBy": "Xpath",
@@ -663,7 +679,6 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//p[contains(text(),'Total a pagar:')]"
   },
-
   "buttonEntryPay": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button/span[contains(text(),'Ingresar')]"
@@ -681,8 +696,8 @@
     "ValueToFind": "mat-input-6"
   },
   "numberCreditCard": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-input-7"
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-7\"]"
   },
   "monthCreditCard": {
     "GetFieldBy": "Id",
@@ -700,6 +715,14 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-select-3\"]"
   },
+  "divDues": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-2\"]/div"
+  },
+  "transactionSuccess": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//p/strong[contains(text(),'APROBADA')]"
+  },
   "btnReturnCommerce": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button[contains(text(),'Volver a comercio')]"
@@ -708,6 +731,18 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//h2[contains(text(),'Pago exitoso')]"
   },
+  "payToPending": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//h2[contains(text(),'Transacción pendiente por confirmar')]"
+  },
+  "goAccount": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),'ir a mi cuenta')]"
+  },
+  "activeProduct": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//span[contains(text(),'Disponible')])[1]"
+  },
   "payFail": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//p/strong[contains(text(), 'FALLIDA')]"
@@ -715,6 +750,10 @@
   "retryPayment": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button[contains(text(), 'Reintentar el pago')]"
+  },
+  "paymentMethod": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//strong[contains(text(), ' Elegir el medio de pago')]"
   },
   "payPending": {
     "GetFieldBy": "Xpath",

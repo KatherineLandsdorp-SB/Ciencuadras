@@ -4,9 +4,23 @@ import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
-public class MethosProduct extends BaseTest {
+public class MethodsProduct extends BaseTest {
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
+
+    public String clickOnButtonProduct() {
+        methods.clickElement("linkProduct");
+        methods.waitingForElement("textProduct", 120);
+        return methods.getTextElement("textProduct");
+    }
+
+    public Boolean validateOptionSeePlan() {
+        return methods.validationElementEnable("seePlans");
+    }
+
+    public Boolean validationOptionsMakePlan() {
+        return methods.validationElementEnable("makePlan");
+    }
 
 
     public void clickOnClientRealEstate() {
@@ -14,73 +28,79 @@ public class MethosProduct extends BaseTest {
         methods.clickElement("clientRealEstate");
     }
 
+    public String clickOnBtnReturnCommerce() {
+        methods.clickElement("btnReturnCommerce");
+        methods.waitingForElement("sanityFinalpaySuccess", 120);
+        methods.validationElementEnable("goAccount");
+        return methods.getTextElement("paySuccessful");
+    }
+
+    public String clickOnBtnReturnCommercePending() {
+        methods.clickElement("btnReturnCommerce");
+        methods.waitingForElement("payToPending", 120);
+        return methods.getTextElement("payToPending");
+    }
+
+    public Boolean clickOnButtonGoAccount() {
+        methods.clickElement("goAccount");
+        return methods.validationElementEnable("activeProduct");
+    }
+
     public void clickOnClientAgent() {
+        methods.waitingForElement("clientAgent", 120);
         methods.clickElement("clientAgent");
     }
 
     public void clickOnClientBuilder() {
-        methods.generatosDinamicValue();
+        methods.waitingForElement("clientBuilder", 120);
         methods.clickElement("clientBuilder");
     }
 
-    public void clickOnMakePlan() {
+    public Boolean clickOnMakePlan() {
+        methods.waitingForElement("makePlan", 120);
         methods.clickElement("makePlan");
+        methods.waitingForElement("windowMakePlan", 120);
+        return methods.validationElementEnable("windowMakePlan");
     }
 
-    public void clickOnSeePlan() {
+    public Boolean clickOnSeePlan() {
         methods.waitingForElement("seePlans", 120);
         methods.clickElement("seePlans");
+        methods.waitingForElement("windowSeePlan", 120);
+        return methods.validationElementEnable("windowSeePlan");
     }
 
     public void clickOnAddPlanToCar() {
+        methods.scrollToPixelUp("carBasePlan");
         methods.clickElement("carBasePlan");
     }
 
-    public void clickOnBtnRemoveTour() {
-        methods.clickElement("btnRemoveTour");
-    }
 
     public void clickOnBtnAddTour() {
         methods.waitingForElement("btnAddTour", 120);
         methods.clickElement("btnAddTour");
     }
 
-    public void clickOnBtnRemovePhoto() {
-        methods.clickElement("btnRemovePhoto");
-    }
 
     public void clickOnBtnAddPhoto() {
         methods.clickElement("btnAddPhoto");
     }
 
-    public void clickOnBtnRemoveOutstanding() {
-        methods.clickElement("btnRemoveOutstanding");
-    }
 
     public void clickOnBtnAddOutstanding() {
         methods.clickElement("btnAddOutstanding");
     }
 
-    public void clickOnBtnRemoveAscend() {
-        methods.clickElement("btnRemoveAscend");
-    }
 
     public void clickOnBtnAddAddAscend() {
         methods.clickElement("btnAddAscend");
     }
 
-    public void clickOnBtnRemovePriceLine() {
-        methods.clickElement("btRemovePriceLine");
-    }
 
     public void clickOnBtnAddAddPriceLine() {
         methods.clickElement("btnAddPriceLine");
     }
 
-    public void clickOnBtnCarPay() {
-        methods.waitingForElement("btnCarPay", 130);
-        methods.clickElement("btnCarPay");
-    }
 
     public void clickOnBtnPlan() {
         methods.clickElement("btnSelectPlan");
@@ -122,8 +142,6 @@ public class MethosProduct extends BaseTest {
         clickOnCheckTerms();
         clickOnCheckAuthorize();
         clickOnBtnEntry();
-
-
     }
 
     public void fillFormNewAccountExists() {
@@ -137,6 +155,7 @@ public class MethosProduct extends BaseTest {
         clickOnCheckTerms();
         clickOnCheckAuthorize();
         clickOnBtnEntry();
+        methods.pause(10);
 
 
     }
@@ -145,9 +164,6 @@ public class MethosProduct extends BaseTest {
         shared.fillDataFormCar(services.getField("sanityCardsuccess"));
     }
 
-    public void clickOnBtnReturnCommerce() {
-        methods.clickElement("btnReturnCommerce");
-    }
 
     public String RealEstateSeePlanExistsUser() {
         methods.waitForPageLoad();
@@ -159,7 +175,7 @@ public class MethosProduct extends BaseTest {
         clickOnBtnAddAddAscend();
         clickOnBtnAddAddPriceLine();
         shared.clickOnBtnPayPlan();
-        clickOnBtnCarPay();
+        shared.clickOnBtnCarPay();
         methods.changeWindow();
         clickOnBtnNewAccount();
         fillFormNewAccountExists();
@@ -170,7 +186,7 @@ public class MethosProduct extends BaseTest {
     }
 
 
-    public String NewUserPaymentSuccess() {
+    public String seePlanNewUser() {
         methods.waitForPageLoad();
         clickOnBtnPlan();
         methods.waitForPageLoad();
@@ -180,51 +196,31 @@ public class MethosProduct extends BaseTest {
         clickOnBtnAddAddAscend();
         clickOnBtnAddAddPriceLine();
         shared.clickOnBtnPayPlan();
-        clickOnBtnCarPay();
+        shared.clickOnBtnCarPay();
         methods.changeWindow();
         clickOnBtnNewAccount();
         fillFormNewAccountSuccess();
-        methods.waitingForElement("elemto del carrito",120);
+        methods.waitingForElement("entryCar", 800);
         return methods.getEntity("entryCar").getText();
 
     }
 
-    public String NewUserPaymentDeclined() {
+    public String makePlanNewUser() {
         methods.waitForPageLoad();
-        clickOnBtnPlan();
-        methods.waitForPageLoad();
-        clickOnBtnAddTour();
-        clickOnBtnAddPhoto();
-        clickOnBtnAddOutstanding();
-        clickOnBtnAddAddAscend();
-        clickOnBtnAddAddPriceLine();
-        shared.clickOnBtnPayPlan();
-        clickOnBtnCarPay();
-        methods.changeWindow();
-        clickOnBtnNewAccount();
-        fillFormNewAccountSuccess();
-        methods.waitingForElement("elemto del carrito", 120);
-        methods.validationElementEnable("elemtonto carrito");
-        return methods.getEntity("texto del carrito").getText();
-
-    }
-    public String NewUserPaymentPending() {
-        methods.waitForPageLoad();
-        clickOnBtnPlan();
         methods.waitForPageLoad();
         clickOnBtnAddTour();
         clickOnBtnAddPhoto();
         clickOnBtnAddOutstanding();
         clickOnBtnAddAddAscend();
         clickOnBtnAddAddPriceLine();
+        clickOnAddPlanToCar();
         shared.clickOnBtnPayPlan();
-        clickOnBtnCarPay();
+        shared.clickOnBtnCarPay();
         methods.changeWindow();
         clickOnBtnNewAccount();
         fillFormNewAccountSuccess();
-        methods.waitingForElement("elemto del carrito", 120);
-        methods.validationElementEnable("elemtonto carrito");
-        return methods.getEntity("texto del carrito").getText();
+        methods.waitingForElement("entryCar", 800);
+        return methods.getEntity("entryCar").getText();
 
     }
 

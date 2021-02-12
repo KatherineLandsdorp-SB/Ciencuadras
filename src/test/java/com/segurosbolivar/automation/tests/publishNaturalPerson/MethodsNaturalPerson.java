@@ -1,18 +1,11 @@
-package com.segurosbolivar.automation.tests.publishProperty;
+package com.segurosbolivar.automation.tests.publishNaturalPerson;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
-import com.segurosbolivar.automation.utils.PropertyManager;
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 
-public class MethodsPublishProperty extends BaseTest {
+public class MethodsNaturalPerson extends BaseTest {
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 
@@ -67,9 +60,10 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void clickOnButtonBackTracking() {
-        methods.doScrollDown(7,"divFormPublication");
+        methods.doScrollDown(7, "divFormPublication");
         methods.clickElement("buttonBackTracking");
     }
+
     public void clickBackForm() {
         methods.clickElement("buttonBackTracking");
     }
@@ -84,7 +78,7 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public void registerRentValue() {
-        methods.waitingForElement("inputValueRent",60);
+        methods.waitingForElement("inputValueRent", 60);
         methods.sendKeysText("inputValueRent", services.getField("sanityValueRent"));
 
 
@@ -123,7 +117,7 @@ public class MethodsPublishProperty extends BaseTest {
 
     public void registerArea() {
         methods.sendKeysText("inputArea", services.getField("sanityArea"));
-        methods.doScrollDown(1,"divFormPublication");
+        methods.doScrollDown(1, "divFormPublication");
     }
 
     public void registerDescriptionProperty() {
@@ -144,7 +138,7 @@ public class MethodsPublishProperty extends BaseTest {
         methods.clickElement("inputDistric");
         methods.pause(3);
         methods.sendKeysText("inputDistric", services.getField("sanityDistric"));
-        methods.waitingForElement("selectCity",120);
+        methods.waitingForElement("selectCity", 120);
         methods.keyDown("inputDistric");
     }
 
@@ -153,6 +147,7 @@ public class MethodsPublishProperty extends BaseTest {
         methods.pause(4);
         methods.sendKeysText("inputAdress", services.getField("sanityAdress"));
     }
+
     public void registerWrongAddress() {
         methods.clickElement("inputDistric");
         methods.pause(4);
@@ -172,7 +167,7 @@ public class MethodsPublishProperty extends BaseTest {
     public void registerEmailOldUser() throws InterruptedException {
         methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
         methods.pause(8);
-        methods.doScrollDown(2,"divFormPublication");
+        methods.doScrollDown(2, "divFormPublication");
     }
 
     public void registerTypeDocument() {
@@ -204,6 +199,7 @@ public class MethodsPublishProperty extends BaseTest {
     public void registerConfirmPassword() {
         methods.sendKeysText("inputPasswordConfirm", services.getField("sanityPassword"));
     }
+
     public void registerPasswordOldUser() {
         methods.sendKeysText("passwordOldUser", services.getField("sanityPassword"));
     }
@@ -215,7 +211,7 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public String validateTexFormWithoutCity() {
-        methods.waitingForElement("texNav", 10);
+        methods.waitingForElement("texNav", 120);
         String text = methods.getTextElement("texNav");
         return text;
     }
@@ -225,6 +221,7 @@ public class MethodsPublishProperty extends BaseTest {
         methods.pause(2);
         methods.keyDown("inputCityCoverage");
     }
+
     public void registerCityOutCoverage() throws InterruptedException {
         methods.sendKeysText("inputCityCoverage", services.getField("sanityOutCoverage"));
         methods.pause(2);
@@ -242,13 +239,13 @@ public class MethodsPublishProperty extends BaseTest {
     }
 
     public String validateTextConfirmCoverage() {
-        methods.pause(2);
+        methods.waitingForElement("texConfirmedCity", 120);
         String text = methods.clearText("texConfirmedCity", "[-¡+.^:,]", "");
         return text;
     }
 
     public String validateTextOutCoverage() {
-        methods.pause(2);
+        methods.waitingForElement("textOutCoverage", 120);
         String text = methods.getTextElement("textOutCoverage");
         return text;
     }
@@ -257,10 +254,13 @@ public class MethodsPublishProperty extends BaseTest {
         methods.clickElement("buttonContinuePhoto");
     }
 
-    public void uploadImage() throws InterruptedException{
-        methods.doScrollUp(2,"divFormPublication");
+    public void uploadImage() throws InterruptedException {
+        methods.doScrollUp(2, "divFormPublication");
         methods.uploadRemoteImage(0, 2, "inputImage");
 
+    }
+    public void clickOnBtnReturnCommerce() {
+        methods.clickElement("btnReturnCommerce");
     }
 
 

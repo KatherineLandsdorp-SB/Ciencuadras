@@ -5,6 +5,7 @@ import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class StepsRegister extends BaseTest {
 
@@ -30,13 +31,14 @@ public class StepsRegister extends BaseTest {
 
     @Step("The user fill all the required fields allied")
     public StepsRegister fillAllAllied(){
-        MethodsRegister.fillAllTheRequiredFieldsAllied();
+        assertTrue(true, MethodsRegister.fillAllTheRequiredFieldsAllied());
         return this;
     }
 
     @Step("The user fill all the required fields")
     public StepsRegister fillAll(){
-        MethodsRegister.fillAllTheRequiredFields();
+        assertTrue(true, MethodsRegister.fillAllTheRequiredFields());
+
         return this;
     }
 

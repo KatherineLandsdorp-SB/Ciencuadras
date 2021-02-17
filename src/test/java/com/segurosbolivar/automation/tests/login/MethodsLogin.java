@@ -76,12 +76,12 @@ public class MethodsLogin extends BaseTest {
 
     public String FailedFields(){
         methods.waitForPageLoad();
-        methods.waitingForElement("loginInMail", 30);
+        methods.waitingForElement("loginInMail", 15);
         methods.sendKeysText("loginInMail", "mailfalso@yopmail.com");
         methods.sendKeysText("loginInPass", services.getField("passRegister"));
         methods.clickElementJs("loginUser");
         methods.waitForPageLoad();
-        methods.waitingForElement("navbarDropdown", 30);
-        return methods.getEntity("navbarDropdown").getText();
+        methods.waitingForElement("navbarDropdown", 15);
+        return methods.searchText("Los datos ingresados no son correctos", 15);
     }
 }

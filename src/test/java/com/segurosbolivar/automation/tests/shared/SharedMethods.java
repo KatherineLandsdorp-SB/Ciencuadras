@@ -63,9 +63,7 @@ public class SharedMethods extends BaseTest {
         methods.clickElement("buttonSale");
     }
 
-    public void clickOnButtonAddPhoto() {
-        buttonAddPhoto.click();
-    }
+
 
     public void registerValueAdministration() {
         List<WebElement> dynamicElement = driverFacade.getWebDriver().findElements(By.id("administrationValue"));

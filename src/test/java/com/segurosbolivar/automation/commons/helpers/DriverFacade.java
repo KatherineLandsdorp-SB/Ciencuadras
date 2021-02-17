@@ -17,7 +17,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.awaitility.Awaitility.await;
@@ -36,12 +38,14 @@ public class DriverFacade {
     RemoteWebDriver driver;
     WebDriverWait wait;
     JSONObject jsonObject;
+    Date myDate = new Date();
+
     List<Windows> windows = new ArrayList<Windows>();
 
     int timeoutInSeconds = 60;
 
 
-    private DesiredCapabilities capabilitiesSetUp() {
+    private DesiredCapabilities capabilitiesSetUp(String description) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 //        capabilities.setCapability("platform", "MacOS Catalina");
 //        capabilities.setCapability("browserName", "Safari");
@@ -49,8 +53,8 @@ public class DriverFacade {
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "70.0");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
-        capabilities.setCapability("build", "Ui_Automation_CienCuadrasTEST");
-        capabilities.setCapability("name", "Ui_Automation_Seguros_Bolivar_Structure_1");
+        capabilities.setCapability("build", PropertyManager.getConfigValueByKey("portal")+"_" + PropertyManager.getConfigValueByKey("suite") + "_" + new SimpleDateFormat("yyyy_MM_dd_hh_mm").format(myDate));
+        capabilities.setCapability("name", description);
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
         capabilities.setCapability("video", true); // To enable video recording
@@ -58,13 +62,13 @@ public class DriverFacade {
         return capabilities;
     }
 
-    public DriverFacade() {
+    public DriverFacade(String description) {
         JsonFile();
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
             try {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
-                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp());
+                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp(description));
             } catch (MalformedURLException e) {
                 System.out.println("Invalid grid URL");
             } catch (Exception e) {

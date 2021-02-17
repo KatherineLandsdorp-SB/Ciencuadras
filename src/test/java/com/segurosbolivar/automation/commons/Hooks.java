@@ -5,13 +5,17 @@ import com.segurosbolivar.automation.utils.PropertyManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import java.lang.reflect.Method;
 
 @Listeners({TestListener.class})
 public class Hooks {
 
     @BeforeMethod
-    public void before() {
-        DriverFactory.setWebDriver();
+    public void before(Method method) {
+        Test test = method.getAnnotation(Test.class);
+        DriverFactory.setWebDriver(test.description());
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
         //bd inicio
     }

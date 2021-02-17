@@ -98,6 +98,41 @@ public class Methods extends BaseTest {
         return element;
     }
 
+    public String searchText(String text, int iterations){
+        WebElement element = null;
+
+        try {
+                boolean ElementPresent = false;
+                iteration = 0;
+
+                while (iteration < (iterations * 2) && !ElementPresent) {
+                    try {
+                        ElementPresent = driverFacade.getWebDriver().findElement(By.xpath(("//*[contains(text(),'" + text + "')]"))).isEnabled();
+                        element = driverFacade.getWebDriver().findElement(By.xpath(("//*[contains(text(),'" + text + "')]")));
+                    } catch (Exception e) {
+                        iteration++;
+                        System.out.print("#Tried: " + iteration);
+                        System.out.println(ElementPresent + " Not Search  " + text);
+                    }
+                }
+
+                if (ElementPresent) {
+                    Thread.sleep(1000);
+                    System.out.print("Successful Enable: ** :) **  "+ element.getText());
+                    return element.getText();
+                } else {
+                    System.out.print("Enable Failed: ** :( **  ");
+                    System.out.print("No Se encontro el Elemento: ** :( ** : " + "//*[contains(text(),'" + text + "'");
+                    System.out.print("No Se encontro el Elemento: ** :) **  ");
+                    assertFalse(ElementPresent);
+                }
+                System.out.println(" ");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        return element.getText();
+
+    }
 
     //Esperar elemento por iteraciones
     public void waitingForElement(String entity, int iterations) {
@@ -139,7 +174,7 @@ public class Methods extends BaseTest {
                 } else {
                     System.out.print("Enable Failed: ** :( **  ");
                     System.out.print("No Se encontro el Elemento: ** :( ** : " + entity);
-                    System.out.print("Nooooo Se encontro el Elemento: ** :) **  ");
+                    System.out.print("No Se encontro el Elemento: ** :) **  ");
                     assertFalse(ElementPresent);
                 }
                 System.out.println(" ");
@@ -319,6 +354,11 @@ public class Methods extends BaseTest {
         getEntity(entity).sendKeys(text);
     }
 
+    //click checkbox
+    public void checkbox(String entity) {
+        getEntity(entity).isSelected();
+    }
+
     //Enviar enter
     public void sendKeysEnter(String entity) {
         getEntity(entity).sendKeys(Keys.ENTER);
@@ -366,6 +406,14 @@ public class Methods extends BaseTest {
         Thread.sleep(3000);
 
     }
+
+
+    public void select(String entity, String search) {
+        Select dropdown = new Select(getEntity(entity));
+        dropdown.selectByVisibleText(search);
+    }
+
+
 
     // Metodo para seleccionar elemento a partir del xpath
     public void angularMaterialDrop(String entity, String search) {

@@ -3,28 +3,21 @@ package com.segurosbolivar.automation.tests.search;
 import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
+import static org.testng.Assert.assertTrue;
+
 public class StepsSearch extends BaseTest {
 
-    private MethodsSearch MethodsRegister = new MethodsSearch();
+    private MethodsSearch MethodsSearch = new MethodsSearch();
 
-    @Step("The user clicks on the login Link in the Header")
-    public StepsSearch clickEntry(){
+    @Step("The user click on the logo")
+    public StepsSearch clickLogo(){
+        MethodsSearch.clickLogo();
         return this;
     }
 
-    @Step("The user clicks on the register Link in the Popup")
-    public StepsSearch clickAllied(){
+    @Step("Search code")
+    public StepsSearch searchCode(){
+        assertTrue(true, MethodsSearch.clickSearchCode());
         return this;
     }
-
-    @Step("The user fill all the required fields")
-    public StepsSearch fillAll(){
-        return this;
-    }
-
-    @Step("Valid send email")
-    public StepsSearch validateEmail(){
-        return this;
-    }
-
 }

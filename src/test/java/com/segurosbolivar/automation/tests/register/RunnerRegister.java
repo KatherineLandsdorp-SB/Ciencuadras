@@ -7,7 +7,7 @@ public class RunnerRegister extends Hooks {
 
     ThreadLocal<StepsRegister> steps= ThreadLocal.withInitial(StepsRegister::new);
 
-    @Test(priority=2, groups = { "smoke" })
+    @Test(priority=1, groups = { "smoke" })
     public void successfullRegister(){
         steps.get()
                 .clickEntry()

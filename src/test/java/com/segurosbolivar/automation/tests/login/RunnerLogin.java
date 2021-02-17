@@ -9,7 +9,7 @@ public class RunnerLogin extends Hooks {
 
     ThreadLocal<StepsLogin> steps = ThreadLocal.withInitial(StepsLogin::new);
 
-    @Test(priority=3, groups = { "smoke" })
+    @Test(priority=2, groups = { "smoke" })
     public void successfullLogin(){
         steps.get()
                 .clickEntry()
@@ -17,7 +17,7 @@ public class RunnerLogin extends Hooks {
                 .fillAll();
     }
 
-    @Test(priority=3, groups = { "smoke" })
+    @Test(priority=2, groups = { "smoke" })
     public void failLogin(){
         steps.get()
                 .clickEntry()
@@ -26,7 +26,7 @@ public class RunnerLogin extends Hooks {
     }
 
 
-    @Test(priority=3, groups = { "smoke" })
+    @Test(priority=2, groups = { "smoke" })
     public void successfullLoginRemember(){
         steps.get()
                 .clickEntry()
@@ -35,21 +35,21 @@ public class RunnerLogin extends Hooks {
                 .fillAll();
     }
 
-    @Test(priority=4, groups = { "smoke" })
-    public void successfullLoginFacebook(){
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillAllFacebook();
-    }
-
-    @Test(priority=4)
-    public void successfullGmail(){
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillAllGmail();
-    }
+//    @Test(priority=2, groups = { "smoke" })
+//    public void successfullLoginFacebook(){
+//        steps.get()
+//                .clickEntry()
+//                .clickLoginPerson()
+//                .fillAllFacebook();
+//    }
+//
+//    @Test(priority=3)
+//    public void successfullGmail(){
+//        steps.get()
+//                .clickEntry()
+//                .clickLoginPerson()
+//                .fillAllGmail();
+//    }
 
     // se agrega inmplementaciòn trayendo datos desde servicio de firebase
    /* ConnectionBD objBd = new ConnectionBD();

@@ -8,11 +8,9 @@ public class RunnerSearch extends Hooks {
     ThreadLocal<StepsSearch> steps= ThreadLocal.withInitial(StepsSearch::new);
 
     @Test(priority=1, groups = { "smoke" })
-    public void successfullRegister(){
+    public void successSearchCode(){
         steps.get()
-                .clickEntry()
-                .clickAllied()
-                .fillAll();
-                //.validateEmail()
+                .clickLogo()
+                .searchCode();
     }
 }

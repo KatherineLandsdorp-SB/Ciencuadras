@@ -7,12 +7,11 @@ public class RunnerEditProfile extends Hooks {
 
     ThreadLocal<StepsEditProfile> steps= ThreadLocal.withInitial(StepsEditProfile::new);
 
-    @Test(priority=2, groups = { "smoke" })
-    public void successfullLogin(){
+    @Test(priority=5, groups = { "smoke" })
+    public void editProfile(){
         steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillAll();
+                .aUserIsLoggedIn()
+                .editProfile();
     }
 
 //    @Test

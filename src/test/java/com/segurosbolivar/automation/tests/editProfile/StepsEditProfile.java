@@ -1,35 +1,30 @@
 package com.segurosbolivar.automation.tests.editProfile;
 
+import com.segurosbolivar.automation.tests.login.MethodsLogin;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
+import static org.testng.Assert.assertEquals;
+
 public class StepsEditProfile {
 
-    private MethodsEditProfile methodsLogin = new MethodsEditProfile();
-    private SharedMethods methods = new SharedMethods();
+    private MethodsLogin methodsLogin = new MethodsLogin();
+    private MethodsEditProfile methodsEditProfile = new MethodsEditProfile();
 
-    @Step("The user clicks on the login Link in the Header")
-    public StepsEditProfile clickEntry(){
+    @Step("^A user is logged in the EdirProfile service$")
+    public StepsEditProfile aUserIsLoggedIn(){
         methodsLogin.clickOnEntry();
-        return this;
-    }
-
-    @Step("The user clicks on the login Link in the Header")
-    public StepsEditProfile clickLoginPerson(){
         methodsLogin.loginPerson();
-        return this;
-    }
-
-
-    @Step("The user fill all the required fields")
-    public StepsEditProfile fillAll(){
         methodsLogin.fillAllTheRequiredFields();
         return this;
     }
 
-    @Step("The user fill all the required fields facebook")
-    public StepsEditProfile fillAllFacebook(){
-        methodsLogin.fillAllTheRequiredFacebook();
+    @Step("^A user is logged in the EdirProfile service$")
+    public StepsEditProfile editProfile(){
+        methodsEditProfile.clickNavbarDropdown();
+        methodsEditProfile.clickEditProfile();
+        assertEquals("Guardando datos por favor espere...", methodsEditProfile.fillAllData());
         return this;
     }
+
 }

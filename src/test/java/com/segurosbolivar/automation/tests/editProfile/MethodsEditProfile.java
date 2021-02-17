@@ -8,34 +8,28 @@ public class MethodsEditProfile extends BaseTest {
     private Methods methods = new Methods();
 
 
-    public void clickOnEntry(){
-        methods.awaitToFindElement("entryUser", 5);
-        entryUser.click();
-    }
-
-    public void loginPerson(){
-        methods.awaitToFindElement("loginPerson", 5);
-        loginPerson.click();
-    }
-
-    public void fillAllTheRequiredFacebook(){
-        methods.awaitToFindElement("facebookbtn", 5);
-        methods.clickElement("facebookbtn");
-        methods.changeWindow();
+    public void clickNavbarDropdown(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("facebookEmail", 5);
-        facebookEmail.sendKeys(PropertyManager.getConfigValueByKey("username"));
-        facebookPass.sendKeys(PropertyManager.getConfigValueByKey("password"));
-        buttonLoginFacebook.click();
+        methods.waitingForElement("navbarDropdown", 5);
+        methods.clickElementJs("navbarDropdown");
     }
 
-    public String fillAllTheRequiredFields(){
-        methods.waitingForElement("loginInMail", 5);
-        loginInMail.click();
-        loginInMail.sendKeys(PropertyManager.getConfigValueByKey("username"));
-        loginInPass.sendKeys(PropertyManager.getConfigValueByKey("password"));
-        loginUser.click();
-        webDriverFacade.waitForVisibilityOfElement(navbarDropdown);
-        return navbarDropdown.getText();
+    public void clickEditProfile(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("myData", 5);
+        methods.clickElementJs("myData");
+    }
+
+    public String fillAllData(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("editDepartment", 90);
+        methods.clickElementJs("editDepartment");
+        methods.sendKeysText("editPhone", "7107799");
+        methods.sendKeysText("numberPhone", "3124444333");
+        methods.checkbox("ckeckboxCall");
+        methods.checkbox("ckeckboxPhone");
+        methods.clickElementJs("saveProfile");
+        methods.waitingForElement("confirmationSaveProfile", 90);
+        return methods.getEntity("confirmationSaveProfile").getText();
     }
 }

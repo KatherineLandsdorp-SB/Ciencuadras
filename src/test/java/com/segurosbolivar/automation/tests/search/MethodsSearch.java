@@ -5,28 +5,19 @@ import com.segurosbolivar.automation.commons.Methods;
 public class MethodsSearch extends BaseTest {
     protected Methods methods = new Methods();
 
-    public void clickSearchSelect(){
+    public void clickLogo(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("searchSelect", 3);
-        methods.clickElement("searchSelect");
+        methods.waitingForElement("logo", 15);
+        methods.clickElementJs("logo");
+
     }
 
-    public void clickSearchType(){
+    public String clickSearchCode(){
         methods.waitForPageLoad();
-        methods.awaitToFindElement("searchType", 3);
-        methods.clickElement("searchType");
+        methods.awaitToFindElement("searchCode", 3);
+        methods.sendKeysText("searchCode", "7214-1200006");
+        methods.clickElementJs("searchButton");
+        methods.pause(15);
+        return  methods.searchText("7214-1200006", 15);
     }
-
-    public void city(){
-        methods.waitForPageLoad();
-        methods.awaitToFindElement("city", 3);
-        methods.clickElement("city");
-    }
-
-    public void search(){
-        methods.waitForPageLoad();
-        methods.awaitToFindElement("search", 3);
-        methods.clickElement("search");
-    }
-
 }

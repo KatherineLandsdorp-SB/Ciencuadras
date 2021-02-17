@@ -10,10 +10,11 @@ public class MethodsRegister extends BaseTest {
     public void clickOnEntry(){
         methods.waitForPageLoad();
         methods.waitingForElement("entryUser", 30);
-        methods.clickElement("entryUser");
+        methods.clickElementJs("entryUser");
     }
 
     public void registerPerson(){
+        methods.waitForPageLoad();
         methods.waitingForElement("registerUser", 30);
         methods.clickElement("registerUser");
     }
@@ -37,8 +38,8 @@ public class MethodsRegister extends BaseTest {
         methods.sendKeysText("passRegister", services.getField("passRegister"));
         methods.sendKeysText("confirmPassRegister", services.getField("passRegister"));
         methods.scrollTo("terms");
-        methods.clickElement("terms");
-        methods.clickElement("register");
+        methods.clickElementJs("terms");
+        methods.clickElementJs("register");
         methods.waitForPageLoad();
         methods.waitingForElement("navbarDropdown", 30);
         return methods.getEntity("navbarDropdown").getText();

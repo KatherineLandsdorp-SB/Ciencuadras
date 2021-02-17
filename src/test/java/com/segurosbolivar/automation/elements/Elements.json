@@ -1,4 +1,9 @@
 {
+
+  "logo": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//header/nav[1]/div[1]/nav[1]/a[1]"
+  },
   "entryUser": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]"
@@ -514,5 +519,60 @@
   "buttonContinuePhoto": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//button[contains(text(), 'CONTINUAR')])[2]"
+  },
+  "myData": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//a[contains(text(),'Mis Datos')]"
+  },
+
+  "editDepartment": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "select2-fijoDepartamento-container"
+  },
+  "selectDepartment1": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "//li[contains(text(), 'Cesar')]"
+  },
+  "seacrchDepartment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@type='search']"
+  },
+  "selectDepartment": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//div[@id='divTelefonosInmoCons']/div[3]/div/div"
+  },
+  "editPhone": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "telefonoFijo"
+  },
+  "numberPhone": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "celularNumero"
+  },
+
+  "ckeckboxCall": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "contacto-por-llamadac"
+  },
+  "ckeckboxPhone": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "contacto-por-whatsapp"
+  },
+  "saveProfile": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "btn-guardar-cambios"
+  },
+  "confirmationSaveProfile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(@class, 'bootbox-body')]"
+  },
+  "searchCode": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-0"
+  },
+  "searchButton": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button/span[@class='icon-search']"
   }
+
 }

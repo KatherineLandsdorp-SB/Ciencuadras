@@ -1,13 +1,13 @@
 package com.segurosbolivar.automation.tests.publishProperty;
 
 import com.segurosbolivar.automation.commons.Hooks;
-import com.segurosbolivar.automation.tests.login.StepsLogin;
+import com.segurosbolivar.automation.tests.suite1Login.StepsSuite1Login;
 import org.testng.annotations.Test;
 
 public class RunnerPublishProperty extends Hooks {
 
     ThreadLocal<StepsPublishProperty> steps = ThreadLocal.withInitial(StepsPublishProperty::new);
-    ThreadLocal<StepsLogin> step = ThreadLocal.withInitial(StepsLogin::new);
+    ThreadLocal<StepsSuite1Login> step = ThreadLocal.withInitial(StepsSuite1Login::new);
 
     @Test(priority = 1)
     //Sienpre cambiar correo para este test

@@ -4,7 +4,7 @@ import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
-public class MethodsLogin extends BaseTest {
+public class MethodsSuite1Login extends BaseTest {
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 

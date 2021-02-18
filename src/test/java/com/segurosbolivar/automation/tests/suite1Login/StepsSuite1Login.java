@@ -7,50 +7,50 @@ import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
 
-public class StepsLogin extends BaseTest {
+public class StepsSuite1Login extends BaseTest {
 
-    private MethodsLogin methodsLogin = new MethodsLogin();
+    private MethodsSuite1Login methodsLogin = new MethodsSuite1Login();
     private SharedMethods methods = new SharedMethods();
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsLogin clickEntry(){
+    public StepsSuite1Login clickEntry(){
         methodsLogin.clickOnEntry();
         return this;
     }
 
     @Step("The user clicks in remember user")
-    public StepsLogin clickRemember(){
+    public StepsSuite1Login clickRemember(){
         methodsLogin.clickOnRemember();
         return this;
     }
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsLogin clickLoginPerson(){
+    public StepsSuite1Login clickLoginPerson(){
         methodsLogin.loginPerson();
         return this;
     }
 
 
     @Step("The user fill all the required fields")
-    public StepsLogin fillAll(){
+    public StepsSuite1Login fillAll(){
         assertEquals(methodsLogin.fillAllTheRequiredFields(), services.getField("nameUserNav"));
         return this;
     }
 
     @Step("The user fill all the required fields")
-    public StepsLogin fillFail(){
+    public StepsSuite1Login fillFail(){
         methodsLogin.FailedFields();
         return this;
     }
 
     @Step("The user fill all the required fields facebook")
-    public StepsLogin fillAllFacebook(){
+    public StepsSuite1Login fillAllFacebook(){
         assertEquals(methodsLogin.fillAllTheRequiredFacebook(), services.getField("navBarFacebook"));
         return this;
     }
 
     @Step("The user fill all the required fields google")
-    public StepsLogin fillAllGmail(){
+    public StepsSuite1Login fillAllGmail(){
         assertEquals(methodsLogin.fillAllTheRequiredGmail(), services.getField("navBarFacebook"));
         return this;
     }

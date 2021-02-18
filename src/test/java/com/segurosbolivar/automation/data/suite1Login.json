@@ -3,9 +3,25 @@
     {
       "case": "CASO3_LOGIN_TRANSVERSAL",
       "data": {
-        "validEmail": "fiftye20200922@yopmail.com",
-        "invalidEmail": "fiftye20200922@yopmail.com",
-        "password": "Test-20200922"
+        "mailAllied": "fiftye20200922@yopmail.com",
+        "passwordAllied": "Test-20200922"
+      },
+      "assert": {
+        "name": "juanito perez"
+      }
+    },
+    {
+      "case": "CASO4_LOGIN_TRANSVERSAL",
+      "data": {
+        "mailAllied": "fiftye20200922@yopmail.com",
+        "passwordAllied": "Test-20200922"
+      }
+    },
+    {
+      "case": "CASO5_LOGIN_TRANSVERSAL",
+      "data": {
+        "mailAllied": "fiftye20200922@yopmail.com",
+        "passwordAllied": "Test-20200922"
       }
     }
   ]

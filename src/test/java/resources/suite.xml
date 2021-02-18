@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<suite name="Test Suite" parallel="methods" thread-count="8">
-    <test name="Seguros Bolivar Test">
+<suite name="CIENCUADRAS_REG_" parallel="methods" thread-count="8">
+    <test name="CIENCUADRAS_REG_">
         <listeners>
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
             <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"/>
-            <!-- <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
+            <class name="com.segurosbolivar.automation.tests.suite1Login.RunnerSuite1Login"/>
             <class name="com.segurosbolivar.automation.tests.editProfile.RunnerEditProfile"/>
-            <class name="com.segurosbolivar.automation.tests.search.RunnerSearch"/> -->
+            <class name="com.segurosbolivar.automation.tests.search.RunnerSearch"/>
         </classes>
     </test>
 </suite>

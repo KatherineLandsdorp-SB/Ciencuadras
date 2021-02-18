@@ -6,7 +6,7 @@
         </listeners>
         <classes>
             <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"/>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
+            <class name="com.segurosbolivar.automation.tests.suite1Login.RunnerSuite1Login"/>
             <class name="com.segurosbolivar.automation.tests.editProfile.RunnerEditProfile"/>
             <class name="com.segurosbolivar.automation.tests.search.RunnerSearch"/>
         </classes>

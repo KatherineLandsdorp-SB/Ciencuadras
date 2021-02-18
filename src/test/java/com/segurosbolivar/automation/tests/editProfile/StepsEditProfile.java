@@ -1,14 +1,13 @@
 package com.segurosbolivar.automation.tests.editProfile;
 
-import com.segurosbolivar.automation.tests.login.MethodsLogin;
-import com.segurosbolivar.automation.tests.shared.SharedMethods;
+import com.segurosbolivar.automation.tests.suite1Login.MethodsSuite1Login;
 import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
 
 public class StepsEditProfile {
 
-    private MethodsLogin methodsLogin = new MethodsLogin();
+    private MethodsSuite1Login methodsLogin = new MethodsSuite1Login();
     private MethodsEditProfile methodsEditProfile = new MethodsEditProfile();
 
     @Step("^A user is logged in the EdirProfile service$")

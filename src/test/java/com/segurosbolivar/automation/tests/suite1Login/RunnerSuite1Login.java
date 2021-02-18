@@ -9,7 +9,7 @@ public class RunnerLogin extends Hooks {
 
     ThreadLocal<StepsLogin> steps = ThreadLocal.withInitial(StepsLogin::new);
 
-    @Test(priority=2, groups = { "smoke" }, description = "This is really a simple crazy test")
+    @Test(priority=2, groups = { "smoke" }, description = "CASO3_LOGIN_TRANSVERSAL")
     public void successfullLogin(){
         steps.get()
                 .clickEntry()
@@ -17,7 +17,7 @@ public class RunnerLogin extends Hooks {
                 .fillAll();
     }
 
-    @Test(priority=2, groups = { "smoke" }, description = "This is really a simple crazy")
+    @Test(priority=2, groups = { "smoke" }, description = "CASO4_LOGIN_TRANSVERSAL")
     public void failLogin(){
         steps.get()
                 .clickEntry()
@@ -25,8 +25,8 @@ public class RunnerLogin extends Hooks {
                 .fillFail();
     }
 
-    @Test(priority=2, groups = { "smoke" }, description = "This is really a simple")
-    public void successfullLoginRemember(){
+    @Test(priority=2, groups = { "smoke" }, description = "CASO5_LOGIN_TRANSVERSAL", sute, case)
+    public void loginRemember(){
         steps.get()
                 .clickEntry()
                 .clickLoginPerson()

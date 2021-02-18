@@ -1,10 +1,8 @@
-package com.segurosbolivar.automation.tests.login;
+package com.segurosbolivar.automation.tests.suite1Login;
 
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
-import com.segurosbolivar.automation.utils.PropertyManager;
-import org.apache.commons.lang3.StringUtils;
 
 public class MethodsLogin extends BaseTest {
     private Methods methods = new Methods();

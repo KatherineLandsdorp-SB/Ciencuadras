@@ -1,4 +1,4 @@
-package com.segurosbolivar.automation.tests.login;
+package com.segurosbolivar.automation.tests.suite1Login;
 
 import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;

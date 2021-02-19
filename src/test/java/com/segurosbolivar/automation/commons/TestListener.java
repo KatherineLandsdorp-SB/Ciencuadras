@@ -30,7 +30,7 @@ public class TestListener implements ITestListener {
 
     }
 
-    @SneakyThrows
+
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         System.out.println("TEST SUCCESSFUL!");
@@ -39,7 +39,7 @@ public class TestListener implements ITestListener {
         this.sendTestMethodStatus(iTestResult, "TEST SUCCESSFUL");
     }
 
-    @SneakyThrows
+
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println("THIS TEST FAILED!");
@@ -50,7 +50,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-
+        this.sendTestMethodStatus(iTestResult, "TEST SKIPPED");
     }
 
     @Override
@@ -68,7 +68,7 @@ public class TestListener implements ITestListener {
 
     }
 
-    private void sendTestMethodStatus(ITestResult iTestResult, String executionState) throws IOException {
+    private void sendTestMethodStatus(ITestResult iTestResult, String executionState)  {
         TestingExecution executionInfo = Utils.getExecutionInfo(iTestResult);
         executionInfo.executionState = executionState;
         ExcelWriter excel = new ExcelWriter("executions.xlsx");

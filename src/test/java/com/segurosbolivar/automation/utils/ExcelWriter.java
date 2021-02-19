@@ -27,12 +27,12 @@ public class ExcelWriter {
 
     private String pathFileName;
 
-    public ExcelWriter(String pathFileName) throws IOException {
+    public ExcelWriter(String pathFileName)  {
         this.pathFileName = pathFileName;
         this.createFile();
     }
 
-    private void createFile() throws IOException {
+    private void createFile()  {
 
         File excel = new File(this.pathFileName);
         if (!excel.exists()) {
@@ -57,9 +57,14 @@ public class ExcelWriter {
                 cell.setCellStyle(headerCellStyle);
             }
 
-            FileOutputStream fileOut = new FileOutputStream(this.pathFileName);
-            workbook.write(fileOut);
-            fileOut.close();
+            FileOutputStream fileOut = null;
+            try {
+                fileOut = new FileOutputStream(this.pathFileName);
+                workbook.write(fileOut);
+                fileOut.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

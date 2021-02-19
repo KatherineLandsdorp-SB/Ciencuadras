@@ -23,13 +23,16 @@ application {
 }
 
 dependencies {
-    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+
+    implementation 'com.google.guava:guava:23.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.0.0-alpha-7'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-7'
+    implementation 'org.testng:testng:7.3.0'
+
     implementation 'log4j:log4j:1.2.17'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'org.apache.commons:commons-text:1.6'
-    testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
-    testImplementation 'org.testng:testng:6.14.3'
-    testImplementation 'io.qameta.allure:allure-testng:2.13.1'
+    testImplementation 'io.qameta.allure:allure-testng:2.13.2'
     testImplementation 'org.awaitility:awaitility:3.0.0'
     testImplementation 'com.sun.jersey:jersey-bundle:1.19.4'
     testImplementation 'org.codehaus.jettison:jettison:1.1'

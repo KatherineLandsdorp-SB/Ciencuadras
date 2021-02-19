@@ -33,6 +33,16 @@ dependencies {
     testImplementation 'org.awaitility:awaitility:3.0.0'
     testImplementation 'com.sun.jersey:jersey-bundle:1.19.4'
     testImplementation 'org.codehaus.jettison:jettison:1.1'
+
+    /* librerias lombok para no utilizar el plugin del editor*/
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    /* librerias para escribir excel */
+    implementation "org.apache.poi:poi-ooxml:3.17"
+    implementation "org.apache.poi:poi:3.17"
 }
 
 group = 'com.segurosbolivar.automation.ui'
@@ -54,7 +64,7 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.named('test') {
-    useTestNG(){
+    useTestNG() {
         useDefaultListeners = true // Tells TestNG to execute its default reporting structure
         suites 'src/test/java/resources/suite.xml'
     }

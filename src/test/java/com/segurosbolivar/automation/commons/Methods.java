@@ -15,10 +15,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.NoSuchElementException;
-import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -295,14 +294,20 @@ public class Methods extends BaseTest {
     public void scrollTo(String entity) {
         WebElement element = getEntity(entity);
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-
-
     }
 
     public void scrollToPixel(String entity) {
         WebElement element = getEntity(entity);
         ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("window.scrollBy(0,500)", element);
 
+    }
+
+
+    public void doScrollDown(int x, String entity) {
+        for (int i = 0; i <= x; i++) {
+            pause(2);
+            scrollToPixel(entity);
+        }
     }
 
     public void scrollToEndPage() {
@@ -398,13 +403,12 @@ public class Methods extends BaseTest {
     /* ============================================================= */
 
     //Metodo para completar formularios de busqueda
-    public void keyDown(String entity) throws InterruptedException {
+    public void keyDown(String entity) {
         waitingForElement(entity, 5);
         getEntity(entity).sendKeys(Keys.ARROW_DOWN);
         getEntity(entity).sendKeys(Keys.ENTER);
         waitingForElement(entity, 5);
-        Thread.sleep(3000);
-
+        pause(3);
     }
 
 
@@ -461,6 +465,36 @@ public class Methods extends BaseTest {
         return new File("./src/test/java/com/segurosbolivar/automation/commons/uploadFile/imagen.png").getAbsolutePath();
     }
 
+    public String generatosDinamicValue() {
+        int longitud = 6;
+        String alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String text = "";
+        Random rnd = new Random();
+        while (text.length() < 4) {
+            for (int x = 0; x < longitud; x++) {
+                int indiceAleatorio = numeroAleatorioEnRango(0, alphabet.length() - 1);
+                char caracterAleatorio = alphabet.charAt(indiceAleatorio);
+                text += caracterAleatorio;
+            }
+            return text;
+
+        }
+        return text;
+
+    }
+
+
+    public static int numeroAleatorioEnRango(int minimo, int maximo) {
+        // nextInt regresa en rango pero con límite superior exclusivo, por eso sumamos 1
+        return ThreadLocalRandom.current().nextInt(minimo, maximo + 1);
+    }
+
+    public String dinamicDataTest(String value){
+        String data= services.getField(value);
+        String dinamic=generatosDinamicValue()+data;
+        return dinamic;
+
+    }
 
 }
 

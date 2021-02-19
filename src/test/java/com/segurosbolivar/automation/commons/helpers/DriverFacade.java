@@ -38,7 +38,7 @@ public class DriverFacade {
     RemoteWebDriver driver;
     WebDriverWait wait;
     JSONObject jsonObject;
-    Date myDate = new Date();
+    Date myDate;
 
     List<Windows> windows = new ArrayList<Windows>();
 
@@ -53,7 +53,7 @@ public class DriverFacade {
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "70.0");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
-        capabilities.setCapability("build", PropertyManager.getConfigValueByKey("portal")+"_" + PropertyManager.getConfigValueByKey("suite") + "_" + new SimpleDateFormat("yyyy_MM_dd_hh_mm").format(myDate));
+        capabilities.setCapability("build", PropertyManager.getConfigValueByKey("portal")+"_" + PropertyManager.getConfigValueByKey("suite") + "_" + new SimpleDateFormat("yyyy_MM_dd_hh").format(this.myDate));
         capabilities.setCapability("name", description);
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
@@ -64,6 +64,8 @@ public class DriverFacade {
 
     public DriverFacade(String description) {
         JsonFile();
+        this.myDate = new Date();
+
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
             try {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")

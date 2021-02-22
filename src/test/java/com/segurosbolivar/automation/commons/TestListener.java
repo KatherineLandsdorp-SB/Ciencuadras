@@ -73,8 +73,6 @@ public class TestListener implements ITestListener {
         executionInfo.executionState = executionState;
         ExcelWriter excel = new ExcelWriter("executions.xlsx");
         excel.write(executionInfo);
-        System.out.println("End Test");
-        System.out.println(executionInfo.toString());
     }
 
 

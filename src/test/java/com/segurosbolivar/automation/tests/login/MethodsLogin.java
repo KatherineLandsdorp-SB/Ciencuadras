@@ -39,8 +39,8 @@ public class MethodsLogin extends BaseTest {
         methods.clickElement("facebookLogin");
         methods.switchToAnotherWindow(1);
         methods.waitForPageLoad();
-        methods.waitingForElement("navbarDropdown", 120);
-        return methods.getEntity("navbarDropdown").getText();
+        methods.waitingForElement("navbarDropdownHome", 120);
+        return methods.getEntity("navbarDropdownHome").getText();
     }
 
     public String fillAllTheRequiredGmail(){
@@ -57,18 +57,18 @@ public class MethodsLogin extends BaseTest {
         methods.clickElementJs("nextGmail");
         methods.switchToAnotherWindow(1);
         methods.waitForPageLoad();
-        methods.waitingForElement("navbarDropdown", 800);
-        return methods.getEntity("navbarDropdown").getText();
+        methods.waitingForElement("navbarDropdownHome", 800);
+        return methods.getEntity("navbarDropdownHome").getText();
     }
 
     public String fillAllTheRequiredFields(){
         methods.waitForPageLoad();
         methods.waitingForElement("loginInMail", 60);
-        methods.sendKeysText("loginInMail", services.getField("mail"));
-        methods.sendKeysText("loginInPass", services.getField("passRegister"));
+        methods.sendKeysText("loginInMail", services.getField("sanityOldUser"));
+        methods.sendKeysText("loginInPass", services.getField("sanityPassword"));
         methods.clickElement("loginUser");
         methods.waitForPageLoad();
-        methods.waitingForElement("navbarDropdown", 800);
-        return methods.getEntity("navbarDropdown").getText();
+        methods.waitingForElement("navbarDropdownHome", 800);
+        return methods.getEntity("navbarDropdownHome").getText();
     }
 }

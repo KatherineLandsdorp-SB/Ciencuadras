@@ -28,14 +28,16 @@ public class SharedMethods extends BaseTest {
         methods.clickElement("buttonKnowPublish");
     }
 
-    public void clickOnPublishYourself() {
+    public Boolean clickOnPublishYourself() {
         methods.doScrollDown(2, "divPublish");
         methods.clickElement("buttonPublishYourself");
+        return methods.validationElementEnable("buttonPublishYourself");
     }
 
-    public void clickOnBasicPlan() {
-        methods.waitingForElement("buttonBasicPlan", 10);
+    public Boolean clickOnBasicPlan() {
+        methods.waitingForElement("buttonBasicPlan", 120);
         methods.clickElement("buttonBasicPlan");
+        return methods.validationElementEnable("buttonBasicPlan");
     }
 
     public void clickOnAddToCar() {
@@ -49,26 +51,33 @@ public class SharedMethods extends BaseTest {
     }
 
 
-    public void clickOnAddToCarOutstanding() {
+    public String clickOnAddToCarOutstanding() {
         methods.waitingForElement("buttonAddToCar", 10);
         methods.clickElement("buttonAddToCar");
+        methods.waitingForElement("textCoverage", 120);
+        return methods.getTextElement("textCoverage");
     }
 
-    public void clickOnAddToCarBasicPlan() {
+    public Boolean clickOnAddToCarBasicPlan() {
         methods.waitingForElement("buttonBasicAddToCar", 10);
         methods.clickElement("buttonBasicAddToCar");
+        return methods.validationElementEnable("buttonBasicAddToCar");
 
 
     }
 
-    public void clickOnButtonSaleHome() {
+    public Boolean clickOnButtonSaleHome() {
         methods.waitForPageLoad();
+        Boolean elementEnable= methods.validationElementEnable("buttonSaleHome");
         methods.clickElement("buttonSaleHome");
+        return elementEnable;
     }
 
-    public void clickOnButtonOfferHome() {
+    public Boolean clickOnButtonOfferHome() {
         methods.waitForPageLoad();
+        Boolean elementEnable= methods.validationElementEnable("buttonOfferHome");
         methods.clickElement("buttonOfferHome");
+       return elementEnable;
     }
 
 
@@ -80,6 +89,7 @@ public class SharedMethods extends BaseTest {
             methods.sendKeysText("inputAdministrationValue", services.getField("sanityAdminValue"));
         } else {//0, elemento no esta presente.
             System.out.println("El campo valor arriendo esta deshabilitado");
+
         }
     }
 
@@ -92,7 +102,7 @@ public class SharedMethods extends BaseTest {
     }
 
     public void fillDataFormCar(String number) {
-
+        methods.waitingForElement("btnPayPlan",250);
         methods.clickElement("btnPayPlan");
         methods.waitingForElement("creditCard",150);
         methods.clickElement("creditCard");
@@ -106,7 +116,7 @@ public class SharedMethods extends BaseTest {
         clickOnBtnCarPay();
     }
     public void fillDataFormCarProduct(String number) {
-
+        methods.waitingForElement("btnPayPlan",150);
         methods.clickElement("btnPayPlan");
         methods.waitingForElement("creditCard",150);
         methods.clickElement("creditCard");

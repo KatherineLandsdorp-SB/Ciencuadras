@@ -4,7 +4,7 @@ import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 import io.qameta.allure.Step;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.*;
 
 public class StepsNaturalPerson extends BaseTest {
 
@@ -13,311 +13,121 @@ public class StepsNaturalPerson extends BaseTest {
 
     @Step("The user clicks on the sale button in the home")
     public StepsNaturalPerson clickButtonSaleHome() {
-        sharemethods.clickOnButtonSaleHome();
+        assertTrue(sharemethods.clickOnButtonSaleHome());
         return this;
 
     }
+
     @Step("The user clicks on the offer button in the home")
     public StepsNaturalPerson clickButtonOfferHome() {
-        sharemethods.clickOnButtonOfferHome();
-        return this;
-
-    }
-
-    @Step("The user clicks on the publish button in the home")
-    public StepsNaturalPerson clickPublish() throws InterruptedException {
-        sharemethods.clickOnPublish();
+        assertTrue(sharemethods.clickOnButtonOfferHome());
         return this;
 
     }
 
     @Step("The user click on button publish yourself")
     public StepsNaturalPerson clickPublishYourself() {
-        sharemethods.clickOnPublishYourself();
-        return this;
-    }
-
-    @Step("The user click on button basic plan")
-    public StepsNaturalPerson clickOnBasicPlan() {
-        sharemethods.clickOnBasicPlan();
+        assertTrue(sharemethods.clickOnPublishYourself());
         return this;
     }
 
     @Step("The user click on button add to car for basic plan")
     public StepsNaturalPerson clickOnAddToCar() {
-        sharemethods.clickOnAddToCarBasicPlan();
+        assertTrue(sharemethods.clickOnAddToCarBasicPlan());
         return this;
     }
 
     @Step("The user click on button add to car for outstanding plan")
     public StepsNaturalPerson clickOnAddToCarOutstanding() {
-        sharemethods.clickOnAddToCarOutstanding();
+        assertEquals(sharemethods.clickOnAddToCarOutstanding(), "Verifica tu cobertura");
         return this;
     }
-
-    @Step("validation enable step Accompaniment ")
-    public StepsNaturalPerson validateStepAccompaniment() {
-        methodsNaturalPerson.validateLabelAccompaniment();
-        return this;
-    }
-
-    @Step("validation enable step choose plan")
-    public StepsNaturalPerson validateStepChoosePlan() {
-        methodsNaturalPerson.validateLabelChoosePlan();
-        return this;
-    }
-
-    @Step("validation enable step publish")
-    public StepsNaturalPerson validateStepPublish() {
-        methodsNaturalPerson.validateLabelPublish();
-        return this;
-    }
-
-    @Step("validation enable step pay")
-    public StepsNaturalPerson validateStepPay() {
-        methodsNaturalPerson.validateLabelPay();
-        return this;
-    }
-
-    @Step("validation enable step one tracking")
-    public StepsNaturalPerson validateCheckDoneStepOneTracking() {
-        methodsNaturalPerson.validateCheckStepOneTracking();
-        return this;
-    }
-
-    @Step("validation enable step two tracking")
-    public StepsNaturalPerson validateCheckDoneStepTwoTracking() {
-        methodsNaturalPerson.validateCheckStepTwoTracking();
-        return this;
-    }
-
-    @Step("validation enable step three tracking")
-    public StepsNaturalPerson validateCheckDoneStepThreeTracking() {
-        methodsNaturalPerson.validateCheckStepThreeTracking();
-        return this;
-    }
-
-    @Step("validation enable step four tracking")
-    public StepsNaturalPerson validateCheckDoneStepFourTracking() {
-        methodsNaturalPerson.validateCheckStepFourTracking();
-        return this;
-    }
-
-    @Step("The user click on button back de tracking")
-    public StepsNaturalPerson clickOnButtonBackStepTracking() {
-        methodsNaturalPerson.clickOnButtonBackTracking();
-        return this;
-    }
-    @Step("The user click on button back de tracking")
-    public StepsNaturalPerson clickOnButtonBackFomr() {
-        methodsNaturalPerson.clickBackForm();
-        return this;
-    }
-
-    @Step("The user click on button back")
-    public StepsNaturalPerson clickOnButtonBack() {
-        methodsNaturalPerson.clickButtonBack();
-        return this;
-    }
-
 
     //Step form publications
-    @Step("The user registered the rent value")
-    public StepsNaturalPerson registerValueRent() {
-        methodsNaturalPerson.registerRentValue();
+
+    @Step("register of new user in form PN")
+    public StepsNaturalPerson fillFormNewUser() {
+        assertEquals(methodsNaturalPerson.registerUserEndFormPublishNaturalPerson(), services.getField("sanityNameUser") + " " + services.getField("sanityLastName"));
         return this;
     }
 
-    @Step("the user click on button publish sale")
-    public StepsNaturalPerson clickButtonPublishSale() {
-        methodsNaturalPerson.clickButtonSale();
+    @Step("publish include value administration")
+    public StepsNaturalPerson publishRentWithAdministrationValue() {
+        assertEquals(methodsNaturalPerson.publishRentIncludeAdministration(), services.getField("sanityUserRegister"));
         return this;
     }
 
-    @Step("The user registered the price sale")
-    public StepsNaturalPerson registerPriceSale() {
-        methodsNaturalPerson.registerSalePrice();
+    @Step("publication validate the steps in form")
+    public StepsNaturalPerson validateSteps() {
+        assertEquals(methodsNaturalPerson.publishWithTracking(), services.getField("sanityUserRegister"));
         return this;
     }
 
-    @Step("The user click on slider administration value")
-    public StepsNaturalPerson clickAdministrationValue() {
-        methodsNaturalPerson.clickSliderAdministrationValue();
-        return this;
-    }
-
-    @Step("The user registered value Administration")
-    public StepsNaturalPerson registerValueAdministration() {
-        sharemethods.registerValueAdministration();
+    @Step("publish include value administration")
+    public StepsNaturalPerson validateBackSteps() {
+        assertEquals(methodsNaturalPerson.publishBackStep(), services.getField("sanityUserRegister"));
         return this;
     }
 
     @Step("validation field value administration")
-    public StepsNaturalPerson validateMandatoryFieldValueAdministration() {
-        assertEquals(methodsNaturalPerson.validateMandatoryValueAdministration(), services.getField("sanityAlertValueAdmin"));
+    public StepsNaturalPerson publishRentWithOutFieldAdministration() {
+        assertEquals(methodsNaturalPerson.publishRentWithOutAdministration(), services.getField("sanityAlertValueAdmin"));
         return this;
     }
 
-    @Step("The user registered the antiquity property")
-    public StepsNaturalPerson registerAntiquityProperty() {
-        methodsNaturalPerson.registerAntiquityProperty();
+    @Step("The user registered city whit coverage")
+    public StepsNaturalPerson registerCityCoverage() {
+        assertEquals(methodsNaturalPerson.registerCityCoverage(), services.getField("sanityCoverageCity"));
         return this;
     }
-
-    @Step("The user registered the value area property")
-    public StepsNaturalPerson registerArea() {
-        methodsNaturalPerson.registerArea();
-        return this;
-    }
-
-    @Step("The user registered description of property ")
-    public StepsNaturalPerson registerDescription() {
-        methodsNaturalPerson.registerDescriptionProperty();
-        return this;
-    }
-
-    @Step("The user registered stratum property")
-    public StepsNaturalPerson registerStratumProperty() {
-        methodsNaturalPerson.registerStratum();
-        return this;
-    }
-
-    @Step("The user registered the city property")
-    public StepsNaturalPerson registerCityProperty() throws InterruptedException {
-        methodsNaturalPerson.registerCityProperty();
-        return this;
-    }
-
-    @Step("The user registered property distric")
-    public StepsNaturalPerson registerPropertyDistric() throws InterruptedException {
-        methodsNaturalPerson.registerDistric();
-        return this;
-    }
-
-    @Step("The user registered the city adress")
-    public StepsNaturalPerson registerCityAdress() {
-        methodsNaturalPerson.registerAdress();
-        return this;
-    }
-    @Step("The user registered the city adress")
-    public StepsNaturalPerson registerWrongCityAdress() {
-        methodsNaturalPerson.registerWrongAddress();
-        return this;
-    }
-
-    @Step("The user confirm the city adress registered")
-    public StepsNaturalPerson confirmAdress() throws InterruptedException {
-        methodsNaturalPerson.confirmAdress();
-        return this;
-    }
-
-    @Step("The user registered your email")
-    public StepsNaturalPerson regisStepsNewUserEmail() throws InterruptedException {
-        methodsNaturalPerson.registerEmailNewUser();
-        return this;
-    }
-    @Step("The user registered email registered")
-    public StepsNaturalPerson regisStepsOldUserEmail() throws InterruptedException {
-        methodsNaturalPerson.registerEmailOldUser();
-        return this;
-    }
-
-    @Step("The user registered typeDocument")
-    public StepsNaturalPerson registerTypeDocument() {
-        methodsNaturalPerson.registerTypeDocument();
-        return this;
-    }
-
-    @Step("The user registered identification")
-    public StepsNaturalPerson registerIdentificationUser() {
-        methodsNaturalPerson.registerIdentificationNewUser();
-        return this;
-    }
-
-    @Step("The user registered nameUser")
-    public StepsNaturalPerson registerNameUser() {
-        methodsNaturalPerson.registerNameNewUser();
-        return this;
-    }
-
-    @Step("The user registered lastName")
-    public StepsNaturalPerson registerLastNameUser() {
-        methodsNaturalPerson.registerLastNameNewUser();
-        return this;
-    }
-
-    @Step("registered phone new user")
-    public StepsNaturalPerson registerCellPhoneUser() {
-        methodsNaturalPerson.registerCellPhoneNewUser();
-        return this;
-    }
-
-    @Step("The user registered password")
-    public StepsNaturalPerson registerPasswordUser() {
-        methodsNaturalPerson.registerPasswordNewUser();
-        return this;
-    }
-
-    @Step("The user confirmed the password")
-    public StepsNaturalPerson registerConfirmPasswordUser() {
-        methodsNaturalPerson.registerConfirmPassword();
-        return this;
-    }
-    @Step("The user confirmed the password")
-    public StepsNaturalPerson registerPasswordOldUser() {
-        methodsNaturalPerson.registerPasswordOldUser();
-        return this;
-    }
-
-    @Step("The user click on button continue")
-    public StepsNaturalPerson clickOnButtonContinue() throws InterruptedException {
-        methodsNaturalPerson.clickOnButtonContinue();
-        return this;
-    }
-
-    @Step("The user regitstered city whit coverage")
-    public StepsNaturalPerson registerCityCoverage() throws InterruptedException {
-        methodsNaturalPerson.registerCityCoverage();
-        return this;
-    }
-    @Step("The user regitstered city whit coverage")
-    public StepsNaturalPerson registerCityOutCoverage() throws InterruptedException {
-        methodsNaturalPerson.registerCityOutCoverage();
-        return this;
-    }
-
-    @Step("validation City withCoverage")
-    public StepsNaturalPerson validateCityCoverage() {
-        assertEquals(methodsNaturalPerson.validateTextConfirmCoverage(), services.getField("sanityCoverageCity"));
-        return this;
-    }
-
     @Step("validation city out coverage")
     public StepsNaturalPerson validateCityOutCoverage() {
-        assertEquals(methodsNaturalPerson.validateTextOutCoverage(), services.getField("sanityOutCoverageCity"));
+        methodsNaturalPerson.registerCityOutCoverage();
+        methodsNaturalPerson.clickButtonConfirmCoverageCity();
+        assertEquals(methodsNaturalPerson.validateCityOutCoverage(), services.getField("sanityOutCoverageCity"));
         return this;
     }
 
     @Step("The user click on button continue form validation city coverage")
-    public StepsNaturalPerson clickButtonContinueCityCoverage() throws InterruptedException {
+    public StepsNaturalPerson clickButtonContinueCityCoverage() {
         methodsNaturalPerson.clickButtonContinueCoverage();
+        assertTrue(methodsNaturalPerson.validateLabelAccompaniment());
         return this;
     }
 
-    @Step("the user click on button confirm coverage city")
-    public StepsNaturalPerson clickButtonConfirmCityCoverage() throws InterruptedException {
-        methodsNaturalPerson.clickButtonConfirmCoverageCity();
+    @Step("Form for publish for rent")
+    public StepsNaturalPerson fillFormRent() {
+        methodsNaturalPerson.publishRentNaturalPerson();
         return this;
     }
 
-    @Step("validation text city without coverage")
+    @Step("Form for publish for rent")
+    public StepsNaturalPerson fillFormRentUserLoggedIn() {
+        assertEquals(methodsNaturalPerson.publishRentUserLoggedIn(),services.getField("sanityUserRegister"));
+        return this;
+    }
+
+    @Step("Form for publish for sale")
+    public StepsNaturalPerson fillFormSale() {
+        methodsNaturalPerson.publishSaleNaturalPerson();
+        return this;
+    }
+
+
+    @Step("validation form  without city")
     public StepsNaturalPerson validateFormWithoutCity() {
-        assertEquals(methodsNaturalPerson.validateTexFormWithoutCity(), services.getField("sanityEmptyCity"));
+        assertEquals(methodsNaturalPerson.publishWithoutAddress(), services.getField("sanityEmptyCity"));
+        return this;
+    }
+
+    @Step("validation form  wrong address")
+    public StepsNaturalPerson validateFormWrongAddress() {
+        assertEquals(methodsNaturalPerson.publishWithWrongAddress(), services.getField("sanityEmptyCity"));
         return this;
     }
 
     @Step("upload images")
-    public StepsNaturalPerson uploapFile() throws InterruptedException {
+    public StepsNaturalPerson uploadFile()  {
         methodsNaturalPerson.uploadImage();
         return this;
     }
@@ -334,11 +144,14 @@ public class StepsNaturalPerson extends BaseTest {
         return this;
 
     }
+
     @Step("")
-    public StepsNaturalPerson returnCommerce(){
+    public StepsNaturalPerson returnCommerce() {
         methodsNaturalPerson.clickOnBtnReturnCommerce();
         return this;
     }
+
+
 }
 
 

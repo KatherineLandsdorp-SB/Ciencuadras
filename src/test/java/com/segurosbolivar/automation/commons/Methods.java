@@ -448,7 +448,7 @@ public class Methods extends BaseTest {
         }
     }
 
-    public void uploadRemoteImage(int Intentos, int Veces, String entity) throws InterruptedException {
+    public void uploadRemoteImage(int Intentos, int Veces, String entity)  {
         while (Intentos <= Veces) {
             getEntity(entity).sendKeys(getFile());
             pause(10);

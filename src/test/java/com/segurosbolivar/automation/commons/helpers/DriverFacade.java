@@ -36,12 +36,13 @@ public class DriverFacade {
     int timeoutInSeconds = 60;
 
 
-    private DesiredCapabilities capabilitiesSetUp() {
+    protected DesiredCapabilities capabilitiesSetUp(String methodName) {
 
         String javaHome = System.getenv("JAVA_HOME");
         String browserName = System.getenv("BROWSER_NAME");
         String browserVersion = System.getenv("BROWSER_VERSION");
         String platformBrowser = System.getenv("BROWSER_PLATFORM");
+
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -55,11 +56,12 @@ public class DriverFacade {
             capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
         }
         capabilities.setCapability("build", "Ui_Automation_CienCuadras_Sonic");
-       capabilities.setCapability("name", "Productos_Al-Destajo");
+       capabilities.setCapability("name", methodName);
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
+
         return capabilities;
     }
 
@@ -69,9 +71,8 @@ public class DriverFacade {
             try {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
-                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp());
+                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp("PruebaLocal"));
                 driver.setFileDetector(new LocalFileDetector());
-                ((JavascriptExecutor) driver).executeScript("lambda-name=TestName");
             } catch (MalformedURLException e) {
                 System.out.println("Invalid grid URL");
             } catch (Exception e) {

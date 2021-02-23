@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite name="Test Suite" parallel="methods" thread-count="8">
+    <test name="Seguros Bolivar Test">
+        <listeners>
+            <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
+        </listeners>
+        <classes>
+            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
+            <class name="com.segurosbolivar.automation.tests.product.RunnerProduct"/>
+            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+        </classes>
+    </test>
+</suite>
+
+

@@ -1,7 +1,7 @@
 {
   "entryUser": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]"
+    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[2]/button[1]/a"
   },
   "allied": {
     "GetFieldBy": "Xpath",
@@ -13,7 +13,7 @@
   },
   "loginPerson": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//span[contains(text(),'Personas')]"
+    "ValueToFind": "//a[contains(text(),'Personas')]"
   },
   "loginInMail": {
     "GetFieldBy": "Id",
@@ -131,9 +131,13 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//input[@type='password']"
   },
+  "navbarDropdownHome": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[2]/button[1]/div/a/span[1]"
+  },
   "navbarDropdown": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//a[@id='navbarDropdown']"
+    "ValueToFind": "(//*[@id=\"navbarDropdown\"])[2]"
   },
   "searchSelect": {
     "GetFieldBy": "Xpath",
@@ -322,6 +326,10 @@
   "buttonAddToCar": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//button[contains(text(),'AÑADIR AL CARRITO')])[1]"
+  },
+  "textCoverage": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//h3[contains(text(),'Verifica tu cobertura')]"
   },
   "inputNameRegister": {
     "GetFieldBy": "Xpath",
@@ -569,7 +577,7 @@
   },
   "windowSeePlan": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//h1[contains(text(),'Escoge tu plan ideal')]"
+    "ValueToFind": "//h1[contains(text(),'Arma tu plan en 2 pasos')]"
   },
   "carBasePlan": {
     "GetFieldBy": "Xpath",

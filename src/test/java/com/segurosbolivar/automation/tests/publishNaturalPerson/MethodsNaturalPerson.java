@@ -12,27 +12,22 @@ public class MethodsNaturalPerson extends BaseTest {
 
     public boolean validateLabelAccompaniment() {
         methods.waitingForElement("labelAccompaniment", 10);
-        boolean present = methods.getEntity("labelAccompaniment").isDisplayed();
-        System.out.println("entro aqui" + methods.getEntity("labelAccompaniment"));
-        return present;
+        return methods.getEntity("labelAccompaniment").isDisplayed();
     }
 
     public boolean validateLabelChoosePlan() {
         methods.waitingForElement("labelChoosePlan", 10);
-        boolean present = methods.validationElementDisplayed("labelChoosePlan");
-        return present;
+        return methods.validationElementDisplayed("labelChoosePlan");
     }
 
     public boolean validateLabelPublish() {
         methods.waitingForElement("labelPublish", 10);
-        boolean present = methods.validationElementDisplayed("labelPublish");
-        return present;
+        return methods.validationElementDisplayed("labelPublish");
     }
 
     public boolean validateLabelPay() {
         methods.waitingForElement("labelPay", 10);
-        boolean present = methods.validationElementDisplayed("labelPay");
-        return present;
+        return methods.validationElementDisplayed("labelPay");
     }
 
     public boolean validateCheckStepOneTracking() {
@@ -69,6 +64,7 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void clickButtonBack() {
+        methods.waitingForElement("buttonBack", 120);
         methods.clickElement("buttonBack");
     }
 
@@ -101,13 +97,9 @@ public class MethodsNaturalPerson extends BaseTest {
         return text;
     }
 
-    public void validateNoEnableIValueAdministration() {
-        if (methods.validationElementEnable("inputAdministrationValue")) {
-            methods.sendKeysText("inputAdministrationValue", services.getField("sanityValueAdmi"));
-        } else {
-            methods.validationElementSelected("sliderAdministration");
-            System.out.println("El campos no esta disponible");
-        }
+    public void registerAdministration() {
+        methods.sendKeysText("inputAdministrationValue", services.getField("sanityAdminValue"));
+
 
     }
 
@@ -128,17 +120,16 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.clickElement("buttonStratum");
     }
 
-    public void registerCityProperty() throws InterruptedException {
+    public void registerCityProperty() {
         methods.sendKeysText("inputCity", services.getField("sanityCity"));
         methods.pause(2);
         methods.keyDown("inputCity");
     }
 
-    public void registerDistric() throws InterruptedException {
+    public void registerDistric() {
         methods.clickElement("inputDistric");
         methods.pause(3);
-        methods.sendKeysText("inputDistric", services.getField("sanityDistric"));
-        methods.waitingForElement("selectCity", 120);
+        methods.sendKeysText("inputDistric", services.getField("sanityDistric"));methods.waitingForElement("selectCity", 120);
         methods.keyDown("inputDistric");
     }
 
@@ -154,17 +145,17 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.sendKeysText("inputAdress", services.getField("sanitywrongAddress"));
     }
 
-    public void confirmAdress() throws InterruptedException {
+    public void confirmAdress() {
         methods.clickElement("checkAdress");
         methods.pause(2);
     }
 
-    public void registerEmailNewUser() throws InterruptedException {
+    public void registerEmailNewUser() {
         methods.sendKeysText("inputEmail", services.getField("sanityMailNewUser"));
         methods.pause(8);
     }
 
-    public void registerEmailOldUser() throws InterruptedException {
+    public void registerEmailOldUser() {
         methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
         methods.pause(8);
         methods.doScrollDown(2, "divFormPublication");
@@ -204,7 +195,7 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.sendKeysText("passwordOldUser", services.getField("sanityPassword"));
     }
 
-    public void clickOnButtonContinue() throws InterruptedException {
+    public void clickOnButtonContinue() {
         methods.waitingForElement("buttonContinue", 10);
         methods.clickElement("buttonContinue");
         methods.pause(8);
@@ -216,13 +207,16 @@ public class MethodsNaturalPerson extends BaseTest {
         return text;
     }
 
-    public void registerCityCoverage() throws InterruptedException {
+    public String registerCityCoverage() {
         methods.sendKeysText("inputCityCoverage", services.getField("sanityCityCoverage"));
         methods.pause(2);
         methods.keyDown("inputCityCoverage");
+        clickButtonConfirmCoverageCity();
+        methods.waitingForElement("texConfirmedCity", 120);
+        return methods.clearText("texConfirmedCity", "[-¡+.^:,]", "");
     }
 
-    public void registerCityOutCoverage() throws InterruptedException {
+    public void registerCityOutCoverage()  {
         methods.sendKeysText("inputCityCoverage", services.getField("sanityOutCoverage"));
         methods.pause(2);
         methods.keyDown("inputCityCoverage");
@@ -236,6 +230,7 @@ public class MethodsNaturalPerson extends BaseTest {
     public void clickButtonContinueCoverage() {
         methods.waitingForElement("buttonContinueCoverage", 120);
         methods.clickElement("buttonContinueCoverage");
+
     }
 
     public String validateTextConfirmCoverage() {
@@ -244,7 +239,7 @@ public class MethodsNaturalPerson extends BaseTest {
         return text;
     }
 
-    public String validateTextOutCoverage() {
+    public String validateCityOutCoverage() {
         methods.waitingForElement("textOutCoverage", 120);
         String text = methods.getTextElement("textOutCoverage");
         return text;
@@ -254,14 +249,222 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.clickElement("buttonContinuePhoto");
     }
 
-    public void uploadImage() throws InterruptedException {
+    public void uploadImage()  {
         methods.doScrollUp(2, "divFormPublication");
         methods.uploadRemoteImage(0, 2, "inputImage");
 
     }
+
     public void clickOnBtnReturnCommerce() {
         methods.clickElement("btnReturnCommerce");
     }
 
+    public String registerUserEndFormPublishNaturalPerson() {
+        registerRentValue();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailNewUser();
+        registerTypeDocument();
+        registerIdentificationNewUser();
+        registerNameNewUser();
+        registerLastNameNewUser();
+        registerCellPhoneNewUser();
+        registerPasswordNewUser();
+        registerConfirmPassword();
+        clickOnButtonContinue();
+        methods.pause(10);
+        methods.waitingForElement("navbarDropdown", 200);
+        return methods.getTextElement("navbarDropdown");
+
+    }
+
+    public void publishRentNaturalPerson() {
+        registerRentValue();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+
+    }
+    public String publishRentUserLoggedIn() {
+        registerRentValue();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerCellPhoneNewUser();
+        clickOnButtonContinue();
+        methods.pause(10);
+        methods.waitingForElement("navbarDropdown", 200);
+        return methods.getTextElement("navbarDropdown");
+
+    }
+
+    public void publishSaleNaturalPerson() {
+        registerSalePrice();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+
+    }
+
+    public String publishWithoutAddress() {
+        registerRentValue();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+        methods.waitingForElement("texNav", 10);
+        return methods.getTextElement("texNav");
+
+    }
+
+    public String publishWithWrongAddress() {
+        registerRentValue();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerWrongAddress();
+        confirmAdress();
+        methods.waitingForElement("texNav", 10);
+        return methods.getTextElement("texNav");
+
+    }
+
+    public String publishRentIncludeAdministration() {
+        registerRentValue();
+        clickSliderAdministrationValue();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+        methods.pause(10);
+        methods.waitingForElement("navbarDropdown", 200);
+        return methods.getTextElement("navbarDropdown");
+    }
+
+    public String publishRentWithOutAdministration() {
+        registerRentValue();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+        methods.waitingForElement("alertValueAdministration", 10);
+        methods.doScrollUp(4, "divFormPublication");
+        return methods.clearText("alertValueAdministration", "[ó]", "o");
+
+    }
+
+    public String publishWithTracking() {
+        validateLabelAccompaniment();
+        shared.clickOnPublishYourself();
+        validateCheckStepOneTracking();
+        validateLabelChoosePlan();
+        shared.clickOnAddToCarBasicPlan();
+        validateCheckStepTwoTracking();
+        validateLabelPublish();
+        registerSalePrice();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+        methods.pause(10);
+        methods.waitingForElement("navbarDropdown", 200);
+        return methods.getTextElement("navbarDropdown");
+
+    }
+    public String publishBackStep(){
+        shared.clickOnPublishYourself();
+        shared.clickOnAddToCarBasicPlan();
+        clickOnButtonBackTracking();
+        shared.clickOnAddToCarBasicPlan();
+        registerRentValue();
+        registerAdministration();
+        registerAntiquityProperty();
+        registerDescriptionProperty();
+        registerStratum();
+        registerArea();
+        registerCityProperty();
+        registerDistric();
+        registerAdress();
+        confirmAdress();
+        registerEmailOldUser();
+        registerCellPhoneNewUser();
+        registerPasswordOldUser();
+        clickOnButtonContinue();
+        methods.pause(10);
+        methods.waitingForElement("navbarDropdown", 200);
+        return methods.getTextElement("navbarDropdown");
+
+
+    }
 
 }

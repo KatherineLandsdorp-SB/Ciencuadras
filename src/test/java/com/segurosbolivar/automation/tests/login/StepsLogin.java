@@ -32,7 +32,7 @@ public class StepsLogin extends BaseTest {
 
     @Step("The user fill all the required fields")
     public StepsLogin fillAll(){
-        assertEquals(methodsLogin.fillAllTheRequiredFields(), services.getField("nameUserNav"));
+        assertEquals(methodsLogin.fillAllTheRequiredFields(), services.getField("sanityUserRegister"));
         return this;
     }
 

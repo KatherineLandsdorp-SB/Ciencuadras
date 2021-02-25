@@ -46,8 +46,16 @@ public class SharedMethods extends BaseTest {
     }
 
     public void publishRealState() {
-        methods.waitingForElement("buttonRealState", 10);
-        methods.clickElement("buttonRealState");
+        try {
+            methods.waitingForElement("buttonRealState", 20);
+            methods.clickElement("buttonRealState");
+
+        }catch (Exception e){
+            methods.waitingForElement("buttonRealState", 20);
+            methods.scrollToElement("buttonRealState");
+            methods.clickElement("buttonRealState");
+        }
+
     }
 
 

@@ -29,6 +29,11 @@ public class StepsPublishRealState extends BaseTest {
         sharemethods.publishRealState();
         return this;
     }
+    @Step("Register the fields in form publish with real state")
+    public  StepsPublishRealState fillForm(){
+       MethodsPublishRealState.registerForm();
+        return this;
+    }
 
     @Step("Register name in form publish with real state")
     public StepsPublishRealState fillInName() {

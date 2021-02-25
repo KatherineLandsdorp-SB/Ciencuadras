@@ -8,6 +8,23 @@ public class MethodsPublishRealState extends BaseTest {
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 
+    public void registerForm(){
+
+        methods.waitingForElement("inputNameRegister", 110);
+        methods.clickElement("inputNameRegister");
+        methods.sendKeysText("inputNameRegister", services.getField("sanityNameRealSt"));
+        methods.sendKeysText("inputMail", services.getField("sanityMailRealSt"));
+        methods.sendKeysText("inputPhone", services.getField("sanityPhone"));
+        methods.sendKeysText("inputCityReallSate", services.getField("sanityCity"));
+        methods.pause(2);
+        methods.keyDown("inputCityReallSate");
+        methods.clickElement("radioButtonSale");
+        methods.clickElement("recaptcha");
+        methods.pause(5);
+        methods.clickElement("buttonConfirm");
+
+    }
+
     public void registerName() {
         methods.waitingForElement("inputNameRegister", 110);
         methods.clickElement("inputNameRegister");

@@ -13,18 +13,15 @@ public class RunnerPublishRealState extends Hooks {
         steps.get()
                 .clickButtonSaleHome()
                 .clickRealState()
-                .fillInName()
-                .fillInMail()
-                .fillInPhones()
-                .fillInCity()
-                .selectSale()
-                .clickCaptcha()
-                .clickConfirmation()
+                .fillForm()
+                //.selectSale()
+                //.clickCaptcha()
+                //.clickConfirmation()
                 .validationTextButtonUnderstand()
                 .clickButtonUnderstood();
     }
 
-    @Test(priority = 2, groups = {"sanity"})
+    @Test(priority = 2, groups = {"sanity"}) //validar caso de prueba
     public void publishRealStateNoMandatoryData() {
         steps.get()
                 .clickButtonSaleHome()
@@ -62,7 +59,7 @@ public class RunnerPublishRealState extends Hooks {
     }
 
     @Test(priority = 5, groups = {"sanity"})
-    public void publihsRealStateNoMandatoryPhoneData() throws InterruptedException {
+    public void publihsRealStateNoMandatoryPhoneData() throws InterruptedException {//ver que paso
         steps.get()
                 .clickButtonSaleHome()
                 .clickRealState()

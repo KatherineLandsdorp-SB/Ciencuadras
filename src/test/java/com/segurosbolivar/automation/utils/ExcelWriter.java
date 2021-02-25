@@ -97,8 +97,11 @@ public class ExcelWriter {
             System.out.println(e.getMessage());
         } finally {
             try {
-                output_file.close();
-                executionFile.close();
+                if (output_file != null)
+                    output_file.close();
+
+                if (executionFile != null)
+                    executionFile.close();
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
@@ -110,7 +113,7 @@ public class ExcelWriter {
         int lastRow = worksheet.getLastRowNum();
         Row row = worksheet.createRow(++lastRow);
         row.createCell(0).setCellValue(testingExecution.idCaseExecution);
-        row.createCell(1).setCellValue(testingExecution.idExecution);
+        row.createCell(1).setCellValue(TestingExecution.idExecution);
         row.createCell(2).setCellValue(testingExecution.dateExecution);
         row.createCell(3).setCellValue(testingExecution.startExecution);
         row.createCell(4).setCellValue(testingExecution.endExecution);

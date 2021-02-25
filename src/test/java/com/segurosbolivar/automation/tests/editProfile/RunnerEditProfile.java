@@ -1,17 +1,27 @@
 package com.segurosbolivar.automation.tests.editProfile;
 
 import com.segurosbolivar.automation.commons.Hooks;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RunnerEditProfile extends Hooks {
 
-    ThreadLocal<StepsEditProfile> steps= ThreadLocal.withInitial(StepsEditProfile::new);
+    ThreadLocal<StepsEditProfile> steps = ThreadLocal.withInitial(StepsEditProfile::new);
 
-    @Test(priority=5, groups = { "smoke" })
-    public void editProfile(){
-        steps.get()
-                .aUserIsLoggedIn()
-                .editProfile();
+    @Test(priority = 5, groups = {"smoke"})
+    public void editProfile() {
+
+        try {
+            steps.get()
+                    .aUserIsLoggedIn()
+                    .editProfile();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
+
     }
 
 //    @Test

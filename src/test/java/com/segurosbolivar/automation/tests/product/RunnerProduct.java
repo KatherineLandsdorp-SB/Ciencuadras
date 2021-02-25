@@ -2,6 +2,7 @@ package com.segurosbolivar.automation.tests.product;
 
 
 import com.segurosbolivar.automation.commons.Hooks;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RunnerProduct extends Hooks {
@@ -9,192 +10,316 @@ public class RunnerProduct extends Hooks {
 
     @Test(priority = 1)
     public void realEstateSeePlanExistingUser() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSeePlan()
-                .fillFormNewAccountExistUser();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSeePlan()
+                    .fillFormNewAccountExistUser();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+        }
+
+
     }
 
     //ver planes flujos esxitosos
     @Test(priority = 2)
     public void realEstateSeePlanNewUserSuccessPay() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentSuccess()
-                .returnCommerce()
-                .goToAccount();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentSuccess()
+                    .returnCommerce()
+                    .goToAccount();
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     @Test(priority = 3)
     public void agentSeePlanNewUserSuccessPay() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientAgent()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentSuccess()
-                .returnCommerce()
-                .goToAccount();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientAgent()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentSuccess()
+                    .returnCommerce()
+                    .goToAccount();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
+
     }
 
     @Test(priority = 4)
     public void builderSeePlanNewUserSuccessPay() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientBuilder()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentSuccess()
-                .returnCommerce()
-                .goToAccount();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientBuilder()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentSuccess()
+                    .returnCommerce()
+                    .goToAccount();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
 
     }
 //flujos fallido ver planes
 
     @Test(priority = 5)
     public void realEstateSeePlanNewUserFailPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentDeclined()
-                .retryPayment();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentDeclined()
+                    .retryPayment();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     @Test(priority = 6)
     public void builderSeePlanNewUserFailPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientBuilder()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentDeclined()
-                .retryPayment();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientBuilder()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentDeclined()
+                    .retryPayment();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     @Test(priority = 7)
     public void AgentSeePlanNewUserFailPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientAgent()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentDeclined()
-                .retryPayment();
+
+        try {
+
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientAgent()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentDeclined()
+                    .retryPayment();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     // flujos pendientes ver planes
     @Test(priority = 8)
     public void realEstateSeePlanNewUserPendingPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentPending()
-                .returnCommercePending();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentPending()
+                    .returnCommercePending();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
+
     }
 
     @Test(priority = 9)
     public void BuilderSeePlanNewUserPendingPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientBuilder()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentPending()
-                .returnCommercePending();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientBuilder()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentPending()
+                    .returnCommercePending();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
     }
 
     @Test(priority = 10)
     public void agentSeePlanNewUserPendingPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientAgent()
-                .clickOnSeePlan()
-                .seePlanFillFormNewAccountSuccess()
-                .paymentPending()
-                .returnCommercePending();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientAgent()
+                    .clickOnSeePlan()
+                    .seePlanFillFormNewAccountSuccess()
+                    .paymentPending()
+                    .returnCommercePending();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     // flujo exitoso arma tu plan
     @Test(priority = 11)
     public void realEstateMakePlanNewUserSuccessPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSMakePlan()
-                .makePlanFillFormNewAccountSuccess()
-                .paymentSuccess()
-                .returnCommerce()
-                .goToAccount();
 
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSMakePlan()
+                    .makePlanFillFormNewAccountSuccess()
+                    .paymentSuccess()
+                    .returnCommerce()
+                    .goToAccount();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
     }
 
     @Test(priority = 12)
     public void agentMakePlanNewUserSuccessPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientAgent()
-                .clickOnSMakePlan()
-                .makePlanFillFormNewAccountSuccess()
-                .paymentSuccess()
-                .returnCommerce()
-                .goToAccount();
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientAgent()
+                    .clickOnSMakePlan()
+                    .makePlanFillFormNewAccountSuccess()
+                    .paymentSuccess()
+                    .returnCommerce()
+                    .goToAccount();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
 
     }
 
     //flujo pendiente arma tu plan
     @Test(priority = 13)
     public void realEstateMakePlanNewUserSuccessPending() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSMakePlan()
-                .makePlanFillFormNewAccountSuccess()
-                .paymentPending()
-                .returnCommercePending();
+
+        try {
+
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSMakePlan()
+                    .makePlanFillFormNewAccountSuccess()
+                    .paymentPending()
+                    .returnCommercePending();
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
 
     }
 
     @Test(priority = 14)
     public void agentMakePlanNewUserSuccessPending() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientAgent()
-                .clickOnSMakePlan()
-                .makePlanFillFormNewAccountSuccess()
-                .paymentPending()
-                .returnCommercePending();
 
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientAgent()
+                    .clickOnSMakePlan()
+                    .makePlanFillFormNewAccountSuccess()
+                    .paymentPending()
+                    .returnCommercePending();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
     }
 
     //flujo rechazado arma tu plan
     @Test(priority = 15)
     public void realEstateMakePlanNewUserFailPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientRealEstate()
-                .clickOnSMakePlan()
-                .makePlanFillFormNewAccountSuccess()
-                .paymentDeclined()
-                .retryPayment();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientRealEstate()
+                    .clickOnSMakePlan()
+                    .makePlanFillFormNewAccountSuccess()
+                    .paymentDeclined()
+                    .retryPayment();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     @Test(priority = 16)
     public void agentMakePlanNewUserFailPayment() {
-        steps.get()
-                .clickOnButtonProduct()
-                .clickOnClientAgent()
-                .clickOnSMakePlan()
-                .makePlanFillFormNewAccountSuccess()
-                .paymentDeclined()
-                .retryPayment();
+
+        try {
+            steps.get()
+                    .clickOnButtonProduct()
+                    .clickOnClientAgent()
+                    .clickOnSMakePlan()
+                    .makePlanFillFormNewAccountSuccess()
+                    .paymentDeclined()
+                    .retryPayment();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
 }

@@ -1,6 +1,7 @@
 package com.segurosbolivar.automation.tests.suite1Login;
 
 import com.segurosbolivar.automation.commons.Hooks;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RunnerSuite1Login extends Hooks {
@@ -14,10 +15,16 @@ public class RunnerSuite1Login extends Hooks {
             priority = 2
     )
     public void suite1Caso3successfullLogin() {
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillAll();
+        try {
+            steps.get()
+                    .clickEntry()
+                    .clickLoginPerson()
+                    .fillAll();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
     }
 
     @Test(
@@ -27,10 +34,18 @@ public class RunnerSuite1Login extends Hooks {
             priority = 2
     )
     public void suite1Caso4failLogin() {
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .fillFail();
+
+        try {
+            steps.get()
+                    .clickEntry()
+                    .clickLoginPerson()
+                    .fillFail();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 
     @Test(
@@ -40,10 +55,18 @@ public class RunnerSuite1Login extends Hooks {
             priority = 2
     )
     public void suite1Caso5loginRemember() {
-        steps.get()
-                .clickEntry()
-                .clickLoginPerson()
-                .clickRemember()
-                .fillAll();
+
+        try {
+
+            steps.get()
+                    .clickEntry()
+                    .clickLoginPerson()
+                    .clickRemember()
+                    .fillAll();
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+
+        }
+
     }
 }

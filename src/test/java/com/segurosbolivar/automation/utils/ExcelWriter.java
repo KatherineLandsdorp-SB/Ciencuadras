@@ -8,6 +8,7 @@ import java.io.*;
 public class ExcelWriter {
 
     private static final String[] columns = {
+            "ID EJECUCION CASO",
             "ID EJECUCION",
             "FECHA",
             "HORA INICIO",
@@ -17,22 +18,23 @@ public class ExcelWriter {
             "CASO",
             "ESTADO",
             "PORTAL",
-            "AUTOMATIZADOR",
+            "EJECUTOR",
             "PROVEEDOR",
             "TIEMPO EJECUCION",
             "TIEMPO EJECUCION MANUAL",
             "AMBIENTE",
-            "TIPO AUTOMATIZACION"
+            "TIPO AUTOMATIZACION",
+            "JIRA ISSUE"
     };
 
-    private String pathFileName;
+    private final String pathFileName;
 
-    public ExcelWriter(String pathFileName)  {
+    public ExcelWriter(String pathFileName) {
         this.pathFileName = pathFileName;
         this.createFile();
     }
 
-    private void createFile()  {
+    private void createFile() {
 
         File excel = new File(this.pathFileName);
         if (!excel.exists()) {
@@ -61,9 +63,16 @@ public class ExcelWriter {
             try {
                 fileOut = new FileOutputStream(this.pathFileName);
                 workbook.write(fileOut);
-                fileOut.close();
+
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
+            } finally {
+                try {
+                    fileOut.close();
+
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
             }
         }
     }
@@ -71,24 +80,28 @@ public class ExcelWriter {
     public void write(TestingExecution testingExecution) {
 
         FileInputStream executionFile = null;
+        FileOutputStream output_file = null;
         try {
             executionFile = new FileInputStream(this.pathFileName);
 
             Workbook executionFileSheet = new XSSFWorkbook(executionFile);
 
             this.setDataToNewRow(testingExecution, executionFileSheet);
-
-            executionFile.close();
-            FileOutputStream output_file = new FileOutputStream(new File(this.pathFileName));
+            output_file = new FileOutputStream(new File(this.pathFileName));
             //write changes
             executionFileSheet.write(output_file);
-            output_file.close();
             System.out.println(" is successfully written");
-
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                output_file.close();
+                executionFile.close();
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
@@ -96,21 +109,23 @@ public class ExcelWriter {
         Sheet worksheet = executionFileSheet.getSheetAt(0);
         int lastRow = worksheet.getLastRowNum();
         Row row = worksheet.createRow(++lastRow);
-        row.createCell(0).setCellValue(testingExecution.id);
-        row.createCell(1).setCellValue(testingExecution.dateExecution);
-        row.createCell(2).setCellValue(testingExecution.startExecution);
-        row.createCell(3).setCellValue(testingExecution.endExecution);
-        row.createCell(4).setCellValue(testingExecution.area);
-        row.createCell(5).setCellValue(testingExecution.suiteName);
-        row.createCell(6).setCellValue(testingExecution.caseName);
-        row.createCell(7).setCellValue(testingExecution.executionState);
-        row.createCell(8).setCellValue(testingExecution.portal);
-        row.createCell(9).setCellValue(testingExecution.automatizador);
-        row.createCell(10).setCellValue(testingExecution.providerName);
-        row.createCell(11).setCellValue(testingExecution.executionTime);
-        row.createCell(12).setCellValue(testingExecution.manualExecutionTime);
-        row.createCell(13).setCellValue(testingExecution.environment);
-        row.createCell(14).setCellValue(testingExecution.automationType);
+        row.createCell(0).setCellValue(testingExecution.idCaseExecution);
+        row.createCell(1).setCellValue(testingExecution.idExecution);
+        row.createCell(2).setCellValue(testingExecution.dateExecution);
+        row.createCell(3).setCellValue(testingExecution.startExecution);
+        row.createCell(4).setCellValue(testingExecution.endExecution);
+        row.createCell(5).setCellValue(testingExecution.area);
+        row.createCell(6).setCellValue(testingExecution.suiteName);
+        row.createCell(7).setCellValue(testingExecution.caseName);
+        row.createCell(8).setCellValue(testingExecution.executionState);
+        row.createCell(9).setCellValue(testingExecution.portal);
+        row.createCell(10).setCellValue(testingExecution.executor);
+        row.createCell(11).setCellValue(testingExecution.providerName);
+        row.createCell(12).setCellValue(testingExecution.executionTime);
+        row.createCell(13).setCellValue(testingExecution.manualExecutionTime);
+        row.createCell(14).setCellValue(testingExecution.environment);
+        row.createCell(15).setCellValue(testingExecution.automationType);
+        row.createCell(16).setCellValue(testingExecution.jiraIssue);
     }
 
 }

@@ -4,6 +4,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 
 public class Utils {
@@ -23,7 +24,7 @@ public class Utils {
         Number duration = (iTestResult.getEndMillis() - iTestResult.getStartMillis());
 
         TestingExecution testingExecution = new TestingExecution();
-        testingExecution.id = iTestResult.getMethod().getId();
+        testingExecution.idCaseExecution = iTestResult.getMethod().getId();
         testingExecution.dateExecution = Utils.getStringDate(iTestResult.getStartMillis(), "dd/MM/yyyy");
         testingExecution.caseName = iTestResult.getMethod().getDescription();
         testingExecution.suiteName = Utils.getTestAnnotation(iTestResult).suiteName();
@@ -35,11 +36,18 @@ public class Utils {
         testingExecution.pathClassName = iTestResult.getTestClass().getName();
         testingExecution.portal = PropertyManager.getConfigValueByKey("portal");
         testingExecution.area = PropertyManager.getConfigValueByKey("area");
-        testingExecution.automatizador = PropertyManager.getConfigValueByKey("automatizador");
+        testingExecution.executor = PropertyManager.getConfigValueByKey("executor");
         testingExecution.providerName = PropertyManager.getConfigValueByKey("providerName");
         testingExecution.manualExecutionTime = PropertyManager.getConfigValueByKey("manualExecutionTime");
         testingExecution.environment = PropertyManager.getConfigValueByKey("environment");
         testingExecution.automationType = PropertyManager.getConfigValueByKey("automationType");
+        testingExecution.jiraIssue = PropertyManager.getConfigValueByKey("jiraIssue");
+
         return testingExecution;
+    }
+
+    public static long getTimeStampSeconds() {
+        Instant instant = Instant.now();
+        return instant.getEpochSecond();
     }
 }

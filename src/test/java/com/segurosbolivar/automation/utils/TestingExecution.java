@@ -4,8 +4,9 @@ import lombok.Data;
 
 @Data
 public class TestingExecution {
+    public static long idExecution;
 
-    public String id;
+    public String idCaseExecution;
     public String dateExecution;
     public String startExecution;
     public String endExecution;
@@ -17,10 +18,11 @@ public class TestingExecution {
     public String pathClassName;
     public String executionState;
     public String portal;
-    public String automatizador;
+    public String executor;
     public String providerName;
     public String executionTime;
     public String manualExecutionTime;
     public String environment;
     public String automationType;
+    public String jiraIssue;
 }

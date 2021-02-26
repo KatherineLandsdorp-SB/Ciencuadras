@@ -6,7 +6,7 @@ import lombok.Data;
 public class TestingExecution {
     public static long idExecution;
 
-    public String idCaseExecution;
+    public long idCaseExecution;
     public String dateExecution;
     public String startExecution;
     public String endExecution;

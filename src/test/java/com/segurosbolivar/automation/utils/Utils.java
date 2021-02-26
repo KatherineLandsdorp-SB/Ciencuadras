@@ -24,7 +24,7 @@ public class Utils {
         Number duration = (iTestResult.getEndMillis() - iTestResult.getStartMillis());
 
         TestingExecution testingExecution = new TestingExecution();
-        testingExecution.idCaseExecution = iTestResult.getMethod().getId();
+        testingExecution.idCaseExecution = Utils.getTimeStampMils();
         testingExecution.dateExecution = Utils.getStringDate(iTestResult.getStartMillis(), "dd/MM/yyyy");
         testingExecution.caseName = iTestResult.getMethod().getDescription();
         testingExecution.suiteName = Utils.getTestAnnotation(iTestResult).suiteName();
@@ -49,5 +49,10 @@ public class Utils {
     public static long getTimeStampSeconds() {
         Instant instant = Instant.now();
         return instant.getEpochSecond();
+    }
+
+    public static long getTimeStampMils() {
+        Instant instant = Instant.now();
+        return instant.toEpochMilli();
     }
 }

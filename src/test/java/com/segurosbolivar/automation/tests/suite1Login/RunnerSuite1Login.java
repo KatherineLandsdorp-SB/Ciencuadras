@@ -22,6 +22,7 @@ public class RunnerSuite1Login extends Hooks {
                     .fillAll();
 
         } catch (Exception ex) {
+
             Assert.fail(ex.getMessage());
 
         }

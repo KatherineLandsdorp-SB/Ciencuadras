@@ -6,15 +6,15 @@ import com.segurosbolivar.automation.utils.TestingExecution;
 import com.segurosbolivar.automation.utils.Utils;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
-import lombok.SneakyThrows;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 
 public class TestListener implements ITestListener {
 
@@ -36,6 +36,8 @@ public class TestListener implements ITestListener {
         System.out.println("TEST SUCCESSFUL!");
         //add log
         takeScreenshot("TEST SUCCESSFUL!");
+        WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+        ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
         this.sendTestMethodStatus(iTestResult, "TEST SUCCESSFUL");
     }
 
@@ -45,6 +47,8 @@ public class TestListener implements ITestListener {
         System.out.println("THIS TEST FAILED!");
         //add log
         takeScreenshot("THIS TEST FAILED!");
+        WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+        ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
         this.sendTestMethodStatus(iTestResult, "TEST FAILED");
     }
 
@@ -68,7 +72,7 @@ public class TestListener implements ITestListener {
 
     }
 
-    private void sendTestMethodStatus(ITestResult iTestResult, String executionState)  {
+    private void sendTestMethodStatus(ITestResult iTestResult, String executionState) {
         TestingExecution executionInfo = Utils.getExecutionInfo(iTestResult);
         executionInfo.executionState = executionState;
         ExcelWriter excel = new ExcelWriter("executions.xlsx");

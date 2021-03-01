@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -21,6 +22,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.remote.LocalFileDetector;
@@ -36,7 +39,9 @@ public class DriverFacade {
     WebDriverWait wait;
     JSONObject jsonObject;
     int timeoutInSeconds = 60;
+    Date date = new Date();
 
+    String executionName = "Ui_Automation_CienCuadras_Sonic"+"_2021_02_26_"+date.getHours()+"_"+date.getMinutes();
 
     protected DesiredCapabilities capabilitiesSetUp(String methodName) {
 
@@ -57,8 +62,13 @@ public class DriverFacade {
             capabilities.setCapability("version",  PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
             capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
         }
+
         capabilities.setCapability("build", "Ui_Automation_CienCuadras_Sonic");
         capabilities.setCapability("name", methodName);
+
+        capabilities.setCapability("build",executionName);
+       capabilities.setCapability("name", methodName);
+
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
         capabilities.setCapability("video", true); // To enable video recording
@@ -75,14 +85,24 @@ public class DriverFacade {
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
                         PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp("PruebaLocal"));
                 driver.setFileDetector(new LocalFileDetector());
+
             } catch (MalformedURLException e) {
                 System.out.println("Invalid grid URL");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         } else {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
+            if (Boolean.valueOf(PropertyManager.getConfigValueByKey("desktop"))) {
+                driver = new ChromeDriver();
+                driver.manage().window().maximize();
+
+            }else{
+                HashMap<String, Object> mobileEmulation = new HashMap<>();
+                mobileEmulation.put("deviceName", PropertyManager.getConfigValueByKey("BROWSER_DEVICE"));
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+                driver = new ChromeDriver(chromeOptions);
+            }
         }
         wait = new WebDriverWait(driver, timeoutInSeconds);
     }

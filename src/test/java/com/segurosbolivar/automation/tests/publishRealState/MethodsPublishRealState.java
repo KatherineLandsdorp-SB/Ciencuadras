@@ -70,7 +70,14 @@ public class MethodsPublishRealState extends BaseTest {
     }
 
     public void clickButtonConfirm() {
-        methods.clickElement("buttonConfirm");
+        try {
+            methods.clickElement("buttonRealState");
+
+        }catch (Exception e){
+            methods.waitingForElement("buttonConfirm", 20);
+            methods.scrollToElement("buttonConfirm");
+            methods.clickElement("buttonConfirm");
+        }
     }
 
     public String validateElement() {
@@ -107,6 +114,7 @@ public class MethodsPublishRealState extends BaseTest {
         methods.clickElement("recaptcha");
         methods.pause(5);
     }
+
     public void fillNoMandatoryDataName() {
         registerMail();
         registerPhone();
@@ -139,5 +147,6 @@ public class MethodsPublishRealState extends BaseTest {
         clickOnCaptcha();
         clickButtonConfirm();
     }
+
 
 }

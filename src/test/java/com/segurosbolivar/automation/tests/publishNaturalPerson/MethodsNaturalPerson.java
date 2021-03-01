@@ -109,7 +109,7 @@ public class MethodsNaturalPerson extends BaseTest {
 
     public void registerArea() {
         methods.sendKeysText("inputArea", services.getField("sanityArea"));
-        methods.doScrollDown(1, "divFormPublication");
+        //methods.doScrollDown(1, "divFormPublication");
     }
 
     public void registerDescriptionProperty() {
@@ -121,6 +121,7 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void registerCityProperty() {
+        methods.scrollToElement("formLocationProperty");
         methods.sendKeysText("inputCity", services.getField("sanityCity"));
         methods.pause(2);
         methods.keyDown("inputCity");
@@ -129,14 +130,17 @@ public class MethodsNaturalPerson extends BaseTest {
     public void registerDistric() {
         methods.clickElement("inputDistric");
         methods.pause(3);
-        methods.sendKeysText("inputDistric", services.getField("sanityDistric"));methods.waitingForElement("selectCity", 120);
+        methods.sendKeysText("inputDistric", services.getField("sanityDistric"));
         methods.keyDown("inputDistric");
+        methods.waitingForElement("selectCity", 120);
+
     }
 
     public void registerAdress() {
         methods.clickElement("inputDistric");
         methods.pause(4);
         methods.sendKeysText("inputAdress", services.getField("sanityAdress"));
+        methods.scrollToElement("inputAdress");
     }
 
     public void registerWrongAddress() {
@@ -146,8 +150,21 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void confirmAdress() {
-        methods.clickElement("checkAdress");
-        methods.pause(2);
+
+        try {
+            methods.waitingForElement("checkLocationProperty", 20);
+            System.out.println("No entro en el catch 1");
+            methods.clickElement("checkLocationProperty");
+            System.out.println("No entro en el catch 2");
+            methods.pause(2);
+        }catch (Exception e){
+            methods.waitingForElement("checkLocationProperty", 40);
+            System.out.println("Entro en el catch ");
+            methods.scrollToElement("checkLocationProperty");
+            System.out.println("Entro en el catch ");
+            methods.clickElement("checkLocationProperty");
+            methods.pause(2);
+        }
     }
 
     public void registerEmailNewUser() {

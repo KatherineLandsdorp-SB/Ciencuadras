@@ -245,7 +245,7 @@
   },
   "buttonPublishYourself": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//div//button[text()='PUBLICA TÚ MISMO']"
+      "ValueToFind": "(//div//button[@class='mode__link'])[2]"
   },
   "buttonRealState": {
     "GetFieldBy": "Xpath",
@@ -313,7 +313,7 @@
   },
   "buttonContinueCoverage": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "(//div/button[contains (text(), 'CONTINUAR')])[6]"
+    "ValueToFind": "(//div/button[@class='btn btn-default'])[7]"
   },
   "texConfirmedCity": {
     "GetFieldBy": "Xpath",
@@ -325,7 +325,7 @@
   },
   "buttonAddToCar": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "(//button[contains(text(),'AÑADIR AL CARRITO')])[1]"
+    "ValueToFind": "(//div//button[@class='plan__button'])[1]"
   },
   "textCoverage": {
     "GetFieldBy": "Xpath",
@@ -810,5 +810,13 @@
   "messageNotResultOffers": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//div[@id='resultados']//div/h2"
+  },
+  "formLocationProperty": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "ubicacion-inmueble"
+  },
+  "checkLocationProperty": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "dirCheckAddress"
   }
 }

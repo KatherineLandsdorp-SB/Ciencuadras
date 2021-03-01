@@ -8,109 +8,89 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class StepsPublishRealState extends BaseTest {
-    private MethodsPublishRealState MethodsPublishRealState= new MethodsPublishRealState();
-    private SharedMethods sharemethods = new SharedMethods();
+    private MethodsPublishRealState methodsPublishRealState = new MethodsPublishRealState();
+    private SharedMethods shareMethods = new SharedMethods();
 
     @Step("The user clicks on the sale button in the home")
     public StepsPublishRealState clickButtonSaleHome() {
-        sharemethods.clickOnButtonSaleHome();
+        assertTrue(shareMethods.clickOnButtonSaleHome());
         return this;
 
     }
 
-    @Step("The user clicks on the offer button in the home")
-    public StepsPublishRealState clickButtonOfferHome() {
-        sharemethods.clickOnButtonOfferHome();
-        return this;
-    }
 
-    @Step("The user click on the button publih with Real State")
+    @Step("The user click on the button publish with Real State")
     public StepsPublishRealState clickRealState() {
-        sharemethods.publishRealState();
+        assertTrue(methodsPublishRealState.publishRealState());
         return this;
     }
+
     @Step("Register the fields in form publish with real state")
-    public  StepsPublishRealState fillForm(){
-       MethodsPublishRealState.registerForm();
+    public StepsPublishRealState fillForm() {
+        methodsPublishRealState.registerForm();
+        assertEquals(methodsPublishRealState.validateElement(), services.getField("sanityUnderstand"));
         return this;
     }
 
-    @Step("Register name in form publish with real state")
-    public StepsPublishRealState fillInName() {
-        MethodsPublishRealState.registerName();
+    @Step("Fill form publish with real state whit out data name")
+    public StepsPublishRealState fillNoMandatoryDataName() {
+        methodsPublishRealState.fillNoMandatoryDataName();
+        assertEquals(methodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
         return this;
     }
 
-    @Step("Register email in form publish with real state")
-    public StepsPublishRealState fillInMail() {
-        MethodsPublishRealState.registerMail();
+    @Step("Fill form publish with real state whit out data email")
+    public StepsPublishRealState fillNoMandatoryDataEmail() {
+        methodsPublishRealState.fillNoMandatoryDataEmail();
+        assertEquals(methodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
         return this;
     }
 
-    @Step("Step(Register cellphone in form publish with real state)")
-    public StepsPublishRealState fillInPhones() {
-        MethodsPublishRealState.registerPhone();
+    @Step("Fill form publish with real state whit out data Phone")
+    public StepsPublishRealState fillNoMandatoryDataPhone() {
+        methodsPublishRealState.fillNoMandatoryDataPhone();
+        assertEquals(methodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
         return this;
     }
 
-    @Step("Register city in form publish with real state)")
-    public StepsPublishRealState fillInCity() throws InterruptedException {
-        MethodsPublishRealState.registerCity();
+    @Step("Fill form publish with real state whit out data city")
+    public StepsPublishRealState fillNoMandatoryDataCity() {
+        methodsPublishRealState.fillNoMandatoryDataCity();
+        assertEquals(methodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
         return this;
     }
 
-
-    @Step("select rent transaction form publish with real state")
-    public StepsPublishRealState selectSale() {
-        MethodsPublishRealState.clickButtonSale();
-        return this;
-    }
 
     @Step("click on button confirm in form publish with real state")
-    public StepsPublishRealState clickConfirmation() {
-        MethodsPublishRealState.clickButtonConfirm();
-        return this;
-    }
-    @Step("click on captcha in form publish with real state")
-    public StepsPublishRealState clickCaptcha() {
-        MethodsPublishRealState.clickOnCaptcha();
+    public StepsPublishRealState clickConfirmationNoMandatoryData() {
+        methodsPublishRealState.clickButtonConfirm();
+        assertEquals(methodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
         return this;
     }
 
-    @Step("Validate text button Understood to end the form publish with real state")
-    public StepsPublishRealState validationTextButtonUnderstand() {
-        assertEquals(MethodsPublishRealState.validateElement(), services.getField("sanityUnderstand"));
-        return this;
-    }
 
     @Step("click on button Understood")
     public StepsPublishRealState clickButtonUnderstood() {
-        MethodsPublishRealState.clickButtonUnderstood();
+        assertTrue(methodsPublishRealState.clickButtonUnderstood());
         return this;
     }
 
-    @Step("validate mandatory button confirm")
-    public StepsPublishRealState validationDataMandatory() {
-        assertEquals(MethodsPublishRealState.validateDataMandatory(), services.getField("sanityConfirm"));
-        return this;
-    }
 
     @Step("validate existence radio button sale")
     public StepsPublishRealState validationRadioButtonSale() {
-        assertTrue(MethodsPublishRealState.validateRadioButtonSale());
+        assertTrue(methodsPublishRealState.validateRadioButtonSale());
         return this;
     }
 
     @Step("validate existence radio button rent")
     public StepsPublishRealState validationRadioButtonRent() {
-
-        assertTrue(MethodsPublishRealState.validateRadioButtonRent());
+        assertTrue(methodsPublishRealState.validateRadioButtonRent());
         return this;
     }
 
     @Step("validate existence radio button rent and sale")
     public StepsPublishRealState validationRadioButtonRentSale() {
-        assertTrue(MethodsPublishRealState.validateRadioButtonRentSale());
+        assertTrue(methodsPublishRealState.validateRadioButtonRentSale());
         return this;
     }
 

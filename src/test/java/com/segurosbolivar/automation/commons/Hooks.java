@@ -2,11 +2,13 @@ package com.segurosbolivar.automation.commons;
 
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
 import com.segurosbolivar.automation.utils.PropertyManager;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
+
 
 @Listeners({TestListener.class})
+
 public class Hooks {
 
     @BeforeMethod(alwaysRun = true)
@@ -17,9 +19,9 @@ public class Hooks {
     }
 
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod()
     public void after() {
-       //DriverFactory.getDriverFacade().getWebDriver().quit();
+       DriverFactory.getDriverFacade().getWebDriver().quit();
     }
 //    bd final
 }

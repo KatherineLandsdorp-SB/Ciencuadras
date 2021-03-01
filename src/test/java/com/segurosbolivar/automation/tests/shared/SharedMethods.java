@@ -45,10 +45,7 @@ public class SharedMethods extends BaseTest {
         methods.clickElement("buttonAddToCar");
     }
 
-    public void publishRealState() {
-        methods.waitingForElement("buttonRealState", 10);
-        methods.clickElement("buttonRealState");
-    }
+
 
 
     public String clickOnAddToCarOutstanding() {

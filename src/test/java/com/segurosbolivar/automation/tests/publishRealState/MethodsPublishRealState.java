@@ -8,6 +8,14 @@ public class MethodsPublishRealState extends BaseTest {
     private Methods methods = new Methods();
     private SharedMethods shared = new SharedMethods();
 
+    public Boolean publishRealState() {
+        methods.waitingForElement("buttonRealState", 10);
+        methods.clickElement("buttonRealState");
+        methods.waitingForElement("recaptcha",10);
+        return methods.validationElementEnable("recaptcha");
+    }
+
+
     public void registerForm(){
 
         methods.waitingForElement("inputNameRegister", 110);
@@ -15,9 +23,9 @@ public class MethodsPublishRealState extends BaseTest {
         methods.sendKeysText("inputNameRegister", services.getField("sanityNameRealSt"));
         methods.sendKeysText("inputMail", services.getField("sanityMailRealSt"));
         methods.sendKeysText("inputPhone", services.getField("sanityPhone"));
-        methods.sendKeysText("inputCityReallSate", services.getField("sanityCity"));
+        methods.sendKeysText("inputCityRealState", services.getField("sanityCity"));
         methods.pause(2);
-        methods.keyDown("inputCityReallSate");
+        methods.keyDown("inputCityRealState");
         methods.clickElement("radioButtonSale");
         methods.clickElement("recaptcha");
         methods.pause(5);
@@ -41,11 +49,11 @@ public class MethodsPublishRealState extends BaseTest {
         methods.sendKeysText("inputPhone", services.getField("sanityPhone"));
     }
 
-    public void registerCity() throws InterruptedException {
-        methods.waitingForElement("inputCityReallSate", 110);
-        methods.sendKeysText("inputCityReallSate", services.getField("sanityCity"));
+    public void registerCity()  {
+        methods.waitingForElement("inputCityRealState", 110);
+        methods.sendKeysText("inputCityRealState", services.getField("sanityCity"));
         methods.pause(2);
-        methods.keyDown("inputCityReallSate");
+        methods.keyDown("inputCityRealState");
     }
 
     public void clickButtonSale() {
@@ -67,40 +75,69 @@ public class MethodsPublishRealState extends BaseTest {
 
     public String validateElement() {
         methods.waitingForElement("buttonUnderstood", 110);
-        String text = methods.getTextElement("buttonUnderstood");
-        System.out.println("texto encontrado" + text);
-        return text;
+        return methods.getTextElement("buttonUnderstood");
     }
 
-    public void clickButtonUnderstood() {
+    public Boolean clickButtonUnderstood() {
         methods.clickElement("buttonUnderstood");
+        return methods.validationElementEnable("buttonSaleHome");
     }
 
     public String validateDataMandatory() {
-        methods.waitingForElement("buttonConfirm", 110);
-        String text = methods.getTextElement("buttonConfirm");
-        System.out.println("texto encontrado" + text);
-        return text;
+        methods.waitingForElement("buttonConfirm", 10);
+
+        return methods.getTextElement("buttonConfirm");
     }
 
     public boolean validateRadioButtonSale() {
-        boolean present = methods.validationElementEnable("radioButtonSale");
-        return present;
+        return methods.validationElementEnable("radioButtonSale");
 
     }
 
     public boolean validateRadioButtonRent() {
-        boolean present = methods.validationElementEnable("radioButtonRent");
-        return present;
+
+        return methods.validationElementEnable("radioButtonRent");
     }
 
     public boolean validateRadioButtonRentSale() {
-        boolean present = methods.validationElementEnable("radioButtonRentSale");
-        return present;
+        return methods.validationElementEnable("radioButtonRentSale");
     }
 
     public void clickOnCaptcha() {
         methods.clickElement("recaptcha");
         methods.pause(5);
     }
+    public void fillNoMandatoryDataName() {
+        registerMail();
+        registerPhone();
+        registerCity();
+        clickButtonSale();
+        clickOnCaptcha();
+        clickButtonConfirm();
+    }
+    public void fillNoMandatoryDataEmail(){
+        registerName();
+        registerPhone();
+        registerCity();
+        clickButtonRent();
+        clickOnCaptcha();
+        clickButtonConfirm();
+    }
+    public void fillNoMandatoryDataPhone(){
+        registerName();
+        registerMail();
+        registerCity();
+        clickButtonSale();
+        clickOnCaptcha();
+        clickButtonConfirm();
+    }
+    public void fillNoMandatoryDataCity(){
+        registerName();
+        registerMail();
+        registerPhone();
+        clickRadioButtonRentSale();
+        clickOnCaptcha();
+        clickButtonConfirm();
+    }
+
 }

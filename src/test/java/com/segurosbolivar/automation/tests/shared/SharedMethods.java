@@ -29,9 +29,18 @@ public class SharedMethods extends BaseTest {
     }
 
     public Boolean clickOnPublishYourself() {
-        methods.doScrollDown(2, "divPublish");
-        methods.clickElement("buttonPublishYourself");
-        return methods.validationElementEnable("buttonPublishYourself");
+        try {
+            methods.waitingForElement("buttonPublishYourself", 20);
+            methods.clickElement("buttonPublishYourself");
+            return methods.validationElementEnable("buttonPublishYourself");
+
+        }catch (Exception e){
+            methods.waitingForElement("buttonPublishYourself", 40);
+            methods.scrollToElement("buttonPublishYourself");
+            methods.clickElement("buttonPublishYourself");
+            return methods.validationElementEnable("buttonPublishYourself");
+        }
+
     }
 
     public Boolean clickOnBasicPlan() {
@@ -60,10 +69,20 @@ public class SharedMethods extends BaseTest {
 
 
     public String clickOnAddToCarOutstanding() {
-        methods.waitingForElement("buttonAddToCar", 10);
-        methods.clickElement("buttonAddToCar");
-        methods.waitingForElement("textCoverage", 120);
-        return methods.getTextElement("textCoverage");
+
+        try {
+            methods.waitingForElement("buttonAddToCar", 30);
+            methods.clickElement("buttonAddToCar");
+            methods.waitingForElement("textCoverage", 120);
+            return methods.getTextElement("textCoverage");
+
+        }catch (Exception e){
+            methods.waitingForElement("buttonAddToCar", 500);
+            methods.scrollToElement("buttonAddToCar");
+            methods.clickElement("buttonAddToCar");
+            methods.waitingForElement("textCoverage", 120);
+            return methods.getTextElement("textCoverage");
+        }
     }
 
     public Boolean clickOnAddToCarBasicPlan() {

@@ -283,6 +283,13 @@ public class Methods extends BaseTest {
 
     }
 
+    public void scrollToElement(String entity) {
+        WebElement element = getEntity(entity);
+        ((JavascriptExecutor) driverFacade.getWebDriver()).executeScript("arguments[0].scrollIntoView();", element);
+
+
+    }
+
     public void doScrollDown(int x, String entity) {
         for (int i = 0; i <= x; i++) {
             pause(2);

@@ -6,7 +6,7 @@
   },
   "entryUser": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//header/nav[1]/div[1]/nav[1]/div[1]/ul[2]/li[1]"
+    "ValueToFind": "//a[contains(text(),'Ingresar')]"
   },
   "allied": {
     "GetFieldBy": "Xpath",
@@ -18,15 +18,21 @@
   },
   "loginPerson": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//span[contains(text(),'Personas')]"
+    "ValueToFind": "//header/nav[1]/div[1]/nav[1]/div[2]/ul[2]/div[1]/ul[1]/li[1]/a[1]"
   },
   "loginInMail": {
     "GetFieldBy": "Id",
-    "ValueToFind": "loginInMail"
+    "ValueToFind": "loginInMail",
+    "asserts": {
+      "placeholder": "correo@ejemplo.com"
+    }
   },
   "loginInPass": {
     "GetFieldBy": "Id",
-    "ValueToFind": "loginInPass"
+    "ValueToFind": "loginInPass",
+    "asserts": {
+      "placeholder": "Escribe tu contraseña"
+    }
   },
   "loginUser": {
     "GetFieldBy": "Id",

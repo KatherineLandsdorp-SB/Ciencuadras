@@ -23,6 +23,7 @@ import java.util.function.Function;
 
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertEquals;
 
 public class Methods extends BaseTest {
     WebDriverWait wait;
@@ -33,6 +34,18 @@ public class Methods extends BaseTest {
     /* ====================== JSON     HANDLE ====================== */
     /* ============================================================= */
 
+    public void assertAttributes(Object asserts, WebElement element){
+        if(asserts != null){
+            JSONObject jsonObject = (JSONObject) field.get("asserts");
+
+            Iterator<String> keys = jsonObject.keySet().iterator();;
+            while(keys.hasNext()) {
+                String key = keys.next();
+                assertEquals(element.getAttribute(key), jsonObject.get(key));
+            }
+        }
+    }
+
     //Buscar un elemento dada la entidad
     public WebElement getEntity(String entity) {
         WebElement element = null;
@@ -40,6 +53,8 @@ public class Methods extends BaseTest {
         try {
             if (field != null) {
                 String typeObject = (String) field.get("GetFieldBy");
+                Object asserts = field.get("asserts");
+
                 switch (typeObject) {
                     case "Xpath":
                         element = driverFacade.getWebDriver().findElement(By.xpath((String) field.get("ValueToFind")));
@@ -50,6 +65,7 @@ public class Methods extends BaseTest {
                     default:
                         element = null;
                 }
+                assertAttributes(asserts, element);
                 return element;
 
             } else {

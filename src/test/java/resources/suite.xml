@@ -10,6 +10,8 @@
             <class name="com.segurosbolivar.automation.tests.editProfile.RunnerEditProfile"/>
             <class name="com.segurosbolivar.automation.tests.search.RunnerSearch"/>
             <class name="com.segurosbolivar.automation.tests.product.RunnerProduct"/>
+            <class name="com.segurosbolivar.automation.tests.suite1Login.RunnerSuite1Login"/>
+
 
         </classes>
     </test>

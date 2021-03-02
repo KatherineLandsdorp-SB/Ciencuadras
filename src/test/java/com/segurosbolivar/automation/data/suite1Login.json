@@ -3,7 +3,7 @@
     {
       "case": "CASO3_LOGIN_TRANSVERSAL",
       "data": {
-        "mailAllied": "fiftye20200922@yopmail.com",
+        "loginInMail": "fiftye20200922@yopmail.com",
         "passwordAllied": "Test-20200922"
       },
       "assert": {

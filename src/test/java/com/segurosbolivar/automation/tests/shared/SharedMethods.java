@@ -88,7 +88,7 @@ public class SharedMethods extends BaseTest {
     }
 
     public Boolean clickOnAddToCarBasicPlan() {
-        methods.waitingForElement("buttonBasicAddToCar", 10);
+        methods.waitingForElement("buttonBasicAddToCar", 100);
         methods.clickElement("buttonBasicAddToCar");
         return methods.validationElementEnable("buttonBasicAddToCar");
 

@@ -445,17 +445,7 @@ public class Methods extends BaseTest {
     }
 
     //Metodo para realizar carga de imagen guardada en ruta del proyecto
-    public void uploadFileImage(int Intentos, int Veces, String entity) {
-        while (Intentos <= Veces) {
-            // getEntity(entity).sendKeys(getFile());
-            // getEntity(entity).sendKeys("https://www.frases333.com/wp-content/uploads/2018/06/jpg.jpg");
-            pause(10);
-            // System.out.println("Valor de Intentos : " + Intentos + getFile());
-            Intentos++;
-        }
-    }
-
-    public void uploadRemoteImage(int Intentos, int Veces, String entity)  {
+       public void uploadRemoteImage(int Intentos, int Veces, String entity)  {
         while (Intentos <= Veces) {
             getEntity(entity).sendKeys(getFile());
             pause(10);

@@ -84,8 +84,7 @@ public class RunnerNaturalPerson extends Hooks {
                 .clickButtonSaleHome()
                 .clickPublishYourself()
                 .clickOnAddToCar()
-                .fillFormSale()
-        ;
+                .fillFormSale();
     }
 
     @Test(priority = 8)

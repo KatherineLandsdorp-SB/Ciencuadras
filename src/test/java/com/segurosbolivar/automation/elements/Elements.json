@@ -343,7 +343,7 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//div/input[@id='cellphone' and @name='cellphone']"
   },
-  "inputCityReallSate": {
+  "inputCityRealState": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//div/input[@id='ciudad' and @name='ciudad'])[2]"
   },

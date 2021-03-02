@@ -489,6 +489,42 @@ public class Methods extends BaseTest {
 
     }
 
+    public int [] selectDateOnCalender(){
+        int[ ] MonthDates = new int[6];
+        Date toDayDate = new Date();
+        for (int i = 0; i < MonthDates.length; i++) {
+            MonthDates[i] = (addDaysDate(toDayDate,i+1)).getDate();
+        }
+        return MonthDates;
+    }
 
+    public static Date addDaysDate(Date date, int days){
+        if (days==0) return date;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, days);
+        return calendar.getTime();
+    }
+
+    public void clickDateMonth(String entity){
+        int [] selectDateOnCalender = selectDateOnCalender();
+        List<WebElement> elementsDate = getEntities(entity);
+        boolean found =false;
+        for (int i = 0; i < selectDateOnCalender.length; i++) {
+            System.out.println("Entro A: "+ selectDateOnCalender[i]);
+        }
+        for (int i = 0; i < elementsDate.size(); i++) {
+            System.out.println("Entro B: "+ Integer.parseInt(elementsDate.get(i).getText()));
+        }
+
+        for (int i = 0; i < selectDateOnCalender.length; i++) {
+            for (int j = 0; j < elementsDate.size(); j++) {
+                if ((!found) && selectDateOnCalender[i]==(Integer.parseInt(elementsDate.get(j).getText()))) {
+                    elementsDate.get(j).click();
+                    found=true;
+                }
+            }
+        }
+    }
 }
 

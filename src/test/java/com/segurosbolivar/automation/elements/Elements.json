@@ -818,5 +818,25 @@
   "checkLocationProperty": {
     "GetFieldBy": "Id",
     "ValueToFind": "dirCheckAddress"
+  },
+  "daysMonthCalendar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='mat-calendar-body-cell ng-star-inserted']"
+  },
+  "textScrollCalender": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='photos-main-title']"
+  },
+  "daysCalendar": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='form-group full-width date-field']"
+  },
+  "hoursDay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='form-group tipo-parqueadero full-width fecha-visita']"
+  },
+  "hourDay": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//*[@class='mat-option-text'])[4]"
   }
 }

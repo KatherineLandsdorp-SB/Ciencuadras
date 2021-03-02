@@ -151,6 +151,11 @@ public class StepsNaturalPerson extends BaseTest {
         return this;
     }
 
+    @Step("select the date you want")
+    public StepsNaturalPerson filldate(){
+        sharemethods.clickOnDate();
+    return this;
+    }
 
 }
 

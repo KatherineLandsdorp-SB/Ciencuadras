@@ -200,5 +200,16 @@ public class SharedMethods extends BaseTest {
 
     }
 
+    public String clickOnDate(){
+        methods.scrollToElement("textScrollCalender");
+        methods.clickElement("daysCalendar");
+        methods.clickDateMonth("daysMonthCalendar");
+        methods.waitingForElement("hoursDay",50);
+        methods.clickElement("hoursDay");
+        methods.waitingForElement("hourDay",50);
+        methods.clickElement("hourDay");
+        return "";
+    }
+
 
 }

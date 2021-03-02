@@ -133,7 +133,7 @@
   },
   "navbarDropdownHome": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[2]/button[1]/div/a/span[1]"
+    "ValueToFind": "//*[@class=\"circle-name\"]\n\n"
   },
   "navbarDropdown": {
     "GetFieldBy": "Xpath",
@@ -735,6 +735,15 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button[contains(text(),'Volver a comercio')]"
   },
+  "addInformation": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),'AÑADIR MÁS INFORMACIÓN')]"
+  },
+  "goPublications": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//button[contains(text(),'IR A MIS PUBLICACIONES')]"
+  },
+
   "paySuccessful": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//h2[contains(text(),'Pago exitoso')]"
@@ -774,10 +783,6 @@
   "divProduct": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"products-profile\"]/div"
-  },
-  "": {
-    "GetFieldBy": "Id",
-    "ValueToFind": ""
   },
   "searchButtonByCode": {
     "GetFieldBy": "Xpath",

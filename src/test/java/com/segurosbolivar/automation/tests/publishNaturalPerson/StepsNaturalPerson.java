@@ -145,10 +145,24 @@ public class StepsNaturalPerson extends BaseTest {
 
     }
 
-    @Step("")
+    @Step("Click on button return commerce")
     public StepsNaturalPerson returnCommerce() {
         methodsNaturalPerson.clickOnBtnReturnCommerce();
+        assertTrue(methodsNaturalPerson.validateButtonGoPublication());
+        assertTrue(methodsNaturalPerson.validateButtonAddInformation());
         return this;
+    }
+    @Step("Click on button go to my publications")
+    public StepsNaturalPerson clickGotoPublication(){
+        methodsNaturalPerson.clickOnButtonGoPublication();
+        return this;
+
+    }
+    @Step("Click on button go to my publications")
+    public StepsNaturalPerson clickAddInformation(){
+        methodsNaturalPerson.clickOnButtonAddInformation();
+        return this;
+
     }
 
     @Step("select the date you want")

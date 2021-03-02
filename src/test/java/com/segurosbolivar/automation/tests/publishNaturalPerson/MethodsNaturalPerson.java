@@ -275,6 +275,20 @@ public class MethodsNaturalPerson extends BaseTest {
     public void clickOnBtnReturnCommerce() {
         methods.clickElement("btnReturnCommerce");
     }
+    public Boolean validateButtonGoPublication(){
+        return methods.validationElementEnable("goPublications");
+    }
+    public Boolean validateButtonAddInformation(){
+        return methods.validationElementEnable("addInformation");
+    }
+    public String clickOnButtonGoPublication(){
+        methods.clickElement("goPublications");
+        return "";
+    }
+    public String clickOnButtonAddInformation(){
+        methods.clickElement("addInformation");
+        return "";
+    }
 
     public String registerUserEndFormPublishNaturalPerson() {
         registerRentValue();

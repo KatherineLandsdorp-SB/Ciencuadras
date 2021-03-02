@@ -156,7 +156,8 @@ public class RunnerNaturalPerson extends Hooks {
                 .uploadFile()
                 .clickButtonContinuePhoto()
                 .paymentSuccess()
-                .returnCommerce();
+                .returnCommerce()
+                .clickGotoPublication();
 
     }
 

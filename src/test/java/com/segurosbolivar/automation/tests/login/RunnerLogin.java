@@ -19,7 +19,7 @@ public class RunnerLogin extends Hooks {
                 .fillAll();
     }
 
-    @Test(priority=1, groups = ( "smoke" ))
+    @Test(priority=1)
     public void successfullLoginRemember(){
         steps.get()
                 .clickEntry()

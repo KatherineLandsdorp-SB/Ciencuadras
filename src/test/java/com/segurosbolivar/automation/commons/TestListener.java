@@ -2,6 +2,7 @@ package com.segurosbolivar.automation.commons;
 
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
 import com.segurosbolivar.automation.utils.ExcelWriter;
+import com.segurosbolivar.automation.utils.PropertyManager;
 import com.segurosbolivar.automation.utils.TestingExecution;
 import com.segurosbolivar.automation.utils.Utils;
 import io.qameta.allure.Allure;
@@ -17,6 +18,8 @@ import org.testng.ITestResult;
 import java.io.ByteArrayInputStream;
 
 public class TestListener implements ITestListener {
+
+    private final boolean isLocalExecution = Boolean.parseBoolean(PropertyManager.getConfigValueByKey("driverLocal"));
 
     @Attachment(value = "Test Evidence", type = "image/png")
     public byte[] takeScreenshot(String description) {
@@ -36,8 +39,13 @@ public class TestListener implements ITestListener {
         System.out.println("TEST SUCCESSFUL!");
         //add log
         takeScreenshot("TEST SUCCESSFUL!");
-        WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
-        ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+
+        if (!isLocalExecution) {
+            WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+            ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+
+        }
+
         this.sendTestMethodStatus(iTestResult, "TEST SUCCESSFUL");
     }
 
@@ -47,8 +55,13 @@ public class TestListener implements ITestListener {
         System.out.println("THIS TEST FAILED!");
         //add log
         takeScreenshot("THIS TEST FAILED!");
-        WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
-        ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+
+        if (!isLocalExecution) {
+            WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+            ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+
+        }
+
         this.sendTestMethodStatus(iTestResult, "TEST FAILED");
     }
 

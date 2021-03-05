@@ -97,7 +97,9 @@ public class RunnerNaturalPerson extends Hooks {
                 .clickButtonContinueCityCoverage()
                 .fillFormSale()
                 .uploadFile()
-                .filldate();
+                .filldate()
+                .clickButtonContinuePhoto()
+                .paymentSuccess();
     }
 
     @Test(priority = 9)

@@ -73,7 +73,7 @@ public class SharedMethods extends BaseTest {
     public String clickOnAddToCarOutstanding() {
 
         try {
-            methods.waitingForElement("buttonAddToCar", 30);
+            methods.waitingForElement("buttonAddToCar", 120);
             methods.clickElement("buttonAddToCar");
             methods.waitingForElement("textCoverage", 120);
             return methods.getTextElement("textCoverage");

@@ -18,7 +18,7 @@ public class MethodsPublishRealState extends BaseTest {
 
     public void registerForm(){
 
-        methods.waitingForElement("inputNameRegister", 110);
+        methods.waitingForElement("inputNameRegister", 210);
         methods.clickElement("inputNameRegister");
         methods.sendKeysText("inputNameRegister", services.getField("sanityNameRealSt"));
         methods.sendKeysText("inputMail", services.getField("sanityMailRealSt"));
@@ -26,10 +26,22 @@ public class MethodsPublishRealState extends BaseTest {
         methods.sendKeysText("inputCityRealState", services.getField("sanityCity"));
         methods.pause(2);
         methods.keyDown("inputCityRealState");
-        methods.clickElement("radioButtonSale");
+        try {
+            methods.clickElement("radioButtonSale");
+        }catch (Exception e ){
+            methods.scrollTo("radioButtonSale");
+            methods.clickElement("radioButtonSale");
+
+        }
         methods.clickElement("recaptcha");
         methods.pause(5);
-        methods.clickElement("buttonConfirm");
+        try {
+            methods.clickElement("buttonConfirm");
+        }catch (Exception e ){
+            methods.scrollTo("buttonConfirm");
+            methods.clickElement("buttonConfirm");
+
+        }
 
     }
 

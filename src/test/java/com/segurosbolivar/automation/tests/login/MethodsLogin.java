@@ -13,7 +13,13 @@ public class MethodsLogin extends BaseTest {
     public void clickOnEntry(){
         methods.waitForPageLoad();
         methods.waitingForElement("entryUser", 60);
-        methods.clickElement("entryUser");
+        try{
+            methods.clickElement("entryUser");
+        }catch (Exception e){
+            methods.waitingForElement("iconPersonalMobile", 60);
+            methods.clickElement("iconPersonalMobile");
+        }
+
     }
 
     public void clickOnRemember(){
@@ -66,7 +72,12 @@ public class MethodsLogin extends BaseTest {
         methods.waitingForElement("loginInMail", 60);
         methods.sendKeysText("loginInMail", services.getField("sanityOldUser"));
         methods.sendKeysText("loginInPass", services.getField("sanityPassword"));
-        methods.clickElement("loginUser");
+        try {
+            methods.clickElement("loginUser");
+        }catch (Exception e){
+            methods.scrollToEndPage();
+            methods.clickElement("loginUser");
+        }
         methods.waitForPageLoad();
         methods.waitingForElement("navbarDropdownHome", 800);
         return methods.getEntity("navbarDropdownHome").getText();

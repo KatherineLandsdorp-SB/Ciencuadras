@@ -88,11 +88,17 @@ public class SharedMethods extends BaseTest {
     }
 
     public Boolean clickOnAddToCarBasicPlan() {
-        methods.waitingForElement("buttonBasicAddToCar", 100);
-        methods.clickElement("buttonBasicAddToCar");
-        return methods.validationElementEnable("buttonBasicAddToCar");
-
-
+        try{
+            methods.waitingForElement("buttonBasicAddToCar", 80);
+            methods.clickElement("buttonBasicAddToCar");
+            return methods.validationElementEnable("buttonBasicAddToCar");
+        }catch (Exception e){
+            methods.waitingForElement("buttonNext", 110);
+            methods.clickElement("buttonNext");
+            methods.waitingForElement("buttonBasicAddToCar", 40);
+            methods.clickElement("buttonBasicAddToCar");
+            return methods.validationElementEnable("buttonBasicAddToCar");
+        }
     }
 
     public Boolean clickOnButtonSaleHome() {

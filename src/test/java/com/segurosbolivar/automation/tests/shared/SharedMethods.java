@@ -148,7 +148,13 @@ public class SharedMethods extends BaseTest {
         methods.sendKeysText("cvvCreditCard", services.getField("sanityCvv"));
         methods.angularMaterialAutocomplete("selectDues","divDues");
         methods.doScrollDown(1,"sanityNameUser");
-        clickOnBtnCarPay();
+        try {
+            clickOnBtnCarPay();
+        }
+        catch (Exception e){
+            clickOnBtnPayPlan();
+        }
+
     }
     public void fillDataFormCarProduct(String number) {
         methods.waitingForElement("btnPayPlan",150);

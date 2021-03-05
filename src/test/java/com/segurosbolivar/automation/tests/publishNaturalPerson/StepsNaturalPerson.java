@@ -154,13 +154,13 @@ public class StepsNaturalPerson extends BaseTest {
     }
     @Step("Click on button go to my publications")
     public StepsNaturalPerson clickGotoPublication(){
-        methodsNaturalPerson.clickOnButtonGoPublication();
+       assertTrue(methodsNaturalPerson.clickOnButtonGoPublication());
         return this;
 
     }
     @Step("Click on button go to my publications")
     public StepsNaturalPerson clickAddInformation(){
-        methodsNaturalPerson.clickOnButtonAddInformation();
+        assertTrue(methodsNaturalPerson.clickOnButtonAddInformation());
         return this;
 
     }

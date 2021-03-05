@@ -4,6 +4,8 @@ import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.tests.shared.SharedMethods;
 
+import java.util.function.BooleanSupplier;
+
 
 public class MethodsNaturalPerson extends BaseTest {
     private Methods methods = new Methods();
@@ -340,15 +342,19 @@ public class MethodsNaturalPerson extends BaseTest {
         return methods.validationElementEnable("goPublications");
     }
     public Boolean validateButtonAddInformation(){
+
         return methods.validationElementEnable("addInformation");
     }
-    public String clickOnButtonGoPublication(){
+    public Boolean clickOnButtonGoPublication(){
+        methods.waitingForElement("goPublications",10);
         methods.clickElement("goPublications");
-        return "";
+        return methods.validationElementEnable("privateZone");
     }
-    public String clickOnButtonAddInformation(){
+    public Boolean clickOnButtonAddInformation(){
+        methods.waitingForElement("addInformation",10);
         methods.clickElement("addInformation");
-        return "";
+        methods.waitingForElement("additionalInformation",10);
+        return methods.validationElementEnable("additionalInformation");
     }
 
     public String registerUserEndFormPublishNaturalPerson() {

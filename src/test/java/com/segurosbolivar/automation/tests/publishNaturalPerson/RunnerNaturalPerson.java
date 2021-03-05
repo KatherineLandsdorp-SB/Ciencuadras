@@ -160,6 +160,18 @@ public class RunnerNaturalPerson extends Hooks {
                 .clickGotoPublication();
 
     }
+    @Test(priority = 16)
+    public void validateBackCheckStepsAddInformation() {
+        steps.get()
+                .clickButtonOfferHome()
+                .validateBackSteps()
+                .uploadFile()
+                .clickButtonContinuePhoto()
+                .paymentSuccess()
+                .returnCommerce()
+                .clickAddInformation();
+
+    }
 
 
 }

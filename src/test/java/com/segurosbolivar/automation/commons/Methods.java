@@ -398,6 +398,7 @@ public class Methods extends BaseTest {
         getEntity(entity).sendKeys(search);
         getEntity(entity).sendKeys(Keys.ARROW_DOWN);
         getEntity(entity).sendKeys(Keys.ENTER);
+
     }
 
     /* ============================================================= */
@@ -450,6 +451,7 @@ public class Methods extends BaseTest {
             getEntity(entity).sendKeys(getFile());
             pause(10);
             Intentos++;
+
         }
     }
 

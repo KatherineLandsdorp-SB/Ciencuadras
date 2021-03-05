@@ -9,7 +9,8 @@ public class MethodsPublishRealState extends BaseTest {
     private SharedMethods shared = new SharedMethods();
 
     public Boolean publishRealState() {
-        methods.waitingForElement("buttonRealState", 10);
+       // methods.waitingForElement("buttonRealState", 20);
+        methods.waitForPageLoad();
         methods.clickElement("buttonRealState");
         methods.waitingForElement("recaptcha",10);
         return methods.validationElementEnable("recaptcha");
@@ -27,7 +28,7 @@ public class MethodsPublishRealState extends BaseTest {
         methods.pause(2);
         methods.keyDown("inputCityRealState");
         methods.clickElement("radioButtonSale");
-        methods.clickElement("recaptcha");
+        clickOnCaptcha();
         methods.pause(5);
         methods.clickElement("buttonConfirm");
 

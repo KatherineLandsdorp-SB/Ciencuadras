@@ -739,9 +739,17 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button[contains(text(),'AÑADIR MÁS INFORMACIÓN')]"
   },
+  "additionalInformation": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/legend)[1]"
+  },
   "goPublications": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//button[contains(text(),'IR A MIS PUBLICACIONES')]"
+  },
+  "privateZone": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mis-publicaciones"
   },
 
   "paySuccessful": {

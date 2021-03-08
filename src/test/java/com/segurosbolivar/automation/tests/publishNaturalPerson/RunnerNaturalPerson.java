@@ -12,7 +12,7 @@ public class RunnerNaturalPerson extends Hooks {
     ThreadLocal<StepsLogin> step = ThreadLocal.withInitial(StepsLogin::new);
 
     @Test(priority = 1)
-    //Siempre cambiar correo para este test
+    //Siempre cambiar correo y cedula para este test
     public void publicarPlanDestacadoUsuarioNoLogueado() {
         steps.get().
                 clickButtonOfferHome()

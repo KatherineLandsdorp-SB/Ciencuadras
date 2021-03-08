@@ -297,7 +297,7 @@
   },
   "buttonBasicAddToCar": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "(//button[contains(text(),'AÑADIR AL CARRITO')])[2]"
+    "ValueToFind": "(//button[@class='plan__button'])[2]"
   },
   "buttonFeaturedPlan": {
     "GetFieldBy": "Id",
@@ -321,7 +321,7 @@
   },
   "textOutCoverage": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//p[contains(text(),'Lo sentimos, aún no tenemos disponibilidad en la zona que seleccionaste.')]"
+    "ValueToFind": "//h3[contains(text(),'Ciudad sin cobertura')]"
   },
   "buttonAddToCar": {
     "GetFieldBy": "Xpath",
@@ -851,5 +851,37 @@
   "hourDay": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//*[@class='mat-option-text'])[4]"
+  },
+  "buttonNext": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[@class='owl-prev'])[2]"
+  },
+  "labelAccompanimentMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//div/span[@class='label-mobile ng-star-inserted'])[1]"
+  },
+  "iconPersonalMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//*[@class='icon material-icons'])[2]"
+  },
+  "textCheckMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='confirmation__text']"
+  },
+  "textPersonalInformationMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//*[@class='tooltip-content'])[2]"
+  },
+  "userIdentification": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "numeroCedula"
+  },
+  "buttonContinueMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[contains(text(), 'CONTINUAR')])[3]"
+  },
+  "buttonContinuePhotoMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "(//button[contains(text(), 'CONTINUAR')])[4]"
   }
 }

@@ -14,7 +14,14 @@ public class MethodsNaturalPerson extends BaseTest {
 
     public boolean validateLabelAccompaniment() {
         methods.waitingForElement("labelAccompaniment", 10);
-        return methods.getEntity("labelAccompaniment").isDisplayed();
+        boolean labelAccompaniment = methods.getEntity("labelAccompaniment").isDisplayed();
+        if(labelAccompaniment){
+            return true;
+        }else{
+            methods.waitingForElement("labelAccompanimentMobile", 10);
+            labelAccompaniment = methods.getEntity("labelAccompanimentMobile").isDisplayed();
+            return labelAccompaniment;
+        }
     }
 
     public boolean validateLabelChoosePlan() {
@@ -83,7 +90,7 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void registerSalePrice() {
-        methods.waitingForElement("inputSalePrice", 60);
+        methods.waitingForElement("inputSalePrice", 110);
         methods.sendKeysText("inputSalePrice", services.getField("sanityValueSale"));
 
     }
@@ -100,26 +107,53 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void registerAdministration() {
-        methods.sendKeysText("inputAdministrationValue", services.getField("sanityAdminValue"));
-
+        try{
+            methods.waitingForElement("inputAntiquity", 10);
+            methods.sendKeysText("inputAdministrationValue", services.getField("sanityAdminValue"));
+        }catch (Exception e){
+            methods.scrollToElement("inputValueRent");
+            methods.sendKeysText("inputAdministrationValue", services.getField("sanityAdminValue"));
+        }
 
     }
 
     public void registerAntiquityProperty() {
-        methods.sendKeysText("inputAntiquity", services.getField("sanityAntiquity"));
+        try{
+            methods.sendKeysText("inputAntiquity", services.getField("sanityAntiquity"));
+        }catch (Exception e){
+            methods.scrollToElement("inputAdministrationValue");
+            methods.sendKeysText("inputAntiquity", services.getField("sanityAntiquity"));
+
+        }
     }
 
     public void registerArea() {
         methods.sendKeysText("inputArea", services.getField("sanityArea"));
         //methods.doScrollDown(1, "divFormPublication");
+        try {
+            methods.sendKeysText("inputArea", services.getField("sanityArea"));
+        }catch (Exception e){
+            methods.scrollToElement("buttonStratum");
+            methods.sendKeysText("inputArea", services.getField("sanityArea"));
+        }
     }
 
     public void registerDescriptionProperty() {
-        methods.sendKeysText("inputDescription", services.getField("sanityDescription"));
+        try {
+            methods.sendKeysText("inputDescription", services.getField("sanityDescription"));
+        }catch (Exception e){
+            methods.scrollToElement("inputAntiquity");
+            methods.sendKeysText("inputDescription", services.getField("sanityDescription"));
+        }
     }
 
     public void registerStratum() {
-        methods.clickElement("buttonStratum");
+        try {
+            methods.clickElement("buttonStratum");
+        }catch (Exception e){
+            methods.scrollToElement("inputDescription");
+            methods.clickElement("buttonStratum");
+        }
     }
 
     public void registerCityProperty() {
@@ -162,7 +196,7 @@ public class MethodsNaturalPerson extends BaseTest {
         }catch (Exception e){
             methods.waitingForElement("checkLocationProperty", 40);
             System.out.println("Entro en el catch ");
-            methods.scrollToElement("checkLocationProperty");
+            methods.scrollToElement("textCheckMobile");
             System.out.println("Entro en el catch ");
             methods.clickElement("checkLocationProperty");
             methods.pause(2);
@@ -175,9 +209,16 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void registerEmailOldUser() {
-        methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
-        methods.pause(8);
-        methods.doScrollDown(2, "divFormPublication");
+        try {
+            methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
+            methods.pause(8);
+            methods.doScrollDown(2, "divFormPublication");
+        }catch (Exception e){
+            methods.scrollToElement("textPersonalInformationMobile");
+            methods.sendKeysText("inputEmail", services.getField("sanityOldUser"));
+            methods.pause(8);
+        }
+
     }
 
     public void registerTypeDocument() {
@@ -207,17 +248,29 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void registerConfirmPassword() {
+        methods.waitingForElement("inputPasswordConfirm", 50);
         methods.sendKeysText("inputPasswordConfirm", services.getField("sanityPassword"));
     }
 
     public void registerPasswordOldUser() {
+        System.out.println("Entroooooo");
+        methods.waitingForElement("passwordOldUser",110);
+        System.out.println("Entroooooo");
         methods.sendKeysText("passwordOldUser", services.getField("sanityPassword"));
     }
 
     public void clickOnButtonContinue() {
-        methods.waitingForElement("buttonContinue", 10);
-        methods.clickElement("buttonContinue");
-        methods.pause(8);
+        try{
+            methods.waitingForElement("buttonContinue", 10);
+            methods.clickElement("buttonContinue");
+            methods.pause(8);
+
+        }catch (Exception e){
+            methods.waitingForElement("buttonContinueMobile", 10);
+            methods.clickElement("buttonContinueMobile");
+            methods.pause(8);
+
+        }
     }
 
     public String validateTexFormWithoutCity() {
@@ -231,7 +284,7 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.pause(2);
         methods.keyDown("inputCityCoverage");
         clickButtonConfirmCoverageCity();
-        methods.waitingForElement("texConfirmedCity", 120);
+        methods.waitingForElement("texConfirmedCity", 130);
         return methods.clearText("texConfirmedCity", "[-¡+.^:,]", "");
     }
 
@@ -265,7 +318,15 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void clickOnButtonContinuePhoto() {
-        methods.clickElement("buttonContinuePhoto");
+        try {
+            methods.clickElement("buttonContinuePhoto");
+            methods.pause(8);
+
+        }catch (Exception e){
+            methods.clickElement("buttonContinuePhotoMobile");
+            methods.pause(8);
+        }
+
     }
 
     public void uploadImage()  {
@@ -446,7 +507,8 @@ public class MethodsNaturalPerson extends BaseTest {
         registerPasswordOldUser();
         clickOnButtonContinue();
         methods.waitingForElement("alertValueAdministration", 10);
-        methods.doScrollUp(4, "divFormPublication");
+        methods.scrollToElement("inputValueRent");
+        //methods.doScrollUp(4, "divFormPublication");
         return methods.clearText("alertValueAdministration", "[ó]", "o");
 
     }

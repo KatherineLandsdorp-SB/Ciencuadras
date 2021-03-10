@@ -1,12 +1,16 @@
 package com.segurosbolivar.automation.tests.suite1Login;
 
 import com.segurosbolivar.automation.commons.Hooks;
+import com.segurosbolivar.automation.commons.anotations.Suite;
+import com.segurosbolivar.automation.commons.enums.Dom;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Suite(id = 1234567, name = "login", domList = {Dom.TRANSVERSAL, Dom.LOGIN, Dom.HOME})
 public class RunnerSuite1Login extends Hooks {
 
     ThreadLocal<StepsSuite1Login> steps = ThreadLocal.withInitial(StepsSuite1Login::new);
+
 
     @Test(
             suiteName = "SUITE1",

@@ -39,6 +39,7 @@ public class DriverFacade {
     int timeoutInSeconds = 60;
     Date date = new Date();
 
+
     String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_03_11_" + date.getHours() + "_" + date.getMinutes();
 
     protected DesiredCapabilities capabilitiesSetUp(String browser, String version, String platform) throws Exception {
@@ -56,6 +57,7 @@ public class DriverFacade {
             capabilities.setCapability("version", PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
             capabilities.setCapability("platform", PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
         }
+
         return capabilities;
     }
 

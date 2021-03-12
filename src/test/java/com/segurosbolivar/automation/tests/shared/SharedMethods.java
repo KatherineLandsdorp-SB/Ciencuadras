@@ -35,6 +35,7 @@ public class SharedMethods extends BaseTest {
             return methods.validationElementEnable("buttonPublishYourself");
 
         }catch (Exception e){
+            methods.pause(4);
             methods.waitingForElement("buttonPublishYourself", 40);
             methods.scrollToElement("buttonPublishYourself");
             methods.clickElement("buttonPublishYourself");
@@ -140,13 +141,25 @@ public class SharedMethods extends BaseTest {
         methods.waitingForElement("btnPayPlan",250);
         methods.clickElement("btnPayPlan");
         methods.waitingForElement("creditCard",150);
-        methods.clickElement("creditCard");
+        methods.pause(3);
+        try{
+            methods.clickElement("creditCard");
+        }catch (Exception e){
+            methods.scrollToElement("cellClientMobile");
+            methods.clickElement("creditCardMobile");
+        }
         methods.sendKeysText("nameCreditCard", services.getField("sanityNameUser"));
+        methods.pause(1);
         methods.sendKeysText("numberCreditCard", number);
+        methods.pause(1);
         methods.sendKeysText("monthCreditCard", services.getField("sanityMonth"));
+        methods.pause(1);
         methods.sendKeysText("yearCreditCard", services.getField("sanityYear"));
+        methods.pause(1);
         methods.sendKeysText("cvvCreditCard", services.getField("sanityCvv"));
+        methods.pause(1);
         methods.angularMaterialAutocomplete("selectDues","divDues");
+        methods.pause(1);
         methods.doScrollDown(1,"sanityNameUser");
         try {
             clickOnBtnCarPay();
@@ -179,7 +192,8 @@ public class SharedMethods extends BaseTest {
 
     public String  paymentSuccess() {
         fillDataFormCar(services.getField("sanityCardsuccess"));
-        methods.waitingForElement("transactionSuccess",500);
+        methods.pause(10);
+        methods.waitingForElement("transactionSuccess",800);
         return methods.getTextElement("transactionSuccess");
     }
 

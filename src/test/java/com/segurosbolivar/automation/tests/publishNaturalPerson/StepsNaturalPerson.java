@@ -103,7 +103,7 @@ public class StepsNaturalPerson extends BaseTest {
 
     @Step("Form for publish for rent")
     public StepsNaturalPerson fillFormRentUserLoggedIn() {
-        assertEquals(methodsNaturalPerson.publishRentUserLoggedIn(),services.getField("sanityUserRegister"));
+        assertEquals( methodsNaturalPerson.publishRentUserLoggedIn(),services.getField("sanityUserRegister"));
         return this;
     }
 

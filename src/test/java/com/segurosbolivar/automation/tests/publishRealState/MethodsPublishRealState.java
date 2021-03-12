@@ -34,17 +34,10 @@ public class MethodsPublishRealState extends BaseTest {
             methods.clickElement("radioButtonSale");
 
         }
-        try {
-            methods.pause(5);
-            methods.clickElement("recaptcha");
-            methods.pause(5);
-        } catch (Exception e) {
-            /*methods.pause(5);
-            driverFacade.getWebDriver().switchTo().frame(8);
-            methods.clickElement("recaptchaMobile");
-            System.out.println("cambio al iframe");*/
 
-        }
+        methods.clickElement("recaptcha");
+        methods.clickElement("recaptchaMobile");
+        methods.pause(5);
         try {
             methods.clickElement("buttonConfirm");
         } catch (Exception e) {

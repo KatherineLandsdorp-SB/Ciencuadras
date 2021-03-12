@@ -33,8 +33,6 @@ import static org.awaitility.Awaitility.await;
 
 public class DriverFacade {
 
-
-
     RemoteWebDriver driver;
     WebDriverWait wait;
     JSONObject jsonObject;
@@ -64,9 +62,6 @@ public class DriverFacade {
             capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
             capabilities.setCapability("deviceName", PropertyManager.getConfigValueByKey("BROWSER_DEVICE"));
         }
-
-        capabilities.setCapability("build", "Ui_Automation_CienCuadras_Sonic");
-        capabilities.setCapability("name", methodName);
 
         capabilities.setCapability("build",executionName);
        capabilities.setCapability("name", methodName);

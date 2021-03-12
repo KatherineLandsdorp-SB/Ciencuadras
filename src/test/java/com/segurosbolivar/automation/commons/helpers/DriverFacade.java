@@ -41,7 +41,7 @@ public class DriverFacade {
     int timeoutInSeconds = 60;
     Date date = new Date();
 
-    String executionName = "Ui_Automation_CienCuadras_Sonic"+"_2021_02_26_"+date.getHours()+"_"+date.getMinutes();
+    String executionName = "Ui_Automation_CienCuadras_Kaisen"+"_2021_03_12_"+date.getHours()+"_"+date.getMinutes();
 
     protected DesiredCapabilities capabilitiesSetUp(String methodName) {
 
@@ -49,7 +49,7 @@ public class DriverFacade {
         String browserName = System.getenv("BROWSER_NAME");
         String browserVersion = System.getenv("BROWSER_VERSION");
         String platformBrowser = System.getenv("BROWSER_PLATFORM");
-
+        String device_name = System.getenv("BROWSER_DEVICE");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -57,10 +57,12 @@ public class DriverFacade {
             capabilities.setCapability("browserName", browserName);
             capabilities.setCapability("version", browserVersion);
             capabilities.setCapability("platform", platformBrowser); // If this cap isn't specified, it will just get the any available one
+            capabilities.setCapability("deviceName", device_name);
         }else{
             capabilities.setCapability("browserName", PropertyManager.getConfigValueByKey("BROWSER_NAME"));
             capabilities.setCapability("version",  PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
             capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
+            capabilities.setCapability("deviceName", PropertyManager.getConfigValueByKey("BROWSER_DEVICE"));
         }
 
         capabilities.setCapability("build", "Ui_Automation_CienCuadras_Sonic");

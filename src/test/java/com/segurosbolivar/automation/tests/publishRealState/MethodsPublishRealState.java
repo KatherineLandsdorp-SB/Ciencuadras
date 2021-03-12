@@ -34,6 +34,7 @@ public class MethodsPublishRealState extends BaseTest {
 
         }
         methods.clickElement("recaptcha");
+        methods.clickElement("recaptchaMobile");
         methods.pause(5);
         try {
             methods.clickElement("buttonConfirm");

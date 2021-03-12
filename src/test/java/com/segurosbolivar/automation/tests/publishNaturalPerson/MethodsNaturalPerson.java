@@ -177,12 +177,19 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.pause(4);
         methods.sendKeysText("inputAdress", services.getField("sanityAdress"));
         methods.scrollToElement("inputAdress");
+        methods.pause(4);
+    }
+    public void registerAdressComplement() {
+        methods.sendKeysText("inputAddressComplement","Casa");
+        methods.scrollToElement("inputAddressComplement");
+        methods.pause(10);
     }
 
     public void registerWrongAddress() {
         methods.clickElement("inputDistric");
         methods.pause(4);
         methods.sendKeysText("inputAdress", services.getField("sanitywrongAddress"));
+        methods.pause(2);
     }
 
     public void confirmAdress() {
@@ -192,14 +199,16 @@ public class MethodsNaturalPerson extends BaseTest {
             System.out.println("No entro en el catch 1");
             methods.clickElement("checkLocationProperty");
             System.out.println("No entro en el catch 2");
-            methods.pause(2);
+            methods.pause(20);
+
         }catch (Exception e){
-            methods.waitingForElement("checkLocationProperty", 40);
+            methods.waitingForElement("textCheckMobile", 40);
             System.out.println("Entro en el catch ");
             methods.scrollToElement("textCheckMobile");
             System.out.println("Entro en el catch ");
             methods.clickElement("checkLocationProperty");
-            methods.pause(2);
+            methods.pause(20);
+
         }
     }
 
@@ -240,7 +249,12 @@ public class MethodsNaturalPerson extends BaseTest {
     }
 
     public void registerCellPhoneNewUser() {
-        methods.sendKeysText("inputCellPhone", services.getField("sanityPhone"));
+        try {
+            methods.sendKeysText("inputCellPhone", services.getField("sanityPhone"));
+        }catch (Exception e ){
+            methods.scrollToElement("textPersonalInformationMobile");
+            methods.sendKeysText("inputCellPhone", services.getField("sanityPhone"));
+        }
     }
 
     public void registerPasswordNewUser() {
@@ -284,6 +298,7 @@ public class MethodsNaturalPerson extends BaseTest {
         methods.pause(2);
         methods.keyDown("inputCityCoverage");
         clickButtonConfirmCoverageCity();
+        methods.pause(4);
         methods.waitingForElement("texConfirmedCity", 130);
         return methods.clearText("texConfirmedCity", "[-¡+.^:,]", "");
     }
@@ -393,6 +408,7 @@ public class MethodsNaturalPerson extends BaseTest {
         registerCityProperty();
         registerDistric();
         registerAdress();
+        registerAdressComplement();
         confirmAdress();
         registerEmailOldUser();
         registerCellPhoneNewUser();
@@ -414,9 +430,13 @@ public class MethodsNaturalPerson extends BaseTest {
         registerCellPhoneNewUser();
         clickOnButtonContinue();
         methods.pause(10);
-        methods.waitingForElement("navbarDropdown", 200);
-        return methods.getTextElement("navbarDropdown");
+        methods.waitingForElement("navbarDropdownMobile", 200);
 
+        if(methods.getTextElement("navbarDropdownMobile").equals("")){
+            return methods.getTextElement("navbarDropdown");
+        }else{
+            return methods.getTextElement("navbarDropdownMobile");
+        }
     }
 
     public void publishSaleNaturalPerson() {

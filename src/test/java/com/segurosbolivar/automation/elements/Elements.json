@@ -137,7 +137,7 @@
   },
   "navbarDropdown": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "(//*[@id=\"navbarDropdown\"])[2]"
+    "ValueToFind": "(//*[@Id='navbarDropdown'])[2]"
   },
   "searchSelect": {
     "GetFieldBy": "Xpath",
@@ -245,7 +245,7 @@
   },
   "buttonPublishYourself": {
     "GetFieldBy": "Xpath",
-      "ValueToFind": "(//div//button[@class='mode__link'])[2]"
+      "ValueToFind": "(//div//button[@class='btn-alt-yellow'])[1]"
   },
   "buttonRealState": {
     "GetFieldBy": "Xpath",
@@ -425,7 +425,7 @@
   },
   "alertValueAdministration": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//div[contains(text(),' El campo Valor de la administración Es Obligatorio')]"
+    "ValueToFind": "//*[@role='alert']"
   },
   "inputAntiquity": {
     "GetFieldBy": "Id",
@@ -883,5 +883,26 @@
   "buttonContinuePhotoMobile": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "(//button[contains(text(), 'CONTINUAR')])[4]"
+  },
+  "creditCardMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='mat-radio-outer-circle']"
+  },
+
+  "cellClientMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@name='cellClient']"
+  },
+  "navbarDropdownMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@Id='navbarDropdown']"
+  },
+  "inputAddressComplement": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "addressComplement"
+  },
+  "recaptchaMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='g-recaptcha']"
   }
 }

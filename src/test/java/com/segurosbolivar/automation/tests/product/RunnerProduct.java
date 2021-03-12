@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class RunnerProduct extends Hooks {
     ThreadLocal<StepProduct> steps = ThreadLocal.withInitial(StepProduct::new);
 
-    @Test(priority = 1, groups = {"sanity"})
+    @Test(priority = 1)
     public void realEstateSeePlanExistingUser() {
         steps.get()
                 .clickOnButtonProduct()

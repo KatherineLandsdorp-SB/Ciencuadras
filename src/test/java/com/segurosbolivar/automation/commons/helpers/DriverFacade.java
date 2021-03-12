@@ -33,57 +33,41 @@ import static org.awaitility.Awaitility.await;
 
 public class DriverFacade {
 
-
-
     RemoteWebDriver driver;
     WebDriverWait wait;
     JSONObject jsonObject;
     int timeoutInSeconds = 60;
     Date date = new Date();
 
-    String executionName = "Ui_Automation_CienCuadras_Sonic"+"_2021_02_26_"+date.getHours()+"_"+date.getMinutes();
+    String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_03_11_" + date.getHours() + "_" + date.getMinutes();
 
-    protected DesiredCapabilities capabilitiesSetUp(String methodName) {
-
-        String javaHome = System.getenv("JAVA_HOME");
-        String browserName = System.getenv("BROWSER_NAME");
-        String browserVersion = System.getenv("BROWSER_VERSION");
-        String platformBrowser = System.getenv("BROWSER_PLATFORM");
-
+    protected DesiredCapabilities capabilitiesSetUp(String browser, String version, String platform) throws Exception {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        if(browserName != null){
-            capabilities.setCapability("browserName", browserName);
-            capabilities.setCapability("version", browserVersion);
-            capabilities.setCapability("platform", platformBrowser); // If this cap isn't specified, it will just get the any available one
-        }else{
+        if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
+            capabilities.setCapability("browserName", browser);
+            capabilities.setCapability("version", version);
+            capabilities.setCapability("platform", platform); // If this cap isn't specified, it will just get the any available one
+            capabilities.setCapability("build", "LambdaTestSampleApp");
+            capabilities.setCapability("name", "LambdaTestJavaSample");
+        } else {
             capabilities.setCapability("browserName", PropertyManager.getConfigValueByKey("BROWSER_NAME"));
-            capabilities.setCapability("version",  PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
-            capabilities.setCapability("platform",  PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
+            capabilities.setCapability("version", PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
+            capabilities.setCapability("platform", PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
         }
-
-        capabilities.setCapability("build", "Ui_Automation_CienCuadras_Sonic");
-        capabilities.setCapability("name", methodName);
-
-        capabilities.setCapability("build",executionName);
-       capabilities.setCapability("name", methodName);
-
-        capabilities.setCapability("network", true); // To enable network logs
-        capabilities.setCapability("visual", true); // To enable step by step screenshot
-        capabilities.setCapability("video", true); // To enable video recording
-        capabilities.setCapability("console", true); // To capture console logs
-
         return capabilities;
     }
 
-    public DriverFacade() {
+    public DriverFacade(String browser, String version, String platform) {
+
+
         JsonFile();
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
             try {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
-                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp("PruebaLocal"));
+                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp(browser, version, platform));
                 driver.setFileDetector(new LocalFileDetector());
 
             } catch (MalformedURLException e) {
@@ -96,7 +80,7 @@ public class DriverFacade {
                 driver = new ChromeDriver();
                 driver.manage().window().maximize();
 
-            }else{
+            } else {
                 HashMap<String, Object> mobileEmulation = new HashMap<>();
                 mobileEmulation.put("deviceName", PropertyManager.getConfigValueByKey("BROWSER_DEVICE"));
                 ChromeOptions chromeOptions = new ChromeOptions();
@@ -112,11 +96,9 @@ public class DriverFacade {
     }
 
 
-
     public JSONObject getJsonObject() {
         return jsonObject;
     }
-
 
 
     public void waitForVisibilityOfElement(WebElement webElement) {
@@ -138,5 +120,6 @@ public class DriverFacade {
         }
         return jsonObject;
     }
+
 
 }

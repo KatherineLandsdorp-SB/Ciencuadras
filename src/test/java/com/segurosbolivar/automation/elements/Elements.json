@@ -539,6 +539,10 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//div/re-captcha/div/div/iframe"
   },
+  "recaptchaMobile": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@class='recaptcha-checkbox-border']"
+  },
   "linkProduct": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//span[@class='link']"

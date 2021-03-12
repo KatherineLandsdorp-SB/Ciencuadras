@@ -122,7 +122,7 @@ public class RunnerNaturalPerson extends Hooks {
                 .publishRentWithOutFieldAdministration();
     }
 
-    @Test(priority = 12)
+    @Test(priority = 11)
     public void validateCityWithCoverage() {
         steps.get()
                 .clickButtonOfferHome()
@@ -131,7 +131,7 @@ public class RunnerNaturalPerson extends Hooks {
                 .registerCityCoverage();
     }
 
-    @Test(priority = 13)
+    @Test(priority = 12)
     public void validateCityOutCoverage() {
         steps.get()
                 .clickButtonSaleHome()
@@ -140,7 +140,7 @@ public class RunnerNaturalPerson extends Hooks {
                 .validateCityOutCoverage();
     }
 
-    @Test(priority = 14)
+    @Test(priority = 13)
     public void validateViewAndCheckStepTracking() {
         steps.get()
                 .clickButtonSaleHome()
@@ -150,7 +150,7 @@ public class RunnerNaturalPerson extends Hooks {
                 .paymentSuccess();
     }
 
-    @Test(priority = 15)
+    @Test(priority = 14)
     public void validateBackCheckSteps() {
         steps.get()
                 .clickButtonOfferHome()
@@ -162,7 +162,7 @@ public class RunnerNaturalPerson extends Hooks {
                 .clickGotoPublication();
 
     }
-    @Test(priority = 16)
+    @Test(priority = 15)
     public void validateBackCheckStepsAddInformation() {
         steps.get()
                 .clickButtonOfferHome()

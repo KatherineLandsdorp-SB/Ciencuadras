@@ -2,23 +2,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
     <suite name="Test Suite" parallel="methods" thread-count="8">
-    <test name="WIN8TEST">
-        <parameter name="browser" value="firefox"/>
-        <parameter name="version" value="62.0"/>
-        <parameter name="platform" value="WIN8"/>
+    <test name="Seguros Bolivar Test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="89"/>
+        <parameter name="platform" value="WIN10"/>
         <classes>
-            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
+            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
         </classes>
-    </test> <!-- Test -->
-
+    </test>
+    <!-- Test
     <test name="WIN10TEST">
         <parameter name="browser" value="chrome"/>
         <parameter name="version" value="70.0"/>
         <parameter name="platform" value="win10"/>
         <classes>
-            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
+            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
         </classes>
-    </test> <!-- Test -->
+    </test> <Test -->
 
 
 </suite>

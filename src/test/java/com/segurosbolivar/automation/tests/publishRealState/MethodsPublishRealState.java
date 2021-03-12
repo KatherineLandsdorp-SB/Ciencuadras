@@ -9,14 +9,15 @@ public class MethodsPublishRealState extends BaseTest {
     private SharedMethods shared = new SharedMethods();
 
     public Boolean publishRealState() {
+        methods.waitForPageLoad();
         methods.waitingForElement("buttonRealState", 10);
         methods.clickElement("buttonRealState");
-        methods.waitingForElement("recaptcha",10);
-        return methods.validationElementEnable("recaptcha");
+        methods.waitForPageLoad();
+        return methods.validationElementEnable("inputNameRegister");
     }
 
 
-    public void registerForm(){
+    public void registerForm() {
 
         methods.waitingForElement("inputNameRegister", 210);
         methods.clickElement("inputNameRegister");
@@ -28,16 +29,25 @@ public class MethodsPublishRealState extends BaseTest {
         methods.keyDown("inputCityRealState");
         try {
             methods.clickElement("radioButtonSale");
-        }catch (Exception e ){
-            methods.scrollTo("radioButtonSale");
+        } catch (Exception e) {
+            //methods.scrollTo("radioButtonSale");
             methods.clickElement("radioButtonSale");
 
         }
-        methods.clickElement("recaptcha");
-        methods.pause(5);
+        try {
+            methods.pause(5);
+            methods.clickElement("recaptcha");
+            methods.pause(5);
+        } catch (Exception e) {
+            /*methods.pause(5);
+            driverFacade.getWebDriver().switchTo().frame(8);
+            methods.clickElement("recaptchaMobile");
+            System.out.println("cambio al iframe");*/
+
+        }
         try {
             methods.clickElement("buttonConfirm");
-        }catch (Exception e ){
+        } catch (Exception e) {
             methods.scrollTo("buttonConfirm");
             methods.clickElement("buttonConfirm");
 
@@ -61,7 +71,7 @@ public class MethodsPublishRealState extends BaseTest {
         methods.sendKeysText("inputPhone", services.getField("sanityPhone"));
     }
 
-    public void registerCity()  {
+    public void registerCity() {
         methods.waitingForElement("inputCityRealState", 110);
         methods.sendKeysText("inputCityRealState", services.getField("sanityCity"));
         methods.pause(2);
@@ -85,7 +95,7 @@ public class MethodsPublishRealState extends BaseTest {
         try {
             methods.clickElement("buttonRealState");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             methods.waitingForElement("buttonConfirm", 20);
             methods.scrollToElement("buttonConfirm");
             methods.clickElement("buttonConfirm");
@@ -135,7 +145,8 @@ public class MethodsPublishRealState extends BaseTest {
         clickOnCaptcha();
         clickButtonConfirm();
     }
-    public void fillNoMandatoryDataEmail(){
+
+    public void fillNoMandatoryDataEmail() {
         registerName();
         registerPhone();
         registerCity();
@@ -143,7 +154,8 @@ public class MethodsPublishRealState extends BaseTest {
         clickOnCaptcha();
         clickButtonConfirm();
     }
-    public void fillNoMandatoryDataPhone(){
+
+    public void fillNoMandatoryDataPhone() {
         registerName();
         registerMail();
         registerCity();
@@ -151,7 +163,8 @@ public class MethodsPublishRealState extends BaseTest {
         clickOnCaptcha();
         clickButtonConfirm();
     }
-    public void fillNoMandatoryDataCity(){
+
+    public void fillNoMandatoryDataCity() {
         registerName();
         registerMail();
         registerPhone();

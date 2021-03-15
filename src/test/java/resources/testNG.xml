@@ -6,20 +6,34 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="version" value="89"/>
         <parameter name="platform" value="WIN10"/>
+        <parameter name="deviceName" value=""/>
         <classes>
             <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
         </classes>
     </test>
-    <!-- Test
-    <test name="WIN10TEST">
-        <parameter name="browser" value="chrome"/>
-        <parameter name="version" value="70.0"/>
-        <parameter name="platform" value="win10"/>
+
+    <test name="TestMozilla">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="version" value="86.0"/>
+        <parameter name="platform" value="WIN10"/>
+        <parameter name="deviceName" value=""/>
         <classes>
             <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
         </classes>
-    </test> <Test -->
+    </test>
 
+    <test name="TestApple">
+        <parameter name="browser" value=""/>
+        <parameter name="version" value="14.2"/>
+        <parameter name="platform" value="iOS"/>
+        <parameter name="deviceName" value="iPad Air (3rd generation)"/>
+        <classes>
+            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
+        </classes>
+    </test>
 
 </suite>
 

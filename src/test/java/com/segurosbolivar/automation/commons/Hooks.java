@@ -13,8 +13,8 @@ public class Hooks {
 
     @BeforeMethod(alwaysRun = true)
     //@org.testng.annotations.Parameters(value={"browser","version","platform"})
-    @Parameters(value={"browser","version","platform"})
-    public void before(String browser, String version, String platform) {
+    @Parameters(value={"browser","version","platform","deviceName"})
+    public void before(String browser, String version, String platform, String deviceName) {
         DriverFactory.setWebDriver(browser,version,platform);
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
         //bd inicio

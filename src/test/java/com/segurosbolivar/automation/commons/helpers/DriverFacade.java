@@ -40,7 +40,7 @@ public class DriverFacade {
     Date date = new Date();
 
 
-    String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_03_11_" + date.getHours() + "_" + date.getMinutes();
+    String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_03_15_" + date.getHours() + "_" + date.getMinutes();
 
     protected DesiredCapabilities capabilitiesSetUp(String browser, String version, String platform) throws Exception {
 
@@ -51,7 +51,7 @@ public class DriverFacade {
             capabilities.setCapability("version", version);
             capabilities.setCapability("platform", platform); // If this cap isn't specified, it will just get the any available one
             capabilities.setCapability("build", "LambdaTestSampleApp");
-            capabilities.setCapability("name", "LambdaTestJavaSample");
+            capabilities.setCapability("name", executionName);
         } else {
             capabilities.setCapability("browserName", PropertyManager.getConfigValueByKey("BROWSER_NAME"));
             capabilities.setCapability("version", PropertyManager.getConfigValueByKey("BROWSER_VERSION"));

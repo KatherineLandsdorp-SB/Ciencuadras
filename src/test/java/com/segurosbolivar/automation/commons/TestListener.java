@@ -1,10 +1,13 @@
 package com.segurosbolivar.automation.commons;
 
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
+import com.segurosbolivar.automation.utils.PropertyManager;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -12,9 +15,11 @@ import org.testng.ITestResult;
 import java.io.ByteArrayInputStream;
 
 public class TestListener  implements ITestListener{
+    private final boolean isLocalExecution = Boolean.parseBoolean(PropertyManager.getConfigValueByKey("driverLocal"));
 
     @Attachment(value = "Test Evidence", type = "image/png")
     public byte[] takeScreenshot(String description) {
+
         Allure.addAttachment(description, new ByteArrayInputStream(((TakesScreenshot) DriverFactory.getDriverFacade().getWebDriver()).getScreenshotAs(OutputType.BYTES)));
         TakesScreenshot scrShot = ((TakesScreenshot) DriverFactory.getDriverFacade().getWebDriver());
         return scrShot.getScreenshotAs(OutputType.BYTES);
@@ -30,6 +35,10 @@ public class TestListener  implements ITestListener{
         System.out.println("TEST SUCCESSFUL!");
         //add log
         takeScreenshot("TEST SUCCESSFUL!");
+        if (!isLocalExecution) {
+            WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+            ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+        }
     }
 
     @Override
@@ -37,6 +46,10 @@ public class TestListener  implements ITestListener{
         System.out.println("THIS TEST FAILED!");
         //add log
         takeScreenshot("THIS TEST FAILED!");
+        if (!isLocalExecution) {
+            WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+            ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+        }
     }
 
     @Override

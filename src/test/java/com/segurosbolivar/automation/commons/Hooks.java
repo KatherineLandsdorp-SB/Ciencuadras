@@ -12,10 +12,9 @@ import java.lang.reflect.Method;
 public class Hooks {
 
     @BeforeMethod(alwaysRun = true)
-    //@org.testng.annotations.Parameters(value={"browser","version","platform"})
     @Parameters(value={"browser","version","platform","deviceName"})
-    public void before(String browser, String version, String platform, String deviceName) {
-        DriverFactory.setWebDriver(browser,version,platform);
+    public void before( @Optional String browser, String version, String platform, @Optional String deviceName) {
+        DriverFactory.setWebDriver(browser,version,platform,deviceName);
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
         //bd inicio
     }

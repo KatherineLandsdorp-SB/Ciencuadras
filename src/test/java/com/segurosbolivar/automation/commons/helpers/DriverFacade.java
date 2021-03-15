@@ -42,7 +42,7 @@ public class DriverFacade {
 
     String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_03_15_" + date.getHours() + "_" + date.getMinutes();
 
-    protected DesiredCapabilities capabilitiesSetUp(String browser, String version, String platform) throws Exception {
+    protected DesiredCapabilities capabilitiesSetUp(String browser, String version, String platform,String deviceName) throws Exception {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -50,18 +50,16 @@ public class DriverFacade {
             capabilities.setCapability("browserName", browser);
             capabilities.setCapability("version", version);
             capabilities.setCapability("platform", platform); // If this cap isn't specified, it will just get the any available one
-            capabilities.setCapability("build", "LambdaTestSampleApp");
+            capabilities.setCapability("build", "LambdaTestCienCuadras");
             capabilities.setCapability("name", executionName);
-        } else {
-            capabilities.setCapability("browserName", PropertyManager.getConfigValueByKey("BROWSER_NAME"));
-            capabilities.setCapability("version", PropertyManager.getConfigValueByKey("BROWSER_VERSION"));
-            capabilities.setCapability("platform", PropertyManager.getConfigValueByKey("BROWSER_PLATFORM")); // If this cap isn't specified, it will just get the any available one
+            capabilities.setCapability("deviceName", deviceName);
+
         }
 
         return capabilities;
     }
 
-    public DriverFacade(String browser, String version, String platform) {
+    public DriverFacade(String browser, String version, String platform, String deviceName) {
 
 
         JsonFile();
@@ -69,7 +67,7 @@ public class DriverFacade {
             try {
                 driver = new RemoteWebDriver(new URL("https://" + PropertyManager.getConfigValueByKey("lambdausername")
                         + ":" + PropertyManager.getConfigValueByKey("lambdapassword") +
-                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp(browser, version, platform));
+                        PropertyManager.getConfigValueByKey("gridURL")), capabilitiesSetUp(browser, version, platform, deviceName));
                 driver.setFileDetector(new LocalFileDetector());
 
             } catch (MalformedURLException e) {

@@ -2,7 +2,7 @@ pipeline
         {
             agent any // run the pipeline on any available node
             tools {
-                jdk 'jdk8' 
+                gradle 'gradle'
             }
              stages
             {

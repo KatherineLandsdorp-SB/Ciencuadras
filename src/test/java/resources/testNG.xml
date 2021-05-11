@@ -8,7 +8,6 @@
         <parameter name="platform" value="WIN10"/>
         <classes>
             <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
         </classes>
     </test>
         <test name="TestMozilla">
@@ -17,7 +16,6 @@
             <parameter name="platform" value="WIN10"/>
             <classes>
                 <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-                <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
             </classes>
         </test>
 
@@ -27,7 +25,6 @@
             <parameter name="platform" value="iOS"/>
             <classes>
                 <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-                <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
             </classes>
         </test>
     </suite>

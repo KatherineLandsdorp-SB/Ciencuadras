@@ -28,6 +28,8 @@ dependencies {
     implementation 'org.awaitility:awaitility:3.0.0'
     implementation 'com.sun.jersey:jersey-bundle:1.19.4'
     implementation 'org.codehaus.jettison:jettison:1.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
 }
 
 tasks.withType(JavaCompile) {
@@ -69,5 +71,6 @@ jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }*/
+
 }
 

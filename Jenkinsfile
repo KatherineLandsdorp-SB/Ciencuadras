@@ -10,28 +10,26 @@ pipeline
                 {
                      steps
                     {
-                        script
-                        {
-                           // checking out repository
-                            git branch: 'test',
-                            credentialsId: 'holmansnc',
-                            url: 'https://github.com/segurosbolivar/bol-automation-ciencuadras-test.git'
-                        }
+                          // checking out repository
+                        git branch: 'candidate-v0.0.4.2', credentialsId: 'eidarraga', url: 'https://github.com/segurosbolivar/bol-automation-ciencuadras-test.git'
                     }
-                }
+                 }
+
                 stage('gradle')
                 {
                     steps
                     {
-                        script
-                        {
-                            //copying and building gradle
-                            	steps {
-                                    sh './gradlew build'
-                                }
-                        }
-                    }
+                       sh "./gradlew clean build"
+                     }
                 }
-                
+
+                stage('test')
+                {
+                    steps
+                    {
+                       sh "./gradlew test"
+                     }
+                }
             }
+
         }

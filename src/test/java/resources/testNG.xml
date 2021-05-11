@@ -11,26 +11,24 @@
             <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
         </classes>
     </test>
+        <test name="TestMozilla">
+            <parameter name="browser" value="firefox"/>
+            <parameter name="version" value="86.0"/>
+            <parameter name="platform" value="WIN10"/>
+            <classes>
+                <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+                <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
+            </classes>
+        </test>
 
-    <test name="TestMozilla">
-        <parameter name="browser" value="firefox"/>
-        <parameter name="version" value="86.0"/>
-        <parameter name="platform" value="WIN10"/>
-        <classes>
-            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
-        </classes>
-    </test>
-
-    <test name="TestMobileIphoneX">
-        <parameter name="deviceName" value="iPhone X"/>
-        <parameter name="version" value="14.2"/>
-        <parameter name="platform" value="iOS"/>
-        <classes>
-            <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-            <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
-        </classes>
-    </test>
-
-</suite>
+        <test name="TestMobileIphoneX">
+            <parameter name="deviceName" value="iPhone X"/>
+            <parameter name="version" value="14.2"/>
+            <parameter name="platform" value="iOS"/>
+            <classes>
+                <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+                <class name="com.segurosbolivar.automation.tests.publishNaturalPerson.RunnerNaturalPerson"/>
+            </classes>
+        </test>
+    </suite>
 

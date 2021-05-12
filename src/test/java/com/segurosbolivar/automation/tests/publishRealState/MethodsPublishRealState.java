@@ -101,7 +101,9 @@ public class MethodsPublishRealState extends BaseTest {
     }
 
     public Boolean clickButtonUnderstood() {
+        methods.pause(3);
         methods.clickElement("buttonUnderstood");
+        methods.pause(3);
         return methods.validationElementEnable("buttonSaleHome");
     }
 

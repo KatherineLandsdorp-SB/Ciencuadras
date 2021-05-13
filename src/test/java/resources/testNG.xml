@@ -18,14 +18,15 @@
                 <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
             </classes>
         </test>
-
-        <test name="TestMobileIphoneX">
-            <parameter name="deviceName" value="iPhone X"/>
-            <parameter name="version" value="14.2"/>
-            <parameter name="platform" value="iOS"/>
-            <classes>
-                <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
-            </classes>
-        </test>
-    </suite>
+    <!--
+            <test name="TestMobileIphoneX">
+                <parameter name="deviceName" value="iPhone X"/>
+                <parameter name="version" value="14.2"/>
+                <parameter name="platform" value="iOS"/>
+                <classes>
+                    <class name="com.segurosbolivar.automation.tests.publishRealState.RunnerPublishRealState"/>
+                </classes>
+            </test>
+    -->
+        </suite>
 

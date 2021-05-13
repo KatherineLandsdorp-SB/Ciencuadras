@@ -40,7 +40,7 @@ public class DriverFacade {
     Date date = new Date();
 
 
-    String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_05_12_" + date.getHours() + "_" + date.getMinutes();
+    String executionName = "Ui_Automation_CienCuadras_PN" + "_2021_05_13_" + date.getHours() + "_" + date.getMinutes();
 
     protected DesiredCapabilities capabilitiesSetUp(String browser, String version, String platform,String deviceName) throws Exception {
 

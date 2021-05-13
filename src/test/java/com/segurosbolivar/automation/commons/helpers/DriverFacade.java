@@ -50,7 +50,7 @@ public class DriverFacade {
             capabilities.setCapability("browserName", browser);
             capabilities.setCapability("version", version);
             capabilities.setCapability("platform", platform); // If this cap isn't specified, it will just get the any available one
-            capabilities.setCapability("build", "LambdaTestCienCuadras");
+            capabilities.setCapability("build", "LambdaTestCienCuadras_2021_05_13_"+ date.getHours() + "_" + date.getMinutes());
             capabilities.setCapability("name", executionName);
             capabilities.setCapability("deviceName", deviceName);
 

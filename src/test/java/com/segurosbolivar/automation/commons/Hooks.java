@@ -1,25 +1,47 @@
 package com.segurosbolivar.automation.commons;
 
 import com.segurosbolivar.automation.commons.helpers.DriverFactory;
-import com.segurosbolivar.automation.utils.PropertyManager;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+import com.segurosbolivar.automation.commons.utils.PropertyManager;
+import com.segurosbolivar.automation.commons.utils.TestingExecution;
+import com.segurosbolivar.automation.commons.utils.Utils;
+import org.testng.annotations.*;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+
 
 @Listeners({TestListener.class})
 public class Hooks {
+    protected Services data = new Services();
 
-    @BeforeMethod
-    public void before() {
-        DriverFactory.setWebDriver();
-        DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
-//        bd inicio
+    @BeforeSuite
+    public void beforeSuite() throws IOException {
+        TestingExecution.nameExecution = Utils.getNameExecution();
+        Services.getElements(PropertyManager.getConfigValueByKey("idPortal"), PropertyManager.getConfigValueByKey("idEnvironment"));
+        if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
+            Services.setExecution("3", "2", "1", "AUT", "A00T01", "Holman Cabezas");
+        }
     }
 
+    @BeforeMethod
+    public void before(Method method) {
+        Test test = method.getAnnotation(Test.class);
+        TestingExecution.testName = test.testName();
+        TestingExecution.testName = test.testName();
+        DriverFactory.setWebDriver(test.description(), TestingExecution.nameExecution);
+        DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
+        data.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
+    }
 
     @AfterMethod
     public void after() {
         DriverFactory.getDriverFacade().getWebDriver().quit();
+        //bd final
     }
-//    bd final
+
+    @AfterSuite
+    public void afterSuite() {
+
+    }
+
 }

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<suite name="Test Suite" parallel="methods" thread-count="2">
-    <test name="Seguros Bolivar Test">
+<suite name="Test Suite" parallel="classes" thread-count="1">
+    <test name="Seguros Bolivar Test" parallel="methods" thread-count="30">
         <listeners>
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"/>
+            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
+                <methods>
+                    <include name="login" />
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

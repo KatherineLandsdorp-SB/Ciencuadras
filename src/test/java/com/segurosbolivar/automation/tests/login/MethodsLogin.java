@@ -1,33 +1,42 @@
 package com.segurosbolivar.automation.tests.login;
 
-import com.segurosbolivar.automation.commons.ConnectionBD;
-import com.segurosbolivar.automation.elements.Elements;
-import com.segurosbolivar.automation.utils.PropertyManager;
+import com.segurosbolivar.automation.commons.BaseTest;
+import com.segurosbolivar.automation.commons.Methods;
 
-public class MethodsLogin extends Elements {
+import java.io.IOException;
 
-    ConnectionBD objBd = new ConnectionBD();
+public class MethodsLogin extends BaseTest {
+    private Methods methods = new Methods();
+
+    public void clickExitPopUp(){
+        boolean hidden = methods.visibleElement("popupExit",10);
+        if(hidden!=false){
+            methods.waitingForElement("popupExit",10);
+            methods.clickElementJs("popupExit");
+        }
+    }
 
     public void clickOnEntry(){
-        webDriverFacade.waitForVisibilityOfElement(entryUser);
-        entryUser.click();
+        methods.waitForPageLoad();
+        methods.waitingForElement("headPerson", 5);
+        methods.clickElement("headPerson");
     }
 
-    public void loginPerson(){
-        webDriverFacade.waitForVisibilityOfElement(loginPerson);
-        loginPerson.click();
+    public void clickOnEntryButton(){ //***
+        methods.waitingForElement("entryUser",5);
+        methods.clickElementJs("entryUser");
     }
 
-    public String fillAllTheRequiredFields(){
-        driverFacade.waitForVisibilityOfElement(loginInMail);
-        loginInMail.click();
-        System.out.println("Prueba de extraccion de BD " + objBd.getDataService("cienCuadras","username"));
-        loginInMail.sendKeys(objBd.getDataService("cienCuadras","username"));
-        loginInPass.sendKeys(PropertyManager.getConfigValueByKey("password"));
-        loginUser.click();
-        webDriverFacade.waitForVisibilityOfElement(navbarDropdown);
-        return navbarDropdown.getText();
+    public String fillAllTheRequiredFieldsLogin(String email, String password){
+        methods.waitForPageLoad();
+        methods.waitingForElement("nameMail", 30);
+        methods.sendKeysText("nameMail", email);
+        methods.waitElementExplicitTime("loginInPass");
+        methods.sendKeysText("loginInPass", password);
+        methods.waitElementExplicitTime("loginUser");
+        methods.clickElement("loginUser");
+        methods.waitForPageLoad();
+        methods.waitingForElement("helloUser", 30);
+        return methods.getEntity("helloUser").getText();
     }
-
-
 }

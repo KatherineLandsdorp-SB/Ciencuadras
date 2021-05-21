@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Test Suite]" parallel="classes">
+  <listeners>
+    <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
+  </listeners>
+  <test thread-count="1" verbose="0" name="Seguros Bolivar Test(failed)" parallel="methods">
+    <classes>
+      <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
+        <methods>
+          <include name="before"/>
+          <include name="login"/>
+          <include name="beforeSuite"/>
+          <include name="after"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- com.segurosbolivar.automation.tests.login.RunnerLogin -->
+    </classes>
+  </test> <!-- Seguros Bolivar Test(failed) -->
+</suite> <!-- Failed suite [Test Suite] -->

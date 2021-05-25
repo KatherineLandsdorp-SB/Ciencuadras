@@ -2,3 +2,6 @@
 /.idea
 /debug.log
 *.exe
+.idea
+.gradle
+

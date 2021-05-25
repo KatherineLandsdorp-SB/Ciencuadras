@@ -17,7 +17,7 @@ public class Hooks {
     @BeforeSuite
     public void beforeSuite() throws IOException {
         TestingExecution.nameExecution = Utils.getNameExecution();
-        Services.getElements(PropertyManager.getConfigValueByKey("idPortal"), PropertyManager.getConfigValueByKey("idEnvironment"));
+        //Services.getElements(PropertyManager.getConfigValueByKey("idPortal"), PropertyManager.getConfigValueByKey("idEnvironment"));
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
             Services.setExecution("3", "2", "1", "AUT", "A00T01", "Holman Cabezas");
         }
@@ -30,13 +30,12 @@ public class Hooks {
         TestingExecution.testName = test.testName();
         DriverFactory.setWebDriver(test.description(), TestingExecution.nameExecution);
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
-        data.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
+       // data.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
     }
 
     @AfterMethod
     public void after() {
         DriverFactory.getDriverFacade().getWebDriver().quit();
-        //bd final
     }
 
     @AfterSuite

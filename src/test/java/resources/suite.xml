@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <suite name="Test Suite" parallel="classes" thread-count="1">
-    <test name="Seguros Bolivar Test" parallel="methods" thread-count="30">
+    <test name="CienCuadras Test" parallel="methods" thread-count="10">
         <listeners>
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
-                <methods>
-                    <include name="login" />
-                </methods>
-            </class>
+          <!--  <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"></class> -->
+            <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"></class>
         </classes>
     </test>
 </suite>

@@ -77,6 +77,7 @@ public class DriverFacade {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
+    /*
     public JSONObject JsonFile(){
         JSONParser parser = new JSONParser();
         try {
@@ -88,5 +89,25 @@ public class DriverFacade {
         }
         return jsonObject;
     }
+*/
+
+    public JSONObject JsonFile(){
+        JSONParser parser = new JSONParser();
+        try {
+            Object obj = parser.parse(new FileReader(PropertyManager.getConfigValueByKey("elements")));
+            jsonObject = (JSONObject) obj;
+            return jsonObject;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
+
+
+
 
 }

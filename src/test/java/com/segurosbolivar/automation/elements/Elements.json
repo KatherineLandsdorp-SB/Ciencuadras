@@ -1,0 +1,58 @@
+{
+  "sigInMenu": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[2]/button[1]/a"
+  },
+  "alliedSigInMenu": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-menu-panel-1\"]/div/a[2]"
+  },
+  "popupSigInAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-login/div"
+  },
+  "labelCreateAccountAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-tab-label-0-1\"]"
+  },
+  "fieldNameRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-2\"]"
+  },
+  "fieldEmailRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-3\"]"
+  },
+  "fieldNitRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-4\"]"
+  },
+  "fieldCellPhoneRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-5\"]"
+  },
+  "fieldCityRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-6\"]"
+  },
+  "fieldPassRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-7\"]"
+  },
+  "fieldPassConfirmationRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-8\"]"
+  },
+  "fieldTermsAndConditionsRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-2\"]"
+  },
+  "buttonEntryRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-2\"]/label/div"
+  }
+
+
+
+
+}

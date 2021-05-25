@@ -1,3 +1,5 @@
+/build
 /allure-results
+/.gradle
 /.idea
 /debug.log

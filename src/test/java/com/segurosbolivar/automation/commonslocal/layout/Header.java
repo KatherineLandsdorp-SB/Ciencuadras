@@ -1,8 +1,8 @@
-package com.segurosbolivar.automation.commonsLocal;
+package com.segurosbolivar.automation.commonslocal.layout;
 
 import com.segurosbolivar.automation.commons.Methods;
 
-public class MethodsHeader  {
+public class Header {
 
     private Methods methods = new Methods();
 
@@ -15,5 +15,9 @@ public class MethodsHeader  {
         methods.waitingForElement("popupSigInAllied",10);
     }
 
-
+    public void clickOnEntry(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("headPerson", 5);
+        methods.clickElement("headPerson");
+    }
 }

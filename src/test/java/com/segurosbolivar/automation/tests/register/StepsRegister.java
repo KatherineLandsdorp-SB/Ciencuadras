@@ -6,10 +6,42 @@ public class StepsRegister {
 
     private MethodsRegister methods = new MethodsRegister();
 
+    @Step("The user clicks on the login Link in the Header")
+    public StepsRegister clickEntry(){
+        this.methods.header.clickOnEntry();
+        return this;
+    }
+
+    @Step("The user clicks on the register Link in the Popup")
+    public StepsRegister clickRegister(){
+        this.methods.registerPerson();
+        return this;
+    }
+
+    @Step("The user fill all the required fields")
+    public StepsRegister fillAll(
+            String firstName,
+            String secondName,
+            String lastName,
+            String secondLastName,
+            String mail,
+            String password,
+            String confirmPassword
+    ){
+        this.methods.fillAllTheRequiredFields(
+                firstName,
+                secondName,
+                lastName,
+                secondLastName,
+                mail,
+                password,
+                confirmPassword);
+        return this;
+    }
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister ClickEntryLoginAllied(){
-        this.methods.clickOnEntryLoginAllied();
+        this.methods.header.clickOnEntryLoginAllied();
         return this;
     }
 

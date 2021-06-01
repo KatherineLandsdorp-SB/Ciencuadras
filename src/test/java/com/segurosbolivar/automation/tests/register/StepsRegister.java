@@ -9,7 +9,7 @@ public class StepsRegister {
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister ClickEntryLoginAllied(){
-        this.methods.clickOnEntryLoginAllied();
+        this.methods.header.clickOnEntryLoginAllied();
         return this;
     }
 

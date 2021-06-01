@@ -1,9 +1,9 @@
 package com.segurosbolivar.automation.tests.register;
 
 import com.segurosbolivar.automation.commons.Methods;
-import com.segurosbolivar.automation.commonsLocal.MethodsHeader;
+import com.segurosbolivar.automation.commonslocal.BaseComponent;
 
-public class MethodsRegister extends MethodsHeader {
+public class MethodsRegister extends BaseComponent {
 
     private Methods methods = new Methods();
 

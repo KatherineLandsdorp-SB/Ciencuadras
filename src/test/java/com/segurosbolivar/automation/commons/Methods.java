@@ -11,6 +11,7 @@ import org.awaitility.Duration;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
@@ -85,9 +86,9 @@ public class Methods extends BaseTest {
     /* ============================================================= */
 
     //Esperar un elemento con carga explicita
-    public WebElement waitElementExplicitTime(String entity) {
+    public WebElement waitElementExplicitTime(String entity, int time) {
         WebElement element = null;
-        WebDriverWait wait = new WebDriverWait(driverFacade.getWebDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(driverFacade.getWebDriver(), time);
         field = (JSONObject) driverFacade.JsonFile().get(entity);
         try {
             if (field != null) {
@@ -361,6 +362,13 @@ public class Methods extends BaseTest {
         executor.executeScript("arguments[0].click();", element);
     }
 
+    public void clickElementAction(String entity) {
+        WebElement element = getEntity(entity);
+        Actions action = new Actions(driverFacade.getWebDriver());
+        action.moveToElement(element).perform();
+        action.moveToElement(element).click().perform();
+    }
+
     //waitTime
     public void pause(Integer seconds) {
         try {
@@ -376,6 +384,13 @@ public class Methods extends BaseTest {
         getEntity(entity).clear();
         getEntity(entity).sendKeys(text);
     }
+
+    public void sendKeysTextJs(String entity, String text) {
+        clickElementJs(entity);
+        getEntity(entity).clear();
+        getEntity(entity).sendKeys(text);
+    }
+
 
     //Enviar enter
     public void sendKeysEnter(String entity) {

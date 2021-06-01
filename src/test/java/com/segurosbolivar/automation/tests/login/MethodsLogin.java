@@ -31,9 +31,9 @@ public class MethodsLogin extends BaseTest {
         methods.waitForPageLoad();
         methods.waitingForElement("nameMail", 30);
         methods.sendKeysText("nameMail", email);
-        methods.waitElementExplicitTime("loginInPass");
+        methods.waitElementExplicitTime("loginInPass",10);
         methods.sendKeysText("loginInPass", password);
-        methods.waitElementExplicitTime("loginUser");
+        methods.waitElementExplicitTime("loginUser",10);
         methods.clickElement("loginUser");
         methods.waitForPageLoad();
         methods.waitingForElement("helloUser", 30);

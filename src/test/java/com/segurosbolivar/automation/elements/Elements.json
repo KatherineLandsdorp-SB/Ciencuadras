@@ -50,8 +50,60 @@
   "buttonEntryRegisterAllied": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-checkbox-2\"]/label/div"
-  }
+  },
+  "entryOffersView":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[1]/ul/li[1]/a"
+  },
+  "filterByCityOrHoods":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"search\"]"
+  },
+  "searchByCityOrHoods":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"searchForm\"]/button[2]"
+  },
+  "filterCheckBoxRealState":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"FiltersResultForm\"]/nav/div[1]/div[2]/mat-form-field/div/div[1]"
+  },
+  "checkBoxApartment":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-0\"]/mat-pseudo-checkbox"
+  },
 
+  "exitPopupSaveSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-instructions-save-search/div/div[1]/button"
+  },
+  "labelBuyRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[3]/a"
+  },
+  "labelRentRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[4]/a"
+  },
+  "buttonMap": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"btn_top_map\"]/span"
+  },
+  "mapCanva": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]"
+  },
+  "markerMapResult": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div[73]"
+  },
+  "body": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "body"
+  },
+  "tittleInfoMarker": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "/html/body/app-root/app-resultview/div/div/div[1]/div[2]/div/div[2]/app-maps/div/agm-map/div[1]/div/div/div[1]/div[3]/div/div[4]/div[1]/div/div/div/div/div/div/span[1]/b"
+  }
 
 
 

@@ -1,11 +1,9 @@
 package com.segurosbolivar.automation.tests.login;
 
-import com.segurosbolivar.automation.commons.BaseTest;
 import com.segurosbolivar.automation.commons.Methods;
+import com.segurosbolivar.automation.commonslocal.BaseComponent;
 
-import java.io.IOException;
-
-public class MethodsLogin extends BaseTest {
+public class MethodsLogin extends BaseComponent {
     private Methods methods = new Methods();
 
     public void clickExitPopUp(){
@@ -16,11 +14,6 @@ public class MethodsLogin extends BaseTest {
         }
     }
 
-    public void clickOnEntry(){
-        methods.waitForPageLoad();
-        methods.waitingForElement("headPerson", 5);
-        methods.clickElement("headPerson");
-    }
 
     public void clickOnEntryButton(){ //***
         methods.waitingForElement("entryUser",5);

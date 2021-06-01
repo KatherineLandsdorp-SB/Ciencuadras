@@ -17,7 +17,7 @@ public class StepsLogin extends BaseTest {
 
     @Step("The user clicks on the login Link in the Header")
     public StepsLogin clickEntry(){
-        methodsLogin.clickOnEntry();
+        methodsLogin.header.clickOnEntry();
         return this;
     }
 

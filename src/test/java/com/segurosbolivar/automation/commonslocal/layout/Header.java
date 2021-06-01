@@ -4,9 +4,7 @@ import com.segurosbolivar.automation.commons.Methods;
 
 public class Header {
 
-
     private Methods methods = new Methods();
-
 
     public void clickOnEntryLoginAllied(){
         methods.waitForPageLoad();
@@ -15,6 +13,12 @@ public class Header {
         methods.waitingForElement("alliedSigInMenu",10);
         methods.clickElementJs("alliedSigInMenu");
         methods.waitingForElement("popupSigInAllied",10);
+    }
+
+    public void clickOnEntry(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("headPerson", 5);
+        methods.clickElement("headPerson");
     }
 
     public void clickOnEntryOffers(){
@@ -36,6 +40,4 @@ public class Header {
         methods.clickElement("labelRentRealState");
         methods.waitForPageLoad();
     }
-
-
 }

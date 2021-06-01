@@ -20,4 +20,24 @@ public class Header {
         methods.waitingForElement("headPerson", 5);
         methods.clickElement("headPerson");
     }
+
+    public void clickOnEntryOffers(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("entryOffersView", 5);
+        methods.clickElement("entryOffersView");
+    }
+
+
+    public void selectBuyRealState(){
+        methods.waitingForElement("labelBuyRealState", 5);
+        methods.clickElement("labelBuyRealState");
+        methods.waitForPageLoad();
+    }
+
+
+    public void selectRentRealState(){
+        methods.waitingForElement("labelRentRealState", 5);
+        methods.clickElement("labelRentRealState");
+        methods.waitForPageLoad();
+    }
 }

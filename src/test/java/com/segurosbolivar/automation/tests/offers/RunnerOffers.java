@@ -15,13 +15,29 @@ public class RunnerOffers extends Hooks {
     public void SearchApartmentsToBuyMap(){
         this.steps.get()
                 .clickOnEntryOffers()
-                .clickOnBuyNewRealState()
+                .clickOnBuyUsedRealState()
                 .clickFilterTypeRealState()
                 .setFilterTypeRealStateApartment()
                 .clickExitPopUp()
                 .setFilterCityOrHoods("Bogotá")
                 .clickOpenMap()
-                .clickOnMarkerResultMap();
+                .clickOnMarkerResultMap("apartamento");
+    }
+
+    @Test(
+            testName = "17",
+            description = "Realizar de búsqueda sin criterios de coincidencia"
+    )
+    public void SearchWithoutCriteria(){
+        this.steps.get()
+                .clickOnEntryOffers()
+                .clickOnBuyNewRealState()
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateApartment()
+                .clickExitPopUp()
+                .setFilterCityOrHoods("Bucaramanga")
+                .clickProjectsOnPlans()
+                .getTittleResultBanner("Proyectos no encontrados");
     }
 
 

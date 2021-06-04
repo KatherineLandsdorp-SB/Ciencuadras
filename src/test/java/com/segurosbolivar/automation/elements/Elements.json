@@ -51,32 +51,31 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-checkbox-2\"]/label/div"
   },
-  "entryOffersView":{
+  "entryOffersView": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[1]/ul/li[1]/a"
   },
-  "filterByCityOrHoods":{
+  "filterByCityOrHoods": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"search\"]"
   },
-  "searchByCityOrHoods":{
+  "searchByCityOrHoods": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"searchForm\"]/button[2]"
   },
-  "filterCheckBoxRealState":{
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"FiltersResultForm\"]/nav/div[1]/div[2]/mat-form-field/div/div[1]"
+  "filterCheckBoxRealState": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-select-0"
   },
-  "checkBoxApartment":{
+  "checkBoxApartment": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-option-0\"]/mat-pseudo-checkbox"
+    "ValueToFind": "//*[@id=\"mat-option-7\"]/mat-pseudo-checkbox"
   },
-
   "exitPopupSaveSearch": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-instructions-save-search/div/div[1]/button"
   },
-  "labelBuyRealState": {
+  "labelBuyUsedRealState": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[3]/a"
   },
@@ -103,8 +102,19 @@
   "tittleInfoMarker": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "/html/body/app-root/app-resultview/div/div/div[1]/div[2]/div/div[2]/app-maps/div/agm-map/div[1]/div/div/div[1]/div[3]/div/div[4]/div[1]/div/div/div/div/div/div/span[1]/b"
+  },
+  "labelBuyNewRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[2]/span"
+  },
+  "labelProjectOnPlans": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "blue-print-tab"
+  },
+  "tittleBannerResult": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"resultados\"]/div/div[3]/div/h2"
   }
-
 
 
 }

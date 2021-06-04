@@ -28,9 +28,15 @@ public class Header {
     }
 
 
-    public void selectBuyRealState(){
-        methods.waitingForElement("labelBuyRealState", 5);
-        methods.clickElement("labelBuyRealState");
+    public void selectBuyUsedRealState(){
+        methods.waitingForElement("labelBuyUsedRealState", 5);
+        methods.clickElement("labelBuyUsedRealState");
+        methods.waitForPageLoad();
+    }
+
+    public void selectBuyNewRealState(){
+        methods.waitingForElement("labelBuyNewRealState", 5);
+        methods.clickElement("labelBuyNewRealState");
         methods.waitForPageLoad();
     }
 
@@ -40,4 +46,7 @@ public class Header {
         methods.clickElement("labelRentRealState");
         methods.waitForPageLoad();
     }
+
+
+
 }

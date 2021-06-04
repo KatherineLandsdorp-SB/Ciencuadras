@@ -14,11 +14,32 @@ public class StepsOffers {
         return this;
     }
 
-    @Step("The user clicks on the header Buy new Real State")
-    public  StepsOffers clickOnBuyNewRealState(){
-        this.methods.header.selectBuyRealState();
+    @Step("The user clicks on the header Buy used Real State")
+    public  StepsOffers clickOnBuyUsedRealState(){
+        this.methods.header.selectBuyUsedRealState();
         return this;
     }
+
+    @Step("The user clicks on the header Buy new Real State")
+    public  StepsOffers clickOnBuyNewRealState(){
+        this.methods.header.selectBuyNewRealState();
+        return this;
+    }
+
+    @Step("The user clicks on the label projects on plans")
+    public StepsOffers clickProjectsOnPlans(){
+        this.methods.clickLabelProjectsOnPlans();
+        return this;
+    }
+
+    @Step("The user get tittle  of the result banner")
+    public  StepsOffers getTittleResultBanner( String  expectedTittle){
+        String text = this.methods.getTittleTextResult();
+        Assert.assertEquals(text, expectedTittle);
+        return  this;
+    }
+
+
 
     @Step("The user set value on the filter cities and Hoods")
     public  StepsOffers setFilterCityOrHoods(String valueFilter){
@@ -54,12 +75,14 @@ public class StepsOffers {
     }
 
     @Step("The user open a marker to extract info")
-    public StepsOffers clickOnMarkerResultMap(){
+    public StepsOffers clickOnMarkerResultMap(String expectedTypeRealState){
         String[] result = this.methods.clickOnMarkerResultMap().split("-");
         String text = result[0].toLowerCase().trim();
-        Assert.assertEquals(text, "apartamento");
+        Assert.assertEquals(text, expectedTypeRealState);
         return this;
     }
+
+
 
 
 }

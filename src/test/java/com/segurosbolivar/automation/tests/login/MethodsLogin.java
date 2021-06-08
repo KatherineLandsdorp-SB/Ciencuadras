@@ -22,8 +22,8 @@ public class MethodsLogin extends BaseComponent {
 
     public String fillAllTheRequiredFieldsLogin(String email, String password){
         methods.waitForPageLoad();
-        methods.waitingForElement("nameMail", 30);
-        methods.sendKeysText("nameMail", email);
+        methods.waitingForElement("loginInMail", 30);
+        methods.sendKeysText("loginInMail", email);
         methods.waitElementExplicitTime("loginInPass",10);
         methods.sendKeysText("loginInPass", password);
         methods.waitElementExplicitTime("loginUser",10);

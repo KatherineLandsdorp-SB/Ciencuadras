@@ -1,6 +1,7 @@
 package com.segurosbolivar.automation.tests.offers;
 
 import com.segurosbolivar.automation.commons.Hooks;
+import com.segurosbolivar.automation.commons.utils.PropertyManager;
 import org.testng.annotations.Test;
 
 public class RunnerOffers extends Hooks {
@@ -32,6 +33,8 @@ public class RunnerOffers extends Hooks {
             description = "Realizar búsqueda con varios tipos de inmueble"
     )
     public void SerchWithManyOptionsRealState(){
+        driver.get(PropertyManager.getConfigValueByKey("url"));
+        String[] data = {"apartamento","casa","oficina"};
         this.steps.get()
                 .clickOnEntryOffers()
                 .clickOnBuyUsedRealState()
@@ -41,7 +44,9 @@ public class RunnerOffers extends Hooks {
                 .clickFilterTypeRealState()
                 .setFilterTypeRealStateHouse()
                 .clickFilterTypeRealState()
-                .setFilterTypeRealStateOffice();
+                .setFilterTypeRealStateOffice()
+                .searchResultRealStateExist(data);
+        driver.quit();
     }
 
 /*

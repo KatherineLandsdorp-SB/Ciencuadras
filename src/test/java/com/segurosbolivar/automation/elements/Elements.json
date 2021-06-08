@@ -122,7 +122,12 @@
   "tittleBannerResult": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"resultados\"]/div/div[3]/div/h2"
+  },
+  "tittlesCardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[1]/span"
   }
+
 
 
 }

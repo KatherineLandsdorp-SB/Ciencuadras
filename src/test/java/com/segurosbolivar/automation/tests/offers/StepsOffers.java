@@ -96,7 +96,12 @@ public class StepsOffers {
         return this;
     }
 
-
+    @Step("The user search types of real state in result card list")
+    public StepsOffers searchResultRealStateExist(String[] typeRealState){
+        boolean result =  this.methods.searchTypesOfRealStatesResult(typeRealState);
+        Assert.assertTrue(result);
+        return  this;
+    }
 
 
 }

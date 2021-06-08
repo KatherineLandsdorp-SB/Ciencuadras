@@ -41,5 +41,22 @@ public class RunnerOffers extends Hooks {
     }
 
 
+    @Test(
+            testName = "15",
+            description = "Realizar búsqueda con varios tipos de inmueble"
+    )
+    public void SerchWithManyOptionsRealState(){
+        this.steps.get()
+                .clickOnEntryOffers()
+                .clickOnBuyUsedRealState()
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateApartment()
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateHouse()
+                .clickFilterTypeRealState()
+                .clickFilterTypeRealState();
+    }
+
+
 
 }

@@ -35,8 +35,19 @@ public class MethodsOffers extends BaseComponent {
     public void filterSelectTypeApartment(){
         methods.waitingForElement("checkBoxApartment",5);
         methods.clickElement("checkBoxApartment");
-
         methods.waitForPageLoad();
+    }
+
+    public void filterSelectTypeHouse(){
+     methods.waitingForElement("checkBoxHouse",5);
+     methods.clickElement("checkBoxHouse");
+     methods.waitForPageLoad();
+    }
+
+    public void filterSelectTypeOffice(){
+     methods.waitElementExplicitTime("checkBoxOffice",5);
+     methods.clickElement("checkBoxOffice");
+     methods.waitForPageLoad();
     }
 
 

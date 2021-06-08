@@ -61,6 +61,20 @@ public class StepsOffers {
         return this;
     }
 
+    @Step("The user select filter, type of real state (House)")
+    public  StepsOffers setFilterTypeRealStateHouse(){
+        this.methods.filterSelectTypeHouse();
+        this.methods.body.randomClickOnBody();
+        return this;
+    }
+
+    @Step("The user select filter, type of real state (Office)")
+    public  StepsOffers setFilterTypeRealStateOffice(){
+        this.methods.filterSelectTypeOffice();
+        this.methods.body.randomClickOnBody();
+        return this;
+    }
+
     @Step("The user closes the popup save search")
     public StepsOffers clickExitPopUp() {
         methods.clickExitPopUp();

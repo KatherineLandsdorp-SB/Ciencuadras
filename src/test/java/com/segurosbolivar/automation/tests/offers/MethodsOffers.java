@@ -32,8 +32,6 @@ public class MethodsOffers extends BaseComponent {
 
     }
 
-
-
     public void filterSelectTypeApartment(){
         methods.waitingForElement("checkBoxApartment",5);
         methods.clickElement("checkBoxApartment");
@@ -47,6 +45,19 @@ public class MethodsOffers extends BaseComponent {
     this.methods.clickElementAction("buttonMap");
     }
 
+    public void clickLabelProjectsOnPlans(){
+    this.methods.waitElementExplicitTime("labelProjectOnPlans",5);
+    this.methods.clickElementJs("labelProjectOnPlans");
+    this.methods.waitForPageLoad();
+    }
+
+    public String getTittleTextResult(){
+        String text = "";
+        this.methods.waitingForElement("tittleBannerResult",10);
+        text = this.methods.getEntity("tittleBannerResult").getText();
+        return text;
+    }
+
     public String clickOnMarkerResultMap(){
         this.methods.waitForPageLoad();
         String text = "";
@@ -58,6 +69,9 @@ public class MethodsOffers extends BaseComponent {
         }
         return text;
     }
+
+
+
 
 
 

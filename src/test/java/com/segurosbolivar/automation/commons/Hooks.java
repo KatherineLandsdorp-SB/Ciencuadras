@@ -32,7 +32,7 @@ public class Hooks {
         DriverFactory.setWebDriver(test.description(), TestingExecution.nameExecution);
         driver = DriverFactory.getDriverFacade().getWebDriver();
         data.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
-        //DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
+        DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
     }
 
     @AfterMethod

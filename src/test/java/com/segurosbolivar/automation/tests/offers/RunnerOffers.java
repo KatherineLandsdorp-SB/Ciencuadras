@@ -7,6 +7,7 @@ public class RunnerOffers extends Hooks {
 
     ThreadLocal<StepsOffers> steps = ThreadLocal.withInitial(StepsOffers::new);
 
+    /*
 
     @Test(
             testName = "11",
@@ -24,6 +25,26 @@ public class RunnerOffers extends Hooks {
                 .clickOnMarkerResultMap("apartamento");
     }
 
+*/
+
+    @Test(
+            testName = "15",
+            description = "Realizar búsqueda con varios tipos de inmueble"
+    )
+    public void SerchWithManyOptionsRealState(){
+        this.steps.get()
+                .clickOnEntryOffers()
+                .clickOnBuyUsedRealState()
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateApartment()
+                .clickExitPopUp()
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateHouse()
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateOffice();
+    }
+
+/*
     @Test(
             testName = "17",
             description = "Realizar de búsqueda sin criterios de coincidencia"
@@ -40,23 +61,7 @@ public class RunnerOffers extends Hooks {
                 .getTittleResultBanner("Proyectos no encontrados");
     }
 
-
-    @Test(
-            testName = "15",
-            description = "Realizar búsqueda con varios tipos de inmueble"
-    )
-    public void SerchWithManyOptionsRealState(){
-        this.steps.get()
-                .clickOnEntryOffers()
-                .clickOnBuyUsedRealState()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateApartment()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateHouse()
-                .clickFilterTypeRealState()
-                .clickFilterTypeRealState();
-    }
-
+*/
 
 
 }

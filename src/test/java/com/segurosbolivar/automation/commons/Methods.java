@@ -4,21 +4,16 @@ import com.github.romankh3.image.comparison.ImageComparison;
 import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import com.github.romankh3.image.comparison.model.ImageComparisonResult;
 import com.github.romankh3.image.comparison.model.ImageComparisonState;
-import com.segurosbolivar.automation.commons.helpers.DriverFactory;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.awaitility.Duration;
-import org.json.simple.parser.ParseException;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
@@ -28,13 +23,17 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.*;
 import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.logging.Logger;
 
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertFalse;
@@ -43,6 +42,7 @@ import static org.testng.Assert.assertEquals;
 public class Methods extends BaseTest {
     private JSONObject field;
     private int iteration;
+    static Logger logger = Logger.getLogger(Methods.class.getName());
 
     /* ============================================================= */
     /* ====================== JSON     HANDLE ====================== */
@@ -68,7 +68,7 @@ public class Methods extends BaseTest {
                 return element;
 
             } else {
-                System.out.println("Item not found " + entity);
+                logger.info("the element " + entity + " is not registered in the database");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

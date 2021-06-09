@@ -3,8 +3,6 @@ package com.segurosbolivar.automation.tests.login;
 import com.segurosbolivar.automation.commons.BaseTest;
 import io.qameta.allure.Step;
 
-import static org.testng.Assert.assertEquals;
-
 public class StepsLogin extends BaseTest {
 
     private MethodsLogin methodsLogin = new MethodsLogin();
@@ -29,7 +27,7 @@ public class StepsLogin extends BaseTest {
 
     @Step("The user fill all the required fields")
     public StepsLogin fillAll(String email, String password){
-        assertEquals(methodsLogin.fillAllTheRequiredFieldsLogin(email, password), "asdf");
+        methodsLogin.fillAllTheRequiredFieldsLogin(email, password);
         return this;
     }
 }

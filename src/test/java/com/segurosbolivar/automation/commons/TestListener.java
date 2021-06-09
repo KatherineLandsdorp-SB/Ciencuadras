@@ -47,10 +47,12 @@ public class TestListener  implements ISuiteListener, ITestListener{
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
+        WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+
         if (!isLocalExecution) {
-            WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
         }
+        driver.quit();
         if((iTestResult.getAttribute("executionFailure") == null)) {
             iTestResult.setAttribute("executionFailure", "true");
             this.sendTestMethodStatus(iTestResult, "3");

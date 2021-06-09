@@ -29,7 +29,7 @@ public class MethodsLogin extends BaseComponent {
         methods.waitElementExplicitTime("loginUser",10);
         methods.clickElement("loginUser");
         methods.waitForPageLoad();
-        methods.waitingForElement("helloUser", 30);
+        methods.waitingForElement("helloUser2", 30);
         return methods.getEntity("helloUser").getText();
     }
 }

@@ -25,6 +25,21 @@ public class RunnerLogin extends Hooks {
         }
     }
 
+    /*
+
+    @Test(
+            testName = "6",
+            description = "Ingresar a Mis Datos y editar",
+            dependsOnMethods = {"loginTransversal"}
+    )
+    public void editProfile(){
+        try {
+            Assert.assertTrue(true);
+        }catch (Exception ex){
+            Assert.fail(ex.getMessage());
+        }
+    }
+
 
     @Test(
             priority = 1,
@@ -42,4 +57,7 @@ public class RunnerLogin extends Hooks {
             Assert.fail(ex.getMessage());
         }
     }
+
+
+     */
 }

@@ -27,7 +27,7 @@ public class MethodsLogin extends BaseComponent {
         methods.waitElementExplicitTime("loginInPass",10);
         methods.sendKeysText("loginInPass", password);
         methods.waitElementExplicitTime("loginUser",10);
-        methods.clickElement("loginUser");
+        methods.clickElementJs("loginUser");
         methods.waitForPageLoad();
         methods.waitingForElement("helloUser", 30);
         return methods.getEntity("helloUser").getText();

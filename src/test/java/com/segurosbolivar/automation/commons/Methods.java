@@ -76,6 +76,34 @@ public class Methods extends BaseTest {
         return element;
     }
 
+
+    public List<WebElement> getEntities(String entity) {
+        List<WebElement> elements = null;
+        field = (JSONObject) driverFacade.JsonFile().get(entity);
+        try {
+            if (field != null) {
+                String typeObject = (String) field.get("GetFieldBy");
+                switch (typeObject) {
+                    case "Xpath":
+                        elements= driverFacade.getWebDriver().findElements(By.xpath((String) field.get("ValueToFind")));
+                        break;
+                    case "Id":
+                        elements = driverFacade.getWebDriver().findElements(By.id((String) field.get("ValueToFind")));
+                        break;
+                    default:
+                        elements = null;
+                }
+                return elements;
+
+            } else {
+                System.out.println("Items not found " + entity);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return elements;
+    }
+
     /* ============================================================= */
     /* ====================== JSON     HANDLE ====================== */
     /* ============================================================= */

@@ -1,6 +1,11 @@
 package com.segurosbolivar.automation.tests.offers;
+import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
+import org.apache.commons.collections.map.HashedMap;
+import org.openqa.selenium.WebElement;
+
+import java.util.*;
 
 public class MethodsOffers extends BaseComponent {
 
@@ -35,8 +40,19 @@ public class MethodsOffers extends BaseComponent {
     public void filterSelectTypeApartment(){
         methods.waitingForElement("checkBoxApartment",5);
         methods.clickElement("checkBoxApartment");
-
         methods.waitForPageLoad();
+    }
+
+    public void filterSelectTypeHouse(){
+     methods.waitingForElement("checkBoxHouse",5);
+     methods.clickElement("checkBoxHouse");
+     methods.waitForPageLoad();
+    }
+
+    public void filterSelectTypeOffice(){
+     methods.waitElementExplicitTime("checkBoxOffice",5);
+     methods.clickElement("checkBoxOffice");
+     methods.waitForPageLoad();
     }
 
 
@@ -68,6 +84,34 @@ public class MethodsOffers extends BaseComponent {
             text = this.methods.getEntity("tittleInfoMarker").getText();
         }
         return text;
+    }
+
+
+    public boolean searchTypesOfRealStatesResult(String[] typesRealState){
+        Map<String, Integer> table = new HashMap<String,Integer>(typesRealState.length);
+        for (String key: typesRealState) {
+            table.put(key,0);
+        }
+        LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("tittlesCardResultSearch"));
+
+        while (elementos.size()>0){
+            WebElement tmpElement = elementos.pop();
+            String textElement = tmpElement.getText().toLowerCase();
+            String key = textElement.split(" ")[0].trim();
+            if(table.containsKey(key)){
+                int value = table.get(key) + 1;
+                table.replace(key, value);
+            }else{
+                return false;
+            }
+        }
+
+        if(table.values().contains(0)){
+            return false;
+        }else {
+            return true;
+        }
+
     }
 
 

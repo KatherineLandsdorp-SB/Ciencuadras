@@ -2,51 +2,65 @@ package com.segurosbolivar.automation.tests.offers;
 
 import com.segurosbolivar.automation.commons.Hooks;
 import com.segurosbolivar.automation.commons.utils.PropertyManager;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RunnerOffers extends Hooks {
 
     ThreadLocal<StepsOffers> steps = ThreadLocal.withInitial(StepsOffers::new);
 
-    /*
-
+/*
     @Test(
             testName = "11",
             description = "Formulario búsqueda por Mapa"
     )
     public void SearchApartmentsToBuyMap(){
-        this.steps.get()
-                .clickOnEntryOffers()
-                .clickOnBuyUsedRealState()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateApartment()
-                .clickExitPopUp()
-                .setFilterCityOrHoods("Bogotá")
-                .clickOpenMap()
-                .clickOnMarkerResultMap("apartamento");
+        driver.get(PropertyManager.getConfigValueByKey("url"));
+        try {
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateApartment()
+                    .clickExitPopUp()
+                    .setFilterCityOrHoods("Bogotá")
+                    .clickOpenMap()
+                    .clickOnMarkerResultMap("apartamento");
+            driver.quit();
+         } catch (Exception ex) {
+        Assert.fail(ex.getMessage());
+        driver.quit();
+        }
     }
 
-*/
 
+
+ */
     @Test(
             testName = "15",
             description = "Realizar búsqueda con varios tipos de inmueble"
     )
     public void SerchWithManyOptionsRealState(){
+
         driver.get(PropertyManager.getConfigValueByKey("url"));
-        String[] data = {"apartamento","casa","oficina"};
-        this.steps.get()
-                .clickOnEntryOffers()
-                .clickOnBuyUsedRealState()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateApartment()
-                .clickExitPopUp()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateHouse()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateOffice()
-                .searchResultRealStateExist(data);
+        try {
+            String[] data = {"apartamento", "casa", "oficina"};
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateApartment()
+                    .clickExitPopUp()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateHouse()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateOffice()
+                    .searchResultRealStateExist(data);
+            driver.quit();
+        } catch (Exception ex) {
+        Assert.fail(ex.getMessage());
         driver.quit();
+        }
     }
 
 /*
@@ -55,18 +69,25 @@ public class RunnerOffers extends Hooks {
             description = "Realizar de búsqueda sin criterios de coincidencia"
     )
     public void SearchWithoutCriteria(){
-        this.steps.get()
-                .clickOnEntryOffers()
-                .clickOnBuyNewRealState()
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateApartment()
-                .clickExitPopUp()
-                .setFilterCityOrHoods("Bucaramanga")
-                .clickProjectsOnPlans()
-                .getTittleResultBanner("Proyectos no encontrados");
+        driver.get(PropertyManager.getConfigValueByKey("url"));
+        try{
+
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .clickOnBuyNewRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateApartment()
+                    .clickExitPopUp()
+                    .setFilterCityOrHoods("Bucaramanga")
+                    .clickProjectsOnPlans()
+                    .getTittleResultBanner("Proyectos no encontrados");
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+            driver.quit();
+
+        }
     }
 
 */
-
 
 }

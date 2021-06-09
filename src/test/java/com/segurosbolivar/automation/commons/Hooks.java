@@ -1,48 +1,40 @@
 package com.segurosbolivar.automation.commons;
 
-import com.segurosbolivar.automation.commons.helpers.DriverFactory;
-import com.segurosbolivar.automation.commons.utils.PropertyManager;
-import com.segurosbolivar.automation.commons.utils.TestingExecution;
-import com.segurosbolivar.automation.commons.utils.Utils;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.*;
+import com.segurosbolivar.automation.commons.helpers.driver.mobile.DriverMobileBase;
+import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
+import com.segurosbolivar.automation.commons.utils.InitAutomation;
+import org.json.simple.JSONObject;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 
-
-@Listeners({TestListener.class})
 public class Hooks {
-    protected Services data = new Services();
-    public WebDriver driver;
-    @BeforeSuite
-    public void beforeSuite() throws IOException {
-        TestingExecution.nameExecution = Utils.getNameExecution();
-        Services.getElements(PropertyManager.getConfigValueByKey("idPortal"), PropertyManager.getConfigValueByKey("idEnvironment"));
-        if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
-            Services.setExecution("3", "2", "1", "AUT", "A00T01", "Holman Cabezas");
-        }
+    protected JSONObject webElements;
+    protected JSONObject mobileElements;
+
+    @BeforeSuite(alwaysRun = true)
+    public void suiteUp() throws Exception {
+        //enable RestAssured logs
+        InitAutomation.initRestAssured();
+        //Init driver Factories
+        InitAutomation.initDriverFactories();
+        //start services  and send token to call other services
+        InitAutomation.initServices();
+        //call elements
+        webElements = Elements.getWebElements();
+        mobileElements = Elements.getMobileElements();
     }
 
-    @BeforeMethod
-    public void before(Method method) {
-        Test test = method.getAnnotation(Test.class);
-        TestingExecution.testName = test.testName();
-        TestingExecution.testName = test.testName();
-        DriverFactory.setWebDriver(test.description(), TestingExecution.nameExecution);
-        driver = DriverFactory.getDriverFacade().getWebDriver();
-        data.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
-        //DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
+    @BeforeMethod(alwaysRun = true)
+    public void beforeMethod(Method method) throws Exception {
     }
 
-    @AfterMethod
-    public void after() {
-        //DriverFactory.getDriverFacade().getWebDriver().quit();
+    @AfterSuite(alwaysRun = true)
+    public void closeDriverObjects() throws MalformedURLException {
+        DriverMobileBase.closeDriverObjects();
+        DriverWebBase.closeDriverObjects();
     }
-
-    @AfterSuite
-    public void afterSuite() {
-
-    }
-
 }

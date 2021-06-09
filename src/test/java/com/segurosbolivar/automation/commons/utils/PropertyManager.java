@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyManager {
-    private static String configFilePath = System.getProperty("user.dir") + "/src/test/java/resources/config.properties";
-    private static Properties properties = new Properties();
+    private static final String configFilePath = System.getProperty("user.dir") + "/src/test/java/resources/config.properties";
+    private static final Properties properties = new Properties();
 
     private static void loadProperties() {
         try {

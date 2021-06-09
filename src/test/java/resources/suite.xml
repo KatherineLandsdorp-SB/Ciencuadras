@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<suite name="Test Suite" parallel="classes" thread-count="1">
-    <test name="CienCuadras Test" parallel="methods" thread-count="10">
-        <listeners>
-            <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
-        </listeners>
-        <classes>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"></class>
-           <!-- <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"></class> -->
-            <class name="com.segurosbolivar.automation.tests.offers.RunnerOffers"></class>
-        </classes>
-    </test>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name = "regression">
+    <listeners>
+        <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
+    </listeners>
+<test name="Seguros Bolivar Test" >
+    <classes>
+        <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
+            <methods>
+                <include name="loginWithoutRegistration"/>
+                <include name="loginWithEmptyFields"/>
+                <include name="loginWithInvalidMailFormat"/>
+                <include name="loginSuccessfully"/>
+            </methods>
+        </class>
+    </classes>
+</test>
 </suite>

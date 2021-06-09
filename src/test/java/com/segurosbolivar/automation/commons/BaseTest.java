@@ -1,13 +1,8 @@
 package com.segurosbolivar.automation.commons;
-import com.segurosbolivar.automation.commons.helpers.DriverFacade;
-import com.segurosbolivar.automation.commons.helpers.DriverFactory;
-import org.openqa.selenium.support.PageFactory;
 
-public class BaseTest extends Elements {
-    protected DriverFacade driverFacade;
+import org.testng.annotations.Listeners;
 
-    public BaseTest() {
-        this.driverFacade = DriverFactory.getDriverFacade();
-        PageFactory.initElements(driverFacade.getWebDriver(),this);
-    }
+@Listeners({TestListener.class})
+public class BaseTest extends Hooks {
+
 }

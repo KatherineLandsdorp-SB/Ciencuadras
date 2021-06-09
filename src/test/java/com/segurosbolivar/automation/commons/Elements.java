@@ -1,19 +1,24 @@
 package com.segurosbolivar.automation.commons;
 
-import com.segurosbolivar.automation.commons.helpers.DriverFacade;
-import com.segurosbolivar.automation.commons.helpers.DriverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import com.segurosbolivar.automation.commons.services.DataService;
+import com.segurosbolivar.automation.commons.services.utils.ServiceConstants;
+import com.segurosbolivar.automation.commons.utils.JsonParser;
+import org.json.simple.JSONObject;
 
 public class Elements {
-    protected DriverFacade webDriverFacade;
+    private static JSONObject response;
 
-    /* ========== Login ========= */
+    private static void initElements() {
+        if (response == null)
+            response = DataService.getElements(ServiceConstants.PLATFORM_ID, ServiceConstants.ENVIRONMENT_ID);
+    }
+    public static JSONObject getWebElements() {
+        initElements();
+        return JsonParser.toJSONObject(response.get("webElements"));
+    }
 
-    public Elements() {
-        this.webDriverFacade = DriverFactory.getDriverFacade();
-        PageFactory.initElements(webDriverFacade.getWebDriver(), this);
+    public static JSONObject getMobileElements() {
+        initElements();
+        return JsonParser.toJSONObject(response.get("mobileElements"));
     }
 }

@@ -9,10 +9,10 @@ public class RunnerOffers extends Hooks {
 
     ThreadLocal<StepsOffers> steps = ThreadLocal.withInitial(StepsOffers::new);
 
-/*
+
     @Test(
-            testName = "11",
-            description = "Formulario búsqueda por Mapa"
+            testName = "47",
+            description = "Realizar búsqueda por mapa con los diferentes filtros"
     )
     public void SearchApartmentsToBuyMap(){
         driver.get(PropertyManager.getConfigValueByKey("url"));
@@ -32,9 +32,12 @@ public class RunnerOffers extends Hooks {
         driver.quit();
         }
     }
- */
+
+
+
+
     @Test(
-            testName = "15",
+            testName = "48",
             description = "Realizar búsqueda con varios tipos de inmueble"
     )
     public void SerchWithManyOptionsRealState(){
@@ -60,9 +63,9 @@ public class RunnerOffers extends Hooks {
         }
     }
 
-/*
+
     @Test(
-            testName = "17",
+            testName = "49",
             description = "Realizar de búsqueda sin criterios de coincidencia"
     )
     public void SearchWithoutCriteria(){
@@ -85,6 +88,6 @@ public class RunnerOffers extends Hooks {
         }
     }
 
-*/
+
 
 }

@@ -88,6 +88,7 @@ public class Services {
             }
             String output = response.getEntity(String.class);
             jsonObj = new JSONObject(output);
+            if(jsonObj.has("data"))
             jsonArray = jsonObj.getJSONArray("data");
         } catch (Exception e) {
             e.printStackTrace();

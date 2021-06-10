@@ -71,6 +71,14 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-option-7\"]/mat-pseudo-checkbox"
   },
+  "checkBoxHouse": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-9\"]/mat-pseudo-checkbox"
+  },
+  "checkBoxOffice": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-11\"]/mat-pseudo-checkbox"
+  },
   "exitPopupSaveSearch": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-instructions-save-search/div/div[1]/button"
@@ -114,7 +122,12 @@
   "tittleBannerResult": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"resultados\"]/div/div[3]/div/h2"
+  },
+  "tittlesCardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[1]/span"
   }
+
 
 
 }

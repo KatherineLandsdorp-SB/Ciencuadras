@@ -32,9 +32,6 @@ public class RunnerOffers extends Hooks {
         driver.quit();
         }
     }
-
-
-
  */
     @Test(
             testName = "15",

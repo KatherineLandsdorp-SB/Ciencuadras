@@ -19,6 +19,7 @@ public class RunnerLogin extends Hooks {
                     .clickEntry()
                     .clickEnterButton()
                     .fillAll(data.getField("mail"), data.getField("password"));
+            driver.quit();
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }

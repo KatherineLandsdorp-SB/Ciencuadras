@@ -1,20 +1,23 @@
 package com.segurosbolivar.automation.tests.register;
+import com.segurosbolivar.automation.commons.Methods;
+import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 
-public class StepsRegister {
+public class StepsRegister extends BaseComponent {
 
-    private MethodsRegister methods = new MethodsRegister();
+    private Methods methods = new Methods();
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister clickEntry(){
-        this.methods.header.clickOnEntry();
+        header.clickOnEntry();
         return this;
     }
 
     @Step("The user clicks on the register Link in the Popup")
     public StepsRegister clickRegister(){
-        this.methods.registerPerson();
+        methods.waitingForElement("registerUser", 3);
+        methods.clickElement("registerUser");
         return this;
     }
 
@@ -28,35 +31,61 @@ public class StepsRegister {
             String password,
             String confirmPassword
     ){
-        this.methods.fillAllTheRequiredFields(
-                firstName,
-                secondName,
-                lastName,
-                secondLastName,
-                mail,
-                password,
-                confirmPassword);
+            methods.waitForPageLoad();
+            methods.waitingForElement("nameRegister", 60);
+            methods.sendKeysText("nameRegister", firstName);
+            methods.sendKeysText("secondNameRegister", secondName);
+            methods.sendKeysText("lastNameRegister", lastName);
+            methods.sendKeysText("secondLastnameRegister", secondLastName);
+            methods.sendKeysText("mailRegister", mail);
+            methods.sendKeysText("passRegister", password);
+            methods.sendKeysText("confirmPassRegister", confirmPassword);
+            methods.scrollTo("terms");
+            methods.clickElement("terms");
+            methods.clickElement("register");
+            methods.waitForPageLoad();
+            methods.waitingForElement("navbarDropdown", 300);
+            methods.getEntity("navbarDropdown").getText();
         return this;
     }
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister ClickEntryLoginAllied(){
-        this.methods.header.clickOnEntryLoginAllied();
+            header.clickOnEntryLoginAllied();
         return this;
     }
 
     @Step("The user clicks on the label create account allied")
     public  StepsRegister ClickLabelCreateAccountAllied(){
-        this.methods.ClickLabelCreateAccountAllied();
+            methods.waitingForElement("popupSigInAllied",10);
+            methods.waitingForElement("labelCreateAccountAllied",5);
+            methods.clickElementJs("labelCreateAccountAllied");
         return this;
     }
 
     @Step("The user fill all fields to register new account allied")
     public  StepsRegister FillAllFieldsCreateAccountAllied(String name, String email, String nit, String cellPhone, String city, String pass, String passConfirmation){
-    boolean result = false;
-    result = this.methods.FillAllCreateAccountAllied(name, email, nit, cellPhone, city, pass, passConfirmation);
-    Assert.assertTrue(result);
-    return this;
+            methods.waitingForElement("fieldNameRegisterAllied",5);
+            methods.sendKeysText("fieldNameRegisterAllied",name);
+            methods.waitingForElement("fieldEmailRegisterAllied",5);
+            methods.sendKeysText("fieldEmailRegisterAllied",email);
+            methods.waitingForElement("fieldNitRegisterAllied",5);
+            methods.sendKeysText("fieldNitRegisterAllied",nit);
+            methods.waitingForElement("fieldCellPhoneRegisterAllied",5);
+            methods.sendKeysText("fieldCellPhoneRegisterAllied",cellPhone);
+            methods.waitingForElement("fieldCityRegisterAllied",5);
+            methods.sendKeysText("fieldCityRegisterAllied",city);
+            methods.waitingForElement("fieldPassRegisterAllied",5);
+            methods.sendKeysText("fieldPassRegisterAllied",pass);
+            methods.waitingForElement("fieldPassConfirmationRegisterAllied",5);
+            methods.sendKeysText("fieldPassConfirmationRegisterAllied",passConfirmation);
+            methods.waitingForElement("fieldTermsAndConditionsRegisterAllied",5);
+            methods.clickElement("fieldTermsAndConditionsRegisterAllied");
+            methods.waitingForElement("buttonEntryRegisterAllied",5);
+            methods.clickElementJs("buttonEntryRegisterAllied");
+            methods.waitForPageLoad();
+            Assert.assertTrue(true);
+        return this;
     }
 
 

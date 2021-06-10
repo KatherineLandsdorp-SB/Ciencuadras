@@ -9,29 +9,54 @@ public class StepsLogin  extends BaseComponent {
 
     @Step("The user clicks on the login Link in the Header")
     public StepsLogin clickEntry(){
-        header.clickOnEntry();
+            header.clickOnEntry();
         return this;
     }
 
     @Step("The user clicks the enter button")
     public StepsLogin clickEnterButton(){
-        methods.waitingForElement("entryUser",5);
-        methods.clickElementJs("entryUser");
+            methods.waitingForElement("entryUser",5);
+            methods.clickElementJs("entryUser");
         return this;
     }
 
     @Step("The user fill all the required fields")
     public StepsLogin fillAll(String email, String password){
-        methods.waitForPageLoad();
-        methods.waitingForElement("loginInMail", 30);
-        methods.sendKeysText("loginInMail", email);
-        methods.waitElementExplicitTime("loginInPass",10);
-        methods.sendKeysText("loginInPass", password);
-        methods.waitElementExplicitTime("loginUser",10);
-        methods.clickElement("loginUser");
-        methods.waitForPageLoad();
-        methods.waitingForElement("helloUser2", 30);
-        methods.getEntity("helloUser").getText();
+            methods.waitForPageLoad();
+            methods.waitingForElement("loginInMail", 30);
+            methods.sendKeysText("loginInMail", email);
+            methods.waitElementExplicitTime("loginInPass",10);
+            methods.sendKeysText("loginInPass", password);
+        return this;
+    }
+
+    @Step("The user fill all the required fields")
+    public StepsLogin checkRemember(){
+        methods.waitingForElement("defaultCheckIn", 30);
+        methods.clickElementJs("defaultCheckIn");
+        return this;
+    }
+
+    @Step("The user fill all the required fields")
+    public StepsLogin clickOnLogin(){
+            methods.waitElementExplicitTime("loginUser",10);
+            methods.clickElement("loginUser");
+
+        return this;
+    }
+
+    @Step("The user fill all the required fields")
+    public StepsLogin validateSuccess(){
+            methods.waitForPageLoad();
+            methods.waitingForElement("helloUser", 30);
+            methods.getEntity("helloUser").getText();
+        return this;
+    }
+
+    @Step("The user fill all the required fields")
+    public StepsLogin validateFailed(){
+        methods.waitingForElement("userError",10);
+        methods.validationElementDisplayed("userError");
         return this;
     }
 }

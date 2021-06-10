@@ -117,7 +117,7 @@
   },
   "labelProjectOnPlans": {
     "GetFieldBy": "Id",
-    "ValueToFind": "blue-print-tab"
+    "ValueToFind": "blue-print-content"
   },
   "tittleBannerResult": {
     "GetFieldBy": "Xpath",

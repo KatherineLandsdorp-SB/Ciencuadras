@@ -62,6 +62,7 @@ public class MethodsOffers extends BaseComponent {
     }
 
     public void clickLabelProjectsOnPlans(){
+    this.methods.waitForPageLoad();
     this.methods.waitElementExplicitTime("labelProjectOnPlans",5);
     this.methods.clickElementJs("labelProjectOnPlans");
     this.methods.waitForPageLoad();

@@ -29,7 +29,7 @@ public class RunnerRegister extends Hooks {
 
     @Test(
             priority = 1,
-            testName = "2",
+            testName = "34",
             description = "El usuario crea correctamente una cuenta de Ciencudadras con el perfil de aliado"
     )
     public void RegisterAllied() {

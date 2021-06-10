@@ -9,13 +9,12 @@ public class RunnerOffers extends Hooks {
 
     ThreadLocal<StepsOffers> steps = ThreadLocal.withInitial(StepsOffers::new);
 
-
+/*
     @Test(
             testName = "47",
             description = "Realizar búsqueda por mapa con los diferentes filtros"
     )
     public void SearchApartmentsToBuyMap(){
-        driver.get(PropertyManager.getConfigValueByKey("url"));
         try {
             this.steps.get()
                     .clickOnEntryOffers()
@@ -26,10 +25,11 @@ public class RunnerOffers extends Hooks {
                     .setFilterCityOrHoods("Bogotá")
                     .clickOpenMap()
                     .clickOnMarkerResultMap("apartamento");
-            driver.quit();
+
          } catch (Exception ex) {
+            driver.quit();
         Assert.fail(ex.getMessage());
-        driver.quit();
+
         }
     }
 
@@ -42,7 +42,6 @@ public class RunnerOffers extends Hooks {
     )
     public void SerchWithManyOptionsRealState(){
 
-        driver.get(PropertyManager.getConfigValueByKey("url"));
         try {
             String[] data = {"apartamento", "casa", "oficina"};
             this.steps.get()
@@ -56,20 +55,20 @@ public class RunnerOffers extends Hooks {
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateOffice()
                     .searchResultRealStateExist(data);
-            driver.quit();
+
         } catch (Exception ex) {
+            driver.quit();
         Assert.fail(ex.getMessage());
-        driver.quit();
+
         }
     }
 
-
+*/
     @Test(
             testName = "49",
             description = "Realizar de búsqueda sin criterios de coincidencia"
     )
     public void SearchWithoutCriteria(){
-        driver.get(PropertyManager.getConfigValueByKey("url"));
         try{
 
             this.steps.get()
@@ -82,8 +81,9 @@ public class RunnerOffers extends Hooks {
                     .clickProjectsOnPlans()
                     .getTittleResultBanner("Proyectos no encontrados");
         } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
             driver.quit();
+            Assert.fail(ex.getMessage());
+
 
         }
     }

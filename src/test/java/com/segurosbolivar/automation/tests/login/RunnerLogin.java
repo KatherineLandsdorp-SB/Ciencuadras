@@ -21,25 +21,8 @@ public class RunnerLogin extends Hooks {
                     .fillAll(data.getField("mail"), data.getField("password"));
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
-            driver.quit();
         }
     }
 
 
-    @Test(
-            priority = 1,
-            testName = "18",
-            description = "Validación tipo de pagina personas"
-    )
-    public void login() {
-        try {
-            steps.get()
-                    .clickExitPopUp()
-                    .clickEntry()
-                    .clickEnterButton()
-                    .fillAll(data.getField("mail"), data.getField("password"));
-        } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
-        }
-    }
 }

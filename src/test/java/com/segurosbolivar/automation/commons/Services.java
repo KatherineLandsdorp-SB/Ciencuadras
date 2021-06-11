@@ -24,6 +24,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 import java.io.File;
@@ -41,10 +42,12 @@ import java.util.Map;
 
 public class Services {
     private static String token;
-    private static JSONObject jsonObj = new JSONObject();
-    private static JSONArray jsonArray = new JSONArray();
+    private  JSONArray jsonArray = new JSONArray();
+    private  JSONObject jsonAssert ;
     private static org.json.simple.JSONObject jsonElements;
     private static String outputElements = new String();
+
+
     public static void getToken(String extent) throws IOException {
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpPost httpPost = new HttpPost("https://autoqa-prod.auth.us-east-1.amazoncognito.com/oauth2/token");
@@ -73,12 +76,11 @@ public class Services {
     }
 
 
-    public static void getDataService(String platform, String caso) {
+    public  void getDataService(String platform, String caso) {
         try {
             String scope = "services/data";
             getToken(scope);
             Client client = Client.create();
-            System.out.println("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/data/"+platform+"/case/"+caso);
             WebResource webResource = client.resource("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/data/"+platform+"/case/"+caso);
             ClientResponse response = webResource
                     .header("Authorization", "Bearer "+token)
@@ -87,16 +89,23 @@ public class Services {
                 throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
             }
             String output = response.getEntity(String.class);
-            jsonObj = new JSONObject(output);
-            if(jsonObj.has("data"))
-            jsonArray = jsonObj.getJSONArray("data");
+            JSONObject jsonObj = new JSONObject(output);
+
+            if(jsonObj.has("data")) {
+                this.jsonArray = jsonObj.getJSONArray("data");
+                this.jsonAssert = jsonObj.getJSONObject("asserts");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static String getAssert(String entity){
-        return  "HOLA PRUEBAS";
+    public  String getAssert() throws JSONException {
+        if(this.jsonAssert != null && this.jsonAssert.has("validate")){
+        return this.jsonAssert.getString("validate");
+    }else{
+        return null;
+    }
     }
 
     public static void getElements(String platform, String environmentId ) {
@@ -113,7 +122,7 @@ public class Services {
                 throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
             }
             String output = response.getEntity(String.class);
-            jsonObj = new JSONObject(output);
+            JSONObject jsonObj = new JSONObject(output);
             outputElements = jsonObj.getJSONObject("elements").toString();
         } catch (Exception e) {
             e.printStackTrace();
@@ -188,37 +197,8 @@ public class Services {
         }
     }
 
-    public void jiraIssue(String idProject, String summary, String description) {
-
-        try {
-            Client client = Client.create();
-            String data =
-                    "{\n    \"fields\": {" +
-                            "\n       \"project\":\n       {" +
-                            "\n          \"id\": "+idProject+"" +
-                            "},\n       " +
-                            "\"summary\": "+ summary +"" +
-                            "\"description\":"+ description +"" +
-                            "\"issuetype\": {\n " +
-                            "\"id\": \"10505\"\n " +
-                            "}\n   }\n}";
-
-            WebResource webResource = client.resource("https://jira.segurosbolivar.com/rest/api/2/issue/");
-            ClientResponse response = webResource.accept("application/json").post(ClientResponse.class, data);
-            if (response.getStatus() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
-            }
-            String output = response.getEntity(String.class);
-
-            jsonObj = new JSONObject(output);
-            jsonArray = jsonObj.getJSONArray("result");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public String getField(String field){
-        System.out.println(jsonArray);
         String res = "";
         try {
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -327,4 +307,38 @@ public class Services {
     String getFileLocal() {
         return new File("src/test/java/com/segurosbolivar/automation/commons/uploadFile/").getAbsolutePath();
     }
+
+
+
+/*
+    public void jiraIssue(String idProject, String summary, String description) {
+
+        try {
+            Client client = Client.create();
+            String data =
+                    "{\n    \"fields\": {" +
+                            "\n       \"project\":\n       {" +
+                            "\n          \"id\": "+idProject+"" +
+                            "},\n       " +
+                            "\"summary\": "+ summary +"" +
+                            "\"description\":"+ description +"" +
+                            "\"issuetype\": {\n " +
+                            "\"id\": \"10505\"\n " +
+                            "}\n   }\n}";
+
+            WebResource webResource = client.resource("https://jira.segurosbolivar.com/rest/api/2/issue/");
+            ClientResponse response = webResource.accept("application/json").post(ClientResponse.class, data);
+            if (response.getStatus() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+            }
+            String output = response.getEntity(String.class);
+
+            JSONObject  jsonObj = new JSONObject(output);
+            jsonArray = jsonObj.getJSONArray("result");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+ */
 }

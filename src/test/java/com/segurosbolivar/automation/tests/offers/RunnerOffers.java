@@ -9,7 +9,7 @@ public class RunnerOffers extends Hooks {
 
     ThreadLocal<StepsOffers> steps = ThreadLocal.withInitial(StepsOffers::new);
 
-/*
+
     @Test(
             testName = "47",
             description = "Realizar búsqueda por mapa con los diferentes filtros"
@@ -22,10 +22,9 @@ public class RunnerOffers extends Hooks {
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
                     .clickExitPopUp()
-                    .setFilterCityOrHoods("Bogotá")
+                    .setFilterCityOrHoods(data.getField("city"))
                     .clickOpenMap()
-                    .clickOnMarkerResultMap("apartamento");
-
+                    .clickOnMarkerResultMap(data.getAssert());
          } catch (Exception ex) {
             driver.quit();
         Assert.fail(ex.getMessage());
@@ -35,7 +34,7 @@ public class RunnerOffers extends Hooks {
 
 
 
-
+/*
     @Test(
             testName = "48",
             description = "Realizar búsqueda con varios tipos de inmueble"
@@ -63,7 +62,6 @@ public class RunnerOffers extends Hooks {
         }
     }
 
-*/
     @Test(
             testName = "49",
             description = "Realizar de búsqueda sin criterios de coincidencia"
@@ -88,6 +86,6 @@ public class RunnerOffers extends Hooks {
         }
     }
 
-
+*/
 
 }

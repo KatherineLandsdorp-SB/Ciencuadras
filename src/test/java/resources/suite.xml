@@ -5,9 +5,9 @@
             <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
         </listeners>
         <classes>
-           <!-- <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"></class> -->
-          <!--  <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"></class> -->
-            <class name="com.segurosbolivar.automation.tests.offers.RunnerOffers"></class>
+           <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"></class>
+           <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"></class>
+           <class name="com.segurosbolivar.automation.tests.offers.RunnerOffers"></class>
         </classes>
     </test>
 </suite>

@@ -38,6 +38,4 @@ public class RunnerRegister extends Hooks {
                 .ClickLabelCreateAccountAllied()
                 .FillAllFieldsCreateAccountAllied("BOB", "fiftye20200922@yopmail.com", "8600025032", "3084665689", "bogota", "1111.SB2021", "1111.SB2021");
     }
-
-
 }

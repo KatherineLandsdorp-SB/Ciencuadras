@@ -10,6 +10,19 @@ public class StepsSearch extends BaseComponent {
     @Step("The user clicks on the login Link in the Header")
     public StepsSearch searchCode(){
             methods.waitForPageLoad();
+            methods.waitingForElement("inputCode", 10);
+            methods.sendKeysText("inputCode", "183150-1440107");
+            methods.clickElementJs("buttonCode");
+            methods.validationElementDisplayed("page");
+        return this;
+    }
+
+
+    @Step("The user clicks on the login Link in the Header")
+    public StepsSearch searchProject(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("leaseProject", 10);
+        methods.waitForPageLoad();
         return this;
     }
 

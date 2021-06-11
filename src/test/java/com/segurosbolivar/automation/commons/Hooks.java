@@ -26,6 +26,7 @@ public class Hooks {
 
     @BeforeMethod
     public void before(Method method) {
+
         Test test = method.getAnnotation(Test.class);
         TestingExecution.testName = test.testName();
         TestingExecution.testName = test.testName();

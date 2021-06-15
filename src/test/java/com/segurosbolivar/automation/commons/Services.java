@@ -16,16 +16,14 @@ import com.segurosbolivar.automation.commons.utils.TestingExecution;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
-import io.qameta.allure.Allure;
 import okhttp3.*;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.codehaus.jettison.json.JSONArray;
-import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,8 +40,6 @@ import java.util.Map;
 
 public class Services {
     private static String token;
-    private  JSONArray jsonArray = new JSONArray();
-    private  JSONObject jsonAssert ;
     private static org.json.simple.JSONObject jsonElements;
     private static String outputElements = new String();
 
@@ -76,47 +72,45 @@ public class Services {
     }
 
 
-    public  void getDataService(String platform, String caso) {
+    public org.json.simple.JSONObject getDataService(String platform, Integer caso) {
         try {
             String scope = "services/data";
             getToken(scope);
             Client client = Client.create();
-            WebResource webResource = client.resource("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/data/"+platform+"/case/"+caso);
+            WebResource webResource = client.resource("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/data/" + platform + "/case/" + caso);
             ClientResponse response = webResource
-                    .header("Authorization", "Bearer "+token)
+                    .header("Authorization", "Bearer " + token)
                     .accept("application/json").get(ClientResponse.class);
             if (response.getStatus() != 200) {
                 throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
             }
             String output = response.getEntity(String.class);
-            JSONObject jsonObj = new JSONObject(output);
-
-            if(jsonObj.has("data")) {
-                this.jsonArray = jsonObj.getJSONArray("data");
-                this.jsonAssert = jsonObj.getJSONObject("asserts");
-            }
+            JSONParser parser = new JSONParser();
+            org.json.simple.JSONObject jsonObj = (org.json.simple.JSONObject) parser.parse(output);
+                return jsonObj;
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public  String getAssert() throws JSONException {
-        if(this.jsonAssert != null && this.jsonAssert.has("validate")){
-        return this.jsonAssert.getString("validate");
-    }else{
         return null;
     }
-    }
 
-    public static void getElements(String platform, String environmentId ) {
+//    public String getAssert() throws JSONException {
+//        if (this.jsonAssert != null && this.jsonAssert.has("validate")) {
+//            return this.jsonAssert.getString("validate");
+//        } else {
+//            return null;
+//        }
+//    }
+
+    public static void getElements(String platform, String environmentId) {
         try {
             String scope = "services/data";
             getToken(scope);
             Client client = Client.create();
-            System.out.println("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/elements/"+platform+"/environment/"+environmentId);
-            WebResource webResource = client.resource("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/elements/"+platform+"/environment/"+environmentId);
+            System.out.println("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/elements/" + platform + "/environment/" + environmentId);
+            WebResource webResource = client.resource("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/elements/" + platform + "/environment/" + environmentId);
             ClientResponse response = webResource
-                    .header("Authorization", "Bearer "+token)
+                    .header("Authorization", "Bearer " + token)
                     .accept("application/json").get(ClientResponse.class);
             if (response.getStatus() != 200) {
                 throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
@@ -129,11 +123,11 @@ public class Services {
         }
     }
 
-    public static String outputElements(){
-       return outputElements;
+    public static String outputElements() {
+        return outputElements;
     }
 
-    public static String setExecution(String idSuite, String idEnvironment, String idStateExecution, String jiraProject, String JiraIssue, String executor) {
+    public static String setExecution(String idSuite, String idEnvironment, String idStateExecution, String idProvider, String idTypeAutomation, String idTypeExecution, String jiraProject, String JiraIssue, String executor) {
         try {
             Date myDate = new Date();
             String requestDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(myDate);
@@ -141,12 +135,15 @@ public class Services {
                     .build();
             String data =
                     "{\n  \"idSuite\": "+"\""+idSuite+"\",\n" +
-                    " \"idEnvironment\": "+"\""+idEnvironment+"\",\n" +
-                    "\"idStateExecution\" : "+"\""+idStateExecution+"\",\n" +
-                    "\"jiraProject\" : "+"\""+jiraProject+"\",\n" +
-                    "\"jiraIssue\" : "+"\""+JiraIssue+"\",\n" +
-                    "\"requestDate\": "+"\""+requestDate +"\",\n" +
-                    "\"executor\": "+"\""+executor+"\"}";
+                            " \"idEnvironment\": "+"\""+idEnvironment+"\",\n" +
+                            "\"idStateExecution\" : "+"\""+idStateExecution+"\",\n" +
+                            "\"idProvider\" : "+"\""+idProvider+"\",\n" +
+                            "\"idTypeAutomation\" : "+"\""+idTypeAutomation+"\",\n" +
+                            "\"idTypeExecution\" : "+"\""+idTypeExecution+"\",\n" +
+                            "\"jiraProject\" : "+"\""+jiraProject+"\",\n" +
+                            "\"jiraIssue\" : "+"\""+JiraIssue+"\",\n" +
+                            "\"requestDate\": "+"\""+requestDate +"\",\n" +
+                            "\"executor\": "+"\""+executor+"\"}";
 
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, data);
@@ -167,25 +164,31 @@ public class Services {
         return null;
     }
 
-    public static void setCaseExecution(String idExecution, String idCase, String idStateExecution, String idTypeExecution,  String startDate, String endDate) {
+
+    public static void setCaseExecution(String idExecution, String idCase, String idStateExecution,  String startDate, String endDate, String dataInputExecution, String dataOutputExecution) {
+
         try {
+            String scope = "services/metrics";
+            getToken(scope);
             Date myDate = new Date();
             String requestDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(myDate);
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
             String data =
                     "{\n  \"idExecution\": "+"\""+idExecution+"\",\n" +
-                    "\"idCase\": "+"\""+idCase+"\",\n" +
-                    "\"idStateExecution\" : "+"\""+idStateExecution+"\",\n" +
-                    "\"idTypeExecution\" : "+"\""+idTypeExecution+"\",\n" +
-                    "\"startDate\" : "+"\""+startDate+"\",\n" +
-                    "\"endDate\": "+"\""+endDate +"\"}";
+                            "\"idCase\": "+"\""+idCase+"\",\n" +
+                            "\"idStateExecution\" : "+"\""+idStateExecution+"\",\n" +
+                            "\"startDate\" : "+"\""+startDate+"\",\n" +
+                            "\"endDate\" : "+"\""+endDate+"\",\n" +
+                            "\"dataInputExecution\" : "+"\""+dataInputExecution+"\",\n" +
+                            "\"dataOutputExecution\": "+"\""+dataOutputExecution +"\"}";
+            //System.out.println("debuuuuggggggggggggg" + data);
 
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, data);
-            Allure.addAttachment("HTTP: ", data);
+            //Allure.addAttachment("HTTP: ", data);
 
-            Request request = new Request.Builder()
+            okhttp3.Request request = new okhttp3.Request.Builder()
                     .url("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/executioncases")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
@@ -198,22 +201,22 @@ public class Services {
     }
 
 
-    public String getField(String field){
-        String res = "";
-        try {
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject explrObject = jsonArray.getJSONObject(i);
-                res = explrObject.getString(field);
-                return res;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return res;
-    }
+//    public String getField(String field) {
+//        String res = "";
+//        try {
+//            for (int i = 0; i < jsonArray.length(); i++) {
+//                JSONObject explrObject = jsonArray.getJSONObject(i);
+//                res = explrObject.getString(field);
+//                return res;
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return res;
+//    }
 
 
-    public void uploadObjectsS3(String nameFile, String data){
+    public void uploadObjectsS3(String nameFile, String data) {
         Regions clientRegion = Regions.US_EAST_1;
         String bucketName = "autoqa-prod-automation";
         String objectKey = nameFile; //NameFileS3
@@ -241,7 +244,7 @@ public class Services {
             out.close();
             connection.getResponseCode();
             S3Object object = s3Client.getObject(bucketName, objectKey);
-        }catch (AmazonServiceException e) {
+        } catch (AmazonServiceException e) {
             e.printStackTrace();
         } catch (SdkClientException e) {
             e.printStackTrace();
@@ -252,7 +255,7 @@ public class Services {
         }
     }
 
-    public void uploadFileS3(String nameFile){
+    public void uploadFileS3(String nameFile) {
         Regions clientRegion = Regions.US_EAST_1;
         String bucketName = "autoqa-prod-automation";
         String objectKey = nameFile; //NameFileS3
@@ -268,16 +271,16 @@ public class Services {
             expiration.setTime(expTimeMillis);
 
             String getFileLocal = new File("src/test/java/com/segurosbolivar/automation/commons/uploadFile/").getAbsolutePath();
-            PutObjectRequest request = new PutObjectRequest(bucketName,  nameFile, new File(getFileLocal+"/"+nameFile));
+            PutObjectRequest request = new PutObjectRequest(bucketName, nameFile, new File(getFileLocal + "/" + nameFile));
             s3Client.putObject(request);
-        }catch (AmazonServiceException e) {
+        } catch (AmazonServiceException e) {
             e.printStackTrace();
         } catch (SdkClientException e) {
             e.printStackTrace();
         }
     }
 
-    public void donwloadObjectsS3(String nameFile){
+    public void donwloadObjectsS3(String nameFile) {
         Regions clientRegion = Regions.US_EAST_1;
         String bucketName = "autoqa-prod-automation";
         String objectKey = nameFile; //NameFileS3
@@ -295,9 +298,9 @@ public class Services {
             S3Object fullObject;
             s3Client.getObject(
                     new GetObjectRequest(bucketName, nameFile),
-                    new File(getFileLocal+"/"+nameFile)
+                    new File(getFileLocal + "/" + nameFile)
             );
-        }catch (AmazonServiceException e) {
+        } catch (AmazonServiceException e) {
             e.printStackTrace();
         } catch (SdkClientException e) {
             e.printStackTrace();

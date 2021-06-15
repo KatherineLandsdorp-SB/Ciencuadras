@@ -9,6 +9,8 @@ import java.util.Date;
 
 public class Utils {
 
+
+
     public static String getStringDate(long milliseconds, String dateFormat) {
         Date startDate = new Date(milliseconds);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
@@ -46,10 +48,6 @@ public class Utils {
         return testingExecution;
     }
 
-    public static long getTimeStampSeconds() {
-        Instant instant = Instant.now();
-        return instant.getEpochSecond();
-    }
 
     public static String getNameExecution() {
         Date myDate = new Date();

@@ -4,7 +4,7 @@ import com.segurosbolivar.automation.commons.helpers.DriverFactory;
 import com.segurosbolivar.automation.commons.utils.PropertyManager;
 import com.segurosbolivar.automation.commons.utils.TestingExecution;
 import com.segurosbolivar.automation.commons.utils.Utils;
-import org.openqa.selenium.WebDriver;
+import org.codehaus.jettison.json.JSONException;
 import org.testng.annotations.*;
 
 import java.io.IOException;
@@ -13,25 +13,35 @@ import java.lang.reflect.Method;
 
 @Listeners({TestListener.class})
 public class Hooks {
-    protected Services data = new Services();
-    public WebDriver driver;
+    private Services services = new Services();
+
     @BeforeSuite
     public void beforeSuite() throws IOException {
         TestingExecution.nameExecution = Utils.getNameExecution();
         Services.getElements(PropertyManager.getConfigValueByKey("idPortal"), PropertyManager.getConfigValueByKey("idEnvironment"));
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
-            Services.setExecution("3", "2", "1", "AUT", "A00T01", "Holman Cabezas");
+            Services.setExecution(PropertyManager.getConfigValueByKey("idSuite"),
+                    PropertyManager.getConfigValueByKey("idEnvironment"),
+                    PropertyManager.getConfigValueByKey("idStateExecution"),
+                    PropertyManager.getConfigValueByKey("idProvider"),
+                    PropertyManager.getConfigValueByKey("idTypeAutomation"),
+                    PropertyManager.getConfigValueByKey("idTypeExecution"),
+                    PropertyManager.getConfigValueByKey("jiraProject"),
+                    PropertyManager.getConfigValueByKey("JiraIssue"),
+                    PropertyManager.getConfigValueByKey("executor"));
+            //Services.setExecution("3", "2", "1", "AUT", "A00T01", "Holman Cabezas");
         }
     }
 
     @BeforeMethod
-    public void before(Method method) {
+    public void before(Method method) throws JSONException {
         Test test = method.getAnnotation(Test.class);
         TestingExecution.testName = test.testName();
         TestingExecution.testName = test.testName();
         DriverFactory.setWebDriver(test.description(), TestingExecution.nameExecution);
-        driver = DriverFactory.getDriverFacade().getWebDriver();
-        data.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
+//        JSONObject jsonObj = services.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
+//        TestingExecution.dataCase = jsonObj.getJSONArray("data");
+//        TestingExecution.dataAssert = jsonObj.getJSONObject("asserts");
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
     }
 

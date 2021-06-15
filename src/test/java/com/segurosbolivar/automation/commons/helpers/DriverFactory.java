@@ -1,6 +1,7 @@
 package com.segurosbolivar.automation.commons.helpers;
 
-public class DriverFactory {
+public class
+DriverFactory {
 
     private static ThreadLocal<DriverFacade> webDriverMap=new ThreadLocal<>();
 

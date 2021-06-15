@@ -13,18 +13,18 @@ public class RunnerRegister extends Hooks {
             description = "Registro transversal"
     )
     public void successfullRegister() {
-        steps.get()
-                .clickEntry()
-                .clickRegister()
-                .fillAll(
-                        data.getField("firstName" ),
-                        data.getField("secondName"),
-                        data.getField("lastName"),
-                        data.getField("secondLastName"),
-                        data.getField("mail"),
-                        data.getField("password"),
-                        data.getField("confirmPassword")
-                );
+//        steps.get()
+//                .clickEntry()
+//                .clickRegister()
+//                .fillAll(
+//                        data.getField("firstName" ),
+//                        data.getField("secondName"),
+//                        data.getField("lastName"),
+//                        data.getField("secondLastName"),
+//                        data.getField("mail"),
+//                        data.getField("password"),
+//                        data.getField("confirmPassword")
+//                );
     }
 
     @Test(

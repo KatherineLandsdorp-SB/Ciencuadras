@@ -1,7 +1,6 @@
 package com.segurosbolivar.automation.tests.offers;
 
 import com.segurosbolivar.automation.commons.Hooks;
-import com.segurosbolivar.automation.commons.utils.PropertyManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,17 +15,16 @@ public class RunnerOffers extends Hooks {
     )
     public void SearchApartmentsToBuyMap(){
         try {
-            this.steps.get()
-                    .clickOnEntryOffers()
-                    .clickOnBuyUsedRealState()
-                    .clickFilterTypeRealState()
-                    .setFilterTypeRealStateApartment()
-                    .clickExitPopUp()
-                    .setFilterCityOrHoods(data.getField("city"))
-                    .clickOpenMap()
-                    .clickOnMarkerResultMap(data.getAssert());
+//            this.steps.get()
+//                    .clickOnEntryOffers()
+//                    .clickOnBuyUsedRealState()
+//                    .clickFilterTypeRealState()
+//                    .setFilterTypeRealStateApartment()
+//                    .clickExitPopUp()
+//                    .setFilterCityOrHoods(data.getField("city"))
+//                    .clickOpenMap()
+//                    .clickOnMarkerResultMap(data.getAssert());
          } catch (Exception ex) {
-            driver.quit();
         Assert.fail(ex.getMessage());
 
         }

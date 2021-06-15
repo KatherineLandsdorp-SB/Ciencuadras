@@ -42,8 +42,8 @@ import java.util.Map;
 
 public class Services {
     private static String token;
-    private  JSONArray jsonArray = new JSONArray();
-    private  JSONObject jsonAssert ;
+    private  static JSONArray  jsonArray = new JSONArray();
+    private  static JSONObject jsonAssert ;
     private static org.json.simple.JSONObject jsonElements;
     private static String outputElements = new String();
 
@@ -76,8 +76,10 @@ public class Services {
     }
 
 
-    public  void getDataService(String platform, String caso) {
+    public  void   getDataService(String platform, String caso) {
         try {
+            jsonArray = null;
+            jsonArray = null;
             String scope = "services/data";
             getToken(scope);
             Client client = Client.create();
@@ -92,8 +94,8 @@ public class Services {
             JSONObject jsonObj = new JSONObject(output);
 
             if(jsonObj.has("data")) {
-                this.jsonArray = jsonObj.getJSONArray("data");
-                this.jsonAssert = jsonObj.getJSONObject("asserts");
+                jsonArray = jsonObj.getJSONArray("data");
+                jsonAssert = jsonObj.getJSONObject("asserts");
             }
         } catch (Exception e) {
             e.printStackTrace();

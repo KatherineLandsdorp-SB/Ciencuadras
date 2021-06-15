@@ -74,6 +74,8 @@ public class Services {
 
     public org.json.simple.JSONObject getDataService(String platform, Integer caso) {
         try {
+            jsonArray = null;
+            jsonArray = null;
             String scope = "services/data";
             getToken(scope);
             Client client = Client.create();

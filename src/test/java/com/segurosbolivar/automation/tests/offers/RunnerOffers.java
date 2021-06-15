@@ -40,7 +40,8 @@ public class RunnerOffers extends Hooks {
     public void SerchWithManyOptionsRealState(){
 
         try {
-            String[] data = {"apartamento", "casa", "oficina"};
+            String[] inputRealStates = {data.getField("realState_1"), data.getField("realState_2"), data.getField("realState_3")};
+
             this.steps.get()
                     .clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
@@ -49,16 +50,19 @@ public class RunnerOffers extends Hooks {
                     .clickExitPopUp()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateHouse()
+                    .clickExitPopUp()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateOffice()
-                    .searchResultRealStateExist(data);
+                    .searchResultRealStateExist(inputRealStates);
 
         } catch (Exception ex) {
-            driver.quit();
         Assert.fail(ex.getMessage());
 
         }
     }
+
+
+
 
     @Test(
             testName = "49",
@@ -66,24 +70,19 @@ public class RunnerOffers extends Hooks {
     )
     public void SearchWithoutCriteria(){
         try{
-
             this.steps.get()
                     .clickOnEntryOffers()
                     .clickOnBuyNewRealState()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
                     .clickExitPopUp()
-                    .setFilterCityOrHoods("Bucaramanga")
+                    .setFilterCityOrHoods(data.getField("city"))
                     .clickProjectsOnPlans()
-                    .getTittleResultBanner("Proyectos no encontrados");
+                    .getTittleResultBanner(data.getAssert());
         } catch (Exception ex) {
-            driver.quit();
             Assert.fail(ex.getMessage());
-
-
         }
     }
-
 */
 
 }

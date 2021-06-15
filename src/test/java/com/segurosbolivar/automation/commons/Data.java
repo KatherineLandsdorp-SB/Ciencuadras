@@ -8,27 +8,32 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Data {
-    private static JSONObject data;
-    private static Services services = new Services();
+    private  JSONObject data;
+    private  Services services;
 
-    public static void initData(Integer testId) throws Exception {
+    public Data(Integer testId) throws Exception{
+        this.services = new Services();
+       initData(testId);
+    }
+
+    private  void initData(Integer testId) throws Exception {
         data = services.getDataService(PropertyManager.getConfigValueByKey("idPortal"), testId);
         if (null == data)
             throw new Exception("Data not found");
     }
 
-    private static JSONObject getData(Integer index) {
+    private  JSONObject getData(Integer index) {
         ObjectMapper objectMapper = new ObjectMapper();
         Object arr = data.get("data");
         JSONArray arrData = objectMapper.convertValue(arr, JSONArray.class);
         return JsonParser.toJSONObject(arrData.get(index));
     }
 
-    private static JSONObject getAsserts() {
+    private  JSONObject getAsserts() {
         return JsonParser.toJSONObject(data.get("asserts"));
     }
 
-    public static String getDataField(String entity) {
+    public  String getDataField(String entity) {
         JSONObject data = getData(0);
         return data.get(entity).toString();
     }
@@ -38,7 +43,7 @@ public class Data {
         return data.get(entity).toString();
     }
 
-    public static String getAssertField(String entity) {
+    public  String getAssertField(String entity) {
         JSONObject asserts = getAsserts();
         return asserts.get(entity).toString();
     }

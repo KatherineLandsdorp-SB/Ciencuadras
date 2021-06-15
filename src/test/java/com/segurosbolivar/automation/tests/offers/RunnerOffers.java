@@ -1,5 +1,6 @@
 package com.segurosbolivar.automation.tests.offers;
 
+import com.segurosbolivar.automation.commons.Data;
 import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,15 +16,17 @@ public class RunnerOffers extends Hooks {
     )
     public void SearchApartmentsToBuyMap(){
         try {
-//            this.steps.get()
-//                    .clickOnEntryOffers()
-//                    .clickOnBuyUsedRealState()
-//                    .clickFilterTypeRealState()
-//                    .setFilterTypeRealStateApartment()
-//                    .clickExitPopUp()
-//                    .setFilterCityOrHoods(data.getField("city"))
-//                    .clickOpenMap()
-//                    .clickOnMarkerResultMap(data.getAssert());
+            Data data = new Data(47);
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                   .clickFilterTypeRealState()
+                    .setFilterTypeRealStateApartment()
+                    .clickExitPopUp()
+                   .setFilterCityOrHoods(data.getDataField("city"))
+                   .clickOpenMap()
+                   .clickOnMarkerResultMap(data.getAssertField("validate"));
+
          } catch (Exception ex) {
         Assert.fail(ex.getMessage());
 
@@ -32,7 +35,7 @@ public class RunnerOffers extends Hooks {
 
 
 
-/*
+
     @Test(
             testName = "48",
             description = "Realizar búsqueda con varios tipos de inmueble"
@@ -40,19 +43,20 @@ public class RunnerOffers extends Hooks {
     public void SerchWithManyOptionsRealState(){
 
         try {
-            String[] inputRealStates = {data.getField("realState_1"), data.getField("realState_2"), data.getField("realState_3")};
+            Data data = new Data(48);
+            String[] inputRealStates = {data.getDataField("realState_1"), data.getDataField("realState_2"),data.getDataField("realState_3")};
 
             this.steps.get()
                     .clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
                     .clickFilterTypeRealState()
+                    .setFilterTypeRealStateOffice()
+                    .clickExitPopUp()
+                    .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
                     .clickExitPopUp()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateHouse()
-                    .clickExitPopUp()
-                    .clickFilterTypeRealState()
-                    .setFilterTypeRealStateOffice()
                     .searchResultRealStateExist(inputRealStates);
 
         } catch (Exception ex) {
@@ -63,26 +67,30 @@ public class RunnerOffers extends Hooks {
 
 
 
-
     @Test(
             testName = "49",
             description = "Realizar de búsqueda sin criterios de coincidencia"
     )
     public void SearchWithoutCriteria(){
         try{
+            Data data = new Data(49);
             this.steps.get()
                     .clickOnEntryOffers()
                     .clickOnBuyNewRealState()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
                     .clickExitPopUp()
-                    .setFilterCityOrHoods(data.getField("city"))
+                    .setFilterCityOrHoods(data.getDataField("city"))
                     .clickProjectsOnPlans()
-                    .getTittleResultBanner(data.getAssert());
+                    .getTittleResultBanner(data.getAssertField("validate"));
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }
     }
-*/
+
+
+
+
+
 
 }

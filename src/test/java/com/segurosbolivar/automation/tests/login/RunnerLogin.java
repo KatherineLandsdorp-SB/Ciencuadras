@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class RunnerLogin extends Hooks {
     ThreadLocal<StepsLogin> steps = ThreadLocal.withInitial(StepsLogin::new);
 
+    /*
     @Test(
             priority = 1,
             testName = "36",
@@ -25,6 +26,9 @@ public class RunnerLogin extends Hooks {
             Assert.fail(ex.getMessage());
         }
     }
+
+
+     */
 //
 //    @Test(
 //            priority = 1,

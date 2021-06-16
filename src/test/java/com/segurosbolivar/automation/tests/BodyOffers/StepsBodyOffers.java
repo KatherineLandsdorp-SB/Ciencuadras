@@ -22,12 +22,24 @@ public class StepsBodyOffers extends BaseComponent {
         return this;
     }
 
+    @Step("The user clicks and open the new window detail offer")
+    public  StepsBodyOffers clicksOnWindowDetailOffer(){
+        this.methods.switchToAnotherWindow(2);
+        return this;
+    }
+
     @Step("The user visualize and check details about offer")
-    public StepsBodyOffers visualizeCheckOfferDetails(){
+    public StepsBodyOffers visualizeCheckOfferDetails() throws Exception{
+        this.methods.waitForPageLoad();
         SoftAssert softAssert = new SoftAssert();
+
+
 
         boolean isFlatPhotoPresent = this.methods.visibleElement("imageFlatOfferDetail",3);
         softAssert.assertTrue(isFlatPhotoPresent);
+
+        this.methods.waitingForElement("buttonCarruselRight",5);
+        this.methods.clickElementJs("buttonCarruselRight");
 
         boolean is360PhotoPresent  = this.methods.visibleElement("imageRotateOfferDetail",3);
         softAssert.assertTrue(is360PhotoPresent);
@@ -42,8 +54,7 @@ public class StepsBodyOffers extends BaseComponent {
                 && this.methods.getEntity("codeOfferDetail").getText().length() >0;
         softAssert.assertTrue(isCodeOfferPresent);
 
-
-        //Click to open panel description offer
+        this.methods.clickElementJs("buttonDropDownPanelDescription");
 
         boolean isMeasuresOfferPresent = this.methods.visibleElement("panelMeasures",3);
         softAssert.assertTrue(isMeasuresOfferPresent);
@@ -51,7 +62,15 @@ public class StepsBodyOffers extends BaseComponent {
         boolean isMonthlyExpensesPresent = this.methods.visibleElement("panelMonthlyExpenses",3);
         softAssert.assertTrue(isMonthlyExpensesPresent);
 
+        boolean isCreditSimulatorPresent = this.methods.visibleElement("tittleCreditSimulator",3);
+        softAssert.assertTrue(isCreditSimulatorPresent);
 
+        this.methods.scrollToEndPage();
+        this.methods.waitingForElement("buttonMapPositionDetailOffer",3);
+        this.methods.clickElement("buttonMapPositionDetailOffer");
+        this.methods.waitingForElement("mapDetailOffer",5);
+
+        softAssert.assertAll();
 
     return this;
     }

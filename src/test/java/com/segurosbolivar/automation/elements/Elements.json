@@ -126,7 +126,12 @@
   "tittlesCardResultSearch": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[1]/span"
+  },
+  "cardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]"
   }
+
 
 
 

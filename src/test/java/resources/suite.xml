@@ -7,7 +7,7 @@
         <classes>
           <!-- <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"></class>
            <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"></class> -->
-           <class name="com.segurosbolivar.automation.tests.offers.RunnerOffers"></class>
+           <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers"></class>
         </classes>
     </test>
 </suite>

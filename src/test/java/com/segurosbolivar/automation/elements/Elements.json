@@ -175,7 +175,12 @@
   "mapDetailOffer":{
     "GetFieldBy": "Id",
     "ValueToFind": "map"
+  },
+  "mapMarkerDetailOffer":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div/img"
   }
+
 
 
 

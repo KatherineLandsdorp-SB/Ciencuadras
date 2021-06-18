@@ -15,6 +15,12 @@ public class StepsBodyOffers extends BaseComponent {
         return this;
     }
 
+    @Step("The user clicks on the header rent offers")
+    public  StepsBodyOffers clickOnEntryRentOffers(){
+        this.header.selectRentRealState();
+        return this;
+    }
+
     @Step("The user clicks on the first card offer")
     public StepsBodyOffers clickOnFirstCardOffer() {
         this.methods.waitForPageLoad();

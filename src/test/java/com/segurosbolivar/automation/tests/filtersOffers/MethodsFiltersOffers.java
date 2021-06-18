@@ -1,13 +1,11 @@
-package com.segurosbolivar.automation.tests.offers;
-import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
+package com.segurosbolivar.automation.tests.filtersOffers;
 import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
-import org.apache.commons.collections.map.HashedMap;
 import org.openqa.selenium.WebElement;
 
 import java.util.*;
 
-public class MethodsOffers extends BaseComponent {
+public class MethodsFiltersOffers extends BaseComponent {
 
     private Methods methods = new Methods();
 

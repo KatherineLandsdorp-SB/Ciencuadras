@@ -126,7 +126,68 @@
   "tittlesCardResultSearch": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[1]/span"
+  },
+  "cardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]"
+  },
+
+  "imageFlatOfferDetail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"panorama\"]/img"
+  },
+  "buttonCarruselRight":{
+  "GetFieldBy": "Xpath",
+  "ValueToFind": "//*[@id=\"estate-detail\"]/div[1]/div[2]/div/div[1]/app-galeria/section/div[1]/div[3]/span"
+  },
+  "imageRotateOfferDetail":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"panorama\"]/div[1]/div[1]"
+  },
+  "valueOfferDetail":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"detail-info\"]/div/div[1]/div/h2"
+  },
+  "codeOfferDetail":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"detail-info\"]/div/div[2]/div[1]/span[1]/strong"
+  },
+  "buttonDropDownPanelDescription":{
+  "GetFieldBy": "Xpath",
+  "ValueToFind": "//*[@id=\"detail-description\"]/div/button"
+},
+  "panelMeasures":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"description\"]/div[4]"
+  },
+  "panelMonthlyExpenses":{
+    "GetFieldBy": "Id",
+    "ValueToFind": "detail-expense"
+  },
+  "tittleCreditSimulator":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-tab-label-1-0\"]/div"
+  },
+  "buttonMapPositionDetailOffer":{
+    "GetFieldBy": "Id",
+    "ValueToFind": "show-map-button"
+  },
+  "mapDetailOffer":{
+    "GetFieldBy": "Id",
+    "ValueToFind": "map"
+  },
+  "mapMarkerDetailOffer":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div/img"
   }
+
+
+
+
+
+
+
+
 
 
 

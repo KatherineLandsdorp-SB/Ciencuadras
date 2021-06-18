@@ -1,13 +1,13 @@
-package com.segurosbolivar.automation.tests.offers;
+package com.segurosbolivar.automation.tests.filtersOffers;
 
 import com.segurosbolivar.automation.commons.Data;
 import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RunnerOffers extends Hooks {
+public class RunnerFiltersOffers extends Hooks {
 
-    ThreadLocal<StepsOffers> steps = ThreadLocal.withInitial(StepsOffers::new);
+    ThreadLocal<StepsFiltersOffers> steps = ThreadLocal.withInitial(StepsFiltersOffers::new);
 
 
     @Test(
@@ -22,7 +22,7 @@ public class RunnerOffers extends Hooks {
                     .clickOnBuyUsedRealState()
                    .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
-                    .clickExitPopUp()
+                     .clickExitPopUp()
                    .setFilterCityOrHoods(data.getDataField("city"))
                    .clickOpenMap()
                    .clickOnMarkerResultMap(data.getAssertField("validate"));

@@ -9,8 +9,8 @@ public class RunnerBodyOffers extends Hooks {
     ThreadLocal<StepsBodyOffers> steps = ThreadLocal.withInitial(StepsBodyOffers::new);
 
     @Test(
-        testName = "23",
-        description = "Realizar validación de las opciones de búsqueda"
+        testName = "55",
+        description = "OFERTAS / DETALLE DEL INMUEBLE"
     )
     public void verifyDetailOffer(){
     try{

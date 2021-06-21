@@ -24,4 +24,25 @@ public class RunnerBodyOffers extends Hooks {
         Assert.fail(e.getMessage());
     }
     }
+
+
+    @Test(
+            testName = "59",
+            description = "ARRIENDO/ DETALLE DEL INMUEBLE"
+    )
+    public void verifyDetailRentOffer(){
+        try{
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .clickOnEntryRentOffers()
+                    .clickOnFirstCardOffer()
+                    .clicksOnWindowDetailOffer()
+                    .visualizeCheckOfferDetails();
+
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+    }
+
+
 }

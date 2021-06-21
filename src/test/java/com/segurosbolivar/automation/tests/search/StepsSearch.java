@@ -8,10 +8,10 @@ public class StepsSearch extends BaseComponent {
     private Methods methods = new Methods();
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsSearch searchCode(){
+    public StepsSearch searchCode(String code){
             methods.waitForPageLoad();
             methods.waitingForElement("inputCode", 10);
-            methods.sendKeysText("inputCode", "183150-1440107");
+            methods.sendKeysText("inputCode", code);
             methods.clickElementJs("buttonCode");
             methods.validationElementDisplayed("page");
         return this;

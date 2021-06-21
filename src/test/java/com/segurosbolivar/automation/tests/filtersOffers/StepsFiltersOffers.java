@@ -1,9 +1,10 @@
 package com.segurosbolivar.automation.tests.filtersOffers;
 
 import io.qameta.allure.Step;
+import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import org.testng.Assert;
 
-public class StepsFiltersOffers {
+public class StepsFiltersOffers extends BaseComponent {
 
     private MethodsFiltersOffers methods = new MethodsFiltersOffers();
 
@@ -38,11 +39,9 @@ public class StepsFiltersOffers {
         return  this;
     }
 
-
-
     @Step("The user set value on the filter cities and Hoods")
     public StepsFiltersOffers setFilterCityOrHoods(String valueFilter){
-        this.methods.filterCityOrHoods(valueFilter);
+        this.filters.filterCityOrHoods(valueFilter);
         this.methods.body.randomClickOnBody();
         return this;
     }
@@ -55,21 +54,21 @@ public class StepsFiltersOffers {
 
     @Step("The user select filter, type of real state (Apartment)")
     public StepsFiltersOffers setFilterTypeRealStateApartment(){
-        this.methods.filterSelectTypeApartment();
+        this.filters.filterSelectTypeApartment();
         this.methods.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user select filter, type of real state (House)")
     public StepsFiltersOffers setFilterTypeRealStateHouse(){
-        this.methods.filterSelectTypeHouse();
+        this.filters.filterSelectTypeHouse();
         this.methods.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user select filter, type of real state (Office)")
     public StepsFiltersOffers setFilterTypeRealStateOffice(){
-        this.methods.filterSelectTypeOffice();
+        this.filters.filterSelectTypeOffice();
         this.methods.body.randomClickOnBody();
         return this;
     }
@@ -82,14 +81,14 @@ public class StepsFiltersOffers {
 
     @Step("The user open select Map mode view")
     public StepsFiltersOffers clickOpenMap(){
-        this.methods.clickButtonGoogleMap();
+        this.filters.clickButtonGoogleMap();
         this.methods.body.randomClickOnBody();
         return  this;
     }
 
     @Step("The user open a marker to extract info")
     public StepsFiltersOffers clickOnMarkerResultMap(String expectedTypeRealState){
-        String[] result = this.methods.clickOnMarkerResultMap().split("-");
+        String[] result = this.filters.clickOnMarkerResultMap().split("-");
         String text = result[0].toLowerCase().trim();
         Assert.assertEquals(text, expectedTypeRealState);
         return this;
@@ -97,7 +96,7 @@ public class StepsFiltersOffers {
 
     @Step("The user search types of real state in result card list")
     public StepsFiltersOffers searchResultRealStateExist(String[] typeRealState){
-        boolean result =  this.methods.searchTypesOfRealStatesResult(typeRealState);
+        boolean result =  this.filters.searchTypesOfRealStatesResult(typeRealState);
         Assert.assertTrue(result);
         return  this;
     }

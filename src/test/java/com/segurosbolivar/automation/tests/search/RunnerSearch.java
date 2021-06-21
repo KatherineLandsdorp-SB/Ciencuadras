@@ -12,10 +12,24 @@ public class RunnerSearch extends Hooks {
             testName = "36",
             description = "Validación login transversal"
     )
-    public void loginTransversal(){
+    public void searchCode(){
         try {
             steps.get()
-                    .searchCode();
+                    .searchCode("183150-1440107");
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+        }
+    }
+
+    @Test(
+            priority = 1,
+            testName = "36",
+            description = "Validación login transversal"
+    )
+    public void searchCodeFail(){
+        try {
+            steps.get()
+                    .searchCode("183150-1411100");
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }

@@ -179,7 +179,54 @@
   "mapMarkerDetailOffer":{
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div/img"
+  },
+
+
+  "photoCardOffer":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/figure/div[2]/a/div[1]/img"
+  },
+  "valueCardOffer":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/h3"
+  },
+  "locationCardOffer":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/p"
+  },
+  "typeCardOffer":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/span"
+  },
+  "numRoomsOfferCard":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[1]"
+  },
+  "numBathRoomsOfferCard":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[2]"
+  },
+  "sizeSquareOfferCard":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[3]"
+  },
+  "buttonContactCard":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/button[3]"
+  },
+  "buttonContactWhatsappCard":{
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/div/ul/li[2]/button"
+  },
+  "checkCompareOffers":{
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-33"
   }
+
+
+
+
+
 
 
 

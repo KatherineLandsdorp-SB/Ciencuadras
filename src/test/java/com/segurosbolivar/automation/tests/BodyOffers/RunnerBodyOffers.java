@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class RunnerBodyOffers extends Hooks {
 
     ThreadLocal<StepsBodyOffers> steps = ThreadLocal.withInitial(StepsBodyOffers::new);
-
+/*
     @Test(
         testName = "55",
         description = "OFERTAS / DETALLE DEL INMUEBLE"
@@ -39,6 +39,20 @@ public class RunnerBodyOffers extends Hooks {
                     .clicksOnWindowDetailOffer()
                     .visualizeCheckOfferDetails();
 
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+    }
+*/
+    @Test(
+            testName = "58",
+            description = "ARRIENDO/ RESULTADO DE INMUEBLES"
+    )
+    public void verifyDetailCardOfferList(){
+        try {
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .verifyCardOfferList();
         }catch (Exception e){
             Assert.fail(e.getMessage());
         }

@@ -89,6 +89,7 @@ public class RunnerFiltersOffers extends Hooks {
     }
 */
 
+    /*
     @Test(
             testName = "64",
             description = "Ordenar Resultados: Área: Menor a Mayor."
@@ -108,5 +109,22 @@ public class RunnerFiltersOffers extends Hooks {
 
 
 
+     */
+    @Test(
+            testName = "65",
+            description = "Ordenar Resultados: Área: Mayor a Menor."
+    )
+    public void OrderSquareHigherToLower(){
+        this.steps.get()
+                .clickOnEntryOffers()
+                .clickOnBuyUsedRealState()
+                .setFilterCityOrHoods("ibague")
+                .clickFilterTypeRealState()
+                .setFilterTypeRealStateApartment()
+                .clickExitPopUp()
+                .clickOrderBySquareHigherToLower()
+                .verifyOrderBySquareHigherToLower();
+
+    }
 
 }

@@ -232,7 +232,11 @@
   "squareCardResultSearch": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[2]/ul/li[3]"
-  }
+  },
+  "elementSquareHigherToLower": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-3\"]"
+  },
 
 
 }

@@ -107,12 +107,24 @@ public class StepsFiltersOffers extends BaseComponent {
     return this;
     }
 
-    @Step("The user verify ")
+    @Step("The user verify order results offers is correct Lower To Higher")
     public StepsFiltersOffers verifyOrderBySquareLowerToHigher(){
         boolean isCorrectOrder  = this.filters.isOrderBySquareLowerToHigher();
         Assert.assertTrue(isCorrectOrder);
         return this;
     }
 
+    @Step("The user order results by square  higher to lower")
+    public StepsFiltersOffers clickOrderBySquareHigherToLower(){
+        this.filters.setOrderBySquareHigherToLower();
+        return this;
+    }
+
+    @Step("The user verify order results offers is correct higher to lower")
+    public StepsFiltersOffers verifyOrderBySquareHigherToLower(){
+        boolean isCorrectOrder  = this.filters.isOrderBySquareHigherToLower();
+        Assert.assertTrue(isCorrectOrder);
+        return this;
+    }
 
 }

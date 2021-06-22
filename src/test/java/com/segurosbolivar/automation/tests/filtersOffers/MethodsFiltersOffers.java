@@ -7,20 +7,12 @@ public class MethodsFiltersOffers extends BaseComponent {
     private Methods methods = new Methods();
 
     public void clickExitPopUp(){
-        boolean hidden = methods.visibleElement("exitPopupSaveSearch",15);
+        boolean hidden = methods.visibleElement("exitPopupSaveSearch",20);
         if(hidden!=false){
-            methods.waitingForElement("exitPopupSaveSearch",10);
+            methods.waitingForElement("exitPopupSaveSearch",5);
             methods.clickElementJs("exitPopupSaveSearch");
         }
     }
-
-
-    public void openFilterTypeRealState(){
-        methods.waitForPageLoad();
-        methods.waitingForElement("filterCheckBoxRealState",5);
-        methods.clickElementJs("filterCheckBoxRealState");
-    }
-
 
 
     public void clickLabelProjectsOnPlans(){

@@ -131,111 +131,108 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]"
   },
-
   "imageFlatOfferDetail": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"panorama\"]/img"
   },
-  "buttonCarruselRight":{
-  "GetFieldBy": "Xpath",
-  "ValueToFind": "//*[@id=\"estate-detail\"]/div[1]/div[2]/div/div[1]/app-galeria/section/div[1]/div[3]/span"
+  "buttonCarruselRight": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"estate-detail\"]/div[1]/div[2]/div/div[1]/app-galeria/section/div[1]/div[3]/span"
   },
-  "imageRotateOfferDetail":{
+  "imageRotateOfferDetail": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"panorama\"]/div[1]/div[1]"
   },
-  "valueOfferDetail":{
+  "valueOfferDetail": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"detail-info\"]/div/div[1]/div/h2"
   },
-  "codeOfferDetail":{
+  "codeOfferDetail": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"detail-info\"]/div/div[2]/div[1]/span[1]/strong"
   },
-  "buttonDropDownPanelDescription":{
-  "GetFieldBy": "Xpath",
-  "ValueToFind": "//*[@id=\"detail-description\"]/div/button"
-},
-  "panelMeasures":{
+  "buttonDropDownPanelDescription": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"detail-description\"]/div/button"
+  },
+  "panelMeasures": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"description\"]/div[4]"
   },
-  "panelMonthlyExpenses":{
+  "panelMonthlyExpenses": {
     "GetFieldBy": "Id",
     "ValueToFind": "detail-expense"
   },
-  "tittleCreditSimulator":{
+  "tittleCreditSimulator": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-tab-label-1-0\"]/div"
   },
-  "buttonMapPositionDetailOffer":{
+  "buttonMapPositionDetailOffer": {
     "GetFieldBy": "Id",
     "ValueToFind": "show-map-button"
   },
-  "mapDetailOffer":{
+  "mapDetailOffer": {
     "GetFieldBy": "Id",
     "ValueToFind": "map"
   },
-  "mapMarkerDetailOffer":{
+  "mapMarkerDetailOffer": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div/img"
   },
-
-
-  "photoCardOffer":{
+  "photoCardOffer": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/figure/div[2]/a/div[1]/img"
   },
-  "valueCardOffer":{
+  "valueCardOffer": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/h3"
   },
-  "locationCardOffer":{
+  "locationCardOffer": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/p"
   },
-  "typeCardOffer":{
+  "typeCardOffer": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/span"
   },
-  "numRoomsOfferCard":{
+  "numRoomsOfferCard": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[1]"
   },
-  "numBathRoomsOfferCard":{
+  "numBathRoomsOfferCard": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[2]"
   },
-  "sizeSquareOfferCard":{
+  "sizeSquareOfferCard": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[3]"
   },
-  "buttonContactCard":{
+  "buttonContactCard": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/button[3]"
   },
-  "buttonContactWhatsappCard":{
+  "buttonContactWhatsappCard": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/div/ul/li[2]/button"
   },
-  "checkCompareOffers":{
+  "checkCompareOffers": {
     "GetFieldBy": "Id",
     "ValueToFind": "mat-checkbox-33"
+  },
+
+
+  "filterCheckBoxOrderBy": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"FiltersResultForm\"]/nav/div[2]/div/mat-form-field/div/div[1]"
+  },
+  "elementSquareLowerToHigher": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-2\"]"
+  },
+  "squareCardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[2]/ul/li[3]"
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

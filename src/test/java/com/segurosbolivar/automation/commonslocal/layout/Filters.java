@@ -83,4 +83,40 @@ public class Filters {
         return text;
     }
 
+    public void openFilterTypeRealState(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("filterCheckBoxRealState",3);
+        methods.clickElementJs("filterCheckBoxRealState");
+    }
+
+    private void openFilterOrderBy(){
+        methods.waitingForElement("filterCheckBoxOrderBy",3);
+        methods.clickElementJs("filterCheckBoxOrderBy");
+    }
+
+   public void setOrderBySquareLowerToHigher(){
+        openFilterOrderBy();
+        methods.waitingForElement("elementSquareLowerToHigher",3);
+        methods.clickElementJs("elementSquareLowerToHigher");
+   }
+
+   public boolean isOrderBySquareLowerToHigher(){
+        this.methods.waitForPageLoad();
+       LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("squareCardResultSearch"));
+       double auxValue = 0;
+       while (elementos.isEmpty() == false){
+           WebElement tmpElement = elementos.removeFirst();
+           String textElement = tmpElement.getText().toLowerCase();
+           double key = Double.valueOf(textElement.trim().split(" ")[0].trim());
+           if(key > auxValue || key == auxValue || auxValue == 0){
+               auxValue = key;
+           }else{
+               return false;
+           }
+       }
+
+
+       return true;
+   }
+
 }

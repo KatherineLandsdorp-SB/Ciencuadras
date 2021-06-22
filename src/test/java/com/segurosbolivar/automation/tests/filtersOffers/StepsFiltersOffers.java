@@ -48,7 +48,7 @@ public class StepsFiltersOffers extends BaseComponent {
 
     @Step("The user click filter combo box type of real state")
     public StepsFiltersOffers clickFilterTypeRealState(){
-        this.methods.openFilterTypeRealState();
+        this.filters.openFilterTypeRealState();
         return this;
     }
 
@@ -99,6 +99,19 @@ public class StepsFiltersOffers extends BaseComponent {
         boolean result =  this.filters.searchTypesOfRealStatesResult(typeRealState);
         Assert.assertTrue(result);
         return  this;
+    }
+
+    @Step("The user order results by square lower to higher")
+    public StepsFiltersOffers clickOrderBySquareLowerToHigher(){
+    this.filters.setOrderBySquareLowerToHigher();
+    return this;
+    }
+
+    @Step("The user verify ")
+    public StepsFiltersOffers verifyOrderBySquareLowerToHigher(){
+        boolean isCorrectOrder  = this.filters.isOrderBySquareLowerToHigher();
+        Assert.assertTrue(isCorrectOrder);
+        return this;
     }
 
 

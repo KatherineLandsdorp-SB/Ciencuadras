@@ -13,16 +13,23 @@ public class StepsSearch extends BaseComponent {
             methods.waitingForElement("inputCode", 10);
             methods.sendKeysText("inputCode", code);
             methods.clickElementJs("buttonCode");
-            methods.validationElementDisplayed("page");
+
+        return this;
+    }
+
+    @Step("Valdiate success")
+    public StepsSearch validateSuccess(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("pageCodeSearch", 10);
+        methods.validationElementDisplayed("pageCodeSearch");
         return this;
     }
 
 
-    @Step("The user clicks on the login Link in the Header")
-    public StepsSearch searchProject(){
-        methods.waitForPageLoad();
-        methods.waitingForElement("leaseProject", 10);
-        methods.waitForPageLoad();
+    @Step("Valdiate fail")
+    public StepsSearch validateFail(){
+        methods.waitElementExplicitTime("pageCodeFailSearch", 20);
+        methods.validationElementDisplayed("pageCodeFailSearch");
         return this;
     }
 

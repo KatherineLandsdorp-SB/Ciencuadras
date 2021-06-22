@@ -1,5 +1,6 @@
 package com.segurosbolivar.automation.tests.search;
 
+import com.segurosbolivar.automation.commons.Data;
 import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,13 +10,15 @@ public class RunnerSearch extends Hooks {
 
     @Test(
             priority = 1,
-            testName = "36",
-            description = "Validación login transversal"
+            testName = "70",
+            description = "Busqueda por codigo de proyecto"
     )
     public void searchCode(){
         try {
+            Data data = new Data(70);
             steps.get()
-                    .searchCode("183150-1440107");
+                    .searchCode(data.getDataField("code"))
+                    .validateSuccess();
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }
@@ -23,13 +26,15 @@ public class RunnerSearch extends Hooks {
 
     @Test(
             priority = 1,
-            testName = "36",
-            description = "Validación login transversal"
+            testName = "71",
+            description = "Busqueda por codigo de proyecto fallida"
     )
     public void searchCodeFail(){
         try {
+            Data data = new Data(71);
             steps.get()
-                    .searchCode("183150-1411100");
+                    .searchCode(data.getDataField("code"))
+                    .validateFail();
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }

@@ -29,7 +29,7 @@ public class RunnerLogin extends Hooks {
     @Test(
             priority = 1,
             testName = "36",
-            description = "Validación login transversal"
+            description = "Validación login con opcion recuerdame"
     )
     public void loginCheck(){
         try {
@@ -50,7 +50,7 @@ public class RunnerLogin extends Hooks {
     @Test(
             priority = 1,
             testName = "36",
-            description = "Validación login transversal"
+            description = "Validación login con correo no registrado"
     )
     public void loginFail(){
         try {
@@ -58,7 +58,7 @@ public class RunnerLogin extends Hooks {
             steps.get()
                     .clickEntry()
                     .clickEnterButton()
-                    .fillAll(data.getDataField("mail"), data.getDataField("password"))
+                    .fillAll(data.getDataField("mail")+"x", data.getDataField("password"))
                     .clickOnLogin()
                     .validateFailed();
         } catch (Exception ex) {

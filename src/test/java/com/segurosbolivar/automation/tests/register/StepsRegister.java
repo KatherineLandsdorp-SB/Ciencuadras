@@ -42,10 +42,10 @@ public class StepsRegister extends BaseComponent {
             methods.sendKeysText("confirmPassRegister", confirmPassword);
             methods.scrollTo("terms");
             methods.clickElement("terms");
-            methods.clickElement("register");
+            methods.clickElementJs("register");
             methods.waitForPageLoad();
-            methods.waitingForElement("navbarDropdown", 300);
-            methods.getEntity("navbarDropdown").getText();
+            methods.waitingForElement("helloUser", 30);
+            methods.getEntity("helloUser").getText();
         return this;
     }
 

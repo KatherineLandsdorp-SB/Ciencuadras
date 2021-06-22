@@ -1,5 +1,5 @@
 package com.segurosbolivar.automation.tests.register;
-
+import com.segurosbolivar.automation.commons.Data;
 import com.segurosbolivar.automation.commons.Hooks;
 import org.testng.annotations.Test;
 
@@ -12,19 +12,20 @@ public class RunnerRegister extends Hooks {
             testName = "35",
             description = "Registro transversal"
     )
-    public void successfullRegister() {
-//        steps.get()
-//                .clickEntry()
-//                .clickRegister()
-//                .fillAll(
-//                        data.getField("firstName" ),
-//                        data.getField("secondName"),
-//                        data.getField("lastName"),
-//                        data.getField("secondLastName"),
-//                        data.getField("mail"),
-//                        data.getField("password"),
-//                        data.getField("confirmPassword")
-//                );
+    public void successfullRegister() throws Exception {
+        Data data = new Data(35);
+        steps.get()
+                .clickEntry()
+                .clickRegister()
+                .fillAll(
+                        data.getDataField("firstName" ),
+                        data.getDataField("secondName"),
+                        data.getDataField("lastName"),
+                        data.getDataField("secondLastName"),
+                        data.getDataField("mail"),
+                        data.getDataField("password"),
+                        data.getDataField("confirmPassword")
+                );
     }
 
     @Test(
@@ -32,10 +33,18 @@ public class RunnerRegister extends Hooks {
             testName = "34",
             description = "El usuario crea correctamente una cuenta de Ciencudadras con el perfil de aliado"
     )
-    public void RegisterAllied() {
+    public void RegisterAllied() throws Exception {
+        Data data = new Data(35);
         this.steps.get()
                 .ClickEntryLoginAllied()
                 .ClickLabelCreateAccountAllied()
-                .FillAllFieldsCreateAccountAllied("BOB", "fiftye20200922@yopmail.com", "8600025032", "3084665689", "bogota", "1111.SB2021", "1111.SB2021");
+                .FillAllFieldsCreateAccountAllied(
+                        data.getDataField("firstName" ),
+                        data.getDataField("mail"),
+                        data.getDataField("nit"),
+                        data.getDataField("cellPhone"),
+                        data.getDataField("city"),
+                        data.getDataField("pass"),
+                        data.getDataField("passConfirmate"));
     }
 }

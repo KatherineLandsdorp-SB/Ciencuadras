@@ -8,7 +8,6 @@ public class RunnerLogin extends Hooks {
     ThreadLocal<StepsLogin> steps = ThreadLocal.withInitial(StepsLogin::new);
 
     @Test(
-            priority = 1,
             testName = "36",
             description = "Validación login transversal"
     )
@@ -27,8 +26,7 @@ public class RunnerLogin extends Hooks {
     }
 
     @Test(
-            priority = 1,
-            testName = "36",
+            testName = "74",
             description = "Validación login con opcion recuerdame"
     )
     public void loginCheck(){
@@ -48,8 +46,7 @@ public class RunnerLogin extends Hooks {
 
 
     @Test(
-            priority = 1,
-            testName = "36",
+            testName = "75",
             description = "Validación login con correo no registrado"
     )
     public void loginFail(){

@@ -72,6 +72,7 @@ public class Services {
     }
 
 
+
     public org.json.simple.JSONObject getDataService(String platform, Integer caso) {
         try {
             String scope = "services/data";
@@ -129,33 +130,39 @@ public class Services {
 
     public static String setExecution(String idSuite, String idEnvironment, String idStateExecution, String idProvider, String idTypeAutomation, String idTypeExecution, String jiraProject, String JiraIssue, String executor) {
         try {
+            String scope = "services/metrics";
+            getToken(scope);
             Date myDate = new Date();
             String requestDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(myDate);
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
+
             String data =
-                    "{\n  \"idSuite\": "+"\""+idSuite+"\",\n" +
+                    "{\n\n  \"idSuite\": "+"\""+idSuite+"\",\n" +
+                            "\"idProvider\" : "+"\""+idProvider+"\",\n" +
+                            "\"idTypeExecution\" : "+"\""+idTypeExecution+"\",\n" +
+                            "\"idTypeAutomation\" : "+"\""+idTypeAutomation+"\",\n" +
                             " \"idEnvironment\": "+"\""+idEnvironment+"\",\n" +
                             "\"idStateExecution\" : "+"\""+idStateExecution+"\",\n" +
-                            "\"idProvider\" : "+"\""+idProvider+"\",\n" +
-                            "\"idTypeAutomation\" : "+"\""+idTypeAutomation+"\",\n" +
-                            "\"idTypeExecution\" : "+"\""+idTypeExecution+"\",\n" +
                             "\"jiraProject\" : "+"\""+jiraProject+"\",\n" +
                             "\"jiraIssue\" : "+"\""+JiraIssue+"\",\n" +
-                            "\"requestDate\": "+"\""+requestDate +"\",\n" +
+                            "\"requestDate\":"+"\""+requestDate+"\",\n" +
                             "\"executor\": "+"\""+executor+"\"}";
 
-            MediaType mediaType = MediaType.parse("application/json");
+            okhttp3.MediaType mediaType = okhttp3.MediaType.parse("application/json");
+            System.out.println("debuuuuggggggggggggg execution" + data);
             RequestBody body = RequestBody.create(mediaType, data);
-            Request request = new Request.Builder()
+            okhttp3.Request request = new okhttp3.Request.Builder()
                     .url("https://7scw0ywnt9.execute-api.us-east-1.amazonaws.com/prod/executions")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .addHeader("Authorization", "Bearer " + token)
                     .build();
             Response response = client.newCall(request).execute();
+            System.out.println(response);
             JSONObject myObject = new JSONObject(response.body().string());
             String IdExecution = myObject.getString("id");
+            //Allure.addAttachment("body: ", response.body().string());
             TestingExecution.idExecution = IdExecution;
             return IdExecution;
         } catch (Exception e) {
@@ -182,7 +189,7 @@ public class Services {
                             "\"endDate\" : "+"\""+endDate+"\",\n" +
                             "\"dataInputExecution\" : "+"\""+dataInputExecution+"\",\n" +
                             "\"dataOutputExecution\": "+"\""+dataOutputExecution +"\"}";
-            //System.out.println("debuuuuggggggggggggg" + data);
+            System.out.println("debuuuuggggggggggggg data" + data);
 
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, data);
@@ -195,6 +202,8 @@ public class Services {
                     .addHeader("Authorization", "Bearer " + token)
                     .build();
             Response response = client.newCall(request).execute();
+            System.out.println("debuuuuggggggggggggg response" + response.body().string());
+
         } catch (Exception e) {
             e.printStackTrace();
         }

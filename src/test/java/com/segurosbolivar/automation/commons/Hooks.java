@@ -20,6 +20,7 @@ public class Hooks {
         TestingExecution.nameExecution = Utils.getNameExecution();
         Services.getElements(PropertyManager.getConfigValueByKey("idPortal"), PropertyManager.getConfigValueByKey("idEnvironment"));
         if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
+
             Services.setExecution(PropertyManager.getConfigValueByKey("idSuite"),
                     PropertyManager.getConfigValueByKey("idEnvironment"),
                     PropertyManager.getConfigValueByKey("idStateExecution"),
@@ -29,19 +30,15 @@ public class Hooks {
                     PropertyManager.getConfigValueByKey("jiraProject"),
                     PropertyManager.getConfigValueByKey("JiraIssue"),
                     PropertyManager.getConfigValueByKey("executor"));
-            //Services.setExecution("3", "2", "1", "AUT", "A00T01", "Holman Cabezas");
         }
+
     }
 
     @BeforeMethod
     public void before(Method method) throws JSONException {
         Test test = method.getAnnotation(Test.class);
         TestingExecution.testName = test.testName();
-        TestingExecution.testName = test.testName();
         DriverFactory.setWebDriver(test.description(), TestingExecution.nameExecution);
-//        JSONObject jsonObj = services.getDataService(PropertyManager.getConfigValueByKey("idPortal"), test.testName());
-//        TestingExecution.dataCase = jsonObj.getJSONArray("data");
-//        TestingExecution.dataAssert = jsonObj.getJSONObject("asserts");
         DriverFactory.getDriverFacade().getWebDriver().get(PropertyManager.getConfigValueByKey("url"));
     }
 

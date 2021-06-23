@@ -11,6 +11,7 @@ public class RunnerFiltersOffers extends Hooks {
 
 
     @Test(
+            priority = 4,
             testName = "47",
             description = "Realizar búsqueda por mapa con los diferentes filtros"
     )
@@ -37,6 +38,7 @@ public class RunnerFiltersOffers extends Hooks {
 
 
     @Test(
+            priority = 4,
             testName = "48",
             description = "Realizar búsqueda con varios tipos de inmueble"
     )
@@ -68,6 +70,7 @@ public class RunnerFiltersOffers extends Hooks {
 
 
     @Test(
+            priority = 4,
             testName = "49",
             description = "Realizar de búsqueda sin criterios de coincidencia"
     )
@@ -89,6 +92,7 @@ public class RunnerFiltersOffers extends Hooks {
     }
 
     @Test(
+            priority = 4,
             testName = "64",
             description = "Ordenar Resultados: Área: Menor a Mayor."
     )
@@ -107,6 +111,7 @@ public class RunnerFiltersOffers extends Hooks {
 
 
     @Test(
+            priority = 4,
             testName = "65",
             description = "Ordenar Resultados: Área: Mayor a Menor."
     )

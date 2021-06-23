@@ -9,7 +9,7 @@ public class RunnerSearch extends Hooks {
     ThreadLocal<StepsSearch> steps = ThreadLocal.withInitial(StepsSearch::new);
 
     @Test(
-            priority = 1,
+            priority = 3,
             testName = "70",
             description = "Busqueda por codigo de proyecto"
     )
@@ -25,7 +25,7 @@ public class RunnerSearch extends Hooks {
     }
 
     @Test(
-            priority = 1,
+            priority = 3,
             testName = "71",
             description = "Busqueda por codigo de proyecto fallida"
     )

@@ -17,9 +17,6 @@ public class TestListener  implements ISuiteListener, ITestListener{
 
     private final boolean isLocalExecution = Boolean.parseBoolean(PropertyManager.getConfigValueByKey("driverLocal"));
 
-
-
-
     @Attachment(value = "Test Evidence", type = "image/png")
     public byte[] takeScreenshot(String description) {
         Allure.addAttachment(description, new ByteArrayInputStream(((TakesScreenshot) DriverFactory.getDriverFacade().getWebDriver()).getScreenshotAs(OutputType.BYTES)));
@@ -40,7 +37,7 @@ public class TestListener  implements ISuiteListener, ITestListener{
             }
          if((iTestResult.getAttribute("executionSuccess") == null)){
              iTestResult.setAttribute("executionSuccess", "true");
-            this.sendTestMethodStatus(iTestResult, "4");
+             this.sendTestMethodStatus(iTestResult, "4");
          }
     }
 
@@ -52,7 +49,6 @@ public class TestListener  implements ISuiteListener, ITestListener{
         if (!isLocalExecution) {
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
         }
-        driver.quit();
         if((iTestResult.getAttribute("executionFailure") == null)) {
             iTestResult.setAttribute("executionFailure", "true");
             this.sendTestMethodStatus(iTestResult, "3");

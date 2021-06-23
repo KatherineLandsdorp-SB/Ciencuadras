@@ -9,7 +9,7 @@ public class RunnerFiltersOffers extends Hooks {
 
     ThreadLocal<StepsFiltersOffers> steps = ThreadLocal.withInitial(StepsFiltersOffers::new);
 
-/*
+
     @Test(
             testName = "47",
             description = "Realizar búsqueda por mapa con los diferentes filtros"
@@ -87,9 +87,7 @@ public class RunnerFiltersOffers extends Hooks {
             Assert.fail(ex.getMessage());
         }
     }
-*/
 
-    /*
     @Test(
             testName = "64",
             description = "Ordenar Resultados: Área: Menor a Mayor."
@@ -108,8 +106,6 @@ public class RunnerFiltersOffers extends Hooks {
     }
 
 
-
-     */
     @Test(
             testName = "65",
             description = "Ordenar Resultados: Área: Mayor a Menor."

@@ -1,40 +1,42 @@
 package com.segurosbolivar.automation.tests.filtersOffers;
-
+import com.segurosbolivar.automation.commons.Methods;
 import io.qameta.allure.Step;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import org.testng.Assert;
 
 public class StepsFiltersOffers extends BaseComponent {
 
-    private MethodsFiltersOffers methods = new MethodsFiltersOffers();
+    private MethodsFiltersOffers methods_1 = new MethodsFiltersOffers();
+
+    private Methods methods = new Methods();
 
     @Step("The user clicks on the header label Offers ")
     public StepsFiltersOffers clickOnEntryOffers(){
-        this.methods.header.clickOnEntryOffers();
+        this.header.clickOnEntryOffers();
         return this;
     }
 
     @Step("The user clicks on the header Buy used Real State")
     public StepsFiltersOffers clickOnBuyUsedRealState(){
-        this.methods.header.selectBuyUsedRealState();
+        this.header.selectBuyUsedRealState();
         return this;
     }
 
     @Step("The user clicks on the header Buy new Real State")
     public StepsFiltersOffers clickOnBuyNewRealState(){
-        this.methods.header.selectBuyNewRealState();
+        this.header.selectBuyNewRealState();
         return this;
     }
 
     @Step("The user clicks on the label projects on plans")
     public StepsFiltersOffers clickProjectsOnPlans(){
-        this.methods.clickLabelProjectsOnPlans();
+        this.methods_1.clickLabelProjectsOnPlans();
         return this;
     }
 
     @Step("The user get tittle  of the result banner")
     public StepsFiltersOffers getTittleResultBanner(String  expectedTittle){
-        String text = this.methods.getTittleTextResult();
+        String text = this.methods_1.getTittleTextResult();
         Assert.assertEquals(text, expectedTittle);
         return  this;
     }
@@ -42,7 +44,7 @@ public class StepsFiltersOffers extends BaseComponent {
     @Step("The user set value on the filter cities and Hoods")
     public StepsFiltersOffers setFilterCityOrHoods(String valueFilter){
         this.filters.filterCityOrHoods(valueFilter);
-        this.methods.body.randomClickOnBody();
+        this.body.randomClickOnBody();
         return this;
     }
 
@@ -55,34 +57,35 @@ public class StepsFiltersOffers extends BaseComponent {
     @Step("The user select filter, type of real state (Apartment)")
     public StepsFiltersOffers setFilterTypeRealStateApartment(){
         this.filters.filterSelectTypeApartment();
-        this.methods.body.randomClickOnBody();
+        this.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user select filter, type of real state (House)")
     public StepsFiltersOffers setFilterTypeRealStateHouse(){
         this.filters.filterSelectTypeHouse();
-        this.methods.body.randomClickOnBody();
+        this.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user select filter, type of real state (Office)")
     public StepsFiltersOffers setFilterTypeRealStateOffice(){
         this.filters.filterSelectTypeOffice();
-        this.methods.body.randomClickOnBody();
+        this.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user closes the popup save search")
     public StepsFiltersOffers clickExitPopUp() {
-        methods.clickExitPopUp();
+        this.filters.clickExitPopUp();
+        this.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user open select Map mode view")
     public StepsFiltersOffers clickOpenMap(){
         this.filters.clickButtonGoogleMap();
-        this.methods.body.randomClickOnBody();
+        this.body.randomClickOnBody();
         return  this;
     }
 
@@ -126,5 +129,43 @@ public class StepsFiltersOffers extends BaseComponent {
         Assert.assertTrue(isCorrectOrder);
         return this;
     }
+
+    @Step("The user set One bedroom in the filters search")
+    public  StepsFiltersOffers setOneBedRoomFilter(){
+        this.filters.setOneBedroomFilter();
+        return this;
+    }
+
+    @Step("The user set three bathrooms in the filter search")
+    public StepsFiltersOffers setThreeBathRoomsFilter(){
+        this.filters.setThreeBathroomsFilter();
+        return  this;
+    }
+
+    @Step("The user set one parking in the filters search")
+    public  StepsFiltersOffers setOneParkingFilter(){
+        this.filters.setOneParkingFilter();
+        return  this;
+    }
+
+    @Step("The user set a max value price int the filters search ")
+    public StepsFiltersOffers setMaxValuePriceOfferFilter(String value){
+        this.filters.setMaxValuePriceOffers(value);
+        return  this;
+    }
+
+    @Step("The user save his search with a name")
+    public StepsFiltersOffers saveSearchFilter(String nameSearch){
+        this.filters.saveSearchFilter(nameSearch);
+        return  this;
+    }
+
+    @Step("The system request log in to save search filter")
+    public StepsFiltersOffers isSystemRequestLogIn(){
+        boolean isLogInPresent = this.methods.visibleElement("panelLoginPopUp",50);
+        Assert.assertTrue(isLogInPresent);
+        return  this;
+    }
+
 
 }

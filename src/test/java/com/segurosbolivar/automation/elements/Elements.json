@@ -105,7 +105,7 @@
   },
   "body": {
     "GetFieldBy": "Id",
-    "ValueToFind": "body"
+    "ValueToFind": "result"
   },
   "tittleInfoMarker": {
     "GetFieldBy": "Xpath",
@@ -219,8 +219,6 @@
     "GetFieldBy": "Id",
     "ValueToFind": "mat-checkbox-33"
   },
-
-
   "filterCheckBoxOrderBy": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"FiltersResultForm\"]/nav/div[2]/div/mat-form-field/div/div[1]"
@@ -237,6 +235,42 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-option-3\"]"
   },
+  "filterOneBedroom": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-1"
+  },
+  "filterThreeBathrooms": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-7"
+  },
+  "filterOneParking": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-9"
+  },
+  "filterMaxPriceValueOffer": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-2"
+  },
+
+
+
+  "buttonSaveSearchFilter": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "btn_top_save"
+  },
+  "fieldTextSaveSearchFilter": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-4"
+  },
+  "buttonPopupSaveSearchFilter": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"instructionsSearchForm\"]/div/button[1]"
+  },
+  "panelLoginPopUp": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "user"
+  }
+
 
 
 }

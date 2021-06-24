@@ -6,13 +6,7 @@ public class MethodsFiltersOffers extends BaseComponent {
 
     private Methods methods = new Methods();
 
-    public void clickExitPopUp(){
-        boolean hidden = methods.visibleElement("exitPopupSaveSearch",20);
-        if(hidden!=false){
-            methods.waitingForElement("exitPopupSaveSearch",5);
-            methods.clickElementJs("exitPopupSaveSearch");
-        }
-    }
+
 
 
     public void clickLabelProjectsOnPlans(){

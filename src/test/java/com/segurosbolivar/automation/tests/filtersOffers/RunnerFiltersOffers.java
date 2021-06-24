@@ -42,7 +42,7 @@ public class RunnerFiltersOffers extends Hooks {
             testName = "48",
             description = "Realizar búsqueda con varios tipos de inmueble"
     )
-    public void SerchWithManyOptionsRealState(){
+    public void SearchWithManyOptionsRealState(){
 
         try {
             Data data = new Data(48);
@@ -127,5 +127,33 @@ public class RunnerFiltersOffers extends Hooks {
                 .verifyOrderBySquareHigherToLower();
 
     }
+
+
+
+    @Test(
+            priority = 4,
+            testName = "79",
+            description = "Filtrar por: Tipo de inmueble, Habitaciones, Baños, Parqueadero, Precio, Más. Guardar búsqueda sin loguearse."
+    )
+    public void SearchWithFiltersAndVerifyLogin(){
+        try {
+            Data data = new Data(79);
+            this.steps.get()
+                    .clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateHouse()
+                    .clickExitPopUp()
+                    .setOneBedRoomFilter()
+                    .setThreeBathRoomsFilter()
+                    .setOneParkingFilter()
+                    .setMaxValuePriceOfferFilter(data.getDataField("price"))
+                    .saveSearchFilter(data.getDataField("nameSave"))
+                    .isSystemRequestLogIn();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+    }
+
 
 }

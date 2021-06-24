@@ -413,12 +413,21 @@ public class Methods extends BaseTest {
         getEntity(entity).sendKeys(text);
     }
 
+
+
     public void sendKeysTextJs(String entity, String text) {
         clickElementJs(entity);
         getEntity(entity).clear();
         getEntity(entity).sendKeys(text);
     }
 
+
+    public void sendKeysTextJsAndPressEnter(String entity, String text) {
+        clickElementJs(entity);
+        getEntity(entity).clear();
+        getEntity(entity).sendKeys(text);
+        getEntity(entity).sendKeys(Keys.ENTER);
+    }
 
     //Enviar enter
     public void sendKeysEnter(String entity) {
@@ -454,6 +463,11 @@ public class Methods extends BaseTest {
     }
 
 
+    public void keyEnter(String entity){
+
+    }
+
+
     // Autocomplete material angular
     public void angularMaterialAutocomplete(String entity, String search) {
         waitingForElement(entity, 5);
@@ -462,6 +476,8 @@ public class Methods extends BaseTest {
         getEntity(entity).sendKeys(Keys.ARROW_DOWN);
         getEntity(entity).sendKeys(Keys.ENTER);
     }
+
+
 
     /* ============================================================= */
     /* =================== FIN ELEMENTOS ANGULAR =================== */

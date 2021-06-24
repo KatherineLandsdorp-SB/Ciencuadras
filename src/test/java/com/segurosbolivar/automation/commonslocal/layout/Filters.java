@@ -143,6 +143,54 @@ public class Filters {
         return true;
     }
 
+    public void clickExitPopUp(){
+        boolean hidden = methods.visibleElement("exitPopupSaveSearch",20);
+        if(hidden!=false){
+            methods.waitingForElement("exitPopupSaveSearch",5);
+            methods.clickElementJs("exitPopupSaveSearch");
+        }
+    }
+
+
+    public  void  setOneBedroomFilter(){
+            this.methods.waitingForElement("filterOneBedroom",3);
+            this.methods.clickElementJs("filterOneBedroom");
+            this.methods.waitForPageLoad();
+    }
+
+    public void setThreeBathroomsFilter(){
+        this.methods.waitingForElement("filterThreeBathrooms",3);
+        this.methods.clickElementJs("filterThreeBathrooms");
+        this.methods.waitForPageLoad();
+    }
+
+    public void setOneParkingFilter(){
+        this.methods.waitingForElement("filterOneParking",3);
+        this.methods.clickElementJs("filterOneParking");
+        this.methods.waitForPageLoad();
+    }
+
+    public void setMaxValuePriceOffers(String value){
+        this.methods.waitingForElement("filterMaxPriceValueOffer",3);
+        this.methods.sendKeysTextJsAndPressEnter("filterMaxPriceValueOffer",value);
+        this.methods.waitForPageLoad();
+    }
+
+    private void clickOnSaveSearchFilter(){
+        this.methods.waitingForElement("buttonSaveSearchFilter",3);
+        this.methods.clickElementJs("buttonSaveSearchFilter");
+    }
+
+    public void  saveSearchFilter(String nameSearch){
+        clickOnSaveSearchFilter();
+        boolean hidden = methods.visibleElement("fieldTextSaveSearchFilter",30);
+        if(hidden!=false){
+           this.methods.sendKeysTextJs("fieldTextSaveSearchFilter", nameSearch);
+           this.methods.clickElementJs("buttonPopupSaveSearchFilter");
+        }
+
+
+    }
 
 
 }

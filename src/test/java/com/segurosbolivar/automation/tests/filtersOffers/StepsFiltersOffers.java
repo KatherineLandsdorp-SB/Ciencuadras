@@ -44,7 +44,6 @@ public class StepsFiltersOffers extends BaseComponent {
     @Step("The user set value on the filter cities and Hoods")
     public StepsFiltersOffers setFilterCityOrHoods(String valueFilter){
         this.filters.filterCityOrHoods(valueFilter);
-        this.body.randomClickOnBody();
         return this;
     }
 
@@ -57,21 +56,19 @@ public class StepsFiltersOffers extends BaseComponent {
     @Step("The user select filter, type of real state (Apartment)")
     public StepsFiltersOffers setFilterTypeRealStateApartment(){
         this.filters.filterSelectTypeApartment();
-        this.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user select filter, type of real state (House)")
     public StepsFiltersOffers setFilterTypeRealStateHouse(){
         this.filters.filterSelectTypeHouse();
-        this.body.randomClickOnBody();
         return this;
     }
 
     @Step("The user select filter, type of real state (Office)")
     public StepsFiltersOffers setFilterTypeRealStateOffice(){
         this.filters.filterSelectTypeOffice();
-        this.body.randomClickOnBody();
+
         return this;
     }
 
@@ -85,7 +82,6 @@ public class StepsFiltersOffers extends BaseComponent {
     @Step("The user open select Map mode view")
     public StepsFiltersOffers clickOpenMap(){
         this.filters.clickButtonGoogleMap();
-        this.body.randomClickOnBody();
         return  this;
     }
 

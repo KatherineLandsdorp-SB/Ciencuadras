@@ -393,8 +393,10 @@ public class Methods extends BaseTest {
     public void clickElementAction(String entity) {
         WebElement element = getEntity(entity);
         Actions action = new Actions(driverFacade.getWebDriver());
-        action.moveToElement(element).perform();
+        JavascriptExecutor executor = (JavascriptExecutor) driverFacade.getWebDriver();
+        executor.executeScript("arguments[0].focus();", element);
         action.moveToElement(element).click().perform();
+
     }
 
     //waitTime

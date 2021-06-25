@@ -35,8 +35,6 @@ public class RunnerFiltersOffers extends Hooks {
     }
 
 
-
-
     @Test(
             priority = 4,
             testName = "48",
@@ -59,6 +57,7 @@ public class RunnerFiltersOffers extends Hooks {
                     .clickExitPopUp()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateHouse()
+                    .setThreeBathRoomsFilter()
                     .searchResultRealStateExist(inputRealStates);
 
         } catch (Exception ex) {

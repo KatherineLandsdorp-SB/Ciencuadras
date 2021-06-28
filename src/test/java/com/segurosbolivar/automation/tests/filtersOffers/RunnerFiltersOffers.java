@@ -21,20 +21,18 @@ public class RunnerFiltersOffers extends Hooks {
             this.steps.get()
                     .clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
-                   .clickFilterTypeRealState()
+                    .setFilterCityOrHoods(data.getDataField("city"))
+                    .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
-                     .clickExitPopUp()
-                   .setFilterCityOrHoods(data.getDataField("city"))
+                    .clickExitPopUp()
                    .clickOpenMap()
-                   .clickOnMarkerResultMap(data.getAssertField("validate"));
+                    .clickOnMarkerResultMap(data.getAssertField("validate"));
 
          } catch (Exception ex) {
         Assert.fail(ex.getMessage());
 
         }
     }
-
-
 
 
     @Test(
@@ -59,6 +57,7 @@ public class RunnerFiltersOffers extends Hooks {
                     .clickExitPopUp()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateHouse()
+                    .setThreeBathRoomsFilter()
                     .searchResultRealStateExist(inputRealStates);
 
         } catch (Exception ex) {
@@ -154,6 +153,7 @@ public class RunnerFiltersOffers extends Hooks {
             Assert.fail(e.getMessage());
         }
     }
+
 
 
 }

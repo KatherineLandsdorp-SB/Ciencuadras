@@ -72,10 +72,11 @@ public class Filters {
 
 
     public String clickOnMarkerResultMap() {
-        this.methods.waitForPageLoad();
+
         String text = "";
-        if (this.methods.visibleElement("mapCanva", 60)) {
-            this.methods.waitingForElement("markerMapResult", 20);
+        boolean isPresent = this.methods.visibleElement("mapCanva", 30);
+        if (isPresent) {
+            this.methods.waitingForElement("markerMapResult", 10);
             this.methods.clickElementJs("markerMapResult");
             this.methods.waitingForElement("tittleInfoMarker", 5);
             text = this.methods.getEntity("tittleInfoMarker").getText();

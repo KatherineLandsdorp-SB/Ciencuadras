@@ -413,7 +413,30 @@ public class Methods extends BaseTest {
         getEntity(entity).sendKeys(text);
     }
 
+    public static String mailGenerator() {
+        String MailGenerate = "";
+        int caracteres = (int) (Math.random() * 20) + 5;
+        for (int i = 0; i < caracteres; i++) {
+            int codigoAscii = (int) Math.floor(Math.random() * (122 - 97) + 97);
+            MailGenerate = MailGenerate + (char) codigoAscii;
+        }
+        String NumGenerate = "";
+        int numeros = (int) (Math.random() * 0) + 3;
+        for (int i = 0; i < numeros; i++) {
+            int numberAscii = (int) Math.floor(Math.random() * (57 - 48) + 48);
+            NumGenerate = NumGenerate + (char) numberAscii;
+        }
+        //List<String> listaMail = Arrays.asList("@gmail", "@outlook", "@hotmail", "@tuempresa", "@yopmail");
+        //Random aleatorioMail = new Random();
+        //String Mail = listaMail.get(aleatorioMail.nextInt(listaMail.size()));
+        String Mail = "@yopmail";
+        List<String> listaDomain = Arrays.asList(".es",".com");
+        Random aleatorioDomain = new Random();
+        String Dominio = listaDomain.get(aleatorioDomain.nextInt(listaDomain.size()));
+        MailGenerate = MailGenerate+NumGenerate+Mail+Dominio;
 
+        return MailGenerate;
+    }
 
     public void sendKeysTextJs(String entity, String text) {
         clickElementJs(entity);

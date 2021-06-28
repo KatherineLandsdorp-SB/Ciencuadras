@@ -24,7 +24,6 @@ public class RunnerRegister extends Hooks {
                             data.getDataField("secondName"),
                             data.getDataField("lastName"),
                             data.getDataField("secondLastName"),
-                            data.getDataField("mail"),
                             data.getDataField("password"),
                             data.getDataField("confirmPassword")
                     );

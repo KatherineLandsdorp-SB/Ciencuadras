@@ -27,7 +27,6 @@ public class StepsRegister extends BaseComponent {
             String secondName,
             String lastName,
             String secondLastName,
-            String mail,
             String password,
             String confirmPassword
     ){
@@ -37,7 +36,7 @@ public class StepsRegister extends BaseComponent {
             methods.sendKeysText("secondNameRegister", secondName);
             methods.sendKeysText("lastNameRegister", lastName);
             methods.sendKeysText("secondLastnameRegister", secondLastName);
-            methods.sendKeysText("mailRegister", mail);
+            methods.sendKeysText("mailRegister", methods.mailGenerator());
             methods.sendKeysText("passRegister", password);
             methods.sendKeysText("confirmPassRegister", confirmPassword);
             methods.scrollTo("terms");

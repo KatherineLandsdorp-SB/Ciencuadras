@@ -1,12 +1,15 @@
 package com.segurosbolivar.automation.tests.register;
-import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import io.qameta.allure.Step;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 
 public class StepsRegister extends BaseComponent {
 
-    private Methods methods = new Methods();
+    public  StepsRegister(JSONObject json){
+        super(json);
+    }
+
 
     @Step("The user clicks on the login Link in the Header")
     public StepsRegister clickEntry(){

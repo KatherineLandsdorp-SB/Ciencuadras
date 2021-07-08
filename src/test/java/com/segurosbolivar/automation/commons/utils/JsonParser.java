@@ -1,6 +1,5 @@
 package com.segurosbolivar.automation.commons.utils;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
 

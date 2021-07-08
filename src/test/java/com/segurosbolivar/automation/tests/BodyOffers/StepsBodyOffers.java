@@ -1,13 +1,15 @@
 package com.segurosbolivar.automation.tests.BodyOffers;
-
-import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import io.qameta.allure.Step;
+import org.json.simple.JSONObject;
 import org.testng.asserts.SoftAssert;
 
 public class StepsBodyOffers extends BaseComponent {
 
-    private Methods methods = new Methods();
+
+    public  StepsBodyOffers(JSONObject json){
+        super(json);
+    }
 
     @Step("The user clicks on the header label Offers")
     public StepsBodyOffers clickOnEntryOffers() {

@@ -1,10 +1,13 @@
 package com.segurosbolivar.automation.commonslocal.layout;
-
-import com.segurosbolivar.automation.commons.Methods;
+import com.segurosbolivar.automation.commons.methods.web.WebGlobalMethods;
 
 public class Header {
 
-    private Methods methods = new Methods();
+    private WebGlobalMethods methods;
+
+    public Header(WebGlobalMethods methods) {
+        this.methods = methods;
+    }
 
     public void clickOnEntryLoginAllied(){
         methods.waitForPageLoad();
@@ -22,6 +25,7 @@ public class Header {
     }
 
     public void clickOnEntryOffers(){
+
         methods.waitForPageLoad();
         methods.waitingForElement("entryOffersView", 5);
         methods.clickElement("entryOffersView");
@@ -44,6 +48,40 @@ public class Header {
     public void selectRentRealState(){
         methods.waitingForElement("labelRentRealState", 5);
         methods.clickElement("labelRentRealState");
+        methods.waitForPageLoad();
+    }
+
+    public void selectTools(){
+        methods.waitingForElement("labelToolsHeader",5);
+        methods.clickElement("labelToolsHeader");
+        methods.waitForPageLoad();
+    }
+
+    public void selectFromExterior(){
+        methods.waitingForElement("labelFromExteriorHeader",5);
+        methods.clickElement("labelFromExteriorHeader");
+        methods.waitForPageLoad();
+    }
+
+    public void selectBlog(){
+        methods.waitingForElement("labelBlogHeader",5);
+        methods.clickElement("labelBlogHeader");
+        methods.waitForPageLoad();
+    }
+
+    public void selectRealState(){
+        methods.waitingForElement("labelAlliedHeader",5);
+        methods.clickElement("labelAlliedHeader");
+        methods.waitingForElement("labelRealStateHeader",5);
+        methods.clickElement("labelRealStateHeader");
+        methods.waitForPageLoad();
+    }
+
+    public void selectBuilders(){
+        methods.waitingForElement("labelAlliedHeader",5);
+        methods.clickElement("labelAlliedHeader");
+        methods.waitingForElement("labelBuildersHeader",5);
+        methods.clickElement("labelBuildersHeader");
         methods.waitForPageLoad();
     }
 

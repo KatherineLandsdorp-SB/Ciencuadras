@@ -1,97 +1,132 @@
 package com.segurosbolivar.automation.commons;
-import com.segurosbolivar.automation.commons.helpers.DriverFactory;
-import com.segurosbolivar.automation.commons.utils.PropertyManager;
-import com.segurosbolivar.automation.commons.utils.TestingExecution;
-import com.segurosbolivar.automation.commons.utils.TrackingWriter;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
+import com.segurosbolivar.automation.commons.helpers.driver.mobile.DriverMobileBase;
+import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
+import com.segurosbolivar.automation.commons.models.CaseExecution;
+import com.segurosbolivar.automation.commons.models.Execution;
+import com.segurosbolivar.automation.commons.services.MetricsService;
+import com.segurosbolivar.automation.commons.utils.Constants;
 import com.segurosbolivar.automation.commons.utils.Utils;
+import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import lombok.SneakyThrows;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.*;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.annotations.Test;
+import org.testng.annotations.TestType;
+
 import java.io.ByteArrayInputStream;
+import java.text.SimpleDateFormat;
 
-public class TestListener  implements ISuiteListener, ITestListener{
+@Log4j2
+public class TestListener implements ITestListener {
 
-    private final boolean isLocalExecution = Boolean.parseBoolean(PropertyManager.getConfigValueByKey("driverLocal"));
+    @Attachment(value = "Test Evidence Mobile", type = "image/png")
+    public byte[] takeMobileScreenshot() {
+        AppiumDriver<?> driver = DriverMobileBase.getCurrentDriver();
+        TakesScreenshot scrShot = null;
+        try {
+            Allure.addAttachment("failure", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+            scrShot = ((TakesScreenshot) driver);
 
-    @Attachment(value = "Test Evidence", type = "image/png")
-    public byte[] takeScreenshot(String description) {
-        Allure.addAttachment(description, new ByteArrayInputStream(((TakesScreenshot) DriverFactory.getDriverFacade().getWebDriver()).getScreenshotAs(OutputType.BYTES)));
-        TakesScreenshot scrShot = ((TakesScreenshot) DriverFactory.getDriverFacade().getWebDriver());
+        } catch (Exception ex) {
+            log.error("Mobile Driver: " + driver);
+        }
         return scrShot.getScreenshotAs(OutputType.BYTES);
     }
 
-    @Override
-    public void onTestStart(ITestResult result) {
-
-    }
-
-    @Override
-    public void onTestSuccess(ITestResult iTestResult) {
-        if (!isLocalExecution) {
-                WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
-                ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
-            }
-         if((iTestResult.getAttribute("executionSuccess") == null)){
-             iTestResult.setAttribute("executionSuccess", "true");
-             this.sendTestMethodStatus(iTestResult, "4");
-         }
+    @Attachment(value = "Test Evidence Web", type = "image/png")
+    public byte[] takeWebScreenshot() {
+        WebDriver driver = DriverWebBase.getCurrentDriver();
+        TakesScreenshot scrShot = null;
+        try {
+            Allure.addAttachment("failure", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+            scrShot = ((TakesScreenshot) driver);
+        } catch (Exception ex) {
+            log.error("Web Driver: " + driver);
+        }
+        return scrShot.getScreenshotAs(OutputType.BYTES);
     }
 
 
+    @Override
+    public void onTestStart(ITestResult iTestResult) {
+        Test testAnnotation = Utils.getTestAnnotation(iTestResult);
+        boolean isLocalDriver = Boolean.parseBoolean(DriverConstants.DRIVER_LOCAL);
+        if (!isLocalDriver) {
+            DriverWebBase.getDriverRemote(testAnnotation.description());
+        }
+    }
+
+    @SneakyThrows
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        WebDriver driver = DriverFactory.getDriverFacade().getWebDriver();
+        Test testAnnotation = Utils.getTestAnnotation(iTestResult);
+        TestType testType = testAnnotation.testType();
 
-        if (!isLocalExecution) {
-            ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
-        }
-        if((iTestResult.getAttribute("executionFailure") == null)) {
-            iTestResult.setAttribute("executionFailure", "true");
-            this.sendTestMethodStatus(iTestResult, "3");
-        }
-    }
-
-    @Override
-    public void onTestSkipped(ITestResult iTestResult) {
-
-    }
-
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-
-    }
-
-    @Override
-    public void onStart(ITestContext iTestContext) {
-
-    }
-
-    @Override
-    public void onFinish(ITestContext iTestContext) {
-
-    }
-
-    @Override
-    public void onStart(ISuite suite) {
-    }
-
-    @Override
-    public void onFinish(ISuite suite) {
-
-    }
-
-    private void sendTestMethodStatus(ITestResult iTestResult, String executionState) {
-
-        if (!Boolean.valueOf(PropertyManager.getConfigValueByKey("driverLocal"))) {
-            TestingExecution executionInfo = Utils.getExecutionInfo(iTestResult);
-            executionInfo.executionState = executionState;
-            TrackingWriter write = new TrackingWriter();
-            write.setCaseExecution(executionInfo);
+        boolean isLocalDriver = Boolean.parseBoolean(DriverConstants.DRIVER_LOCAL);
+        if (testType == TestType.WEB) {
+            takeWebScreenshot();
+            if (!isLocalDriver) {
+                WebDriver driver = DriverWebBase.getCurrentDriver();
+                ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+            }
+            DriverWebBase.quitDriver();
+        } else if (testType == TestType.MOBILE) {
+            takeMobileScreenshot();
+            DriverMobileBase.quitDriver();
+        } else if (testType == TestType.HYBRID) {
+            takeWebScreenshot();
+            takeMobileScreenshot();
+            DriverMobileBase.quitDriver();
+            DriverWebBase.quitDriver();
         }
 
+
+        sendTestMethodStatus(iTestResult, Constants.TEST_FAIL);
     }
+
+
+    @SneakyThrows
+    @Override
+    public void onTestSuccess(ITestResult iTestResult) {
+        boolean isLocalDriver = Boolean.parseBoolean(DriverConstants.DRIVER_LOCAL);
+
+        Object[] params = iTestResult.getParameters();
+        if (params.length > 0) {
+            Data data = (Data) params[0];
+            System.out.println(data.getData().toJSONString());
+
+        }
+        /*
+        if (!isLocalDriver) {
+            WebDriver driver = DriverWebBase.getCurrentDriver();
+            ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+        }
+
+         */
+        sendTestMethodStatus(iTestResult, Constants.TEST_SUCCESS);
+    }
+
+    private void sendTestMethodStatus(ITestResult iTestResult, Integer idStateExecution) throws JsonProcessingException {
+        Test testAnnotation = Utils.getTestAnnotation(iTestResult);
+        Integer idExecution = Execution.id;
+        CaseExecution caseExecution = CaseExecution.builder()
+                .idExecution(idExecution)
+                .idCase(testAnnotation.id())
+                .idStateExecution(idStateExecution)
+                .startDate(new SimpleDateFormat(Constants.DATE_TIME_FORMAT).format(iTestResult.getStartMillis()))
+                .endDate(new SimpleDateFormat(Constants.DATE_TIME_FORMAT).format(iTestResult.getEndMillis()))
+                .build();
+        MetricsService.setCaseExecution(caseExecution);
+    }
+
 }

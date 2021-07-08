@@ -1,14 +1,17 @@
 package com.segurosbolivar.automation.tests.login;
-
-import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import io.qameta.allure.Step;
+import org.json.simple.JSONObject;
 
 public class StepsLogin  extends BaseComponent {
-    private Methods methods = new Methods();
+
+    public StepsLogin(JSONObject json){
+        super(json);
+    }
 
     @Step("The user clicks on the login Link in the Header")
     public StepsLogin clickEntry(){
+            methods.waitForPageLoad();
             header.clickOnEntry();
         return this;
     }

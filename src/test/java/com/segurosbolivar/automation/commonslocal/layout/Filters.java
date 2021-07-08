@@ -1,6 +1,7 @@
 package com.segurosbolivar.automation.commonslocal.layout;
-
-import com.segurosbolivar.automation.commons.Methods;
+import com.segurosbolivar.automation.commons.methods.web.WebGlobalMethods;
+import com.segurosbolivar.automation.commons.methods.web.factory.WebMethodsFactory;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.WebElement;
 
 import java.util.HashMap;
@@ -8,7 +9,11 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class Filters {
-    private Methods methods = new Methods();
+    private WebGlobalMethods methods;
+
+    public  Filters(WebGlobalMethods methods){
+        this.methods = methods;
+    }
 
     public void filterCityOrHoods(String filterValue) {
         methods.waitForPageLoad();
@@ -30,20 +35,11 @@ public class Filters {
             WebElement tmpElement = elementos.pop();
             String textElement = tmpElement.getText().toLowerCase();
             String key = textElement.split(" ")[0].trim();
-            if (table.containsKey(key)) {
-                int value = table.get(key) + 1;
-                table.replace(key, value);
-            } else {
+            if (!table.containsKey(key)) {
                 return false;
             }
         }
-
-        if (table.values().contains(0)) {
-            return false;
-        } else {
             return true;
-        }
-
     }
 
     public void filterSelectTypeApartment() {
@@ -74,7 +70,7 @@ public class Filters {
     public String clickOnMarkerResultMap() {
 
         String text = "";
-        boolean isPresent = this.methods.visibleElement("mapCanva", 30);
+        boolean isPresent = this.methods.visibleElement("mapCanva", 60);
         if (isPresent) {
             this.methods.waitingForElement("markerMapResult", 10);
             this.methods.clickElementJs("markerMapResult");
@@ -86,7 +82,7 @@ public class Filters {
 
     public void openFilterTypeRealState() {
         methods.waitForPageLoad();
-        methods.waitingForElement("filterCheckBoxRealState", 3);
+        methods.waitingForElement("filterCheckBoxRealState", 5);
         methods.clickElementJs("filterCheckBoxRealState");
     }
 
@@ -105,7 +101,7 @@ public class Filters {
         this.methods.waitForPageLoad();
         LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("squareCardResultSearch"));
         double auxValue = 0;
-        while (elementos.isEmpty() == false) {
+        while (elementos.size() >0) {
             WebElement tmpElement = elementos.removeFirst();
             String textElement = tmpElement.getText().toLowerCase();
             double key = Double.valueOf(textElement.trim().split(" ")[0].trim());
@@ -116,6 +112,7 @@ public class Filters {
                 return false;
             }
         }
+        elementos = null;
         return true;
     }
 
@@ -129,7 +126,7 @@ public class Filters {
         this.methods.waitForPageLoad();
         LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("squareCardResultSearch"));
         double auxValue = 0;
-        while (elementos.isEmpty() == false) {
+        while (elementos.size()>0) {
             WebElement tmpElement = elementos.removeFirst();
             String textElement = tmpElement.getText().toLowerCase();
             double key = Double.valueOf(textElement.trim().split(" ")[0].trim());
@@ -140,7 +137,7 @@ public class Filters {
                 return false;
             }
         }
-
+        elementos = null;
         return true;
     }
 

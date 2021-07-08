@@ -251,9 +251,6 @@
     "GetFieldBy": "Id",
     "ValueToFind": "mat-input-2"
   },
-
-
-
   "buttonSaveSearchFilter": {
     "GetFieldBy": "Id",
     "ValueToFind": "btn_top_save"
@@ -269,7 +266,44 @@
   "panelLoginPopUp": {
     "GetFieldBy": "Id",
     "ValueToFind": "user"
+  },
+
+
+  "labelToolsHeader": {
+  "GetFieldBy": "Xpath",
+  "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[5]/a"
+  },
+  "labelFromExteriorHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[7]/a"
+  },
+  "labelBlogHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[9]/span"
+  },
+  "labelAlliedHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[8]/a"
+  },
+  "labelRealStateHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[8]/div/a[1]"
+  },
+  "labelBuildersHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[8]/div/a[2]"
+  },
+  "buttonClosePopupFromExterior": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-video/div/div[1]/button"
   }
+
+
+
+
+
+
+
 
 
 

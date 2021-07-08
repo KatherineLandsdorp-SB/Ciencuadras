@@ -1,24 +1,32 @@
 package com.segurosbolivar.automation.tests.filtersOffers;
 
 import com.segurosbolivar.automation.commons.Data;
+import com.segurosbolivar.automation.commons.Elements;
 import com.segurosbolivar.automation.commons.Hooks;
+import com.segurosbolivar.automation.commons.dataprovider.DataProviderSource;
+import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
+import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.annotations.TestType;
 
 public class RunnerFiltersOffers extends Hooks {
 
-    ThreadLocal<StepsFiltersOffers> steps = ThreadLocal.withInitial(StepsFiltersOffers::new);
-
+    StepsFiltersOffers steps;
 
     @Test(
             priority = 4,
-            testName = "47",
+            id = 47,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
             description = "Realizar búsqueda por mapa con los diferentes filtros"
     )
-    public void SearchApartmentsToBuyMap(){
+    public void SearchApartmentsToBuyMap(Data data){
         try {
-            Data data = new Data(47);
-            this.steps.get()
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps
                     .clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
                     .setFilterCityOrHoods(data.getDataField("city"))
@@ -27,27 +35,27 @@ public class RunnerFiltersOffers extends Hooks {
                     .clickExitPopUp()
                    .clickOpenMap()
                     .clickOnMarkerResultMap(data.getAssertField("validate"));
-
+            DriverWebBase.quitDriver();
          } catch (Exception ex) {
         Assert.fail(ex.getMessage());
 
         }
     }
 
-
     @Test(
             priority = 4,
-            testName = "48",
+            id = 48,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
             description = "Realizar búsqueda con varios tipos de inmueble"
     )
-    public void SearchWithManyOptionsRealState(){
-
+    public void SearchWithManyOptionsRealState(Data data){
         try {
-            Data data = new Data(48);
             String[] inputRealStates = {data.getDataField("realState_1"), data.getDataField("realState_2"),data.getDataField("realState_3")};
-
-            this.steps.get()
-                    .clickOnEntryOffers()
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateOffice()
@@ -59,10 +67,9 @@ public class RunnerFiltersOffers extends Hooks {
                     .setFilterTypeRealStateHouse()
                     .setThreeBathRoomsFilter()
                     .searchResultRealStateExist(inputRealStates);
-
+            DriverWebBase.quitDriver();
         } catch (Exception ex) {
         Assert.fail(ex.getMessage());
-
         }
     }
 
@@ -70,14 +77,17 @@ public class RunnerFiltersOffers extends Hooks {
 
     @Test(
             priority = 4,
-            testName = "49",
+            id = 49,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
             description = "Realizar de búsqueda sin criterios de coincidencia"
     )
-    public void SearchWithoutCriteria(){
+    public void SearchWithoutCriteria(Data data){
         try{
-            Data data = new Data(49);
-            this.steps.get()
-                    .clickOnEntryOffers()
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
                     .clickOnBuyNewRealState()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
@@ -85,60 +95,82 @@ public class RunnerFiltersOffers extends Hooks {
                     .setFilterCityOrHoods(data.getDataField("city"))
                     .clickProjectsOnPlans()
                     .getTittleResultBanner(data.getAssertField("validate"));
+            DriverWebBase.quitDriver();
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }
     }
 
+
+
     @Test(
             priority = 4,
-            testName = "64",
-            description = "Ordenar Resultados: Área: Menor a Mayor."
+            id = 64,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
+            description = "Ordenar Resultados: Area: Menor a Mayor."
     )
-    public void OrderSquareLowerToHigher(){
-            this.steps.get()
-                    .clickOnEntryOffers()
+    public void OrderSquareLowerToHigher(Data data){
+        try {
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
-                    .setFilterCityOrHoods("ibague")
+                    .setFilterCityOrHoods(data.getDataField("city"))
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
                     .clickExitPopUp()
                     .clickOrderBySquareLowerToHigher()
                     .verifyOrderBySquareLowerToHigher();
-
+            DriverWebBase.quitDriver();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
     }
 
 
     @Test(
             priority = 4,
-            testName = "65",
-            description = "Ordenar Resultados: Área: Mayor a Menor."
+            id = 65,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
+            description = "Ordenar Resultados: Area: Mayor a Menor."
     )
-    public void OrderSquareHigherToLower(){
-        this.steps.get()
-                .clickOnEntryOffers()
-                .clickOnBuyUsedRealState()
-                .setFilterCityOrHoods("ibague")
-                .clickFilterTypeRealState()
-                .setFilterTypeRealStateApartment()
-                .clickExitPopUp()
-                .clickOrderBySquareHigherToLower()
-                .verifyOrderBySquareHigherToLower();
-
+    public void OrderSquareHigherToLower(Data data){
+        try {
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .setFilterCityOrHoods(data.getDataField("city"))
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateApartment()
+                    .clickExitPopUp()
+                    .clickOrderBySquareHigherToLower()
+                    .verifyOrderBySquareHigherToLower();
+            DriverWebBase.quitDriver();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
     }
 
 
 
     @Test(
             priority = 4,
-            testName = "79",
+            id = 79,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
             description = "Filtrar por: Tipo de inmueble, Habitaciones, Baños, Parqueadero, Precio, Más. Guardar búsqueda sin loguearse."
     )
-    public void SearchWithFiltersAndVerifyLogin(){
+    public void SearchWithFiltersAndVerifyLogin(Data data){
         try {
-            Data data = new Data(79);
-            this.steps.get()
-                    .clickOnEntryOffers()
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateHouse()
@@ -149,11 +181,10 @@ public class RunnerFiltersOffers extends Hooks {
                     .setMaxValuePriceOfferFilter(data.getDataField("price"))
                     .saveSearchFilter(data.getDataField("nameSave"))
                     .isSystemRequestLogIn();
+            DriverWebBase.quitDriver();
         }catch (Exception e){
             Assert.fail(e.getMessage());
         }
     }
-
-
 
 }

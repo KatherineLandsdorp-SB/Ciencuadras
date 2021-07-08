@@ -1,15 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<suite name="Test Suite" parallel="classes" thread-count="1">
-    <test name="CienCuadras Test" parallel="methods" thread-count="10">
-        <listeners>
-            <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
-        </listeners>
-        <classes>
-      <class name="com.segurosbolivar.automation.tests.login.RunnerLogin"></class>
-         <class name="com.segurosbolivar.automation.tests.register.RunnerRegister"></class>
-          <class name="com.segurosbolivar.automation.tests.search.RunnerSearch"></class>
-            <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers"></class>
-            <class  name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers"></class>
-        </classes>
-    </test>
-</suite>
+<!DOCTYPE suite SYSTEM "testng/testng-1.0.dtd">
+<suite name="regression" id="6" parallel="methods" thread-count="20">
+    <listeners>
+        <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
+    </listeners>
+    <test name="Seguros Bolivar Test"  >
+        <classes >
+            <!--
+            <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers">
+                   <methods>
+                       <include name="verifyDetailOffer"/>
+                       <include name="verifyDetailRentOffer"/>
+                       <include name="verifyDetailCardOfferList"/>
+
+
+                   </methods>
+               </class>
+
+            <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
+                <methods>
+
+
+                    <include name="OrderSquareLowerToHigher"></include>
+                    <include name="OrderSquareHigherToLower"></include>
+                    <include name="SearchWithManyOptionsRealState"></include>
+                    <include name="SearchWithoutCriteria"></include>
+                    <include name="SearchApartmentsToBuyMap"></include>
+                    <include name="SearchWithFiltersAndVerifyLogin"></include>
+
+                </methods>
+            </class>
+
+            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
+                <methods>
+                    <include name="loginTransversal"></include>
+
+                    <include name="loginCheck"></include>
+                    <include name="loginFail"></include>
+                </methods>
+            </class>
+
+            <class name="com.segurosbolivar.automation.tests.register.RunnerRegister">
+                <methods>
+                    <include name="successfullRegister"></include>
+                    <include name="RegisterAllied"></include>
+                </methods>
+            </class>
+            <class name="com.segurosbolivar.automation.tests.search.RunnerSearch">
+            <methods>
+                <include name="searchCode"></include>
+                <include name="searchCodeFail"></include>
+            </methods>
+            </class>
+    -->
+            <class name="com.segurosbolivar.automation.tests.header.RunnerHeader">
+                <methods>
+
+                </methods>
+            </class>
+            </classes>
+        </test>
+    </suite>

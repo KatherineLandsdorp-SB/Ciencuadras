@@ -1,14 +1,14 @@
 package com.segurosbolivar.automation.tests.filtersOffers;
-import com.segurosbolivar.automation.commons.Methods;
 import io.qameta.allure.Step;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 
 public class StepsFiltersOffers extends BaseComponent {
 
-    private MethodsFiltersOffers methods_1 = new MethodsFiltersOffers();
-
-    private Methods methods = new Methods();
+    public StepsFiltersOffers(JSONObject json){
+        super(json);
+    }
 
     @Step("The user clicks on the header label Offers ")
     public StepsFiltersOffers clickOnEntryOffers(){
@@ -30,13 +30,18 @@ public class StepsFiltersOffers extends BaseComponent {
 
     @Step("The user clicks on the label projects on plans")
     public StepsFiltersOffers clickProjectsOnPlans(){
-        this.methods_1.clickLabelProjectsOnPlans();
+        this.methods.waitForPageLoad();
+        this.methods.waitElementExplicitTime("labelProjectOnPlans",5);
+        this.methods.clickElementJs("labelProjectOnPlans");
+        this.methods.waitForPageLoad();
         return this;
     }
 
     @Step("The user get tittle  of the result banner")
     public StepsFiltersOffers getTittleResultBanner(String  expectedTittle){
-        String text = this.methods_1.getTittleTextResult();
+        String text = "";
+        this.methods.waitingForElement("tittleBannerResult",10);
+        text = this.methods.getEntity("tittleBannerResult").getText();
         Assert.assertEquals(text, expectedTittle);
         return  this;
     }

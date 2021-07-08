@@ -1,11 +1,13 @@
 package com.segurosbolivar.automation.tests.search;
-
-import com.segurosbolivar.automation.commons.Methods;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import io.qameta.allure.Step;
+import org.json.simple.JSONObject;
 
 public class StepsSearch extends BaseComponent {
-    private Methods methods = new Methods();
+
+    public StepsSearch(JSONObject json){
+        super(json);
+    }
 
     @Step("The user clicks on the login Link in the Header")
     public StepsSearch searchCode(String code){

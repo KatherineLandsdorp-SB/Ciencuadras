@@ -39,4 +39,21 @@ public class RunnerSearch extends Hooks {
             Assert.fail(ex.getMessage());
         }
     }
+
+    @Test(
+            priority = 3,
+            testName = "102",
+            description = " Realizar búsqueda por proyecto "
+    )
+    public void searchProject(){
+        try {
+            Data data = new Data(102);
+            steps.get()
+                    .banner.buyNewProperty()
+                    .searchCode(data.getDataField("code"))
+                    .validateFail();
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+        }
+    }
 }

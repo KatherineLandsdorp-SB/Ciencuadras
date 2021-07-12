@@ -13,7 +13,6 @@ public class StepsSearch extends BaseComponent {
             methods.waitingForElement("inputCode", 10);
             methods.sendKeysText("inputCode", code);
             methods.clickElementJs("buttonCode");
-
         return this;
     }
 

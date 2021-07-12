@@ -17,11 +17,8 @@
                </class>
 
 
-
             <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
                 <methods>
-
-
                     <include name="OrderSquareLowerToHigher"></include>
                     <include name="OrderSquareHigherToLower"></include>
                     <include name="SearchWithManyOptionsRealState"></include>
@@ -53,14 +50,11 @@
                 <include name="searchCodeFail"></include>
             </methods>
             </class>
-
-
-            <!--
             <class name="com.segurosbolivar.automation.tests.header.RunnerHeader">
                 <methods>
-
+                    <include name="NavBarHeader"></include>
                 </methods>
-            </class> -->
+            </class>
             </classes>
         </test>
     </suite>

@@ -25,10 +25,10 @@ public class RunnerHeader extends Hooks {
                       .clickOnBuyUsedRealState()
                       .clickOnRentRealState()
                       .clickOnFromExterior()
+                      .clickOnTools()
                       .closePopUpFromExterior()
                       .clickOnBuilders()
                       .clickOnRealState()
-                      .clickOnTools()
                       .clickOnBlog();
             DriverWebBase.quitDriver();
         }catch (Exception e){

@@ -83,14 +83,7 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-instructions-save-search/div/div[1]/button"
   },
-  "labelBuyUsedRealState": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[3]/a"
-  },
-  "labelRentRealState": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[4]/a"
-  },
+
   "buttonMap": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"btn_top_map\"]/span"
@@ -111,14 +104,7 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "/html/body/app-root/app-resultview/div/div/div[1]/div[2]/div/div[2]/app-maps/div/agm-map/div[1]/div/div/div[1]/div[3]/div/div[4]/div[1]/div/div/div/div/div/div/span[1]/b"
   },
-  "labelBuyNewRealState": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[2]/span"
-  },
-  "labelProjectOnPlans": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "blue-print-content"
-  },
+
   "tittleBannerResult": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"resultados\"]/div/div[3]/div/h2"
@@ -267,36 +253,52 @@
     "GetFieldBy": "Id",
     "ValueToFind": "user"
   },
-
-
-  "labelToolsHeader": {
-  "GetFieldBy": "Xpath",
-  "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[5]/a"
-  },
-  "labelFromExteriorHeader": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[7]/a"
-  },
-  "labelBlogHeader": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[9]/span"
-  },
-  "labelAlliedHeader": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[8]/a"
-  },
-  "labelRealStateHeader": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[8]/div/a[1]"
-  },
-  "labelBuildersHeader": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"navbarText\"]/ul[1]/li[8]/div/a[2]"
+  "labelProjectOnPlans": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "blue-print-content"
   },
   "buttonClosePopupFromExterior": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-video/div/div[1]/button"
+  },
+  "labelAlliedHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Aliados') and contains(@href,'#')]"
+  },
+  "labelBuildersHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Constructoras') and contains(@href,'/constructoras')]"
+  },
+  "labelToolsHeader": {
+  "GetFieldBy": "Xpath",
+  "ValueToFind": "//*[contains(text(),'Herramientas') and contains(@href,'/herramientas')]"
+  },
+  "labelFromExteriorHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Desde el exterior') and contains(@href,'/colombianos/exterior')]"
+  },
+  "labelBuyNewRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Compra Nuevo') or  contains(@href,'/proyectos-vivienda-nueva')]"
+  },
+  "labelBlogHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Blog') or  contains(@href,'/blog') ]"
+  },
+  "labelBuyUsedRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Compra Usado') or  contains(@href,'/venta')]"
+  },
+
+  "labelRentRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Arrendar inmueble')]"
+  },
+  "labelRealStateHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Inmobiliarias') and contains(@href,'/inmobiliaria')]"
   }
+
 
 
 

@@ -58,7 +58,7 @@ public class MetricsService {
         data.put("idCase", caseExecution.idCase);
         data.put("idStateExecution", caseExecution.idStateExecution);
         data.put("startDate", caseExecution.startDate);
-        data.put("endDate", caseExecution.startDate);
+        data.put("endDate", caseExecution.endDate);
         data.put("dataInputExecution", caseExecution.dataInputExecution);
         data.put("dataOutputExecution", caseExecution.dataOutputExecution);
         String request = mapper.writeValueAsString(data);

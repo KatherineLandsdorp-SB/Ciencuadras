@@ -1,7 +1,6 @@
 package com.segurosbolivar.automation.commonslocal.layout;
+
 import com.segurosbolivar.automation.commons.methods.web.WebGlobalMethods;
-import com.segurosbolivar.automation.commons.methods.web.factory.WebMethodsFactory;
-import org.json.simple.JSONObject;
 import org.openqa.selenium.WebElement;
 
 import java.util.HashMap;

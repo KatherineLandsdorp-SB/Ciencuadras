@@ -16,8 +16,6 @@
                    </methods>
                </class>
 
-
-
             <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
                 <methods>
 
@@ -54,13 +52,11 @@
             </methods>
             </class>
 
-
-            <!--
             <class name="com.segurosbolivar.automation.tests.header.RunnerHeader">
                 <methods>
 
                 </methods>
-            </class> -->
+            </class>
             </classes>
         </test>
     </suite>

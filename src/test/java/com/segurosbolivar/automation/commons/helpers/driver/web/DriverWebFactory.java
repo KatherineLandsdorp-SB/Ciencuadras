@@ -1,7 +1,6 @@
 package com.segurosbolivar.automation.commons.helpers.driver.web;
 
 import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
-import com.segurosbolivar.automation.commons.utils.PropertyManager;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,8 +9,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Log4j2
 public class DriverWebFactory {

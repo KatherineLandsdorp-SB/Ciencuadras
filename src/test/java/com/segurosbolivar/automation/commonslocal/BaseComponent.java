@@ -1,8 +1,6 @@
 package com.segurosbolivar.automation.commonslocal;
 
-import com.segurosbolivar.automation.commons.Elements;
 import com.segurosbolivar.automation.commons.methods.web.WebGlobalMethods;
-import com.segurosbolivar.automation.commons.methods.web.factory.WebMethodsFactory;
 import com.segurosbolivar.automation.commonslocal.layout.Body;
 import com.segurosbolivar.automation.commonslocal.layout.Filters;
 import com.segurosbolivar.automation.commonslocal.layout.Header;

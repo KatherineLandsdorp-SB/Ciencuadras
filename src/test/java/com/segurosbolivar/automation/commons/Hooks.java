@@ -1,6 +1,5 @@
 package com.segurosbolivar.automation.commons;
 
-import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import com.segurosbolivar.automation.commons.helpers.driver.mobile.DriverMobileBase;
 import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
 import com.segurosbolivar.automation.commons.models.Execution;
@@ -18,8 +17,6 @@ import org.testng.annotations.BeforeSuite;
 
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Hooks {
     @BeforeSuite(alwaysRun = true)

@@ -23,3 +23,4 @@ allure-results/
 *.zip
 *.tar.gz
 *.rar
+/chromedriver

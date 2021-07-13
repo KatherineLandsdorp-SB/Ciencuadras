@@ -3,7 +3,6 @@ package com.segurosbolivar.automation.commons.methods.web;
 import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
 import com.segurosbolivar.automation.commons.utils.JsonParser;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -16,20 +15,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.*;
-import java.util.NoSuchElementException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.assertFalse;
-import static org.testng.Assert.assertEquals;
 
 public class WebGlobalMethods {
 

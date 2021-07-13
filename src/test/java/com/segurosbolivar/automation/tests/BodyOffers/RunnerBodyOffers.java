@@ -4,7 +4,6 @@ import com.segurosbolivar.automation.commons.Elements;
 import com.segurosbolivar.automation.commons.Hooks;
 import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
-import com.segurosbolivar.automation.commons.utils.PropertyManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.TestType;

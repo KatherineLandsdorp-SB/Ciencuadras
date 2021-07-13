@@ -1,6 +1,7 @@
 package com.segurosbolivar.automation.tests.filtersOffers;
-import io.qameta.allure.Step;
+
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
+import io.qameta.allure.Step;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 

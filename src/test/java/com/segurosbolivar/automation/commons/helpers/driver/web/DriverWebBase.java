@@ -3,10 +3,8 @@ package com.segurosbolivar.automation.commons.helpers.driver.web;
 import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 public class DriverWebBase {

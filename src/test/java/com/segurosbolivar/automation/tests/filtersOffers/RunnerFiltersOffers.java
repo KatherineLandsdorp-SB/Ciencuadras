@@ -144,10 +144,10 @@ public class RunnerFiltersOffers extends Hooks {
             this.steps = new StepsFiltersOffers(Elements.getWebElements());
             this.steps.clickOnEntryOffers()
                     .clickOnBuyUsedRealState()
-                    .setFilterCityOrHoods(data.getDataField("city"))
                     .clickFilterTypeRealState()
                     .setFilterTypeRealStateApartment()
                     .clickExitPopUp()
+                    .setFilterCityOrHoods(data.getDataField("city"))
                     .clickOrderBySquareHigherToLower()
                     .verifyOrderBySquareHigherToLower();
             DriverWebBase.quitDriver();

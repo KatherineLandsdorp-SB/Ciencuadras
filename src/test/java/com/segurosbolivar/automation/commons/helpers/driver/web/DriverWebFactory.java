@@ -4,6 +4,7 @@ import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -72,7 +73,7 @@ public class DriverWebFactory {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", DriverConstants.WEB_BROWSER_NAME);
         capabilities.setCapability("version", DriverConstants.WEB_BROWSER_VERSION);
-        capabilities.setCapability("platform", DriverConstants.WEB_OS_PLATFORM); // If this cap isn't specified, it will just get the any available one
+        capabilities.setCapability(CapabilityType.PLATFORM_NAME, DriverConstants.WEB_OS_PLATFORM); // If this cap isn't specified, it will just get the any available one
         capabilities.setCapability("build", name);
         capabilities.setCapability("name", description);
         capabilities.setCapability("network", Boolean.parseBoolean(DriverConstants.WEB_NETWORK_ENABLE)); // To enable network logs

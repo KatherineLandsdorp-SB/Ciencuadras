@@ -12,7 +12,7 @@ public class StepsSearch extends BaseComponent {
     @Step("The user clicks on the login Link in the Header")
     public StepsSearch searchCode(String code){
             methods.waitForPageLoad();
-            methods.waitingForElement("inputCode", 10);
+            methods.waitingForElement("inputCode", 5);
             methods.sendKeysText("inputCode", code);
             methods.clickElementJs("buttonCode");
 
@@ -22,7 +22,7 @@ public class StepsSearch extends BaseComponent {
     @Step("Valdiate success")
     public StepsSearch validateSuccess(){
         methods.waitForPageLoad();
-        methods.waitingForElement("pageCodeSearch", 10);
+        methods.waitingForElement("pageCodeSearch", 5);
         methods.validationElementDisplayed("pageCodeSearch");
         return this;
     }

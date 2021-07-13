@@ -16,10 +16,6 @@
                    </methods>
                </class>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e578759cb895c4749640e75cc9801018e7eaa84
             <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
                 <methods>
                     <include name="OrderSquareLowerToHigher"></include>
@@ -35,9 +31,10 @@
             <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
                 <methods>
                     <include name="loginTransversal"></include>
-
+    <!--
                     <include name="loginCheck"></include>
                     <include name="loginFail"></include>
+-->
                 </methods>
             </class>
 
@@ -53,6 +50,7 @@
                 <include name="searchCodeFail"></include>
             </methods>
             </class>
+
             <class name="com.segurosbolivar.automation.tests.header.RunnerHeader">
                 <methods>
                     <include name="NavBarHeader"></include>

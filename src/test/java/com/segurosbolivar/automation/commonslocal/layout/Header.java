@@ -53,7 +53,7 @@ public class Header {
 
     public void selectTools(){
         methods.waitingForElement("labelToolsHeader",5);
-        methods.clickElement("labelToolsHeader");
+        methods.clickElementJs("labelToolsHeader");
         methods.waitForPageLoad();
     }
 

@@ -25,8 +25,8 @@ public class RunnerHeader extends Hooks {
                       .clickOnBuyUsedRealState()
                       .clickOnRentRealState()
                       .clickOnFromExterior()
-                      .clickOnTools()
                       .closePopUpFromExterior()
+                      .clickOnTools()
                       .clickOnBuilders()
                       .clickOnRealState()
                       .clickOnBlog();

@@ -89,8 +89,6 @@ public class TestListener implements ITestListener {
             DriverMobileBase.quitDriver();
             DriverWebBase.quitDriver();
         }
-
-
         sendTestMethodStatus(iTestResult, Constants.TEST_FAIL);
     }
 

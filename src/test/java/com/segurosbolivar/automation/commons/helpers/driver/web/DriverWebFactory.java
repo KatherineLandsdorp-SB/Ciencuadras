@@ -80,6 +80,7 @@ public class DriverWebFactory {
         capabilities.setCapability("visual", Boolean.parseBoolean(DriverConstants.WEB_VISUAL_ENABLE)); // To enable step by step screenshot
         capabilities.setCapability("video", Boolean.parseBoolean(DriverConstants.WEB_VIDEO_ENABLE)); // To enable video recording
         capabilities.setCapability("console", Boolean.parseBoolean(DriverConstants.WEB_CONSOLE_ENABLE)); // To capture console logs
+        capabilities.setCapability("idleTimeout",270);
         return capabilities;
     }
 

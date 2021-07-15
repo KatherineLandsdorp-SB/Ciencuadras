@@ -5,7 +5,7 @@
     </listeners>
     <test name="Seguros Bolivar Test"  >
         <classes >
-<!--
+
             <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers">
                    <methods>
                        <include name="verifyDetailOffer"/>
@@ -13,19 +13,20 @@
                        <include name="verifyDetailCardOfferList"/>
                    </methods>
                </class>
--->
+
             <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
                 <methods>
+
                     <include name="SearchWithManyOptionsRealState"></include>
-                    <!--<include name="OrderSquareLowerToHigher"></include>
+                    <include name="OrderSquareLowerToHigher"></include>
                     <include name="OrderSquareHigherToLower"></include>
                     <include name="SearchWithoutCriteria"></include>
                     <include name="SearchApartmentsToBuyMap"></include>
                     <include name="SearchWithFiltersAndVerifyLogin"></include>
--->
+
                 </methods>
             </class>
-<!--
+
             <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
                 <methods>
                     <include name="loginTransversal"></include>
@@ -52,7 +53,7 @@
                     <include name="NavBarHeader"></include>
                 </methods>
             </class>
-            -->
+
             </classes>
         </test>
     </suite>

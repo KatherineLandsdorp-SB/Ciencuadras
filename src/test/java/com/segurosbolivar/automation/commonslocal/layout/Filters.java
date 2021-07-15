@@ -55,7 +55,7 @@ public class Filters {
 
     public void filterSelectTypeOffice() {
         methods.waitElementExplicitTime("checkBoxOffice", 5);
-        methods.clickElement("checkBoxOffice");
+        methods.clickElementJs("checkBoxOffice");
         methods.waitForPageLoad();
     }
 

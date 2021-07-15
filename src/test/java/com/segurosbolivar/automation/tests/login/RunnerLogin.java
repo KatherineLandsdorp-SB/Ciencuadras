@@ -38,8 +38,7 @@ public class RunnerLogin extends Hooks {
         }
     }
 
-/*
-les falta el json de la data
+
     @Test(
             id = 74,
             testType = TestType.WEB,
@@ -85,6 +84,6 @@ les falta el json de la data
             Assert.fail(ex.getMessage());
         }
     }
-*/
+
 
 }

@@ -69,15 +69,15 @@
   },
   "checkBoxApartment": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-option-7\"]/mat-pseudo-checkbox"
+    "ValueToFind": "//*/mat-option/span[.= ' Apartamento ']"
   },
   "checkBoxHouse": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-option-9\"]/mat-pseudo-checkbox"
+    "ValueToFind": "//*/mat-option/span[.= ' Casa ']"
   },
   "checkBoxOffice": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-option-11\"]/mat-pseudo-checkbox"
+    "ValueToFind": "//*/mat-option/span[contains(text(),'Oficina')]"
   },
   "exitPopupSaveSearch": {
     "GetFieldBy": "Xpath",

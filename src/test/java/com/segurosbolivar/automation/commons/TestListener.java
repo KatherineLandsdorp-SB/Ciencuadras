@@ -90,6 +90,44 @@ public class TestListener implements ITestListener {
             DriverWebBase.quitDriver();
         }
         sendTestMethodStatus(iTestResult, Constants.TEST_FAIL);
+        /*
+
+         System.out.println("THIS TEST FAILED!");
+        String idTest = Utils.getTestAnnotation(result).testName();
+        String description = Utils.getTestAnnotation(result).description();
+        String idIssue = mp.get(Integer.valueOf(idTest));
+
+        IssueDOM issue = null;
+        try {
+            logger.info("COSULTANDO CASO DE PRUEBA " + idIssue);
+            issue = this.conn.getIssue(idIssue);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        logger.info("INICIANDO EJECUCION DE LA SUITE DE PRUEBAS: MARCACION DE LA PRUEBA PARA LA EJECUCION");
+        try {
+            TestObject   currentTest = TestObject.createTestObject(issue, this.versionId, this.nameCycle, this.testCycleList);
+            currentTest.getExecutionForTest();
+            currentTest.markTestStatusTo(TestStatus.iStatus_FAIL);
+            logger.info("ESTADO DE LA PRUEBA: FAIL");
+
+            String issueSummary = "CASO ID - " + idTest+" - ERROR"; // Campo: Resumen, en JIRA
+            String issueDescription = description; // Campo: Descripción, en JIRA
+            String userResponsibleError = "";
+            String idIssueError = jiraSP.createJiraIssue("Error", issueSummary, issueDescription, userResponsibleError);
+            this.conn.linkIssues(idIssue,idIssueError,"");
+            this.conn.DoTransitionIssue(idIssueError,"");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+         */
     }
 
 

@@ -53,7 +53,14 @@
                     <include name="NavBarHeader"></include>
                 </methods>
             </class>
+
+
 -->
+            <class name="com.segurosbolivar.automation.tests.sample.RunnerSample">
+                <methods>
+                    <include name="test"></include>
+                </methods>
+            </class>
             </classes>
         </test>
     </suite>

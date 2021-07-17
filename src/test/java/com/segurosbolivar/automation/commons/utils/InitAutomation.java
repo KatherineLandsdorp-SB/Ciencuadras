@@ -3,6 +3,7 @@ package com.segurosbolivar.automation.commons.utils;
 import com.segurosbolivar.automation.commons.enums.ScopeType;
 import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
+import com.segurosbolivar.automation.commons.jira.integration.JiraClientFactory;
 import com.segurosbolivar.automation.commons.services.DataService;
 import com.segurosbolivar.automation.commons.services.MetricsService;
 import com.segurosbolivar.automation.commons.services.Token;
@@ -32,6 +33,11 @@ public class InitAutomation {
         log.info("Start config Services ....");
         DataService.setToken(new Token(ScopeType.SERVICES_DATA).buildToken());
         MetricsService.setToken(new Token(ScopeType.SERVICES_METRICS).buildToken());
+    }
+
+    public static void initJiraClient(){
+        log.info("Create instance of a JiraClient");
+        JiraClientFactory.InitJiraServiceProvider();
     }
 
 

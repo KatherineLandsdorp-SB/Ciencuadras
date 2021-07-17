@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import com.segurosbolivar.automation.commons.helpers.driver.mobile.DriverMobileBase;
 import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
+import com.segurosbolivar.automation.commons.jira.integration.JiraClientFactory;
+import com.segurosbolivar.automation.commons.jira.integration.JiraServiceProvider;
+import com.segurosbolivar.automation.commons.jira.zapi.ConnectionManager;
 import com.segurosbolivar.automation.commons.models.CaseExecution;
 import com.segurosbolivar.automation.commons.models.Execution;
 import com.segurosbolivar.automation.commons.services.MetricsService;
@@ -74,12 +77,18 @@ public class TestListener implements ITestListener {
 
         boolean isLocalDriver = Boolean.parseBoolean(DriverConstants.DRIVER_LOCAL);
         if (testType == TestType.WEB) {
-            takeWebScreenshot();
+            //takeWebScreenshot();
             if (!isLocalDriver) {
                 WebDriver driver = DriverWebBase.getCurrentDriver();
                 ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             }
             DriverWebBase.quitDriver();
+            JiraServiceProvider jiraSP = JiraClientFactory.getClient(); //Provide services create issue and DOMS
+            ConnectionManager jiraApi = JiraClientFactory.getJiraApi(); //Provide services rest direct with jira
+            String issueSummary = "CIENCUADRAS - CASE "+testAnnotation.id();
+            String issueDescription = testAnnotation.description();
+            String idIssueError = jiraSP.createJiraIssue("Defecto QA", issueSummary, issueDescription);
+            log.info("SE CREO LA ISSUE "+idIssueError);
         } else if (testType == TestType.MOBILE) {
             takeMobileScreenshot();
             DriverMobileBase.quitDriver();
@@ -92,10 +101,6 @@ public class TestListener implements ITestListener {
         sendTestMethodStatus(iTestResult, Constants.TEST_FAIL);
         /*
 
-         System.out.println("THIS TEST FAILED!");
-        String idTest = Utils.getTestAnnotation(result).testName();
-        String description = Utils.getTestAnnotation(result).description();
-        String idIssue = mp.get(Integer.valueOf(idTest));
 
         IssueDOM issue = null;
         try {
@@ -118,7 +123,7 @@ public class TestListener implements ITestListener {
             String issueSummary = "CASO ID - " + idTest+" - ERROR"; // Campo: Resumen, en JIRA
             String issueDescription = description; // Campo: Descripción, en JIRA
             String userResponsibleError = "";
-            String idIssueError = jiraSP.createJiraIssue("Error", issueSummary, issueDescription, userResponsibleError);
+
             this.conn.linkIssues(idIssue,idIssueError,"");
             this.conn.DoTransitionIssue(idIssueError,"");
 

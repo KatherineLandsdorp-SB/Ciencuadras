@@ -1,4 +1,4 @@
-package com.segurosbolivar.automation.tests.search;
+package com.segurosbolivar.automation.tests.blog;
 
 import com.segurosbolivar.automation.commons.Data;
 import com.segurosbolivar.automation.commons.Elements;
@@ -10,88 +10,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.TestType;
 
-public class RunnerSearch extends Hooks {
+public class RunnerBlog extends Hooks {
 
-    StepsSearch steps;
+    StepsBlog steps;
 
-
-    @Test(
-            priority = 3,
-            id = 70,
-            testType = TestType.WEB,
-            dataProviderClass = DataProviderSource.class,
-            dataProvider = "test-data",
-            description = "Busqueda por codigo de proyecto"
-    )
-    public void searchCode(Data data){
-        try {
-            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
-            this.steps = new StepsSearch(Elements.getWebElements());
-            steps.searchCode(data.getDataField("code"))
-                    .validateSuccess();
-        } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
-        }
-    }
-
-    @Test(
-            priority = 3,
-            id = 71,
-            testType = TestType.WEB,
-            dataProviderClass = DataProviderSource.class,
-            dataProvider = "test-data",
-            description = "Busqueda por codigo de proyecto fallida"
-    )
-    public void searchCodeFail(Data data){
-        try {
-            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
-            this.steps = new StepsSearch(Elements.getWebElements());
-            steps.searchCode(data.getDataField("code"))
-                    .validateFail();
-        } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
-        }
-    }
-
-    @Test(
-            priority = 3,
-            id = 102,
-            testType = TestType.WEB,
-            dataProviderClass = DataProviderSource.class,
-            dataProvider = "test-data",
-            description = " Realizar búsqueda por proyecto "
-    )
-    public void searchProject(Data data){
-        try {
-            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
-            this.steps = new StepsSearch(Elements.getWebElements());
-            steps.searchCode(data.getDataField("code"))
-                    .validateFail();
-
-        } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
-        }
-    }
-
-    @Test(
-            priority = 3,
-            id = 103,
-            testType = TestType.WEB,
-            dataProviderClass = DataProviderSource.class,
-            dataProvider = "test-data",
-            description = "Realizar búsqueda con diferentes filtros"
-    )
-    public void searchProjectFail(Data data){
-        try {
-            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
-            this.steps = new StepsSearch(Elements.getWebElements());
-            steps.searchCode(data.getDataField("code"))
-                    .validateFail();
-
-        } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
-        }
-    }
 
     @Test(
             priority = 3,
@@ -104,7 +26,7 @@ public class RunnerSearch extends Hooks {
     public void moduleBlog(Data data){
         try {
             DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
-            this.steps = new StepsSearch(Elements.getWebElements());
+            this.steps = new StepsBlog(Elements.getWebElements());
             steps.searchCode(data.getDataField("code"))
                     .validateFail();
 
@@ -112,26 +34,5 @@ public class RunnerSearch extends Hooks {
             Assert.fail(ex.getMessage());
         }
     }
-
-
-    @Test(
-            priority = 3,
-            id = 105,
-            testType = TestType.WEB,
-            dataProviderClass = DataProviderSource.class,
-            dataProvider = "test-data",
-            description = "Realizar validación de las opciones de búsqueda"
-    )
-    public void optionsSerach(Data data){
-        try {
-            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
-            this.steps = new StepsSearch(Elements.getWebElements());
-            steps.searchCode(data.getDataField("code"))
-                    .validateFail();
-        } catch (Exception ex) {
-            Assert.fail(ex.getMessage());
-        }
-    }
-
 
 }

@@ -187,4 +187,91 @@ public class RunnerFiltersOffers extends Hooks {
         }
     }
 
+    @Test(
+            priority = 4,
+            id = 228,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
+            description = "Realizar validación de las opciones de búsqueda:-Opción: ciudad, sector o barrio.-Filtrar tu búsqueda -Ordenar-Ver Mapa-Filtrar por Afinidad-Guardar Búsqueda\n"
+    )
+    public void SearchWithFiltersCity(Data data){
+        try {
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateHouse()
+                    .clickExitPopUp()
+                    .setOneBedRoomFilter()
+                    .setThreeBathRoomsFilter()
+                    .setOneParkingFilter()
+                    .setMaxValuePriceOfferFilter(data.getDataField("price"))
+                    .saveSearchFilter(data.getDataField("nameSave"))
+                    .isSystemRequestLogIn();
+            DriverWebBase.quitDriver();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+    }
+
+    @Test(
+            priority = 4,
+            id = 229,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
+            description = "Realizar validación de las opciones de búsqueda:-Opción: ciudad, sector o barrio.-Filtrar tu búsqueda -Ordenar-Ver Mapa-Filtrar por Afinidad-Guardar Búsqueda"
+    )
+    public void SearchWithAffinity(Data data){
+        try {
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateHouse()
+                    .clickExitPopUp()
+                    .setOneBedRoomFilter()
+                    .setThreeBathRoomsFilter()
+                    .setOneParkingFilter()
+                    .setMaxValuePriceOfferFilter(data.getDataField("price"))
+                    .saveSearchFilter(data.getDataField("nameSave"))
+                    .isSystemRequestLogIn();
+            DriverWebBase.quitDriver();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+    }
+
+    @Test(
+            priority = 4,
+            id = 230,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
+            description = "Realizar validación de las opciones de búsqueda:-Opción: ciudad, sector o barrio.-Filtrar tu búsqueda -Ordenar-Ver Mapa-Filtrar por Afinidad-Guardar Búsqueda"
+    )
+    public void SearchWithAffinitySave(Data data){
+        try {
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsFiltersOffers(Elements.getWebElements());
+            this.steps.clickOnEntryOffers()
+                    .clickOnBuyUsedRealState()
+                    .clickFilterTypeRealState()
+                    .setFilterTypeRealStateHouse()
+                    .clickExitPopUp()
+                    .setOneBedRoomFilter()
+                    .setThreeBathRoomsFilter()
+                    .setOneParkingFilter()
+                    .setMaxValuePriceOfferFilter(data.getDataField("price"))
+                    .saveSearchFilter(data.getDataField("nameSave"))
+                    .isSystemRequestLogIn();
+            DriverWebBase.quitDriver();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+    }
+
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "testng/testng-1.0.dtd">
-<suite name="regression" id="6" parallel="methods" thread-count="20">
+<suite name="regression" id="6" parallel="methods" thread-count="40">
     <listeners>
         <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
     </listeners>
@@ -45,6 +45,10 @@
             <methods>
                 <include name="searchCode"></include>
                 <include name="searchCodeFail"></include>
+                <include name="searchProject"></include>
+                <include name="searchProjectFail"></include>
+                <include name="moduleBlog"></include>
+                <include name="optionsSerach"></include>
             </methods>
             </class>
 

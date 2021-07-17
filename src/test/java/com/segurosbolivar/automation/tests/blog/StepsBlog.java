@@ -1,16 +1,16 @@
-package com.segurosbolivar.automation.tests.search;
+package com.segurosbolivar.automation.tests.blog;
 import com.segurosbolivar.automation.commonslocal.BaseComponent;
 import io.qameta.allure.Step;
 import org.json.simple.JSONObject;
 
-public class StepsSearch extends BaseComponent {
+public class StepsBlog extends BaseComponent {
 
-    public StepsSearch(JSONObject json){
+    public StepsBlog(JSONObject json){
         super(json);
     }
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsSearch searchCode(String code){
+    public StepsBlog searchCode(String code){
             methods.waitForPageLoad();
             methods.waitingForElement("inputCode", 5);
             methods.sendKeysText("inputCode", code);
@@ -20,7 +20,7 @@ public class StepsSearch extends BaseComponent {
     }
 
     @Step("Valdiate success")
-    public StepsSearch validateSuccess(){
+    public StepsBlog validateSuccess(){
         methods.waitForPageLoad();
         methods.waitingForElement("pageCodeSearch", 5);
         methods.validationElementDisplayed("pageCodeSearch");
@@ -29,7 +29,7 @@ public class StepsSearch extends BaseComponent {
 
 
     @Step("Valdiate fail")
-    public StepsSearch validateFail(){
+    public StepsBlog validateFail(){
         methods.waitElementExplicitTime("pageCodeFailSearch", 20);
         methods.validationElementDisplayed("pageCodeFailSearch");
         return this;

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.segurosbolivar.automation.commons.jira.JiraConstants;
 import com.segurosbolivar.automation.commons.jira.zapi.DOM.ExecStatus.CycleDOM;
 import com.segurosbolivar.automation.commons.jira.zapi.DOM.ExecStatus.CycleExecution.ExecutionCycleDOM;
 import com.segurosbolivar.automation.commons.jira.zapi.DOM.ExecStatus.CycleExecution.ExecutionForActiveExecutionDOM;
@@ -711,15 +712,13 @@ public class ConnectionManager {
     public static  void DoTransitionIssue(String keyIssue, String typeTransition)  throws URISyntaxException, IOException{
         URI uri = uriBuilder.clearParameters()
                 .setScheme("https")
-                .setHost(PropertiesParser.getJiraHost())
-                .setPort(PropertiesParser.getJiraPort())
+                .setHost(JiraConstants.JIRA_HOST)
+                .setPort(Integer.parseInt(JiraConstants.JIRA_PORT))
                 .setPath(fetchIssueUrl+keyIssue+"/transitions").build();
 
         HttpPost httpPost = new HttpPost(uri);
         setGenericParams(httpPost);
         String jsonBody =  "{\"transition\": { \"id\":\"81\",  \"name\":\"Error_encontrado\" }}";
-        System.out.println(jsonBody);
-        System.out.println(uri.toString());
         httpPost.setEntity(new StringEntity(jsonBody));
         HttpEntity httpEntity = makeRequest(httpPost);
         EntityUtils.consume(httpEntity);

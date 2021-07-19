@@ -5,7 +5,7 @@
     </listeners>
     <test name="Seguros Bolivar Test"  >
         <classes >
-<!--
+
             <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers">
                    <methods>
                        <include name="verifyDetailOffer"/>
@@ -55,12 +55,15 @@
             </class>
 
 
--->
+
+
+          <!--
             <class name="com.segurosbolivar.automation.tests.sample.RunnerSample">
                 <methods>
                     <include name="test"></include>
                 </methods>
             </class>
+            -->
             </classes>
         </test>
     </suite>

@@ -9,6 +9,7 @@ public class StepsSearch extends BaseComponent {
         super(json);
     }
 
+
     @Step("The user clicks on the login Link in the Header")
     public StepsSearch searchCode(String code){
             methods.waitForPageLoad();

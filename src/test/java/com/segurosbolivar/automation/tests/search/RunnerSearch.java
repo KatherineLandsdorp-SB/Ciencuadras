@@ -13,26 +13,46 @@ import org.testng.annotations.TestType;
 public class RunnerSearch extends Hooks {
 
     StepsSearch steps;
-    
+
+
     @Test(
             priority = 3,
-            id = 104,
+            id = 70,
             testType = TestType.WEB,
             dataProviderClass = DataProviderSource.class,
             dataProvider = "test-data",
-            description = "Módulo Artículos de Interés Blog"
+            description = "Busqueda por codigo de proyecto"
     )
-    public void moduleBlog(Data data){
+    public void searchCode(Data data){
+        try {
+            DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
+            this.steps = new StepsSearch(Elements.getWebElements());
+            steps.searchCode(data.getDataField("code"))
+                    .validateSuccess();
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+        }
+    }
+
+    @Test(
+            priority = 3,
+            id = 71,
+            testType = TestType.WEB,
+            dataProviderClass = DataProviderSource.class,
+            dataProvider = "test-data",
+            description = "Busqueda por codigo de proyecto fallida"
+    )
+    public void searchCodeFail(Data data){
         try {
             DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
             this.steps = new StepsSearch(Elements.getWebElements());
             steps.searchCode(data.getDataField("code"))
                     .validateFail();
-
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }
     }
+
 
 
 }

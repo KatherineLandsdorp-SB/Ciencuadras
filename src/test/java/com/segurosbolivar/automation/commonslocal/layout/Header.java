@@ -24,6 +24,12 @@ public class Header {
         methods.clickElement("headPerson");
     }
 
+    public void clickOnBlog(){
+        methods.waitForPageLoad();
+        methods.waitingForElement("blog", 5);
+        methods.clickElement("blog");
+    }
+
     public void clickOnEntryOffers(){
 
         methods.waitForPageLoad();
@@ -85,6 +91,16 @@ public class Header {
         methods.waitForPageLoad();
     }
 
+    public void selectPropertyForBuy(){
+        methods.waitingForElement("selectPropertyForBuy",5);
+        methods.clickElement("selectPropertyForBuy");
+        methods.waitForPageLoad();
+    }
 
+    public void selectPropertyForRent(){
+        methods.waitingForElement("selectPropertyForRent",5);
+        methods.clickElement("selectPropertyForRent");
+        methods.waitForPageLoad();
+    }
 
 }

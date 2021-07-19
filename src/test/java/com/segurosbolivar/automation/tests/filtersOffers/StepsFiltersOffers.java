@@ -108,8 +108,8 @@ public class StepsFiltersOffers extends BaseComponent {
 
     @Step("The user order results by square lower to higher")
     public StepsFiltersOffers clickOrderBySquareLowerToHigher(){
-    this.filters.setOrderBySquareLowerToHigher();
-    return this;
+        this.filters.setOrderBySquareLowerToHigher();
+        return this;
     }
 
     @Step("The user verify order results offers is correct Lower To Higher")
@@ -168,6 +168,21 @@ public class StepsFiltersOffers extends BaseComponent {
         Assert.assertTrue(isLogInPresent);
         return  this;
     }
+
+    @Step("The user clicks on the buy Link in the Header")
+    public StepsFiltersOffers searchProjectBuy(){
+        methods.waitForPageLoad();
+        header.selectPropertyForBuy();
+        return this;
+    }
+
+    @Step("The user clicks on the rent Link in the Header")
+    public StepsFiltersOffers searchProjecRent(){
+        methods.waitForPageLoad();
+        header.selectPropertyForRent();
+        return this;
+    }
+
 
 
 }

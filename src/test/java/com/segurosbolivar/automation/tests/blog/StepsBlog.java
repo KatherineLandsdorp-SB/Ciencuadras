@@ -10,29 +10,19 @@ public class StepsBlog extends BaseComponent {
     }
 
     @Step("The user clicks on the login Link in the Header")
-    public StepsBlog searchCode(String code){
-            methods.waitForPageLoad();
-            methods.waitingForElement("inputCode", 5);
-            methods.sendKeysText("inputCode", code);
-            methods.clickElementJs("buttonCode");
-
+    public StepsBlog clickHeaderBlog(){
+            header.clickOnBlog();
         return this;
     }
 
     @Step("Valdiate success")
-    public StepsBlog validateSuccess(){
+    public StepsBlog scrollToPage(String page) throws InterruptedException {
         methods.waitForPageLoad();
-        methods.waitingForElement("pageCodeSearch", 5);
-        methods.validationElementDisplayed("pageCodeSearch");
+        methods.waitingForElement(page, 5);
+        methods.clickElementJs(page);
+        methods.waitForPageLoad();
+        methods.scrollToEndPage();
+        methods.scrollToInitPage();
         return this;
     }
-
-
-    @Step("Valdiate fail")
-    public StepsBlog validateFail(){
-        methods.waitElementExplicitTime("pageCodeFailSearch", 20);
-        methods.validationElementDisplayed("pageCodeFailSearch");
-        return this;
-    }
-
 }

@@ -27,8 +27,11 @@ public class RunnerBlog extends Hooks {
         try {
             DriverWebBase.getDriver().get(DriverConstants.WEB_URL_ENVIRONMENT);
             this.steps = new StepsBlog(Elements.getWebElements());
-            steps.searchCode(data.getDataField("code"))
-                    .validateFail();
+            steps.clickHeaderBlog()
+                    .scrollToPage("blogDecor")
+                    .scrollToPage("blogRealEstate")
+                    .scrollToPage("blogOrganization")
+                    .scrollToPage("blogTrends");
 
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());

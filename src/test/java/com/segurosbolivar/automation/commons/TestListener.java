@@ -4,6 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.segurosbolivar.automation.commons.helpers.driver.DriverConstants;
 import com.segurosbolivar.automation.commons.helpers.driver.mobile.DriverMobileBase;
 import com.segurosbolivar.automation.commons.helpers.driver.web.DriverWebBase;
+import com.segurosbolivar.automation.commons.jira.JiraConstants;
+import com.segurosbolivar.automation.commons.jira.integration.JiraClientFactory;
+import com.segurosbolivar.automation.commons.jira.integration.JiraServiceProvider;
+import com.segurosbolivar.automation.commons.jira.zapi.ConnectionManager;
 import com.segurosbolivar.automation.commons.models.CaseExecution;
 import com.segurosbolivar.automation.commons.models.Execution;
 import com.segurosbolivar.automation.commons.services.MetricsService;
@@ -18,6 +22,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
@@ -25,6 +30,7 @@ import org.testng.annotations.TestType;
 
 import java.io.ByteArrayInputStream;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Log4j2
 public class TestListener implements ITestListener {
@@ -71,15 +77,18 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         Test testAnnotation = Utils.getTestAnnotation(iTestResult);
         TestType testType = testAnnotation.testType();
-
+        String issueDescription = "";
         boolean isLocalDriver = Boolean.parseBoolean(DriverConstants.DRIVER_LOCAL);
         if (testType == TestType.WEB) {
-            takeWebScreenshot();
+            String sessionID = "";
+            //takeWebScreenshot();
             if (!isLocalDriver) {
-                WebDriver driver = DriverWebBase.getCurrentDriver();
+                RemoteWebDriver driver = DriverWebBase.getCurrentDriver();
+                sessionID =  driver.getSessionId().toString();
                 ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             }
             DriverWebBase.quitDriver();
+            issueDescription = "Description TEST : "+testAnnotation.description()+"\n"+"LambdaTest proof of case: "+"https://automation.lambdatest.com/logs/?testID="+sessionID;
         } else if (testType == TestType.MOBILE) {
             takeMobileScreenshot();
             DriverMobileBase.quitDriver();
@@ -90,6 +99,20 @@ public class TestListener implements ITestListener {
             DriverWebBase.quitDriver();
         }
         sendTestMethodStatus(iTestResult, Constants.TEST_FAIL);
+
+        if(Boolean.parseBoolean(JiraConstants.JIRA_TRACE_ENABLE)){
+            try {
+                JiraServiceProvider jiraSP = JiraClientFactory.getClient(); //Provide services create issue and DOMS
+                ConnectionManager jiraApi = JiraClientFactory.getJiraApi(); //Provide services rest direct with jira
+                String issueSummary = "CASE_" + testAnnotation.id() + "_" + DriverConstants.WEB_PLATFORM_NAME + "_" + new SimpleDateFormat("yyyy_MM_dd_hh:mm:ss").format(new Date());
+                String idIssueError = jiraSP.createJiraIssue("Defecto QA", issueSummary, issueDescription);
+                jiraApi.DoTransitionIssue(idIssueError, "");
+                log.info("SE CREO LA ISSUE " + idIssueError);
+            }catch (Exception e){
+                log.error(e.getMessage());
+            }
+            }
+
     }
 
 

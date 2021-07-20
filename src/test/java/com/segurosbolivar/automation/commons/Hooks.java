@@ -28,10 +28,11 @@ public class Hooks {
         InitAutomation.initDriverFactories();
         //start services  and send token to call other services
         InitAutomation.initServices();
+        //Start services Jira
+        InitAutomation.initJiraClient();
+
         //call elements
         Elements.initElements();
-
-
 
         // Register execution into database
         String pathXmlSuiteFile = iTestContext.getSuite().getXmlSuite().getFileName();
@@ -47,6 +48,7 @@ public class Hooks {
                 .requestDate(Utils.getStringDate(Constants.DATE_TIME_FORMAT))
                 .build();
         Execution.id = MetricsService.setExecution(executionRequest);
+
     }
 
     @BeforeMethod(alwaysRun = true)

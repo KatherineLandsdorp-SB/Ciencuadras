@@ -77,10 +77,10 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         Test testAnnotation = Utils.getTestAnnotation(iTestResult);
         TestType testType = testAnnotation.testType();
-        String sessionID = "";
         String issueDescription = "";
         boolean isLocalDriver = Boolean.parseBoolean(DriverConstants.DRIVER_LOCAL);
         if (testType == TestType.WEB) {
+            String sessionID = "";
             //takeWebScreenshot();
             if (!isLocalDriver) {
                 RemoteWebDriver driver = DriverWebBase.getCurrentDriver();

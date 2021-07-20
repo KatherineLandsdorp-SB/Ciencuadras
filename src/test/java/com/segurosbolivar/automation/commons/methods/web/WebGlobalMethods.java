@@ -372,7 +372,6 @@ public class WebGlobalMethods {
     public void clickElementJs(String entity) {
         WebElement element = getEntity(entity);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
-        System.out.println(element == null);
         executor.executeScript("arguments[0].click();", element);
     }
 

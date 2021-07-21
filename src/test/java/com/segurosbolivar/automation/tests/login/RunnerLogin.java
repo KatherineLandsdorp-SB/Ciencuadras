@@ -16,11 +16,11 @@ public class RunnerLogin extends Hooks {
     StepsLogin steps;
 
     @Test(
-            id = 36,
+            id = 235,
             testType = TestType.WEB,
             dataProviderClass = DataProviderSource.class,
             dataProvider = "test-data",
-            description = "Validación login transversal 36"
+            description = "Validación login transversal"
     )
     public void loginTransversal(Data data){
         try {

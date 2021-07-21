@@ -5,64 +5,23 @@
     </listeners>
     <test name="Seguros Bolivar Test">
         <classes>
-            <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers">
-                   <methods>
-                       <include name="verifyDetailOffer"/>
-                       <include name="verifyDetailRentOffer"/>
-                       <include name="verifyDetailCardOfferList"/>
-                   </methods>
-               </class>
             <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
                 <methods>
-                    <include name="SearchWithManyOptionsRealState"></include>
-                    <include name="OrderSquareLowerToHigher"></include>
-                    <include name="OrderSquareHigherToLower"></include>
                     <include name="SearchWithoutCriteria"></include>
-                    <include name="SearchApartmentsToBuyMap"></include>
-                    <include name="SearchWithFiltersAndVerifyLogin"></include>
-                    <include name="searchProject"></include>
-                    <include name="searchProjectEmpty"></include>
-                    <include name="HeaderSales"></include>
-                    <include name="HeaderBuyUsedaFinityFilter"></include>
-                    <include name="HeaderBuyUsedSaveSearch"></include>
                 </methods>
             </class>
             <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
                 <methods>
                     <include name="loginTransversal"></include>
-                    <include name="loginCheck"></include>
-                    <include name="loginFail"></include>
                 </methods>
             </class>
-            <class name="com.segurosbolivar.automation.tests.register.RunnerRegister">
-                <methods>
-                    <include name="successfullRegister"></include>
-                    <include name="RegisterAllied"></include>
-                </methods>
-            </class>
-            <class name="com.segurosbolivar.automation.tests.search.RunnerSearch">
-            <methods>
-                <include name="searchCode"></include>
-                <include name="searchCodeFail"></include>
-            </methods>
-            </class>
-            <class name="com.segurosbolivar.automation.tests.blog.RunnerBlog">
-                <methods>
-                    <include name="moduleBlog"></include>
-                </methods>
-            </class>
+
             <class name="com.segurosbolivar.automation.tests.header.RunnerHeader">
                 <methods>
                     <include name="NavBarHeader"></include>
                 </methods>
             </class>
-          <!--
-            <class name="com.segurosbolivar.automation.tests.sample.RunnerSample">
-                <methods>
-                    <include name="test"></include>
-                </methods>
-            </class>
-            -->
+
             </classes>
         </test>
     </suite>

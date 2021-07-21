@@ -9,26 +9,13 @@ public class Header {
         this.methods = methods;
     }
 
-    public void clickOnEntryLoginAllied(){
-        methods.waitForPageLoad();
-        methods.waitingForElement("sigInMenu",10);
-        methods.clickElementJs("sigInMenu");
-        methods.waitingForElement("alliedSigInMenu",10);
-        methods.clickElementJs("alliedSigInMenu");
-        methods.waitingForElement("popupSigInAllied",10);
-    }
-
     public void clickOnEntry(){
         methods.waitForPageLoad();
         methods.waitingForElement("headPerson", 5);
         methods.clickElement("headPerson");
     }
 
-    public void clickOnBlog(){
-        methods.waitForPageLoad();
-        methods.waitingForElement("blog", 5);
-        methods.clickElement("blog");
-    }
+
 
     public void clickOnEntryOffers(){
 
@@ -91,16 +78,6 @@ public class Header {
         methods.waitForPageLoad();
     }
 
-    public void selectPropertyForBuy(){
-        methods.waitingForElement("selectPropertyForBuy",5);
-        methods.clickElement("selectPropertyForBuy");
-        methods.waitForPageLoad();
-    }
 
-    public void selectPropertyForRent(){
-        methods.waitingForElement("selectPropertyForRent",5);
-        methods.clickElement("selectPropertyForRent");
-        methods.waitForPageLoad();
-    }
 
 }

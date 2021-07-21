@@ -23,23 +23,6 @@ public class Filters {
         methods.waitForPageLoad();
     }
 
-    public boolean searchTypesOfRealStatesResult(String[] typesRealState) {
-        Map<String, Integer> table = new HashMap<String, Integer>(typesRealState.length);
-        for (String key : typesRealState) {
-            table.put(key, 0);
-        }
-        LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("tittlesCardResultSearch"));
-
-        while (elementos.size() > 0) {
-            WebElement tmpElement = elementos.pop();
-            String textElement = tmpElement.getText().toLowerCase();
-            String key = textElement.split(" ")[0].trim();
-            if (!table.containsKey(key)) {
-                return false;
-            }
-        }
-            return true;
-    }
 
     public void filterSelectTypeApartment() {
         methods.waitingForElement("checkBoxApartment", 5);
@@ -66,79 +49,12 @@ public class Filters {
     }
 
 
-    public String clickOnMarkerResultMap() {
-
-        String text = "";
-        boolean isPresent = this.methods.visibleElement("mapCanva", 60);
-        if (isPresent) {
-            this.methods.waitingForElement("markerMapResult", 10);
-            this.methods.clickElementJs("markerMapResult");
-            this.methods.waitingForElement("tittleInfoMarker", 5);
-            text = this.methods.getEntity("tittleInfoMarker").getText();
-        }
-        return text;
-    }
-
     public void openFilterTypeRealState() {
         methods.waitForPageLoad();
         methods.waitingForElement("filterCheckBoxRealState", 5);
         methods.clickElementJs("filterCheckBoxRealState");
     }
 
-    private void openFilterOrderBy() {
-        methods.waitingForElement("filterCheckBoxOrderBy", 3);
-        methods.clickElementJs("filterCheckBoxOrderBy");
-    }
-
-    public void setOrderBySquareLowerToHigher() {
-        openFilterOrderBy();
-        methods.waitingForElement("elementSquareLowerToHigher", 3);
-        methods.clickElementJs("elementSquareLowerToHigher");
-    }
-
-    public boolean isOrderBySquareLowerToHigher() {
-        this.methods.waitForPageLoad();
-        LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("squareCardResultSearch"));
-        double auxValue = 0;
-        while (elementos.size() >0) {
-            WebElement tmpElement = elementos.removeFirst();
-            String textElement = tmpElement.getText().toLowerCase();
-            double key = Double.valueOf(textElement.trim().split(" ")[0].trim());
-            if (key >= auxValue || auxValue == 0) {
-                auxValue = key;
-            } else {
-                elementos = null;
-                return false;
-            }
-        }
-        elementos = null;
-        return true;
-    }
-
-    public void setOrderBySquareHigherToLower() {
-        openFilterOrderBy();
-        methods.waitingForElement("elementSquareHigherToLower", 3);
-        methods.clickElementJs("elementSquareHigherToLower");
-    }
-
-    public boolean isOrderBySquareHigherToLower() {
-        this.methods.waitForPageLoad();
-        LinkedList<WebElement> elementos = new LinkedList<>(this.methods.getEntities("squareCardResultSearch"));
-        double auxValue = 0;
-        while (elementos.size()>0) {
-            WebElement tmpElement = elementos.removeFirst();
-            String textElement = tmpElement.getText().toLowerCase();
-            double key = Double.valueOf(textElement.trim().split(" ")[0].trim());
-            if (key <= auxValue  || auxValue == 0) {
-                auxValue = key;
-            } else {
-                elementos = null;
-                return false;
-            }
-        }
-        elementos = null;
-        return true;
-    }
 
     public void clickExitPopUp(){
         boolean hidden = methods.visibleElement("exitPopupSaveSearch",20);
@@ -178,16 +94,7 @@ public class Filters {
         this.methods.clickElementJs("buttonSaveSearchFilter");
     }
 
-    public void  saveSearchFilter(String nameSearch){
-        clickOnSaveSearchFilter();
-        boolean hidden = methods.visibleElement("fieldTextSaveSearchFilter",30);
-        if(hidden!=false){
-           this.methods.sendKeysTextJs("fieldTextSaveSearchFilter", nameSearch);
-           this.methods.clickElementJs("buttonPopupSaveSearchFilter");
-        }
 
-
-    }
 
 
 }

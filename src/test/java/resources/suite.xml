@@ -1,18 +1,13 @@
 <!DOCTYPE suite SYSTEM "testng/testng-1.0.dtd">
-<suite name="regression" id="6" parallel="methods" thread-count="40">
+<suite name="regression" id="8" parallel="methods" thread-count="40">
     <listeners>
         <listener class-name="com.segurosbolivar.automation.commons.TestListener"/>
     </listeners>
-    <test name="Seguros Bolivar Test">
+    <test name="Seguros Bolivar learning">
         <classes>
             <class name="com.segurosbolivar.automation.tests.filtersOffers.RunnerFiltersOffers">
                 <methods>
                     <include name="SearchWithoutCriteria"></include>
-                </methods>
-            </class>
-            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
-                <methods>
-                    <include name="loginTransversal"></include>
                 </methods>
             </class>
 
@@ -21,6 +16,14 @@
                     <include name="NavBarHeader"></include>
                 </methods>
             </class>
+
+            <!--
+            <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
+                <methods>
+                    <include name="loginTransversal"></include>
+                </methods>
+            </class>
+            -->
 
             </classes>
         </test>

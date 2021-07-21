@@ -1,71 +1,79 @@
 {
-  "sigInMenu": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[2]/button[1]/a"
-  },
   "alliedSigInMenu": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-menu-panel-1\"]/div/a[2]"
   },
-  "popupSigInAllied": {
+  "blog": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-login/div"
+    "ValueToFind": "//a[contains(text(),'blog')]"
   },
-  "labelCreateAccountAllied": {
+  "blogDecor": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-tab-label-0-1\"]"
+    "ValueToFind": "(//li//a[contains(text(),'Decoración')])[1]"
   },
-  "fieldNameRegisterAllied": {
+  "blogOrganization": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-2\"]"
+    "ValueToFind": "(//li//a[contains(text(),'Organización')])[1]"
   },
-  "fieldEmailRegisterAllied": {
+  "blogRealEstate": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-3\"]"
+    "ValueToFind": "(//li//a[contains(text(),'Inmobiliarias')])[1]"
   },
-  "fieldNitRegisterAllied": {
+  "blogTrends": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-4\"]"
+    "ValueToFind": "(//li//a[contains(text(),'Tendencias')])[1]"
   },
-  "fieldCellPhoneRegisterAllied": {
+  "body": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-5\"]"
+    "ValueToFind": "//*[@id=\"target\"]/div[1]/div[1]/app-search/div/h1"
   },
-  "fieldCityRegisterAllied": {
+  "buttonCarruselRight": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-6\"]"
+    "ValueToFind": "//*[@id=\"estate-detail\"]/div[1]/div[2]/div/div[1]/app-galeria/section/div[1]/div[3]/span"
   },
-  "fieldPassRegisterAllied": {
+  "buttonClosePopupFromExterior": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-7\"]"
+    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-video/div/div[1]/button"
   },
-  "fieldPassConfirmationRegisterAllied": {
+  "buttonCode": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-input-8\"]"
+    "ValueToFind": "//body[1]/app-root[1]/app-home[1]/section[1]/div[1]/app-circle-five[1]/section[1]/article[2]/app-search-code[1]/div[1]/button[1]"
   },
-  "fieldTermsAndConditionsRegisterAllied": {
+  "buttonContactCard": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-checkbox-2\"]"
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/button[3]"
+  },
+  "buttonContactWhatsappCard": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/div/ul/li[2]/button"
+  },
+  "buttonDropDownPanelDescription": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"detail-description\"]/div/button"
   },
   "buttonEntryRegisterAllied": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"mat-checkbox-2\"]/label/div"
   },
-  "entryOffersView": {
+  "buttonMap": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[1]/ul/li[1]/a"
+    "ValueToFind": "//*[@id=\"btn_top_map\"]"
   },
-  "filterByCityOrHoods": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"search\"]"
-  },
-  "searchByCityOrHoods": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"searchForm\"]/button[2]"
-  },
-  "filterCheckBoxRealState": {
+  "buttonMapPositionDetailOffer": {
     "GetFieldBy": "Id",
-    "ValueToFind": "mat-select-0"
+    "ValueToFind": "show-map-button"
+  },
+  "buttonPopupSaveSearchFilter": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"instructionsSearchForm\"]/div/button[1]"
+  },
+  "buttonSaveSearchFilter": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "btn_top_save"
+  },
+  "cardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]"
   },
   "checkBoxApartment": {
     "GetFieldBy": "Xpath",
@@ -79,83 +87,197 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*/mat-option/span[contains(text(),'Oficina')]"
   },
-  "exitPopupSaveSearch": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-instructions-save-search/div/div[1]/button"
-  },
-
-  "buttonMap": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"btn_top_map\"]/span"
-  },
-  "mapCanva": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]"
-  },
-  "markerMapResult": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div[73]"
-  },
-  "body": {
+  "checkCompareOffers": {
     "GetFieldBy": "Id",
-    "ValueToFind": "result"
-  },
-  "tittleInfoMarker": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "/html/body/app-root/app-resultview/div/div/div[1]/div[2]/div/div[2]/app-maps/div/agm-map/div[1]/div/div/div[1]/div[3]/div/div[4]/div[1]/div/div/div/div/div/div/span[1]/b"
-  },
-
-  "tittleBannerResult": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"resultados\"]/div/div[3]/div/h2"
-  },
-  "tittlesCardResultSearch": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[1]/span"
-  },
-  "cardResultSearch": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]"
-  },
-  "imageFlatOfferDetail": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"panorama\"]/img"
-  },
-  "buttonCarruselRight": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"estate-detail\"]/div[1]/div[2]/div/div[1]/app-galeria/section/div[1]/div[3]/span"
-  },
-  "imageRotateOfferDetail": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"panorama\"]/div[1]/div[1]"
-  },
-  "valueOfferDetail": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"detail-info\"]/div/div[1]/div/h2"
+    "ValueToFind": "mat-checkbox-33"
   },
   "codeOfferDetail": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"detail-info\"]/div/div[2]/div[1]/span[1]/strong"
   },
-  "buttonDropDownPanelDescription": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"detail-description\"]/div/button"
-  },
-  "panelMeasures": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"description\"]/div[4]"
-  },
-  "panelMonthlyExpenses": {
+  "confirmPassRegister": {
     "GetFieldBy": "Id",
-    "ValueToFind": "detail-expense"
+    "ValueToFind": "confirmPassRegister"
   },
-  "tittleCreditSimulator": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-tab-label-1-0\"]/div"
-  },
-  "buttonMapPositionDetailOffer": {
+  "defaultCheckIn": {
     "GetFieldBy": "Id",
-    "ValueToFind": "show-map-button"
+    "ValueToFind": "defaultCheckIn"
+  },
+  "elementSquareHigherToLower": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-3\"]"
+  },
+  "elementSquareLowerToHigher": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-option-2\"]"
+  },
+  "entryOffersView": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[1]/ul/li[1]/a"
+  },
+  "entryUser": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//a[contains(text(),'Personas')]"
+  },
+  "exitPopupSaveSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-instructions-save-search/div/div[1]/button"
+  },
+  "fieldCellPhoneRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-5\"]"
+  },
+  "fieldCityRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-6\"]"
+  },
+  "fieldEmailRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-3\"]"
+  },
+  "fieldNameRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-2\"]"
+  },
+  "fieldNitRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-4\"]"
+  },
+  "fieldPassConfirmationRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-8\"]"
+  },
+  "fieldPassRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-input-7\"]"
+  },
+  "fieldTermsAndConditionsRegisterAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-checkbox-2\"]"
+  },
+  "fieldTextSaveSearchFilter": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-4"
+  },
+  "filterByCityOrHoods": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"search\"]"
+  },
+  "filterCheckBoxOrderBy": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"FiltersResultForm\"]/nav/div[2]/div/mat-form-field/div/div[1]"
+  },
+  "filterCheckBoxRealState": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-select-0"
+  },
+  "filterMaxPriceValueOffer": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-input-2"
+  },
+  "filterOneBedroom": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-1"
+  },
+  "filterOneParking": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-9"
+  },
+  "filterThreeBathrooms": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mat-checkbox-7"
+  },
+  "headPerson": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//a[contains(text(),'Ingresar')]"
+  },
+  "helloUser": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(@class, 'circle-name')]"
+  },
+  "imageFlatOfferDetail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"panorama\"]/img"
+  },
+  "imageRotateOfferDetail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"panorama\"]/div[1]/div[1]"
+  },
+  "inputCode": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//input[@id='mat-input-0']"
+  },
+  "labelAlliedHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Aliados') and contains(@href,'#')]"
+  },
+  "labelBlogHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Blog') or contains(@href,'/blog')]"
+  },
+  "labelBuildersHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Constructoras') and contains(@href,'/constructoras')]"
+  },
+  "labelBuyNewRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Compra Nuevo') or  contains(@href,'/proyectos-vivienda-nueva')]"
+  },
+  "labelBuyUsedRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Compra Usado') or  contains(@href,'/venta')]"
+  },
+  "labelCreateAccountAllied": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-tab-label-0-1\"]"
+  },
+  "labelFromExteriorHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Desde el exterior') and contains(@href,'/colombianos/exterior')]"
+  },
+  "labelProjectOnPlans": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "blue-print-content"
+  },
+  "labelRealStateHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Inmobiliarias') and contains(@href,'/inmobiliaria')]"
+  },
+  "labelRentRealState": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Arrendar inmueble')]"
+  },
+  "labelToolsHeader": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(text(),'Herramientas') and contains(@href,'/herramientas')]"
+  },
+  "lastNameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "lastNameRegister"
+  },
+  "locationCardOffer": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/p"
+  },
+  "loginInMail": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginInMail"
+  },
+  "loginInPass": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginInPass"
+  },
+  "loginUser": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "loginUser"
+  },
+  "mailRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "mailRegister"
+  },
+  "mapCanva": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]"
   },
   "mapDetailOffer": {
     "GetFieldBy": "Id",
@@ -165,148 +287,135 @@
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div/img"
   },
-  "photoCardOffer": {
+  "markerMapResult": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/figure/div[2]/a/div[1]/img"
+    "ValueToFind": "//*[@id=\"map\"]/div[1]/div/div/div[1]/div[3]/div/div[3]/div[73]"
   },
-  "valueCardOffer": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/h3"
-  },
-  "locationCardOffer": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/p"
-  },
-  "typeCardOffer": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/span"
-  },
-  "numRoomsOfferCard": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[1]"
+  "nameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "nameRegister"
   },
   "numBathRoomsOfferCard": {
     "GetFieldBy": "Xpath",
     "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[2]"
   },
-  "sizeSquareOfferCard": {
+  "numRoomsOfferCard": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[3]"
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[1]"
   },
-  "buttonContactCard": {
+  "page": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/button[3]"
+    "ValueToFind": "//div[contains(@class, 'page')]"
   },
-  "buttonContactWhatsappCard": {
+  "pageCodeFailSearch": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[2]/div/div/ul/li[2]/button"
+    "ValueToFind": "//div[contains(text(),'El código que ingresaste no existe')]"
   },
-  "checkCompareOffers": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-checkbox-33"
-  },
-  "filterCheckBoxOrderBy": {
+  "pageCodeSearch": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"FiltersResultForm\"]/nav/div[2]/div/mat-form-field/div/div[1]"
-  },
-  "elementSquareLowerToHigher": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-option-2\"]"
-  },
-  "squareCardResultSearch": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[2]/ul/li[3]"
-  },
-  "elementSquareHigherToLower": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-option-3\"]"
-  },
-  "filterOneBedroom": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-checkbox-1"
-  },
-  "filterThreeBathrooms": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-checkbox-7"
-  },
-  "filterOneParking": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-checkbox-9"
-  },
-  "filterMaxPriceValueOffer": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-input-2"
-  },
-  "buttonSaveSearchFilter": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "btn_top_save"
-  },
-  "fieldTextSaveSearchFilter": {
-    "GetFieldBy": "Id",
-    "ValueToFind": "mat-input-4"
-  },
-  "buttonPopupSaveSearchFilter": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"instructionsSearchForm\"]/div/button[1]"
+    "ValueToFind": "//div[contains(@class, 'page')]"
   },
   "panelLoginPopUp": {
     "GetFieldBy": "Id",
     "ValueToFind": "user"
   },
-  "labelProjectOnPlans": {
+  "panelMeasures": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"description\"]/div[4]"
+  },
+  "panelMonthlyExpenses": {
     "GetFieldBy": "Id",
-    "ValueToFind": "blue-print-content"
+    "ValueToFind": "detail-expense"
   },
-  "buttonClosePopupFromExterior": {
+  "passRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "passRegister"
+  },
+  "photoCardOffer": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-video/div/div[1]/button"
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/figure/div[2]/a/div[1]/img"
   },
-  "labelAlliedHeader": {
+  "popupSigInAllied": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Aliados') and contains(@href,'#')]"
+    "ValueToFind": "//*[@id=\"mat-dialog-0\"]/app-login/div"
   },
-  "labelBuildersHeader": {
+  "register": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "register"
+  },
+  "registerUser": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Constructoras') and contains(@href,'/constructoras')]"
+    "ValueToFind": "//body/div[6]/div[2]/div[1]/div[1]/div[1]/a[3]"
   },
-  "labelToolsHeader": {
-  "GetFieldBy": "Xpath",
-  "ValueToFind": "//*[contains(text(),'Herramientas') and contains(@href,'/herramientas')]"
-  },
-  "labelFromExteriorHeader": {
+  "searchByCityOrHoods": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Desde el exterior') and contains(@href,'/colombianos/exterior')]"
+    "ValueToFind": "//*[@id=\"searchForm\"]/button[2]"
   },
-  "labelBuyNewRealState": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Compra Nuevo') or  contains(@href,'/proyectos-vivienda-nueva')]"
+  "secondLastnameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "secondLastnameRegister"
   },
-  "labelBlogHeader": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Blog') or  contains(@href,'/blog') ]"
+  "secondNameRegister": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "secondNameRegister"
   },
-  "labelBuyUsedRealState": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Compra Usado') or  contains(@href,'/venta')]"
+  "selectPropertyForBuy": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "circulo-home-comprar-nuevo"
   },
-
-  "labelRentRealState": {
-    "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Arrendar inmueble')]"
+  "selectPropertyForRent": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "circulo-home-arrendar"
   },
-  "labelRealStateHeader": {
+  "sigInMenu": {
     "GetFieldBy": "Xpath",
-    "ValueToFind": "//*[contains(text(),'Inmobiliarias') and contains(@href,'/inmobiliaria')]"
+    "ValueToFind": "//*[@id=\"headerHome\"]/app-header/header/nav[2]/button[1]/a"
+  },
+  "sizeSquareOfferCard": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[2]/ul/li[3]"
+  },
+  "squareCardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[2]/ul/li[3]"
+  },
+  "terms": {
+    "GetFieldBy": "Id",
+    "ValueToFind": "terms"
+  },
+  "test": {
+    "value": 0
+  },
+  "tittleBannerResult": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"resultados\"]/div/div[3]/div/h2"
+  },
+  "tittleCreditSimulator": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"mat-tab-label-1-0\"]/div"
+  },
+  "tittleInfoMarker": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "/html/body/app-root/app-resultview/div/div/div[1]/div[2]/div/div[2]/app-maps/div/agm-map/div[1]/div/div/div[1]/div[3]/div/div[4]/div[1]/div/div/div/div/div/div/span[1]/b"
+  },
+  "tittlesCardResultSearch": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card/div/div/div[1]/div[1]/span"
+  },
+  "typeCardOffer": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/span"
+  },
+  "userError": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[contains(@class, 'user-error')]"
+  },
+  "valueCardOffer": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"all-content\"]/app-card[1]/div/div/div[1]/div[1]/h3"
+  },
+  "valueOfferDetail": {
+    "GetFieldBy": "Xpath",
+    "ValueToFind": "//*[@id=\"detail-info\"]/div/div[1]/div/h2"
   }
-
-
-
-
-
-
-
-
-
-
-
 }

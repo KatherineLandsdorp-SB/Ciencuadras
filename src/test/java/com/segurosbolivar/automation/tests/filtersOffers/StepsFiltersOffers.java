@@ -17,12 +17,6 @@ public class StepsFiltersOffers extends BaseComponent {
         return this;
     }
 
-    @Step("The user clicks on the header Buy used Real State")
-    public StepsFiltersOffers clickOnBuyUsedRealState(){
-        this.header.selectBuyUsedRealState();
-        return this;
-    }
-
     @Step("The user clicks on the header Buy new Real State")
     public StepsFiltersOffers clickOnBuyNewRealState(){
         this.header.selectBuyNewRealState();
@@ -65,18 +59,6 @@ public class StepsFiltersOffers extends BaseComponent {
         return this;
     }
 
-    @Step("The user select filter, type of real state (House)")
-    public StepsFiltersOffers setFilterTypeRealStateHouse(){
-        this.filters.filterSelectTypeHouse();
-        return this;
-    }
-
-    @Step("The user select filter, type of real state (Office)")
-    public StepsFiltersOffers setFilterTypeRealStateOffice(){
-        this.filters.filterSelectTypeOffice();
-
-        return this;
-    }
 
     @Step("The user closes the popup save search")
     public StepsFiltersOffers clickExitPopUp() {
@@ -85,103 +67,6 @@ public class StepsFiltersOffers extends BaseComponent {
         return this;
     }
 
-    @Step("The user open select Map mode view")
-    public StepsFiltersOffers clickOpenMap(){
-        this.filters.clickButtonGoogleMap();
-        return  this;
-    }
-
-    @Step("The user open a marker to extract info")
-    public StepsFiltersOffers clickOnMarkerResultMap(String expectedTypeRealState){
-        String[] result = this.filters.clickOnMarkerResultMap().split("-");
-        String text = result[0].toLowerCase().trim();
-        Assert.assertEquals(text, expectedTypeRealState);
-        return this;
-    }
-
-    @Step("The user search types of real state in result card list")
-    public StepsFiltersOffers searchResultRealStateExist(String[] typeRealState){
-        boolean result =  this.filters.searchTypesOfRealStatesResult(typeRealState);
-        Assert.assertTrue(result);
-        return  this;
-    }
-
-    @Step("The user order results by square lower to higher")
-    public StepsFiltersOffers clickOrderBySquareLowerToHigher(){
-        this.filters.setOrderBySquareLowerToHigher();
-        return this;
-    }
-
-    @Step("The user verify order results offers is correct Lower To Higher")
-    public StepsFiltersOffers verifyOrderBySquareLowerToHigher(){
-        boolean isCorrectOrder  = this.filters.isOrderBySquareLowerToHigher();
-        Assert.assertTrue(isCorrectOrder);
-        return this;
-    }
-
-    @Step("The user order results by square  higher to lower")
-    public StepsFiltersOffers clickOrderBySquareHigherToLower(){
-        this.filters.setOrderBySquareHigherToLower();
-        return this;
-    }
-
-    @Step("The user verify order results offers is correct higher to lower")
-    public StepsFiltersOffers verifyOrderBySquareHigherToLower(){
-        boolean isCorrectOrder  = this.filters.isOrderBySquareHigherToLower();
-        Assert.assertTrue(isCorrectOrder);
-        return this;
-    }
-
-    @Step("The user set One bedroom in the filters search")
-    public  StepsFiltersOffers setOneBedRoomFilter(){
-        this.filters.setOneBedroomFilter();
-        return this;
-    }
-
-    @Step("The user set three bathrooms in the filter search")
-    public StepsFiltersOffers setThreeBathRoomsFilter(){
-        this.filters.setThreeBathroomsFilter();
-        return  this;
-    }
-
-    @Step("The user set one parking in the filters search")
-    public  StepsFiltersOffers setOneParkingFilter(){
-        this.filters.setOneParkingFilter();
-        return  this;
-    }
-
-    @Step("The user set a max value price int the filters search ")
-    public StepsFiltersOffers setMaxValuePriceOfferFilter(String value){
-        this.filters.setMaxValuePriceOffers(value);
-        return  this;
-    }
-
-    @Step("The user save his search with a name")
-    public StepsFiltersOffers saveSearchFilter(String nameSearch){
-        this.filters.saveSearchFilter(nameSearch);
-        return  this;
-    }
-
-    @Step("The system request log in to save search filter")
-    public StepsFiltersOffers isSystemRequestLogIn(){
-        boolean isLogInPresent = this.methods.visibleElement("panelLoginPopUp",50);
-        Assert.assertTrue(isLogInPresent);
-        return  this;
-    }
-
-    @Step("The user clicks on the buy Link in the Header")
-    public StepsFiltersOffers searchProjectBuy(){
-        methods.waitForPageLoad();
-        header.selectPropertyForBuy();
-        return this;
-    }
-
-    @Step("The user clicks on the rent Link in the Header")
-    public StepsFiltersOffers searchProjecRent(){
-        methods.waitForPageLoad();
-        header.selectPropertyForRent();
-        return this;
-    }
 
 
 

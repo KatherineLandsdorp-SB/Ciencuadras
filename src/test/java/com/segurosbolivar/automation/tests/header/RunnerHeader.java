@@ -12,7 +12,7 @@ public class RunnerHeader extends Hooks {
     StepsHeader steps;
 
     @Test(
-            id = 116,
+            id = 212,
             testType = TestType.WEB,
             description = "La url debe redireccionar a la pagina correspondiente"
     )

@@ -20,8 +20,7 @@ public class RunnerLogin extends Hooks {
             testType = TestType.WEB,
             dataProviderClass = DataProviderSource.class,
             dataProvider = "test-data",
-            priority = 1,
-            description = "Validación login transversal"
+            description = "Validación login transversal 36"
     )
     public void loginTransversal(Data data){
         try {

@@ -33,12 +33,7 @@ public class StepsLogin  extends BaseComponent {
         return this;
     }
 
-    @Step("The user fill all the required fields")
-    public StepsLogin checkRemember(){
-        methods.waitingForElement("defaultCheckIn", 30);
-        methods.clickElementJs("defaultCheckIn");
-        return this;
-    }
+
 
     @Step("The user fill all the required fields")
     public StepsLogin clickOnLogin(){
@@ -56,10 +51,4 @@ public class StepsLogin  extends BaseComponent {
         return this;
     }
 
-    @Step("The user fill all the required fields")
-    public StepsLogin validateFailed(){
-        methods.waitingForElement("userError",10);
-        methods.validationElementDisplayed("userError");
-        return this;
-    }
 }

@@ -18,8 +18,7 @@ public class RunnerFiltersOffers extends Hooks {
 
 
     @Test(
-            priority = 4,
-            id = 49,
+            id = 233,
             testType = TestType.WEB,
             dataProviderClass = DataProviderSource.class,
             dataProvider = "test-data",

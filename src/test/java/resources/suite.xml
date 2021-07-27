@@ -6,8 +6,8 @@
     <test name="Seguros Bolivar Test">
         <classes>
 
-            <!--
-            <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers">
+
+          <class name="com.segurosbolivar.automation.tests.BodyOffers.RunnerBodyOffers">
                    <methods>
                        <include name="verifyDetailOffer"/>
                        <include name="verifyDetailRentOffer"/>
@@ -29,22 +29,22 @@
                     <include name="HeaderBuyUsedSaveSearch"></include>
                 </methods>
             </class>
-            -->
+
             <class name="com.segurosbolivar.automation.tests.login.RunnerLogin">
                 <methods>
                     <include name="loginTransversal"></include>
-                    <!--    <include name="loginCheck"></include>
-                      <include name="loginFail"></include> -->
+                     <include name="loginCheck"></include>
+                      <include name="loginFail"></include>
                 </methods>
             </class>
 
             <class name="com.segurosbolivar.automation.tests.register.RunnerRegister">
                 <methods>
                     <include name="successfullRegister"></include>
-               <!--     <include name="RegisterAllied"></include> -->
+                   <include name="RegisterAllied"></include> -->
                 </methods>
             </class>
-            <!--
+
            <class name="com.segurosbolivar.automation.tests.search.RunnerSearch">
            <methods>
                <include name="searchCode"></include>
@@ -61,7 +61,7 @@
                    <include name="NavBarHeader"></include>
                </methods>
            </class>
-           -->
+
           <!--
             <class name="com.segurosbolivar.automation.tests.sample.RunnerSample">
                 <methods>

@@ -38,6 +38,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.16'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
     implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
+
     /* slf4j */
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
 
@@ -47,6 +48,18 @@ dependencies {
     compile "net.sf.json-lib:json-lib:2.4:jdk15"
     implementation 'joda-time:joda-time:2.3'
     implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Images Libraries
+    implementation group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
+    implementation group: 'org.dmfs', name: 'httpurlconnection-executor', version: '0.8'
+    implementation group: 'com.github.romankh3', name: 'image-comparison', version: '4.3.1'
+
+
+/* librerias lombok para manejo de aws s3*/
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.980'
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.980'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
 }
 

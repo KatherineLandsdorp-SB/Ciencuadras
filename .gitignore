@@ -16,7 +16,6 @@ allure-results/
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
